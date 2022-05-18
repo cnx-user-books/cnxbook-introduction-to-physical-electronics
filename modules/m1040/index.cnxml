@@ -1,0 +1,115 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Integrated Circuit Manufacturing: Bird's Eye View</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c264b519-6c1e-4038-ac29-afe98af57409</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">It will no doubt be helpful if we also take a
+      plane or "bird's eye" view of what this circuit looks like as
+      well. There are, in fact, some interesting things we can gain by
+      looking at some of them.
+    </para>
+
+    <para id="para2"> We have been looking at the development of the
+      circuit from a cross-sectional point of view, watching the
+      formation of the various levels which make up the finished CMOS
+      inverter. This is, in fact, not the way a circuit designer looks
+      at things. A circuit designer sees things from above, and only
+      worries about the placement of transistors, and how they will be
+      connected together. In fact, the only factor in the actual
+      design of the layout engineer has any choice on is the
+      transistor width, W. All other parameters are decided upon
+      beforehand by the process engineer. So what does the layout
+      engineer see? We start with the n- implant to make the n-tank,
+      as shown in <link target-id="fig1"/>. (You should go back and
+      follow along with the cross-sectional views of the process, as
+      we review looking at things from the top.)
+      
+      <figure id="fig1">
+	<title>Implanted n-Tank</title>
+	<media id="idm11138976" alt=""><image src="../../media/5.37.png" mime-type="image/png"/></media>
+      </figure>
+
+      A mask opposite to that of the n-tank allows us to an n-channel
+
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>T</m:mi>
+	</m:msub>
+      </m:math>
+
+      adjust. We next deposit and pattern the nitride for the active
+      regions, and grow the field oxide (FOX) <link target-id="fig2"/>.
+
+      <figure id="fig2">
+	<title>Growing FOX</title>
+	<media id="idm523840" alt=""><image src="../../media/5.38.png" mime-type="image/png"/></media>
+      </figure>
+      
+      We remove the nitride, and deposit and pattern the poly., as seen
+      in <link target-id="fig3"/>
+
+      <figure id="fig3">
+	<title>Gate Poly Pattern</title>
+	<media id="idm7163280" alt=""><image src="../../media/5.39.png" mime-type="image/png"/></media>
+      </figure>
+
+      <link target-id="fig4"/> shows what the two masks look like for the
+      n+ and p+ source/drain implants:
+
+      <figure id="fig4">
+	<title>S/D Implants</title>
+	<media id="idp6249600" alt=""><image src="../../media/5.40.png" mime-type="image/png"/></media>
+      </figure>
+
+      Note that the gate poly extends beyond where the implant is
+      being performed (inside the dotted line). This is a
+      <emphasis>design rule</emphasis> which is the way the circuit
+      designer takes into account the fact that the manufacturing
+      process must have some tolerance built in, because things will
+      not always be lined up just perfectly. Now we make some contact
+      holes, seen in <link target-id="fig5"/>:
+
+      <figure id="fig5">
+	<title>Etching Contact Holes</title>
+	<media id="idm7788448" alt=""><image src="../../media/5.41.png" mime-type="image/png"/></media>
+      </figure>
+
+      And finally, we sputter and pattern the metallization, which is
+      depicted in <link target-id="fig6"/>. You should go back to <link document="m1020">MOSFETs</link>, and convince yourself that the
+      circuit shown in <link target-id="fig1"/> is indeed what has been
+      constructed in <link target-id="fig6"/>. See if you can identify
+      all of the correct parts. Note that there is a connection
+      between
+
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>ss</m:mi>
+	</m:msub>
+      </m:math>
+
+      (ground) and the p-substrate <emphasis>very</emphasis> close to
+      the n-channel source. There is also a contact between the n-moat
+      and
+
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>dd</m:mi>
+	</m:msub>
+      </m:math>
+
+      which is <emphasis>very</emphasis> close to the p-channel
+      source.  What advantage would this have? Hint: review the
+      discussion of <link document="m1031">latch-up</link>.
+
+      <figure id="fig6">
+	<title>Metallization Patterning</title>
+	<media id="idm6142544" alt=""><image src="../../media/5.42.png" mime-type="image/png"/></media>
+      </figure>  
+    </para>
+  </content>
+  
+</document>

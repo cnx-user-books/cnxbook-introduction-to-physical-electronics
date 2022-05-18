@@ -1,0 +1,1365 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Transmission Line Equation</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>f80365da-2137-4f51-833d-a23a02e10f4d</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">We need to solve the <term>telegrapher's
+    equations</term>,
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:apply>
+		  <m:partialdiff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">I</m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">I</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">C</m:mi>
+		<m:apply>
+		  <m:partialdiff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">V</m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      The way we will proceed to a solution, and the way you always
+      proceed when confronted with a pair of equations such as these,
+      is to take a spatial derivative of one equation, and then
+      substitute the second equation in for the spatial derivative in
+      the first and you end up with...well, let's try it and see.
+    </para>
+
+    <para id="para2">
+      Taking a derivative with respect to
+      <m:math><m:ci>x</m:ci></m:math> of <link target-id="eqn1"/>
+
+      <equation id="eqn3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+		<m:degree>
+		  <m:cn>2</m:cn>
+		</m:degree>
+	      </m:bvar>
+	      <m:degree>
+		<m:cn>2</m:cn>
+	      </m:degree>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:apply>
+		  <m:partialdiff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:bvar>
+		    <m:ci>x</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">I</m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Now we substitute in for
+      <m:math>
+	<m:apply>
+	  <m:partialdiff/>
+	  <m:bvar>
+	    <m:ci>x</m:ci>
+	  </m:bvar>
+	  <m:apply>
+	    <m:ci type="fn">I</m:ci>
+	    <m:ci>x</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> from <link target-id="eqn2"/>
+
+      <equation id="eqn4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+		<m:degree>
+		  <m:cn>2</m:cn>
+		</m:degree>
+	      </m:bvar>
+	      <m:degree>
+		<m:cn>2</m:cn>
+	      </m:degree>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:mi fontweight="bold">L</m:mi>
+	      <m:mi fontweight="bold">C</m:mi>
+	      <m:apply>
+		<m:partialdiff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		  <m:degree>
+		    <m:cn>2</m:cn>
+		  </m:degree>
+		</m:bvar>
+		<m:degree>
+		  <m:cn>2</m:cn>
+		</m:degree>
+		<m:apply>
+		  <m:ci type="fn">V</m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      It should be <emphasis>very</emphasis> easy for you to derive 
+
+      <equation id="eqn5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+		<m:degree>
+		  <m:cn>2</m:cn>
+		</m:degree>
+	      </m:bvar>
+	      <m:degree>
+		<m:cn>2</m:cn>
+	      </m:degree>
+	      <m:apply>
+		<m:ci type="fn">I</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:mi fontweight="bold">L</m:mi>
+	      <m:mi fontweight="bold">C</m:mi>
+	      <m:apply>
+		<m:partialdiff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		  <m:degree>
+		    <m:cn>2</m:cn>
+		  </m:degree>
+		</m:bvar>
+		<m:degree>
+		  <m:cn>2</m:cn>
+		</m:degree>
+		<m:apply>
+		  <m:ci type="fn">I</m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Oh, I know you all <emphasis>love</emphasis> differential
+      equations! Well, let's take a look at these and just
+      <emphasis>think</emphasis> for a minute. For
+      <emphasis>either</emphasis>
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> or
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>, we need to find a function that has some rather
+      stringent requirements. First of all, the function must be of
+      the form such that no matter whether we take its second
+      derivative in space (<m:math><m:ci>x</m:ci></m:math>) or in time
+      (<m:math><m:ci>t</m:ci></m:math>), it must end up differing in
+      the way it behaves in <m:math><m:ci>x</m:ci></m:math> or
+      <m:math><m:ci>t</m:ci></m:math> by no more than just a constant
+      (<m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:mi fontweight="bold">L</m:mi>
+	  <m:mi fontweight="bold">C</m:mi>
+	</m:apply>
+      </m:math>).
+    </para>
+
+    <para id="para3">In fact, we can be more specific than that. First
+      <m:math>
+		<m:apply>
+			<m:ci type="fn">V</m:ci>
+			<m:ci>x</m:ci>
+			<m:ci>t</m:ci>
+		</m:apply>
+	</m:math> must have the same functional form for
+      <emphasis>both</emphasis> its <m:math><m:ci>x</m:ci></m:math>
+      and <m:math><m:ci>t</m:ci></m:math> variation. At most, the two
+      derivatives must differ only by a constant. Let's try a "lucky"
+      guess and let:
+
+      <equation id="eqn6">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:ci type="fn">V</m:ci>
+					<m:ci>x</m:ci>
+					<m:ci>t</m:ci>
+				</m:apply>
+				<m:apply>
+					<m:times/>
+					<m:msub>
+						<m:mi>V</m:mi>
+						<m:mn>0</m:mn>
+					</m:msub>
+					<m:apply>
+						<m:ci type="fn">f</m:ci>
+						<m:apply>
+							<m:minus/>
+							<m:ci>x</m:ci>
+							<m:apply>
+								<m:times/>
+								<m:ci>v</m:ci>
+								<m:ci>t</m:ci>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:math>
+	</equation>
+
+      where
+      <m:math>
+		<m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>0</m:mi>
+		</m:msub>
+	</m:math>
+      is the amplitude of the voltage, and
+      <m:math><m:ci>f</m:ci></m:math> is some function, of a form yet
+      undetermined. Well
+
+      <equation id="eqn7"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:apply>
+				<m:partialdiff/>
+				<m:bvar>
+					<m:ci>t</m:ci>
+				</m:bvar>
+				<m:apply>
+					<m:ci type="fn">f</m:ci>
+					<m:apply>
+						<m:minus/>
+						<m:ci>x</m:ci>
+						<m:apply>
+							<m:times/>
+							<m:ci>v</m:ci>
+							<m:ci>t</m:ci>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+			<m:apply>
+				<m:minus/>
+				<m:apply>
+					<m:times/>
+					<m:ci>v</m:ci>
+					<m:apply>
+					   <m:diff/>
+					   <m:ci>f</m:ci>
+				        </m:apply>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation>
+      
+      and
+
+      <equation id="eqn8"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:apply>
+				<m:partialdiff/>
+				<m:bvar>
+					<m:ci>t</m:ci>
+					<m:degree><m:cn>2</m:cn></m:degree>
+				</m:bvar>
+				<m:apply>
+					<m:ci type="fn">f</m:ci>
+					<m:apply>
+						<m:minus/>
+						<m:ci>x</m:ci>
+					        <m:apply>
+							<m:times/>
+							<m:ci>v</m:ci>
+							<m:ci>t</m:ci>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+			<m:apply>
+				<m:times/>
+				<m:apply>
+					<m:power/>
+					<m:ci>v</m:ci>
+					<m:cn>2</m:cn>
+				</m:apply>
+				<m:apply>
+					<m:diff/>
+					<m:degree><m:cn>2</m:cn></m:degree>
+					<m:ci>f</m:ci>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation>
+
+      Note also, that
+   
+      <equation id="eqn9"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:apply>
+				<m:partialdiff/>
+				<m:bvar>
+					<m:ci>x</m:ci>
+					<m:degree>
+						<m:cn>2</m:cn>
+					</m:degree>
+				</m:bvar>
+				<m:degree>
+					<m:cn>2</m:cn>
+				</m:degree>
+				<m:apply>
+					<m:ci type="fn">f</m:ci>
+					<m:apply>
+						<m:minus/>
+						<m:ci>x</m:ci>
+						<m:apply>
+							<m:times/>
+							<m:ci>v</m:ci>
+							<m:ci>t</m:ci>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+			<m:apply>
+				<m:diff/>
+				<m:degree><m:cn>2</m:cn></m:degree>
+				<m:ci>f</m:ci>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation>
+
+      Now, let's take <link target-id="eqn6"/>, <link target-id="eqn8"/>, and <link target-id="eqn9"/> and substitute them into <link target-id="eqn4"/>:
+
+
+      <equation id="eqn10"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:apply>
+				<m:times/>
+				<m:msub>
+					<m:mi>V</m:mi>
+					<m:mn>0</m:mn>
+				</m:msub>
+				<m:apply>
+					<m:diff/>
+					<m:degree><m:cn>2</m:cn></m:degree>
+					<m:ci>f</m:ci>
+				</m:apply>
+			</m:apply>
+			<m:apply>
+				<m:times/>
+				<m:mi fontweight="bold">L</m:mi>
+				<m:mi fontweight="bold">C</m:mi>
+				<m:msub>
+					<m:mi>V</m:mi>
+					<m:mn>0</m:mn>
+				</m:msub>
+				<m:apply>
+					<m:power/>
+					<m:ci>v</m:ci>
+					<m:cn>2</m:cn>
+				</m:apply>
+				<m:apply>
+					<m:diff/>
+					<m:degree><m:cn>2</m:cn></m:degree>
+					<m:ci>f</m:ci>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation>
+
+      Our "lucky" guess works as a solution as long as
+  
+      <equation id="eqn11"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:ci>v</m:ci>
+			<m:apply>
+				<m:times/>
+				<m:mi fontweight="bold">±</m:mi>
+				<m:apply>
+					<m:divide/>
+					<m:cn>1</m:cn>
+					<m:apply>
+						<m:root/>
+						<m:apply>
+							<m:times/>
+							<m:mi fontweight="bold">L</m:mi>
+							<m:mi fontweight="bold">C</m:mi>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation>
+      
+      So, what is this
+      <m:math>
+		<m:apply>
+			<m:ci type="fn">f</m:ci>
+			<m:apply>
+				<m:minus/>
+				<m:ci>x</m:ci>
+				<m:apply>
+					<m:times/>
+					<m:ci>v</m:ci>
+					<m:ci>t</m:ci>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:math>? We don't know yet what its actual functional form
+      will be, but suppose at some point in time,
+      <m:math>
+		<m:msub>
+			<m:mi>t</m:mi>
+			<m:mn>1</m:mn>
+		</m:msub>
+	</m:math>, the function looks like <link target-id="fig1"/>.
+
+      <figure id="fig1">
+		<title>f(x) At Some Point In Time</title>
+		<media id="idm653520" alt=""><image src="../../media/6_08.png" mime-type="image/png"/></media>
+		<caption>
+			<m:math>
+				<m:apply>
+					<m:ci type="fn">f</m:ci>
+					<m:ci>x</m:ci>
+				</m:apply>
+			</m:math> at time
+	  <m:math>
+				<m:msub>
+					<m:mi>t</m:mi>
+					<m:mn>1</m:mn>
+				</m:msub>
+			</m:math>.
+	</caption>
+	</figure>
+
+      At point
+      <m:math>
+		<m:msub>
+			<m:mi>x</m:mi>
+			<m:mn>1</m:mn>
+		</m:msub>
+	</m:math>, the function takes on the value
+      <m:math>
+		<m:msub>
+			<m:mi>V</m:mi>
+			<m:mn>1</m:mn>
+		</m:msub>
+	</m:math>. Now, let's advance to time
+      <m:math>
+		<m:msub>
+			<m:mi>t</m:mi>
+			<m:mn>2</m:mn>
+		</m:msub>
+	</m:math>. We look at the function and we see <link target-id="fig2"/>.
+
+      <figure id="fig2">
+		<title>f(x) At a Later Point In Time</title>
+		<media id="idp1152064" alt=""><image src="../../media/6_09.png" mime-type="image/png"/></media>
+		<caption>
+			<m:math>
+				<m:apply>
+					<m:ci type="fn">f</m:ci>
+					<m:ci>x</m:ci>
+				</m:apply>
+			</m:math> at a later
+	  <m:math>
+				<m:msub>
+					<m:mi>t</m:mi>
+					<m:mn>2</m:mn>
+				</m:msub>
+			</m:math>.
+	</caption>
+	</figure>
+      
+      If <m:math><m:ci>t</m:ci></m:math> increases from
+      <m:math>
+		<m:msub>
+			<m:mi>t</m:mi>
+			<m:mn>1</m:mn>
+		</m:msub>
+	</m:math> to
+      <m:math>
+		<m:msub>
+			<m:mi>t</m:mi>
+			<m:mn>2</m:mn>
+		</m:msub>
+	</m:math>
+      then <m:math><m:ci>x</m:ci></m:math> will have to increase from
+      <m:math>
+		<m:msub>
+			<m:mi>x</m:mi>
+			<m:mn>1</m:mn>
+		</m:msub>
+	</m:math> to
+      <m:math>
+		<m:msub>
+			<m:mi>x</m:mi>
+			<m:mn>2</m:mn>
+		</m:msub>
+	</m:math> in order for the argument of
+      <m:math><m:ci>f</m:ci></m:math> to have the same value,
+      <m:math>
+		<m:msub>
+			<m:mi>V</m:mi>
+			<m:mn>1</m:mn>
+		</m:msub>
+	</m:math>. Thus we find
+
+      <equation id="eqn12">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:minus/>
+					<m:msub>
+						<m:mi>x</m:mi>
+						<m:mn>1</m:mn>
+					</m:msub>
+					<m:apply>
+						<m:times/>
+						<m:ci>v</m:ci>
+						<m:msub>
+							<m:mi>t</m:mi>
+							<m:mn>1</m:mn>
+						</m:msub>
+					</m:apply>
+				</m:apply>
+				<m:apply>
+					<m:minus/>
+					<m:msub>
+						<m:mi>x</m:mi>
+						<m:mn>2</m:mn>
+					</m:msub>
+					<m:apply>
+						<m:times/>
+						<m:ci>v</m:ci>
+						<m:msub>
+							<m:mi>t</m:mi>
+							<m:mn>2</m:mn>
+						</m:msub>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:math>
+	</equation>
+
+      which can be re-written as
+
+      <equation id="eqn13">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:equivalent/>
+					<m:apply>
+						<m:eq/>
+						<m:apply>
+							<m:divide/>
+							<m:apply>
+								<m:minus/>
+								<m:msub>
+									<m:mi>x</m:mi>
+									<m:mn>2</m:mn>
+								</m:msub>
+								<m:msub>
+									<m:mi>x</m:mi>
+									<m:mn>1</m:mn>
+								</m:msub>
+							</m:apply>
+							<m:apply>
+								<m:minus/>
+								<m:msub>
+									<m:mi>t</m:mi>
+									<m:mn>2</m:mn>
+								</m:msub>
+								<m:msub>
+									<m:mi>t</m:mi>
+									<m:mn>1</m:mn>
+								</m:msub>
+							</m:apply>
+						</m:apply>
+						<m:apply>
+							<m:divide/>
+							<m:apply>
+								<m:mo>Δ</m:mo>
+								<m:ci>x</m:ci>
+							</m:apply>
+							<m:apply>
+								<m:mo>Δ</m:mo>
+								<m:ci>t</m:ci>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+					<m:msub>
+						<m:mi>v</m:mi>
+						<m:mi>p</m:mi>
+					</m:msub>
+				</m:apply>
+				<m:apply>
+					<m:divide/>
+					<m:cn>1</m:cn>
+					<m:apply>
+						<m:root/>
+						<m:apply>
+							<m:times/>
+							<m:mi fontweight="bold">L</m:mi>
+							<m:mi fontweight="bold">C</m:mi>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:math>
+	</equation>
+
+      where
+
+      <m:math>
+		<m:msub>
+			<m:mi>v</m:mi>
+			<m:mi>p</m:mi>
+		</m:msub>
+	</m:math>is the velocity with which the function is moving along
+      the x-axis! (We use the subscript "p" to indicated that what we
+      have here is what is called the <term>phase velocity</term>. We
+      will encounter another velocity called the <term>group
+      velocity</term> a little later in the course.)
+    </para>
+
+    <para id="para4">
+      If we had "guessed" an
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">f</m:ci>
+	  <m:apply>
+	    <m:plus/>
+	    <m:ci>x</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>v</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> for our function, it should be pretty easy to see that
+      this would have given us a signal moving in the
+      <emphasis>minus</emphasis> <m:math><m:ci>x</m:ci></m:math>
+      direction, instead of the plus <m:math><m:ci>x</m:ci></m:math>
+      direction. Thus we shall denote
+
+      <equation id="eqn14">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mtext>plus</m:mtext>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:ci type="fn">f</m:ci>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>x</m:ci>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:cn>1</m:cn>
+		      <m:apply>
+			<m:root/>
+			<m:apply>
+			  <m:times/>
+			  <m:mi fontweight="bold">L</m:mi>
+			  <m:mi fontweight="bold">C</m:mi>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      the <emphasis>positive</emphasis> going voltage function and
+
+      <equation id="eqn15">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mtext>minus</m:mtext>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>-</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:ci type="fn">f</m:ci>
+		<m:apply>
+		  <m:plus/>
+		  <m:ci>x</m:ci>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:cn>1</m:cn>
+		      <m:apply>
+			<m:root/>
+			<m:apply>
+			  <m:times/>
+			  <m:mi fontweight="bold">L</m:mi>
+			  <m:mi fontweight="bold">C</m:mi>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      which is the negative going voltage function. Notice that since
+      we are taking the <emphasis>second</emphasis> derivative of
+      <m:math><m:ci>f</m:ci></m:math> with respect to
+      <m:math><m:ci>t</m:ci></m:math>, we are free to choose either a
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>1</m:cn>
+	    <m:apply>
+	      <m:root/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:mi fontweight="bold">C</m:mi>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> or a
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>1</m:cn>
+	    <m:apply>
+	      <m:root/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:mi fontweight="bold">C</m:mi>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> in front of the time argument inside
+      <m:math><m:ci>f</m:ci></m:math>.  Also note that these are our
+      <emphasis>only</emphasis> choices for a solution. As we know
+      from Differential Equations, a second order equation has, at
+      most, two independent solutions.
+    </para>
+
+    <para id="para5">
+      Since
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> has the <emphasis>same</emphasis> differential
+      equation describing its behavior, the solutions for
+      <m:math><m:ci>I</m:ci></m:math> must also be of the exact same
+      form. Thus we can let
+
+      <equation id="eqn16">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mtext>plus</m:mtext>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:msup>
+		<m:mi>I</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:ci type="fn">f</m:ci>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>x</m:ci>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:cn>1</m:cn>
+		      <m:apply>
+			<m:root/>
+			<m:apply>
+			  <m:times/>
+			  <m:mi fontweight="bold">L</m:mi>
+			  <m:mi fontweight="bold">C</m:mi>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      represent the current function which goes in the positive
+      <m:math><m:ci>x</m:ci></m:math> direction, and
+
+      <equation id="eqn17">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mtext>minus</m:mtext>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:msup>
+		<m:mi>I</m:mi>
+		<m:mo>-</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:ci type="fn">f</m:ci>
+		<m:apply>
+		  <m:plus/>
+		  <m:ci>x</m:ci>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:cn>1</m:cn>
+		      <m:apply>
+			<m:root/>
+			<m:apply>
+			  <m:times/>
+			  <m:mi fontweight="bold">L</m:mi>
+			  <m:mi fontweight="bold">C</m:mi>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      represent the negative going current function.
+    </para>
+
+    <para id="para6">
+      Now, let's take <link target-id="eqn16"/> and <link target-id="eqn14"/> and substitute them into <link target-id="eqn1"/>:
+
+      <equation id="eqn18">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:root/>
+		  <m:apply>
+		    <m:times/>
+		    <m:mi fontweight="bold">L</m:mi>
+		    <m:mi fontweight="bold">C</m:mi>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:ci type="fn">f</m:ci>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>x</m:ci>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:cn>1</m:cn>
+		      <m:apply>
+			<m:root/>
+			<m:apply>
+			  <m:times/>
+			  <m:mi fontweight="bold">L</m:mi>
+			  <m:mi fontweight="bold">C</m:mi>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:mi fontweight="bold">L</m:mi>
+	      <m:msup>
+		<m:mi>I</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:ci type="fn">f</m:ci>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>x</m:ci>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:cn>1</m:cn>
+		      <m:apply>
+			<m:root/>
+			<m:apply>
+			  <m:times/>
+			  <m:mi fontweight="bold">L</m:mi>
+			  <m:mi fontweight="bold">C</m:mi>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      This can be solved for
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> in terms of
+      <m:math>
+	<m:msup>
+	  <m:mi>I</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math>.
+
+      <equation id="eqn19">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:apply>
+	      <m:eq/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:root/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:mi fontweight="bold">L</m:mi>
+		    <m:mi fontweight="bold">C</m:mi>
+		  </m:apply>
+		</m:apply>
+		<m:msup>
+		  <m:mi>I</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mi>0</m:mi>
+	      </m:msub>
+	      <m:msup>
+		<m:mi>I</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      where
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>0</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:root/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:mi fontweight="bold">L</m:mi>
+	      <m:mi fontweight="bold">C</m:mi>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> is called the <term>characteristic impedance</term>
+      of the transmission line. We will leave it as an exercise to the
+      reader to ensure that indeed
+      <m:math>
+	<m:apply>
+	  <m:root/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:mi fontweight="bold">L</m:mi>
+	    <m:mi fontweight="bold">C</m:mi>
+	  </m:apply>
+	</m:apply>
+      </m:math> has units of Ohms. For practice, and understanding
+      about just how these equations work, the reader should ensure
+      him/her self that
+      
+      <equation id="eqn20">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:apply>
+	      <m:eq/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>-</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:root/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:mi fontweight="bold">L</m:mi>
+		      <m:mi fontweight="bold">C</m:mi>
+		    </m:apply>
+		  </m:apply>
+		  <m:msup>
+		    <m:mi>I</m:mi>
+		    <m:mo>-</m:mo>
+		  </m:msup>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mi>0</m:mi>
+		</m:msub>
+		<m:msup>
+		  <m:mi>I</m:mi>
+		  <m:mo>-</m:mo>
+		</m:msup>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Note the "subtle" difference here, with a "-" sign in front of
+      the RHS of the equation!
+    </para>
+
+    <para id="para7">We've been through lots of equations recently, so
+      it is probably worth our while to summarize what we know so far.
+
+      <list list-type="enumerated" id="list1">
+	<item>
+	  The telegrapher's equations allow two solutions for the
+	  voltage and current on a transmission line. One moves in the
+	  <m:math>
+	    <m:apply>
+	      <m:plus/>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	  </m:math> direction and the other moves in the 
+	  <m:math>
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	  </m:math> direction.
+	</item>
+	<item>Both signals move at a constant velocity
+	  <m:math>
+	    <m:msub>
+	      <m:mi>v</m:mi>
+	      <m:mi>p</m:mi>
+	    </m:msub>
+	  </m:math> given by <link target-id="eqn21"/>.
+	</item>
+
+	<item>
+	  The voltage and current signals are related to one another by
+	  the characteristic impedance
+	  <m:math>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:math>, with <link target-id="eqn22"/>
+	</item>
+      </list>
+
+      <equation id="eqn21">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>v</m:mi>
+	      <m:mi>p</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:apply>
+		<m:root/>
+		<m:apply>
+		  <m:times/>
+		  <m:mi fontweight="bold">L</m:mi>
+		  <m:mi fontweight="bold">C</m:mi>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <equation id="eqn22">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mi>0</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:root/>
+	      <m:apply>
+		<m:divide/>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:mi fontweight="bold">C</m:mi>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <m:math display="block">
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msup>
+	      <m:mi>V</m:mi>
+	      <m:mo>+</m:mo>
+	    </m:msup>
+	    <m:msup>
+	      <m:mi>I</m:mi>
+	      <m:mo>+</m:mo>
+	    </m:msup>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>0</m:mi>
+	  </m:msub>
+	</m:apply>
+      </m:math>
+
+      <m:math display="block">
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msup>
+	      <m:mi>V</m:mi>
+	      <m:mo>-</m:mo>
+	    </m:msup>
+	    <m:msup>
+	      <m:mi>I</m:mi>
+	      <m:mo>-</m:mo>
+	    </m:msup>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mi>0</m:mi>
+	    </m:msub>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+    </para>
+  </content>
+  
+</document>

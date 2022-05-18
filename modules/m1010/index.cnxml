@@ -1,0 +1,920 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Diffusion</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>318c3d09-651c-409d-807f-751d78f77dd8</md:uuid>
+</metadata>
+
+  <content>
+    <section id="intro">
+      <title>Introduction</title>
+      <para id="attention">
+	Let us turn our attention to what happens to the electrons and
+	holes, once they have been injected across a forward-biased
+	junction. We will concentrate just on the electrons which are
+	injected into the p-side of the junction, but keep in mind
+	that similar things are also happening to the holes which
+	enter the n-side.
+      </para>
+      <para id="injected">
+	As we saw a while back, when electrons are injected across a
+	junction, they move away from the junction region by a
+	diffusion process, while at the same time, some of them are
+	disappearing because they are minority carriers (electrons in
+	basically p-type material) and so there are lots of holes
+	around for them to recombine with. This is all shown
+	schematically in <link target-id="processes"/>.
+	<figure id="processes">
+	  <title>Diffusion across a P-N Junction</title>
+	  <media id="idp8012864" alt=""><image src="../../media/f2_52.png" mime-type="image/png"/></media>  
+	  <caption>
+	    Processes involved in electron transport across a p-n
+	    junction
+	  </caption>
+	</figure>
+      </para>
+    </section>
+    <section id="quantified">
+      <title>Diffusion Process Quantified</title>
+      <para id="easy">
+	It is actually fairly easy to quantify this, and come up with
+	an expression for the electron distribution within the
+	p-region.  First we have to look a little bit at the diffusion
+	process however. Imagine that we have a series of bins, each
+	with a different number of electrons in them. In a given time,
+	we could imagine that all of the electrons would flow out of
+	their bins into the neighboring ones. Since there is no reason
+	to expect the electrons to favor one side over the other, we
+	will assume that exactly half leave by each side. This is all
+	shown in <link target-id="first"/>.  We will keep things simple
+	and only look at three bins. Imagine I have 4, 6, and 8
+	electrons respectively in each of the bins. After the required
+	"emptying time," we will have a net flux of exactly one
+	electron across each boundary as shown.
+      </para>
+	<figure id="first">
+	    <title>First example of a diffusion problem</title>
+	  <media id="idm887648" alt=""><image src="../../media/f2_53.png" mime-type="image/png"/></media>
+	</figure>
+	<figure id="bins">
+	  <title>Diffusion from bins</title>
+	  <media id="idp9495936" alt=""><image src="../../media/f2_54.png" mime-type="image/png"/></media>
+	</figure>
+      <para id="para1">
+	Now let's raise the number of electrons to 8, 12 and 16
+	respectively (the electrons may overlap some now in the
+	picture.) We find that the net flux across each boundary is
+	now 2 electrons per emptying time, rather than one. Note that
+	the gradient (slope) of the concentration in the boxes has
+	also doubled from one per box to two per box.  This leads us to a
+	rather obvious statement that the flux of carriers is
+	proportional to the gradient of their density. This is stated
+	formally in what is known as <term>Fick's First Law of
+	Diffusion</term>:
+	<equation id="ficksfirst">
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:ci>Flux</m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci><m:msub>
+		      <m:mi>D</m:mi>
+		      <m:mi>e</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:diff/>
+		  <m:bvar>
+		    <m:ci>x</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">n</m:ci>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</equation>
+	Where <m:math><m:ci><m:msub><m:mi>D</m:mi><m:mi>e</m:mi>
+	</m:msub></m:ci></m:math> is simply a proportionality constant
+	called the <term>diffusion coefficient</term>. Since we are
+	talking about the motion of electrons, this diffusion flux
+	must give rise to a current density
+	<m:math><m:ci><m:msub><m:mi>J</m:mi><m:msub><m:mi>e</m:mi>
+	<m:mi>diff</m:mi> </m:msub> </m:msub></m:ci> </m:math>.  Since
+	an electron has a charge
+	<m:math>
+	  <m:apply>
+	    <m:minus/>
+	    <m:ci>q</m:ci>
+	  </m:apply>
+	</m:math> associated with it,
+	<equation id="guiltbyassociation">
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:ci><m:msub>
+		  <m:mi>J</m:mi>
+		  <m:msub>
+		    <m:mi>e</m:mi>
+		    <m:mi>diff</m:mi>
+		  </m:msub>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:ci>q</m:ci>
+		<m:ci><m:msub>
+		    <m:mi>D</m:mi>
+		    <m:mi>e</m:mi>
+		  </m:msub></m:ci>
+		<m:apply>
+		  <m:diff/>
+		  <m:bvar>
+		    <m:ci>x</m:ci>
+		  </m:bvar>
+		  <m:ci type="fn">n</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</equation>
+      </para>
+      <para id="para2">
+	Now we have to invoke something called the <term>continuity
+	equation</term>. Imagine we have a volume
+	<m:math><m:ci>V</m:ci> </m:math> which is filled with some
+	charge <m:math><m:ci>Q</m:ci></m:math>.  It is fairly obvious
+	that if we add up all of the current density which is flowing
+	out of the volume that it must be equal to the time rate of
+	decrease of the charge within that volume. This ideas is
+	expressed in the formula below which uses a
+	<emphasis>closed-surface integral</emphasis>, along with the
+	all the other integrals to follow:
+	<equation id="closed">
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+		<m:bvar>
+		  <m:ci>S</m:ci>
+		</m:bvar>
+		<m:domainofapplication>
+		  <m:ci>S</m:ci>
+		</m:domainofapplication>
+		<m:ci>J</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:diff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:ci>Q</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</equation>	  
+	We can write <m:math><m:ci>Q</m:ci></m:math> as 
+	<equation id="q"><m:math>
+	<m:apply>
+		<m:eq/>
+		<m:ci>Q</m:ci>
+			<m:apply>
+				<m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+				<m:bvar>
+					<m:ci>V</m:ci>
+				</m:bvar>
+				<m:domainofapplication>
+					<m:ci>V</m:ci>
+				</m:domainofapplication>
+					<m:apply>
+						<m:ci type="fn">ρ</m:ci>
+						<m:ci>v</m:ci>
+					</m:apply>
+			</m:apply>
+	</m:apply>
+</m:math>
+</equation>  
+	where we are doing a volume integral of the charge density
+	<m:math><m:ci>ρ</m:ci></m:math> over the volume
+	<m:math><m:ci>V</m:ci></m:math>.  Now we can use Gauss'
+	theorem which says we can replace a surface integral of a
+	quantity with a volume integral of its divergence:
+	<equation id="usegauss">
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+		<m:bvar>
+		  <m:ci>S</m:ci>
+		</m:bvar>
+		<m:domainofapplication>
+		  <m:ci>S</m:ci>
+		</m:domainofapplication>
+		<m:ci>J</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:int/>
+		<m:bvar>
+		  <m:ci>V</m:ci>
+		</m:bvar>
+		<m:domainofapplication>
+		  <m:ci>V</m:ci>
+		</m:domainofapplication>
+		<m:apply>
+		  <m:divergence/>
+		  <m:ci>J</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</equation>  	
+	So, combining <link target-id="closed"/>, <link target-id="q"/>
+	and <link target-id="usegauss"/>, we have (note we are still
+	dealing with surface and volume integrals):
+	<equation id="combined">
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:int/>
+		<m:bvar>
+		  <m:ci>V</m:ci>
+		</m:bvar>
+		<m:domainofapplication>
+		  <m:ci>V</m:ci>
+		</m:domainofapplication>
+		<m:apply>
+		  <m:divergence/>
+		  <m:ci>J</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:int/>
+		  <m:bvar>
+		    <m:ci>V</m:ci>
+		  </m:bvar>
+		  <m:domainofapplication>
+		    <m:ci>V</m:ci>
+		  </m:domainofapplication>
+		  <m:apply>
+		    <m:diff/>
+		    <m:bvar>
+		      <m:ci>t</m:ci>
+		    </m:bvar>
+		    <m:ci type="fn">ρ</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</equation>
+	
+	Finally, we let the volume <m:math><m:ci>V</m:ci></m:math>
+	shrink down to a point, which means the quantities inside the
+	integral must be equal, and we have the differential form of
+	the continuity equation (in one dimension)
+	<equation id="differential">
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:divergence/>
+		<m:ci>J</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:partialdiff/>
+		<m:bvar>
+		  <m:ci>x</m:ci>
+		</m:bvar>
+		<m:ci>J</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:diff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">ρ</m:ci>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</equation>
+      </para>
+    </section>
+    <section id="electrons">
+      <title>What about the Electrons?</title> 
+      <para id="whatindeed">
+	Now let's go back to the electrons in the diode. The electrons
+	which have been injected across the junction are called
+	<term>excess minority carriers</term>, because they are
+	electrons in a p-region (hence minority) but their
+	concentration is greater than what they would be if they were
+	in a sample of p-type material at equilibrium. We will
+	designate them as
+	<m:math><m:ci><m:msup><m:mi>n</m:mi><m:mi>′</m:mi>
+	</m:msup></m:ci></m:math>, and since they could change with
+	both time and position we shall write them as
+	<m:math>
+	  <m:apply>
+	    <m:ci type="fn"><m:msup>
+		<m:mi>n</m:mi>
+		<m:mi>′</m:mi>
+	      </m:msup></m:ci>
+	    <m:ci>x</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:math>.  Now there are two ways in which 
+	<m:math>
+	  <m:apply>
+	    <m:ci type="fn"><m:msup>
+		<m:mi>n</m:mi>
+		<m:mi>′</m:mi>
+	      </m:msup></m:ci>
+	    <m:ci>x</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:math> can change with time. One would be if we were to
+	stop injecting electrons in from the n-side of the
+	junction. A reasonable way to account for the decay which
+	would occur if we were not supplying electrons would be to
+	write:
+	<equation id="noelectrons">
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:diff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn"><m:msup>
+		      <m:mi>n</m:mi>
+		      <m:mi>′</m:mi>
+		    </m:msup></m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:ci type="fn"><m:msup>
+			<m:mi>n</m:mi>
+			<m:mi>′</m:mi>
+		      </m:msup></m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		  <m:ci><m:msub>
+		      <m:mi>τ</m:mi>
+		      <m:mi>r</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</equation>
+	Where <m:math><m:ci><m:msub><m:mi>τ</m:mi><m:mi>r</m:mi>
+	</m:msub></m:ci></m:math> called the <term>minority carrier
+	recombination lifetime</term>. It is pretty easy to show that
+	if we start out with an excess minority carrier concentration
+	<m:math><m:ci><m:msup><m:msub><m:mi>n</m:mi><m:mi>o</m:mi>
+	</m:msub><m:mi>′</m:mi> </m:msup></m:ci></m:math> at
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>t</m:ci>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>, then 
+	<m:math>
+	  <m:apply>
+	    <m:ci type="fn"><m:msup>
+		<m:mi>n</m:mi>
+		<m:mi>′</m:mi>
+	      </m:msup></m:ci>
+	    <m:ci>x</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:math> will goes as
+	<equation id="goingas">
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:ci type="fn"><m:msup>
+		    <m:mi>n</m:mi>
+		    <m:mi>′</m:mi>
+		  </m:msup></m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:ci><m:msub>
+		    <m:msup>
+		      <m:mi>n</m:mi>
+		      <m:mi>′</m:mi>
+		    </m:msup>
+		    <m:mn>0</m:mn>
+		  </m:msub></m:ci>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		    <m:ci><m:msub>
+			<m:mi>τ</m:mi>
+			<m:mi>r</m:mi>
+		      </m:msub></m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</equation>  
+	But, the electron concentration can also change because of
+	electrons flowing into or out of the region
+	<m:math><m:ci>x</m:ci></m:math>. The electron concentration 
+	<m:math>
+	  <m:apply>
+	    <m:ci type="fn"><m:msup>
+		<m:mi>n</m:mi>
+		<m:mi>′</m:mi>
+	      </m:msup></m:ci>
+	    <m:ci>x</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:math> is just 
+	<m:math>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">ρ</m:ci>
+	      <m:ci>x</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:ci>q</m:ci>
+	  </m:apply>
+	</m:math>.  Thus, due to electron flow we have:
+	<equation id="flow">
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:diff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn"><m:msup>
+		      <m:mi>n</m:mi>
+		      <m:mi>′</m:mi>
+		    </m:msup></m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:cn>1</m:cn>
+		  <m:ci>q</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:diff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">ρ</m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:cn>1</m:cn>
+		  <m:ci>q</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:divergence/>
+		  <m:apply>
+		    <m:ci type="fn">J</m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</equation>	
+	But, we can get an expression for 
+	<m:math>
+	  <m:apply>
+	    <m:ci type="fn">J</m:ci>
+	    <m:ci>x</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:math> from <link target-id="guiltbyassociation"/>.  Reducing
+	the divergence in <link target-id="flow"/> to one dimension (we
+	just have a
+	<m:math>
+	  <m:apply>
+	    <m:partialdiff/>
+	    <m:bvar>
+	      <m:ci>x</m:ci>
+	    </m:bvar>
+	    <m:ci type="fn">J</m:ci>
+	  </m:apply>
+	</m:math>) we finally end up with
+	<equation id="finally">
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:diff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn"><m:msup>
+		      <m:mi>n</m:mi>
+		      <m:mi>′</m:mi>
+		    </m:msup></m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:ci><m:msub>
+		    <m:mi>D</m:mi>
+		    <m:mi>e</m:mi>
+		  </m:msub></m:ci>
+		<m:apply>
+		  <m:diff/>
+		  <m:bvar>
+		    <m:ci>x</m:ci>
+		    <m:degree>
+		      <m:cn>2</m:cn>
+		    </m:degree>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn"><m:msup>
+			<m:mi>n</m:mi>
+			<m:mi>′</m:mi>
+		      </m:msup></m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</equation>	  	
+	Combining <link target-id="finally"/> and <link target-id="noelectrons"/> (electrons will, after all, suffer
+	from both recombination and diffusion) and we end up with:
+	<equation id="recomdiff">
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:diff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn"><m:msup>
+		      <m:mi>n</m:mi>
+		      <m:mi>′</m:mi>
+		    </m:msup></m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci><m:msub>
+		      <m:mi>D</m:mi>
+		      <m:mi>e</m:mi>
+		    </m:msub></m:ci>
+		  <m:apply>
+		    <m:diff/>
+		    <m:bvar>
+		      <m:ci>x</m:ci>
+		      <m:degree>
+			<m:cn>2</m:cn>
+		      </m:degree>
+		    </m:bvar>
+		    <m:apply>
+		      <m:ci type="fn"><m:msup>
+			  <m:mi>n</m:mi>
+			  <m:mi>′</m:mi>
+			</m:msup></m:ci>
+		      <m:ci>x</m:ci>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:ci type="fn"><m:msup>
+			<m:mi>n</m:mi>
+			<m:mi>′</m:mi>
+		      </m:msup></m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		  <m:ci><m:msub>
+		      <m:mi>τ</m:mi>
+		      <m:mi>r</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</equation> This is a somewhat specialized form of an equation
+	called the <term>ambipolar diffusion equation</term>. It seems
+	kind of complicated but we can get some nice results from it
+	if we make some simply boundary condition assumptions. Let's
+	see what we can do with this.
+      </para>
+      <section id="ambipolar">
+	<title>Using the Ambipolar Diffusion Equation</title>
+	<para id="steadystate">
+	  For anything we will be interested in, we will only look at
+	  <term>steady state solutions</term>. This means that the
+	  time derivative on the LHS of <link target-id="recomdiff"/> is
+	  zero, and so we have (letting
+	  <m:math>
+	    <m:apply>
+	      <m:ci type="fn"><m:msup>
+		  <m:mi>n</m:mi>
+		  <m:mi>′</m:mi>
+		</m:msup></m:ci>
+	      <m:ci>x</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	  </m:math> become simply 
+	  <m:math>
+	    <m:apply>
+	      <m:ci type="fn"><m:msup>
+		  <m:mi>n</m:mi>
+		  <m:mi>′</m:mi>
+		</m:msup></m:ci>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	  </m:math> since we no longer have any time variation to
+	  worry about)
+	  <equation id="steadystateq">
+	    <m:math>
+	      <m:apply>
+		<m:eq/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:diff/>
+		    <m:bvar>
+		      <m:ci>t</m:ci>
+		      <m:degree>
+			<m:cn>2</m:cn>
+		      </m:degree>
+		    </m:bvar>
+		    <m:apply>
+		      <m:ci type="fn"><m:msup>
+			  <m:mi>n</m:mi>
+			  <m:mi>′</m:mi>
+			</m:msup></m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:cn>1</m:cn>
+		      <m:apply>
+			<m:times/>
+			<m:ci><m:msub>
+			    <m:mi>D</m:mi>
+			    <m:mi>e</m:mi>
+			  </m:msub></m:ci>
+			<m:ci><m:msub>
+			    <m:mi>τ</m:mi>
+			    <m:mi>r</m:mi>
+			  </m:msub></m:ci>
+		      </m:apply>
+		    </m:apply>
+		    <m:apply>
+		      <m:ci type="fn"><m:msup>
+			  <m:mi>n</m:mi>
+			  <m:mi>′</m:mi>
+			</m:msup></m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+		<m:cn>0</m:cn>
+	      </m:apply>
+	    </m:math>
+	  </equation>	    	  
+	  Let's pick the not unreasonable boundary conditions that 
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:ci type="fn"><m:msup>
+		    <m:mi>n</m:mi>
+		    <m:mi>′</m:mi>
+		  </m:msup></m:ci>
+		<m:cn>0</m:cn>
+	      </m:apply>
+	      <m:ci><m:msub>
+		  <m:mi>n</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub></m:ci>
+	    </m:apply>
+	  </m:math> (the concentration of excess electrons just at
+	  the start of the diffusion region) and 
+	  <m:math>
+	    <m:apply>
+	      <m:tendsto/>
+	      <m:apply>
+		<m:ci type="fn"><m:msup>
+		    <m:mi>n</m:mi>
+		    <m:mi>′</m:mi>
+		  </m:msup></m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	      <m:cn>0</m:cn>
+	    </m:apply>
+	  </m:math> as 
+	  <m:math>
+	    <m:apply>
+	      <m:tendsto/>
+	      <m:ci>x</m:ci>
+	      <m:infinity/>
+	    </m:apply>
+	  </m:math> (the excess carriers go to zero when we get far
+	  from the junction) then
+	  <equation id="boundaries">
+	    <m:math>
+	      <m:apply>
+		<m:eq/>
+		<m:apply>
+		  <m:ci type="fn">n</m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:ci><m:msub>
+		      <m:mi>n</m:mi>
+		      <m:mn>0</m:mn>
+		    </m:msub></m:ci>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:apply>
+			<m:divide/>
+			<m:ci>x</m:ci>
+			<m:apply>
+			  <m:root/>
+			  <m:apply>
+			    <m:times/>
+			    <m:ci><m:msub>
+				<m:mi>D</m:mi>
+				<m:mi>e</m:mi>
+			      </m:msub></m:ci>
+			    <m:ci><m:msub>
+				<m:mi>τ</m:mi>
+				<m:mi>r</m:mi>
+			      </m:msub></m:ci>
+			  </m:apply>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:math>
+	  </equation>   
+	  The expression in the radical
+	  <m:math>
+	    <m:apply>
+	      <m:root/>
+	      <m:apply>
+		<m:times/>
+		<m:ci><m:msub>
+		    <m:mi>D</m:mi>
+		    <m:mi>e</m:mi>
+		  </m:msub></m:ci>
+		<m:ci><m:msub>
+		    <m:mi>τ</m:mi>
+		    <m:mi>r</m:mi>
+		  </m:msub></m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:math> is called the <term>electron diffusion
+	    length</term>,
+	  <m:math><m:ci><m:msub><m:mi>L</m:mi><m:mi>e</m:mi>
+	      </m:msub></m:ci></m:math>, and gives us some idea as to how
+	  far away from the junction the excess electrons will exist
+	  before they have more or less all recombined. This will be
+	  important for us when we move on to bipolar transistors.
+	</para>
+	<para id="numbers">     
+	  Just so you can get a feel for some numbers, a typical value
+	  for the diffusion coefficient for electrons in silicon would be
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:ci><m:msub>
+		  <m:mi>D</m:mi>
+		  <m:mi>e</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:cn>25</m:cn>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:power/>
+		    <m:ci>cm</m:ci>
+		    <m:cn>2</m:cn>
+		  </m:apply>
+		  <m:ci>sec</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math> and the minority carrier lifetime is usually around a 
+	  microsecond. Thus 
+	  <equation id="length">
+	    <m:math>
+	      <m:apply>
+		<m:eq/>
+		<m:ci><m:msub>
+		    <m:mi>L</m:mi>
+		    <m:mi>e</m:mi>
+		  </m:msub></m:ci>
+		<m:apply>
+		  <m:root/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci><m:msub>
+			<m:mi>D</m:mi>
+			<m:mi>e</m:mi>
+		      </m:msub></m:ci>
+		    <m:ci><m:msub>
+			<m:mi>τ</m:mi>
+			<m:mi>r</m:mi>
+		      </m:msub></m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:root/>
+		  <m:cn type="e-notation">25<m:sep/>-6</m:cn>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:cn type="e-notation">5<m:sep/>-3</m:cn>
+		  <m:ci>cm</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:math>
+	  </equation>      
+	  which is not very far at all!
+
+	</para> 
+      </section> 
+    </section>
+  </content>
+</document>

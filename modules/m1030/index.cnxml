@@ -1,0 +1,150 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>JFET</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>cf4e3f0c-fa45-47db-99f7-ac8383b37f7e</md:uuid>
+</metadata>
+
+  <content>
+    <para id="pa1">
+      There is a lot more that we could do with field effect devices,
+      but it is probably time to move on to new topics. For one final
+      point however, we might just look at something called the JFET,
+      or junction field effect transistor. The JFET structure looks
+      like <link target-id="fig53"/>. It consists of a piece of p-type
+      silicon, into which two n-type regions have been
+      diffused. However, instead of being both on the same surface, as
+      with a MOSFET, the two regions are opposite one another on
+      either side of the crystal. In cross-section, the JFET looks
+      like <link target-id="fig54"/>. We also show the biasing here.
+    </para>
+
+
+    <figure id="fig53" orient="horizontal"><media id="idm9608400" alt=""><image src="../../media/4.53.png" mime-type="image/png" print-width="2in"/></media><caption>JFET</caption></figure>
+
+
+    <figure id="fig54" orient="horizontal"><media id="idm16089936" alt=""><image src="../../media/4.54.png" mime-type="image/png" print-width="3in"/></media><caption>Biasing a JFET</caption></figure>
+
+
+    <para id="pa2">
+      The two n-regions are connected together, and are reverse biased
+      with respect to the p-type substrate. A second battery,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> is used to pull current out of the
+      source, by applying a negative voltage between the drain and the
+      source. The reverse biased n-p junctions creates a depletion
+      region which extends into the p-type material through which the
+      holes travel as they go from source to drain (a channel?). By
+      adjusting the value of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math>, one can make the depletion region
+      smaller or larger, thus increasing or decreasing the drain
+      current.
+    </para>
+
+
+    <para id="pa3">
+      The observant student will also note that the polarity of the
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> battery makes it so that there is more
+      reverse bias across the p-n junctions at the drain end of the
+      channel than at the source end. Thus, a more accurate depiction
+      of the JFET would be what is shown in <link target-id="fig55"/>. When the drain/source voltage gets large
+      enough, the two depletion regions will join together, and, just
+      as with the MOSFET, the channel pinches off, as shown in <link target-id="fig56"/>.
+    </para>
+
+
+    <figure id="fig55" orient="horizontal">
+      <media id="idm5768848" alt=""><image src="../../media/4.55.png" mime-type="image/png"/></media>
+      <caption>Depletion region controls current</caption>
+    </figure>
+
+
+    <figure id="fig56" orient="horizontal">
+      <media id="idm8117328" alt=""><image src="../../media/4.56.png" mime-type="image/png"/></media>
+      <caption>Pinch-Off</caption>
+    </figure>
+
+
+    <para id="pa4">
+      Surprising as it may seem, when you work out the equations which
+      describe how the depletion region extends with
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math> and how the pinch-off mechanism
+      changes <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>D</m:mi>
+      </m:msub></m:ci></m:math>, you end up with behavior, and
+      equations, which are quite similar to those of a depletion-mode
+      MOSFET.
+    </para>
+
+
+    <para id="pa5">
+      Using JFETs is a little more cumbersome than a normal
+      MOSFET. You must make sure that the gate-substrate junction
+      always remains reverse biased, and since the JFET can only be a
+      depletion-mode device, you have to have a voltage on the gate if
+      you want to turn the transistor off. The JFET <emphasis>does
+      </emphasis>have one advantage over the MOSFET however. A while
+      back we calculated the value for
+      <m:math><m:ci><m:msub><m:mi>C</m:mi><m:mi>ox</m:mi>
+      </m:msub></m:ci></m:math> the oxide capacitance and found that
+      it was on the order of
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>-7</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>F</m:ci>
+	    <m:apply>
+	      <m:power/>
+	      <m:ci>cm</m:ci>
+	      <m:cn>2</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>.  A typical MOSFET gate might be 1 μm long by 20
+      μm wide, and so it would have a gate area of 20
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:ci>μm</m:ci>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>
+      or <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>2</m:cn>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>-7</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:ci>cm</m:ci>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>.
+      Thus, the total gate capacitance is only about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>-14</m:cn>
+	  </m:apply>
+	  <m:ci>F</m:ci>
+	</m:apply>
+      </m:math>.  
+    </para> 
+  </content> 
+</document>

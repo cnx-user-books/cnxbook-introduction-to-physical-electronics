@@ -1,0 +1,1193 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Simple Calculations with the Smith Chart</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c8799fc4-05d4-4185-ba92-afe49e203188</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">So, what do we do for
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub>
+      </m:math>? A quick glance at a <link document="m1059" target-id="fig2">transmission line problem</link> shows that at
+      the load we have a resistor and an inductor in parallel.  This
+      was done on purpose, to show you one of the powerful aspects of
+      the Smith Chart.  Based on what you know from circuit theory you
+      would calculate the load impedance by using the formula for two
+      impedances in parallel
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>ω</m:ci>
+	      <m:ci>L</m:ci>
+	      <m:ci>R</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:imaginaryi/>
+		<m:ci>ω</m:ci>
+		<m:ci>L</m:ci>
+	      </m:apply>
+	      <m:ci>R</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> which will be somewhat messy to calculate.       
+    </para>   
+
+    <para id="para2"> Let's remember the formula for what the Smith
+      Chart represents in terms of the phasor
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>.
+      <equation id="eq1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mi>L</m:mi>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:ci type="fn">r</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:ci type="fn">r</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>Let's invert this expression
+      <equation id="eq2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mi>L</m:mi>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>Y</m:mi>
+		<m:mi>L</m:mi>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Y</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:ci type="fn">r</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:ci type="fn">r</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation><link target-id="eq3"/> says that is we want to get an
+      <term>admittance</term> instead of an impedance, all we have to
+      do is substitute
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:ci type="fn">r</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> for 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> on the Smith Chart plane!
+      <equation id="eq3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:cn>50</m:cn>
+	    </m:apply>
+	    <m:cn>0.02</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>in our case.  We have two elements in parallel for
+      the load (<m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:plus/>
+	    <m:ci>Y</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>B</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>), so we can easily add their admittances, normalize them to
+      <m:math>
+	<m:msub>
+	  <m:mi>Y</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math>, put them on the Smith Chart, go 
+      <m:math>
+	<m:msup>
+	  <m:mn>180</m:mn>
+	  <m:mo>°</m:mo>
+	</m:msup>
+      </m:math> around (same thing as letting
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:minus/>
+	    <m:apply>
+	      <m:ci type="fn">r</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:ci type="fn">r</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>) and read off
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>. For a 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>200</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> resistor, <m:math><m:ci>G</m:ci></m:math>, the
+      condunctance equals
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>1</m:cn>
+	    <m:cn>200</m:cn>
+	  </m:apply>
+	  <m:cn>0.005</m:cn>
+	</m:apply>
+      </m:math>.
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	  <m:cn>0.02</m:cn>
+	</m:apply>
+      </m:math> so
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>G</m:ci>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn>0.25</m:cn>
+	</m:apply>
+      </m:math>. The generator is operating at a frequency of 
+      <m:math>
+	<m:apply>
+	  <m:cn>200</m:cn>
+	  <m:ci>MHz</m:ci>
+	</m:apply>
+      </m:math>, so
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>ω</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>2</m:cn>
+	    <m:pi/>
+	    <m:ci>f</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>1.25</m:cn>
+	    <m:apply>
+	      <m:power/>
+	      <m:cn>10</m:cn>
+	      <m:cn>9</m:cn>
+	    </m:apply>
+	    <m:apply>
+	      <m:power/>
+	      <m:ci>s</m:ci>
+	      <m:cn>-1</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> and the inductor has a value of 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>160</m:cn>
+	  <m:ci>nH</m:ci>
+	</m:apply>
+      </m:math>, so 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>ω</m:ci>
+	    <m:ci>L</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>200</m:cn>
+	    <m:imaginaryi/>
+	  </m:apply>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>B</m:ci>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>1</m:cn>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>ω</m:ci>
+	      <m:ci>L</m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>-0.005</m:cn>
+	    <m:imaginaryi/>
+	  </m:apply>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>B</m:ci>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>-0.25</m:cn>
+	    <m:imaginaryi/>
+	  </m:apply>
+	</m:apply>
+      </m:math>.
+    </para>
+
+    <para id="para3">We plot this on the <link target-id="fig1">Smith
+      Chart</link> by first finding the real part = 0.25 circle, and
+      then we go down onto the lower half of the chart since that is
+      where all the negative reactive parts are, and we find the curve
+      which represents
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>-0.25</m:cn>
+	  <m:imaginaryi/>
+	</m:apply>
+      </m:math> and where they intersect, we put a dot, and mark the
+      location as
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>. Now to find
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>, we simply reflect half way around to the opposite
+      side of the chart, which happens to be about
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">2<m:sep/>2</m:cn>
+	</m:apply>
+      </m:math>, and we mark that as well.  Note that we can take the
+      length of the line from the center of the Smith Chart to our
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>and move it down to the
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:ci>Γ</m:ci>
+	</m:apply>
+      </m:math> scale and find that the reflection coefficient has a
+      magnitude of about 0.6.  On a real Smith Chart, there is also a
+      phase angle scale on the outside of the circle (where our
+      distance scale is) which you can use to read off the phase angle
+      of the reflection coefficient as well.  Putting that scale on
+      the "mini Smith Chart" would clog things up too much, but the
+      phase angle of <m:math><m:ci>Γ</m:ci></m:math> is about
+      <m:math>
+	<m:msup>
+	  <m:mn>3.0</m:mn>
+	  <m:mo>°</m:mo>
+	</m:msup>
+      </m:math>.
+      
+      <figure id="fig1"><title>Moving Down the Transmission Line</title><media id="idp1057408" alt=""><image src="../../media/804.png" mime-type="image/png" print-width="3in"/></media></figure>
+    </para>
+
+    <para id="para4">Now the wavelength of the signal on the line is
+    given as
+      <equation id="eq4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>λ</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>ν</m:mi>
+		<m:mi>p</m:mi>
+	      </m:msub>
+	      <m:ci>f</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2.8</m:cn>
+		<m:apply>
+		  <m:power/>
+		  <m:cn>10</m:cn>
+		  <m:cn>8</m:cn>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:cn>200</m:cn>
+		<m:apply>
+		  <m:power/>
+		  <m:cn>10</m:cn>
+		  <m:cn>6</m:cn>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>1</m:cn>
+	      <m:ci>m</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      The input to the line is located
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>21.5</m:cn>
+	  <m:ci>cm</m:ci>
+	</m:apply>
+      </m:math> or
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.215</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> away from the load. Thus, we start at
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>, and rotate around on a circle of constant radius a
+      distance
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.215</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> towards the generator.  To do this, we extend a line out from
+      our
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> point to the scale and read a relative distance of
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.208</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math>. We add
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.215</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> to this, and get
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.423</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> Thus, if we rotate around the Smith Chart, on our
+      circle of constant radius  Since, after all, all we are doing is
+      following
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> as it rotates around from the load to the input to the line.
+      When we get to
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.423</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math>, we stop, draw a line out from the center, and where
+	it intercepts the circle, we read off
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> from the grid lines on the <link target-id="fig2">Smith
+      Chart</link>.  We find that
+      <equation id="eq5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mi>in</m:mi>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	    <m:cn type="complex-cartesian">0.3<m:sep/>-0.5</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <figure id="fig2"><title>Using a Smith Chart to Convert From Admittance to 	Impedance</title><media id="idm2799920" alt=""><image src="../../media/803.png" mime-type="image/png" print-width="3in"/></media></figure>
+
+      Thus, 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>in</m:mi>
+	  </m:msub>
+	  <m:cn type="complex-cartesian">15<m:sep/>-25</m:cn>
+	</m:apply>
+      </m:math> ohms <link target-id="fig3"/>. Or, the impedance at the
+      input to the line looks like a
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>15</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> resistor in series with a capacitor whose reactance
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>X</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>-25</m:cn>
+	    <m:imaginaryi/>
+	  </m:apply>
+	</m:apply>
+      </m:math>, or, since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>X</m:mi>
+	    <m:mi>cap</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>1</m:cn>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>ω</m:ci>
+	      <m:ci>C</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>, we find that,
+      <equation id="eq6">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>C</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:pi/>
+		<m:cn>200</m:cn>
+		<m:cn>200</m:cn>
+		<m:apply>
+		  <m:power/>
+		  <m:cn>10</m:cn>
+		  <m:cn>6</m:cn>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>31.8</m:cn>
+	      <m:ci>pF</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>To find 
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>in</m:mi>
+	</m:msub>
+      </m:math>, there is no avoiding doing some complex math:
+      <equation id="eq7">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn type="complex-cartesian">15<m:sep/>-25</m:cn>
+		<m:apply>
+		  <m:plus/>
+		  <m:cn>50</m:cn>
+		  <m:cn type="complex-cartesian">15<m:sep/>-25</m:cn>
+		</m:apply>
+	      </m:apply>
+	      <m:cn>10</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Which, we write in polar notation, divide, figure the voltage
+      and then return to rectangular notation.
+      <equation id="eq8">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn type="complex-polar">29.1<m:sep/>59</m:cn>
+		<m:cn type="complex-polar">69.6<m:sep/>-21</m:cn>
+	      </m:apply>
+	      <m:cn>10</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      
+      <equation id="eq9">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn type="complex-polar">0.418<m:sep/>-38</m:cn>
+	      <m:cn>10</m:cn>
+	    </m:apply>
+	    <m:cn type="complex-polar">4.18<m:sep/>-38</m:cn>
+	    <m:cn type="complex-cartesian">3.30<m:sep/>-2.58</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <figure id="fig3">
+	<title>Find Vin</title> 
+	<media id="idp679440" alt=""><image src="../../media/805.png" mime-type="image/png"/></media>
+      </figure>
+
+      If at this point we needed to find the actual voltage phasor
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> we would have to use the equation
+      <equation id="eq10">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>		
+		  <m:exp/>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:ci>β</m:ci>
+		    <m:ci>L</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:ci>Γ</m:ci>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>		
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:ci>β</m:ci>
+		      <m:ci>L</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>		
+		  <m:exp/>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:ci>β</m:ci>
+		    <m:ci>L</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:abs/>
+		  <m:ci>Γ</m:ci>
+		</m:apply>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>		
+		  <m:exp/>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:msub>
+			<m:mi>θ</m:mi>
+			<m:mi>r</m:mi>
+		      </m:msub>
+		      <m:apply>
+			<m:times/>
+			<m:ci>β</m:ci>
+			<m:ci>L</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>Where
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>β</m:ci>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>2</m:cn>
+	      <m:pi/>
+	    </m:apply>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> is the propagation constant for the line as mentioned
+      in the <link document="m1052" target-id="eqn15">last
+      chapter</link>, and <m:math><m:ci>L</m:ci></m:math> is the
+      length of the line.
+    </para>
+
+    <para id="para5">For this example,
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>β</m:ci>
+	    <m:ci>L</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:pi/>
+	      </m:apply>
+	      <m:ci>λ</m:ci>
+	    </m:apply>
+	    <m:cn>0.215</m:cn>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>1.35</m:cn>
+	    <m:mtext>radians</m:mtext>
+	  </m:apply>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>θ</m:mi>
+	    <m:mi>Γ</m:mi>
+	  </m:msub>
+	  <m:ci>Γ</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>0.52</m:cn>
+	    <m:mtext>radians</m:mtext>
+	  </m:apply>
+	</m:apply>
+      </m:math>. Thus we have:
+      <equation id="eq11">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:cn>1.35</m:cn>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:cn>0.52</m:cn>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:cn>0.52</m:cn>
+		      <m:cn>1.35</m:cn>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Which then gives us:
+      <equation id="eq12">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msup>
+	      <m:mi>V</m:mi>
+	      <m:mo>+</m:mo>
+	    </m:msup>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>in</m:mi>
+	      </m:msub>
+	      <m:apply>
+		<m:plus/>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:cn>1.35</m:cn>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>0.52</m:cn>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:apply>
+			<m:minus/>
+			<m:cn>0.52</m:cn>
+			<m:cn>1.35</m:cn>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      When you expand the exponentials, add and combine in rectangular
+      coordinates, change to polar, and divide, you will get a phasor
+      value for
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math>. If you do it correctly, you will find that
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msup>
+	    <m:mi>V</m:mi>
+	    <m:mo>+</m:mo>
+	  </m:msup>
+	  <m:cn type="complex-polar">5.04<m:sep/>-71.59</m:cn>
+	</m:apply>
+      </m:math>
+    </para>
+
+    <para id="para6">Many times we don't care about
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math>itself, but are more interested in how much power is being
+      delivered to the load. Note that power delivered to the input
+      of the line is also the amount of power which is delivered to
+      the load! Finding
+      <m:math>
+	<m:msub>
+	  <m:mi>I</m:mi>
+	  <m:mi>in</m:mi>
+	</m:msub>
+      </m:math>is easy, it's just
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>in</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>in</m:mi>
+	  </m:msub>
+	</m:apply>
+      </m:math>. All we have to do is change
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mi>in</m:mi>
+	</m:msub>
+      </m:math> to polar form.
+      <equation id="eq13">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	    <m:cn type="complex-cartesian">15<m:sep/>-25</m:cn>
+	    <m:cn type="complex-polar">29.1<m:sep/>59</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+      
+      <equation id="eq14">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>in</m:mi>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mi>in</m:mi>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn type="complex-polar">4.18<m:sep/>38</m:cn>
+	      <m:cn type="complex-polar">29.1<m:sep/>59</m:cn>
+	    </m:apply>
+	    <m:cn type="complex-polar">0.144<m:sep/>21</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+  </content>
+  
+</document>

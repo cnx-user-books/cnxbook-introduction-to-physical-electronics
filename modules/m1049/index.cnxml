@@ -1,0 +1,1357 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Bounce Diagrams</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>0cff4068-1044-4378-9ebb-61eeac870031</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1"> Now this <emphasis>new</emphasis>
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>2</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      will head back towards the load and ...Hmmm... things are going
+      to get kind of messy and complicated. Fortunately for us,
+      transmission line engineers came up with a scheme for keeping
+      track of all of the waves bouncing back and forth on the
+      line. The scheme is called a <term>bounce diagram</term>. A
+      bounce diagram consists of a horizontal distance line, which
+      represents distance along the transmission line, and a vertical
+      time axis, which represents time since the battery was first
+      connected to the line. Just to keep things conceptually clear,
+      we usually first start out by showing the line, the battery, the
+      load and a switch, S, which is used to connect the source to the
+      line. It doesnt hurt to make a little sketch like <link target-id="fig1"/> , and write down the length of the line,
+
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math>
+      
+      and
+
+      <m:math>
+	<m:msub>
+	  <m:mi>v</m:mi>
+	  <m:mi>p</m:mi>
+	</m:msub>
+      </m:math>,
+
+      along with the source and load resistances. Now we draw the
+      bounce diagram, which is shown in <link target-id="fig2"/>
+
+      <figure id="fig1"><title>Transient Problem</title><media id="idm2246144" alt=""><image src="../../media/6.21.png" mime-type="image/png" print-width="3in"/></media></figure>
+
+      <figure id="fig2">
+	<title>A "Bounce Diagram"</title> 
+	<media id="idm4612960" alt=""><image src="../../media/6.22.png" mime-type="image/png"/></media>
+      </figure>
+
+      Normally, you would not put the formula for
+
+      <m:math>
+	<m:msub>
+	  <m:mi>Γ</m:mi>
+	  <m:mrow>
+	    <m:mi>v</m:mi>
+	    <m:mo>​</m:mo>
+	    <m:mi>S</m:mi>
+	  </m:mrow>
+	</m:msub>
+      </m:math>
+
+      and
+
+      <m:math>
+	<m:msub>
+	  <m:mi>Γ</m:mi>
+	  <m:mrow>
+	    <m:mi>v</m:mi>
+	    <m:mo>​</m:mo>
+	    <m:mi>L</m:mi>
+	  </m:mrow>
+	</m:msub>
+      </m:math>
+
+      by 0 and <m:math><m:ci>L</m:ci></m:math> in the diagram, but
+      rather their values. This will become clear when we do an
+      example. The next thing we do is calculate
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      and draw a straight line on the bounce diagram (nominally at a
+      slope of
+
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:cn>1</m:cn>
+	  <m:msub>
+	    <m:mi>v</m:mi>
+	    <m:mi>p</m:mi>
+	  </m:msub>
+	</m:apply>
+      </m:math>)
+
+      which will represent the initial signal going down the line. We
+      mark a
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>τ</m:ci>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>L</m:ci>
+	    <m:msub>
+	      <m:mi>v</m:mi>
+	      <m:mi>p</m:mi>
+	    </m:msub>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+
+      on the vertical axis to show how long it takes for the wave to
+      reach the end of the line <link target-id="fig3"/>.
+
+      <figure id="fig3">
+	<title>Diagram With First Wave</title>
+      <media id="idm9932592" alt=""><image src="../../media/6.23.png" mime-type="image/png"/></media>
+      </figure>
+      
+      Once the initial wave hits the load, a second, reflected wave
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msubsup>
+	    <m:mi>V</m:mi>
+	    <m:mn>1</m:mn>
+	    <m:mo>-</m:mo>
+	  </m:msubsup>
+	  <m:apply>
+	    <m:times/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:mrow>
+		<m:mi>v</m:mi>
+		<m:mo>​</m:mo>
+		<m:mi>L</m:mi>
+	      </m:mrow>
+	    </m:msub>
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mn>1</m:mn>
+	      <m:mo>+</m:mo>
+	    </m:msubsup>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+
+      is sent back the other way. So we add it to the bounce
+      diagram. This is shown in <link target-id="fig4"/>. Since all of
+      the waves move with the same phase velocity, we should be
+      careful to draw all of the lines with the same slope. Note that
+      the time when the reflected wave hits the generator end is a
+      total round trip time of
+
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>2</m:cn>
+	  <m:ci>τ</m:ci>
+	</m:apply>
+      </m:math>. (This simple concept is one which students often
+      forget come test time, so be forewarned!)
+
+      <figure id="fig4">
+	<title>Adding the First Reflected Wave</title>
+	<media id="idp2710448" alt=""><image src="../../media/6.24.png" mime-type="image/png"/></media>
+      </figure>
+
+      We saw that the next thing that happens is that another wave is
+      reflected from the generator, so we add that to the bounce
+      diagram as well. This is shown in <link target-id="fig5"/>.
+
+      <figure id="fig5">
+	<title>The Third Wave</title>
+	<media id="idm1933312" alt=""><image src="../../media/6.25.png" mime-type="image/png"/></media>
+      </figure>
+
+      Finally, one last wave, as we are almost bounced right off the
+      diagram, as shown in <link target-id="fig6"/>!
+      
+      <figure id="fig6">
+	<title>And the Fourth</title>
+	<media id="idp19456" alt=""><image src="../../media/6.26.png" mime-type="image/png"/></media>
+      </figure>
+
+      OK, so we've got a bounce diagram, so what? Having the diagram
+      is only part of the solution. We still have to see what good
+      they are. Let's do a numerical example, as it is maybe a little
+      more illustrative, and certainly will be easier to write out
+      than all these ratios all the time. We will just pick some
+      typical numbers, and then work out the answers. Let's let
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>S</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:cn>40</m:cn>
+	    <m:ci>V</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>,
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>R</m:mi>
+	    <m:mi>S</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:cn>150</m:cn>
+	    <m:ci>Ω</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>,
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	  <m:apply>
+	    <m:cn>50</m:cn>
+	    <m:ci>Ω</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+
+      and
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>R</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:cn>16.7</m:cn>
+	    <m:ci>Ω</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>.
+
+      The line will be 100m long, and
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>v</m:mi>
+	    <m:mi>p</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>2</m:cn>
+	    <m:apply>
+	      <m:power/>
+	      <m:cn>10</m:cn>
+	      <m:cn>8</m:cn>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>m</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> <link target-id="fig7"/>.
+
+      <figure id="fig7"><title>A Numerical Example</title><media id="idm1897984" alt=""><image src="../../media/6.27.png" mime-type="image/png" print-width="3in"/></media></figure>
+
+      First we calculate the reflection coefficients
+
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:mrow>
+		<m:mi>v</m:mi>
+		<m:mo>​</m:mo>
+		<m:mi>L</m:mi>
+	      </m:mrow>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>16.7</m:cn>
+		<m:cn>50</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>16.7</m:cn>
+		<m:cn>50</m:cn>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>-0.50</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      and
+
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:mrow>
+		<m:mi>v</m:mi>
+		<m:mo>​</m:mo>
+		<m:mi>S</m:mi>
+	      </m:mrow>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>S</m:mi>
+		</m:msub>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>S</m:mi>
+		</m:msub>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>150</m:cn>
+		<m:cn>50</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>150</m:cn>
+		<m:cn>50</m:cn>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>0.50</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      The initial voltage signal
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      is
+
+      <equation id="eqn3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mn>1</m:mn>
+	      <m:mo>+</m:mo>
+	    </m:msubsup>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>50</m:cn>
+		<m:apply>
+		  <m:plus/>
+		  <m:cn>50</m:cn>
+		  <m:cn>150</m:cn>
+		</m:apply>
+	      </m:apply>
+	      <m:cn>40</m:cn>
+	    </m:apply>
+	    <m:apply>
+	      <m:cn>10</m:cn>
+	      <m:ci>V</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      and the propagation time is
+
+      <equation id="eqn4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>τ</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>L</m:ci>
+	      <m:msub>
+		<m:mi>v</m:mi>
+		<m:mi>p</m:mi>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:cn>100</m:cn>
+		<m:ci>m</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>2</m:cn>
+		  <m:apply>
+		    <m:power/>
+		    <m:cn>10</m:cn>
+		    <m:cn>8</m:cn>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:divide/>
+		  <m:mi>m</m:mi>
+		  <m:mi>s</m:mi>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:cn>0.5</m:cn>
+	      <m:ci>μ</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      So we draw the bounce diagrams seen in <link target-id="fig8"/>.
+      
+      <figure id="fig8">
+	<title>The Bounce Diagram</title>
+	<media id="idp2631248" alt=""><image src="../../media/6.28.png" mime-type="image/png"/></media>
+      </figure>
+
+      Now, here's how we use a bounce diagram, once we have
+      it. Suppose we want to know what
+
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>, the voltage as a function of time, would look like
+      half-way down the line. We draw a vertical line at the place we
+      are interested in (the dotted line in <link target-id="fig8"/>) and
+      then just go up along the line, adding voltage to whatever we
+      had before whenever we cross one of the "bouncing"
+      signal lines. Thus for the line as shown we would have for
+
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>
+
+      what we see in <link target-id="fig9"/>.
+
+      <figure id="fig9">
+	<title>V(t) at 50m Down the Line</title>
+	<media id="idp33104" alt=""><image src="../../media/6.29.png" mime-type="image/png"/></media>
+      </figure>
+
+      For the first 0.25μs we have no voltage, because
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      has not reached the half-way point yet. The voltage then jumps
+      to +10V when
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      comes by. It stays like that until the -5V
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>-</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      comes by 0.5μs later. The voltage then remains constant at 5V
+      until the -2.5V
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>2</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      comes along to drop the total voltage down to only 2.5
+      volts. When
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>2</m:mn>
+	  <m:mo>-</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      comes along, it has been switched back to a positive voltage
+      wave by the negative load reflection coefficient, and so now the
+      voltage jumps back up to 3.75V. It will keep oscillating back
+      and forth until it finally settles down to some asymptotic
+      value. 
+    </para>
+
+    <para id="para2"> What will that asymptotic value be? One approach
+      is to write down the following equation.
+
+      <equation id="eqn5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>x</m:ci>
+	      <m:infinity/>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:msub>
+		  <m:mi>Γ</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+		<m:apply>
+		  <m:times/>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>S</m:mi>
+		  </m:msub>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:power/>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub>
+		    <m:cn>2</m:cn>
+		  </m:apply>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>S</m:mi>
+		  </m:msub>
+		</m:apply>
+		<m:ci>…</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Which we can re-write as
+
+      <equation id="eqn6">
+	<m:math>
+	  <m:apply>
+	    <m:plus/>
+	    <m:apply>
+	      <m:times/>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>S</m:mi>
+		  </m:msub>
+		</m:apply>
+		<m:apply>
+		  <m:power/>
+		  <m:apply>
+		    <m:times/>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>S</m:mi>
+		    </m:msub>
+		  </m:apply>
+		  <m:cn>2</m:cn>
+		</m:apply>
+		<m:ci>…</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>Γ</m:mi>
+		<m:mi>L</m:mi>
+	      </m:msub>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>S</m:mi>
+		  </m:msub>
+		</m:apply>
+		<m:apply>
+		  <m:power/>
+		  <m:apply>
+		    <m:times/>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>S</m:mi>
+		    </m:msub>
+		  </m:apply>
+		  <m:cn>2</m:cn>
+		</m:apply>
+		<m:ci>…</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    
+      Now, remembering the infinite sum relationship:
+
+      <equation id="eqn7">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:sum/>
+	      <m:bvar><m:ci>n</m:ci></m:bvar>
+	      <m:lowlimit><m:cn>0</m:cn></m:lowlimit>
+	      <m:uplimit><m:infinity/></m:uplimit>
+	      <m:apply>
+		<m:power/>
+		<m:ci>x</m:ci>
+		<m:ci>n</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      for
+
+      <m:math>
+	<m:apply>
+	  <m:lt/>
+	  <m:apply>
+	    <m:abs/>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	  <m:cn>1</m:cn>
+	</m:apply>
+      </m:math>
+
+      (which is <emphasis>always </emphasis>the case for a reflection
+      coefficient). We can substitute <link target-id="eqn7"/> for the
+      terms inside the parentheses in <link target-id="eqn6"/> and we get
+
+      <equation id="eqn8">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>x</m:ci>
+	      <m:infinity/>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:apply>
+		<m:plus/>
+		<m:apply>
+		  <m:divide/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:minus/>
+		    <m:cn>1</m:cn>
+		    <m:apply>
+		      <m:times/>
+		      <m:msub>
+			<m:mi>Γ</m:mi>
+			<m:mi>L</m:mi>
+		      </m:msub>
+		      <m:msub>
+			<m:mi>Γ</m:mi>
+			<m:mi>S</m:mi>
+		      </m:msub>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:divide/>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub>
+		  <m:apply>
+		    <m:minus/>
+		    <m:cn>1</m:cn>
+		    <m:apply>
+		      <m:times/>
+		      <m:msub>
+			<m:mi>Γ</m:mi>
+			<m:mi>L</m:mi>
+		      </m:msub>
+		      <m:msub>
+			<m:mi>Γ</m:mi>
+			<m:mi>S</m:mi>
+		      </m:msub>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:plus/>
+		  <m:cn>1</m:cn>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub>
+		</m:apply>
+		<m:apply>
+		  <m:minus/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:times/>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>S</m:mi>
+		    </m:msub>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      We will leave it as an exercise to the reader to show that if we
+      substitute <link document="m1048" target-id="eqn9"/>, <link document="m1048" target-id="eqn14"/> and finally <link document="m1048" target-id="eqn17"/> into <link target-id="eqn8"/> we
+      will eventually get:
+
+      <equation id="eqn9">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>x</m:ci>
+	      <m:infinity/>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+		<m:apply>
+		  <m:plus/>
+		  <m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub>
+		  <m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>S</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>S</m:mi>
+	      </m:msub>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Look back at <link target-id="fig1"/> and see if <link target-id="eqn9"/> makes any sense. It should. If we wait long
+      enough, it is reasonable to expect that any "transmission line"
+      effects should go away, and we would be back to the same
+      situation we would have if the line was just some wire
+      connecting the source to the load. In this case, the load
+      resistor and the source resistor would form a voltage divider,
+      and we would expect the voltage across the load to be determined
+      by the voltage divider equation. That's all <link target-id="eqn9"/> is saying! 
+    </para>
+
+    <para id="para3"> What do we do if we want, say, the voltage
+      across the load with time? To do this we move up the RHS of the
+      bounce diagram, and count voltage waves as we move across
+      them. We start out at zero, of course, and do not see anything
+      until we get to 0.5ms. Then we cross the 10V
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      wave <emphasis>and</emphasis> we cross the -5V
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>-</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      wave at the same time, so the voltage only goes up to
+      +5V. Likewise, another 1ms later, we cross both the -2.5V
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>2</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      <emphasis>and</emphasis> the +1.25V
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>2</m:mn>
+	  <m:mo>-</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      wave, and so the voltage ends up at the 3.75V position <link target-id="fig10"/>.
+      
+      <figure id="fig10">
+	<title>V(t) Across the Load</title>
+	<media id="idm3974672" alt=""><image src="../../media/6.30.png" mime-type="image/png"/></media>
+      </figure>
+
+      We can also use the bounce diagram to find the voltage as a
+      function of position, for some fixed time,
+
+      <m:math>
+	<m:msub>
+	  <m:mi>t</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math> <link target-id="fig11"/>.
+
+      <figure id="fig11">
+	<title>Finding V(x) at t=0.75μs</title>
+	<media id="idp382576" alt=""><image src="../../media/6.31.png" mime-type="image/png"/></media>
+      </figure>
+
+      To do this, we draw a horizontal line at the time we are
+      interested in, say 0.75μs. Now, for each position
+      <m:math><m:ci>x</m:ci></m:math>, we go from the bottom of the
+      diagram, up to the horizontal line, adding up voltage as we
+      go. Thus for the example: we get what we see in <link target-id="fig12"/> . For the first half of the line, we cross the
+      +10V
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>, but that's it. For the second half of the line we
+      cross <emphasis>both</emphasis> the +10V line as well as -5V
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>-</m:mo>
+	</m:msubsup>
+      </m:math>
+
+      wave, and so the voltage drops down to 5V.
+
+      <figure id="fig12">
+	<title>V(x) at t = 0.75μs</title>
+	<media id="idm4254576" alt=""><image src="../../media/6.32.png" mime-type="image/png"/></media>
+      </figure>
+
+      Of particular interest to many of you will be the way in which a
+      <term>pulse</term> moves down a line and is reflected
+      <foreign>etc</foreign>. This is also quite easy to do with a
+      reflection diagram, if we simply break the pulse into two waves,
+      one which has a <emphasis>positive</emphasis> swing at
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>t</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>
+
+      and another which is a <emphasis>negative</emphasis> going wave
+      at
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>t</m:ci>
+	  <m:msub>
+	    <m:mi>τ</m:mi>
+	    <m:mi>p</m:mi>
+	  </m:msub>
+	</m:apply>
+      </m:math>,
+
+      where
+
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>τ</m:mi>
+	    <m:mi>p</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      is the pulse width of the pulse being generated. The way we do
+      this is suggested in <link target-id="fig13"/> . We replace the
+      pulse generator with two battery/switch combinations. The first
+      circuit is just like we have seen so far, with a battery equal
+      to the open circuit pulse height of the generator, and a switch
+      which closes at
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>t</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>. The second circuit has a battery with an amplitude of
+      <emphasis>minus</emphasis> the pulse height, and a switch which
+      closes at
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>t</m:ci>
+	  <m:msub>
+	    <m:mi>τ</m:mi>
+	    <m:mi>p</m:mi>
+	  </m:msub>
+	</m:apply>
+      </m:math>, the pulse width of the pulse itself.
+
+      <figure id="fig13">
+	<title>Simulating a Pulse With Two Batteries and Two
+	Switches</title> 
+	<media id="idm4211632" alt=""><image src="../../media/6.33.png" mime-type="image/png"/></media>
+      </figure>
+
+      By superposition, we can just add these two generators, one
+      after the other, and see how the pulse goes down the
+      line. Suppose
+
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>p</m:mi>
+	</m:msub>
+      </m:math>
+
+      is 10 volts,
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>τ</m:mi>
+	    <m:mi>p</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:cn>0.25</m:cn>
+	    <m:ci>μ</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>,
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>R</m:mi>
+	    <m:mi>S</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:cn>50</m:cn>
+	    <m:ci>Ω</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>,
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	  <m:apply>
+	    <m:cn>50</m:cn>
+	    <m:ci>Ω</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+
+      and
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>R</m:mi>
+	    <m:mn>L</m:mn>
+	  </m:msub>
+	  <m:apply>
+	    <m:cn>25</m:cn>
+	    <m:ci>Ω</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. With the numbers, we find that
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msubsup>
+	    <m:mi>V</m:mi>
+	    <m:mn>1</m:mn>
+	    <m:mo>+</m:mo>
+	  </m:msubsup>
+	  <m:apply>
+	    <m:cn>25</m:cn>
+	    <m:ci>V</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>.
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Γ</m:mi>
+	    <m:mrow>
+	      <m:mi>v</m:mi>
+	      <m:mo>​</m:mo>
+	      <m:mi>L</m:mi>
+	    </m:mrow>
+	  </m:msub>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>-1</m:cn>
+	    <m:cn>3</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+
+      and
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Γ</m:mi>
+	    <m:mrow>
+	      <m:mi>v</m:mi>
+	      <m:mo>​</m:mo>
+	      <m:mi>S</m:mi>
+	    </m:mrow>
+	  </m:msub>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>.
+
+      Let's assume that the propagation time on the line is still
+      0.5μs to get from one end of the line to the other.
+    </para>
+
+    <para id="para4"> We draw the <link target-id="fig14">bounce
+      diagram</link>, and launch <emphasis>two waves</emphasis>, one
+      which leaves at
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>t</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> has an amplitude of
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msubsup>
+	    <m:mi>V</m:mi>
+	    <m:mn>1</m:mn>
+	    <m:mo>+</m:mo>
+	  </m:msubsup>
+	  <m:apply>
+	    <m:cn>5</m:cn>
+	    <m:ci>V</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. The second wave leaves at a time
+
+      <m:math>
+	<m:msub>
+	  <m:mi>τ</m:mi>
+	  <m:mi>p</m:mi>
+	</m:msub>
+      </m:math>, later, and has an amplitude of -5V.
+
+      <figure id="fig14">
+	<title>Pulse Bounce Diagram</title>
+	<media id="idp2443584" alt=""><image src="../../media/6.34.png" mime-type="image/png"/></media>
+      </figure>
+
+      Now when we want to see what the voltage as a function of time
+      looks like, we again draw a line up the middle, and add voltages
+      as we cross them. Here we see, again, no voltage until we cross
+      the first wave at 0.25μs, which pops us up to +5V. At a
+      time 0.25μs later however, the -5V wave comes along, and
+      we go back down to zero. At 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>t</m:ci>
+	  <m:apply>
+	    <m:cn>0.75</m:cn>
+	    <m:ci>μ</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, the reflected -1.67V pulse comes along, and so we see
+      that. Since the source is matched to the line,
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Γ</m:mi>
+	    <m:mrow>
+	      <m:mi>v</m:mi>
+	      <m:mo>​</m:mo>
+	      <m:mi>S</m:mi>
+	    </m:mrow>
+	  </m:msub>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>
+
+      and so this is the end of the story <link target-id="fig15"/>.
+      
+      <figure id="fig15">
+	<title>V(t) Half-way Down the Line</title>
+	<media id="idp2553152" alt=""><image src="../../media/6.35.png" mime-type="image/png"/></media>
+      </figure>
+
+      You can get somewhat more interesting waveforms if you go
+      someplace where the two pulses at least partially overlap. Let's
+      look at say,
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>x</m:ci>
+	  <m:apply>
+	    <m:cn>87.5</m:cn>
+	    <m:ci>m</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. <link target-id="fig16">Here</link> is the bounce
+      diagram.
+
+      <figure id="fig16">
+	<title>Finding V(t) Near the Load</title>
+	<media id="idm1222784" alt=""><image src="../../media/6.36.png" mime-type="image/png"/></media>
+      </figure>
+
+      And <link target-id="fig17">here</link> is the voltage waveform we
+      get.
+
+      <figure id="fig17">
+	<title>V(t) Near the Load</title>
+	<media id="idm1010672" alt=""><image src="../../media/6.37.png" mime-type="image/png"/></media>
+      </figure>
+
+      This time the 1.67V pulse gets to us before the +5V pulse has
+      completely passed, and so we drop from 5V to 3.33V. Then, when
+      the -5V wave goes by, we drop down to -1.67V for a little while,
+      until the +1.67V wave comes along to bring us back to
+      zero. 
+    </para>
+
+  </content>
+  
+</document>

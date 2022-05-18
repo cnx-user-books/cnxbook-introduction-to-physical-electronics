@@ -1,0 +1,110 @@
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+    <md:content-id>col10114</md:content-id>
+    <md:title>Introduction to Physical Electronics</md:title>
+    <md:language>en</md:language>
+    <md:license url="http://creativecommons.org/licenses/by/1.0">Creative Commons Attribution License</md:license>
+    <md:uuid>204e335b-9c17-40ad-85f4-5aef52a8ec8d</md:uuid>
+<md:slug>introduction-to-physical-electronics</md:slug>
+</metadata>
+  <col:content>
+    <col:subcollection>
+      <md:title>Conductors, Semiconductors and Diodes</md:title>
+      <col:content>
+        <col:module document="m1000"/>
+        <col:module document="m1001"/>
+        <col:module document="m1002"/>
+        <col:module document="m1003"/>
+        <col:module document="m1004"/>
+        <col:module document="m1005"/>
+        <col:module document="m1006"/>
+        <col:module document="m1007"/>
+        <col:module document="m1008"/>
+        <col:module document="m1009"/>
+        <col:module document="m1010"/>
+        <col:module document="m1011"/>
+        <col:module document="m1012"/>
+        <col:module document="m1013"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Bipolar Transistors</md:title>
+      <col:content>
+        <col:module document="m1014"/>
+        <col:module document="m1015"/>
+        <col:module document="m1016"/>
+        <col:module document="m1017"/>
+        <col:module document="m1018"/>
+        <col:module document="m1019"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>FETs</md:title>
+      <col:content>
+        <col:module document="m1020"/>
+        <col:module document="m1021"/>
+        <col:module document="m1022"/>
+        <col:module document="m1023"/>
+        <col:module document="m1024"/>
+        <col:module document="m1025"/>
+        <col:module document="m1026"/>
+        <col:module document="m1027"/>
+        <col:module document="m1028"/>
+        <col:module document="m1029"/>
+        <col:module document="m1030"/>
+        <col:module document="m1031"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>IC Manufacturing</md:title>
+      <col:content>
+        <col:module document="m1032"/>
+        <col:module document="m1033"/>
+        <col:module document="m1034"/>
+        <col:module document="m1035"/>
+        <col:module document="m1036"/>
+        <col:module document="m1037"/>
+        <col:module document="m1038"/>
+        <col:module document="m1039"/>
+        <col:module document="m1040"/>
+        <col:module document="m1041"/>
+        <col:module document="m1042"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Introduction to Transmission Lines</md:title>
+      <col:content>
+        <col:module document="m1043"/>
+        <col:module document="m1044"/>
+        <col:module document="m1045"/>
+        <col:module document="m1046"/>
+        <col:module document="m1047"/>
+        <col:module document="m1048"/>
+        <col:module document="m1049"/>
+        <col:module document="m1050"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>AC Steady-State Transmission</md:title>
+      <col:content>
+        <col:module document="m1051"/>
+        <col:module document="m1052"/>
+        <col:module document="m1053"/>
+        <col:module document="m1054"/>
+        <col:module document="m1055"/>
+        <col:module document="m1056"/>
+        <col:module document="m1057"/>
+        <col:module document="m1058"/>
+        <col:module document="m1059"/>
+        <col:module document="m1060"/>
+        <col:module document="m1061"/>
+        <col:module document="m1062"/>
+        <col:module document="m1063"/>
+        <col:module document="m1064"/>
+        <col:module document="m1065"/>
+        <col:module document="m1066"/>
+        <col:module document="m1067"/>
+      </col:content>
+    </col:subcollection>
+  </col:content>
+</col:collection>

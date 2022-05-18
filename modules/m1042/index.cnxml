@@ -1,0 +1,52 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Yield</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>16324914-da39-47d9-8b51-4678b5b5c25d</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">Perhaps a word about feature size, chip size and
+      yield would be in order. We saw earlier that circuits are
+      repeated many times across a wafer's surface during the
+      photolithographic stage. Although great care is exercised in
+      trying to prevent defects from becoming part of a wafer surface
+      (clean rooms, "bunny" suits, ultra-pure chemicals etc.) each
+      wafer that goes through a fab will end up with
+      <emphasis>some</emphasis> "killer" defects distributed across
+      the wafer surface <link target-id="fig1"/>.
+
+      <figure id="fig1">
+	<title>A Wafer with Defects</title>
+	<media id="idm9488592" alt=""><image src="../../media/5.45.png" mime-type="image/png"/></media>
+      </figure>
+
+      Imagine that we try to manufacture some chips of a certain
+      size. A glance at <link target-id="fig2"/> shows that we would have
+      15 of 21 good chips, for a yield of about 71%. Suppose we could,
+      through improved technology, perform a 30% "shrink" on the
+      circuit - <foreign>i.e.</foreign> make its dimensions 30%
+      smaller. Now, as <link target-id="fig3"/> shows, we get 40 good
+      chips/wafer instead of 15 (and they cost no more to produce) and
+      our yield has gone to 40 out of 46 or 87%. We will be rich! Or
+      at least we won't go out of business!
+      
+      <figure id="fig2">
+	<title>Six Killed Circuits</title>
+	<media id="idp3226800" alt=""><image src="../../media/5.46.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig3">
+	<title>Lots More Good Ones</title>
+	<media id="idm1011568" alt=""><image src="../../media/5.47.png" mime-type="image/png"/></media>
+      </figure>
+
+      Yield, reliability and manufacturability are all critical issues
+      in the semiconductor industry. The business is highly
+      competitive, and the technology keeps moving rapidly. It is an
+      exciting and challenging field, one which demands the very best,
+      but which rewards someone who is willing to never stop thinking
+      and to bring forth the very best creative solutions to hard
+      problems.
+    </para>
+  </content>
+  
+</document>

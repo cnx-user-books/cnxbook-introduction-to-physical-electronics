@@ -1,0 +1,720 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Exciting a Line</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>4c35653b-61ed-4385-ae91-2268a3d655d0</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">We will now go on and look at what happens when
+      we excite the line. Let's take a DC voltage source with a source
+      internal impedance
+      <m:math>
+	<m:ci><m:msub>
+	    <m:mi>R</m:mi>
+	    <m:mi>s</m:mi>
+	  </m:msub></m:ci>
+      </m:math> and connect it to our semi-infinite line. The sketch
+      in <link target-id="fig1"/> is sort of awkward looking, and will
+      be hard to analyze, so let's make a more "schematic like"
+      drawing <link target-id="fig2"/>, keeping in mind that it is a
+      situation such as <link target-id="fig1"/> which we trying to
+      represent.
+      
+      <figure id="fig1">
+	<title>Exciting a Transmission Line</title>
+	<media id="idp2376288" alt=""><image src="../../media/6.12.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig2">
+	<title>Schematic Representation</title>
+	<media id="idp368288" alt=""><image src="../../media/6.13.png" mime-type="image/png"/></media>
+      </figure>
+
+      Why have we shown an
+      <m:math>
+	<m:ci><m:msup>
+	  <m:mi>I</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup></m:ci>
+      </m:math> and a
+      <m:math>
+	<m:ci><m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup></m:ci>
+      </m:math> but not
+      <m:math>
+	<m:ci><m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup></m:ci>
+      </m:math> or
+      <m:math>
+	<m:ci><m:msup>
+	  <m:mi>I</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup></m:ci>
+      </m:math>? The answer is, that if the line is semi-infinite,
+      then the "other" end is at infinity, and we know there
+      are no sources at infinity. The current flowing through the
+      source resistor is just
+      <m:math>
+	<m:ci><m:msubsup>
+	  <m:mi>I</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup></m:ci>
+      </m:math>, so we can do a KVL around the loop
+
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:minus/>
+		<m:ci><m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>s</m:mi>
+		</m:msub></m:ci>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:ci type="fn">
+		      <m:msubsup>
+			<m:mi>I</m:mi>
+			<m:mn>1</m:mn>
+			<m:mo>+</m:mo>
+		      </m:msubsup>
+		    </m:ci>
+		    <m:cn>0</m:cn>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		  <m:ci><m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:msubsup>
+		    <m:mi>V</m:mi>
+		    <m:mn>1</m:mn>
+		    <m:mo>+</m:mo>
+		  </m:msubsup>
+		</m:ci>
+		<m:cn>0</m:cn>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Substituting for
+      <m:math>
+	<m:ci><m:msubsup>
+	  <m:mi>I</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup></m:ci>
+      </m:math> in terms of
+      <m:math>
+	<m:ci><m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup></m:ci>
+      </m:math> using <link document="m1045" target-id="eqn19">this
+      equation</link>:
+
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:minus/>
+		<m:ci><m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>s</m:mi>
+		</m:msub></m:ci>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:ci type="fn">
+			<m:msubsup>
+			  <m:mi>V</m:mi>
+			  <m:mn>1</m:mn>
+			  <m:mo>+</m:mo>
+			</m:msubsup>
+		      </m:ci>
+		      <m:cn>0</m:cn>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		    <m:ci><m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mn>0</m:mn>
+		    </m:msub></m:ci>
+		  </m:apply>
+		  <m:ci><m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:msubsup>
+		    <m:mi>V</m:mi>
+		    <m:mn>1</m:mn>
+		    <m:mo>+</m:mo>
+		  </m:msubsup>
+		</m:ci>
+		<m:cn>0</m:cn>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+  
+      Which we re-write as
+
+      <equation id="eqn3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:msubsup>
+		    <m:mi>V</m:mi>
+		    <m:mn>1</m:mn>
+		    <m:mo>+</m:mo>
+		  </m:msubsup>
+		</m:ci>
+		<m:cn>0</m:cn>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci><m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub></m:ci>
+		  <m:ci><m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:ci><m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>s</m:mi>
+	    </m:msub></m:ci>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Or, on solving for
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mn>1</m:mn>
+	      <m:mo>+</m:mo>
+	    </m:msubsup>
+	  </m:ci>
+	  <m:cn>0</m:cn>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>:
+
+      <equation id="eqn4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+	      </m:ci>
+	      <m:cn>0</m:cn>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:ci><m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub></m:ci>
+		<m:apply>
+		  <m:plus/>
+		  <m:ci><m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub></m:ci>
+		  <m:ci><m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mn>s</m:mn>
+		  </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:ci><m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>s</m:mi>
+	      </m:msub></m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    
+      This <emphasis>should</emphasis> look both reasonable and
+      familiar to you. The line and the source resistance are acting
+      as a <link document="m0014" target-id="para2lit2">voltage
+      divider</link>. In fact, <link target-id="eqn4"/> is just the usual
+      voltage divider equation for two resistors in series. Thus, the
+      generator can not tell the difference between a semi-infinite
+      transmission line of characteristic impedance
+      <m:math>
+	<m:ci><m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub></m:ci>
+      </m:math> and a resistor with a resistance of the same value
+      <link target-id="fig3"/>.
+   
+      <figure id="fig3">
+	<title>Line is Initially a Voltage Divider!</title>
+	<media id="idp7672368" alt=""><image src="../../media/6.14.png" mime-type="image/png"/></media>
+      </figure>
+
+      Have you ever heard of "<m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>300</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> twin-lead" or maybe "<m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>75</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> co-ax" and wondered why people would want to use wires
+      with such a high resistance value to bring a TV signal to their
+      set? Now you know. The
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>300</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> characterization is not a measure of the resistance of
+      the wire, rather it is a specification of the transmission
+      line's impedance. Thus, if a TV signal coming from your antenna
+      has a value of, say,
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>30</m:cn>
+	  <m:ci>μV</m:ci>
+	</m:apply>
+      </m:math>, and it is being brought down from the roof with 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>300</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> twin-lead, then the current flowing in the wires is
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>I</m:ci>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>30</m:cn>
+	      <m:ci>μV</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>300</m:cn>
+	      <m:ci>Ω</m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>100</m:cn>
+	    <m:ci>nA</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, which is a very small current indeed!
+    </para>
+
+    <para id="para2"> Why then, did people decide on 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>300</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math>?  An antenna which is just a half-wavelength long
+      (Which turns out to be both a convenient and efficient choice
+      for signals in the 100 MHz (<m:math>
+	<m:apply>
+	  <m:approx/>
+	  <m:ci>λ</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>3</m:cn>
+	    <m:ci>m</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>) range) acts like a voltage source with a source
+      resistance of about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>300</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math>. If you remember from ELEC 242, when we have a source
+      with a source resistance
+      <m:math>
+	<m:ci><m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>s</m:mi>
+	</m:msub></m:ci>
+      </m:math> and a load resistor with load resistance value
+      <m:math>
+	<m:ci><m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub></m:ci>
+      </m:math> <link target-id="fig4"/>, you calculate the power
+      delivered to the load using the following method.
+      
+      <figure id="fig4">
+	<title>Power Transfer To a Load</title>
+	<media id="idm5273936" alt=""><image src="../../media/6.15.png" mime-type="image/png"/></media>
+      </figure>
+
+      <m:math>
+	<m:ci><m:msub>
+	  <m:mi>P</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub></m:ci>
+      </m:math>, the power in the load, is just product of the voltage
+      across the load times the current through the load. We can use
+      the voltage divider law to find the voltage across
+      <m:math>
+	<m:ci><m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub></m:ci>
+      </m:math> and the resistor sum law to find the current through
+      it.
+
+      <equation id="eqn5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci><m:msub>
+	      <m:mi>P</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub></m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci><m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>L</m:mi>
+	      </m:msub></m:ci>
+	      <m:ci><m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>L</m:mi>
+	      </m:msub></m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:ci><m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub></m:ci>
+		<m:apply>
+		  <m:plus/>
+		  <m:ci><m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub></m:ci>
+		  <m:ci><m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:ci><m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>s</m:mi>
+	      </m:msub></m:ci>
+	      <m:apply>
+		<m:divide/>
+		<m:ci><m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>s</m:mi>
+		</m:msub></m:ci>
+		<m:apply>
+		  <m:plus/>
+		  <m:ci><m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub></m:ci>
+		  <m:ci><m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:ci><m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub></m:ci>
+		<m:apply>
+		  <m:power/>
+		  <m:apply>
+		    <m:plus/>
+		    <m:ci><m:msub>
+		      <m:mi>R</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub></m:ci>
+		    <m:ci><m:msub>
+		      <m:mi>R</m:mi>
+		      <m:mi>s</m:mi>
+		    </m:msub></m:ci>
+		  </m:apply>
+		  <m:cn>2</m:cn>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:power/>
+		<m:ci><m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>s</m:mi>
+		</m:msub></m:ci>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+   
+      If we take the derivative of <link target-id="eqn5"/> with respect
+      to
+      <m:math>
+	<m:ci><m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub></m:ci>
+      </m:math>, the load resistor (which we assume we can pick, given
+      some predetermined
+      <m:math>
+	<m:ci><m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>s</m:mi>
+	</m:msub></m:ci>
+      </m:math>) we have (ignoring the
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:ci><m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>s</m:mi>
+	  </m:msub></m:ci>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>),
+
+      <equation id="eqn6">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:diff/>
+	      <m:bvar>
+		<m:ci><m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub></m:ci>
+	      </m:bvar>
+	     <m:ci> <m:msub>
+		<m:mi>P</m:mi>
+		<m:mi>L</m:mi>
+	      </m:msub></m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:power/>
+		  <m:apply>
+		    <m:plus/>
+		    <m:ci><m:msub>
+		      <m:mi>R</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub></m:ci>
+		    <m:ci><m:msub>
+		      <m:mi>R</m:mi>
+		      <m:mi>s</m:mi>
+		    </m:msub></m:ci>
+		  </m:apply>
+		  <m:cn>2</m:cn>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>2</m:cn>
+		  <m:ci><m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub></m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:power/>
+		  <m:apply>
+		    <m:plus/>
+		    <m:ci><m:msub>
+		      <m:mi>R</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub></m:ci>
+		    <m:ci><m:msub>
+		      <m:mi>R</m:mi>
+		      <m:mi>s</m:mi>
+		    </m:msub></m:ci>
+		  </m:apply>
+		  <m:cn>3</m:cn>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+  
+      Putting everything on
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:apply>
+	    <m:plus/>
+	    <m:ci><m:msub>
+	      <m:mi>R</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub></m:ci>
+	    <m:ci><m:msub>
+	      <m:mi>R</m:mi>
+	      <m:mi>s</m:mi>
+	    </m:msub></m:ci>
+	  </m:apply>
+	  <m:cn>3</m:cn>
+	</m:apply>
+      </m:math> and then just looking at the numerator:
+
+      <equation id="eqn7">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:plus/>
+		<m:ci><m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub></m:ci>
+		<m:ci><m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>s</m:mi>
+		</m:msub></m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:ci><m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub></m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+   
+      Which obviously says that for maximum power transfer, you want
+      your load resistor
+      <m:math>
+	<m:ci><m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub></m:ci>
+      </m:math> to have the same value as your source resistor
+      <m:math>
+	<m:ci><m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>s</m:mi>
+	</m:msub></m:ci>
+      </m:math>! Thus, people came up with
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>300</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> twin lead so that they could maximize the energy
+      transfer between the TV antenna and the transmission line
+      bringing the signal to the TV receiver set. It turns out that
+      for a co-axial transmission line (such as your TV cable)
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>75</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> minimizes the signal loss, which is why that value was
+      chosen for CATV.
+    </para>
+  </content>
+  
+</document>

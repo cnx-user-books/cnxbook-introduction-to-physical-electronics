@@ -1,0 +1,167 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Introduction to MOSFETs</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c95d1b8a-fa1d-4648-9362-a0dfcf5bbf24</md:uuid>
+</metadata>
+ 
+  <content>
+    <para id="para1">
+      We now move on to another three terminal device - also called a
+      <term>transistor</term>.  (In truth this device really has at
+      least four, and probably five, terminals, but we will leave the
+      subtle details for a later time.)  This transistor, however,
+      works on much different principles than does the bipolar
+      junction transistor of the last chapter.  We will now focus on a
+      device called the <term>Field Effect Transistor</term>, or
+      <term>Metal-Oxide-Semiconductor Field Effect Transistor</term>
+      or simply, the <term>MOSFET</term>.  Consider the following:
+    </para>
+
+    <figure id="fig01">
+      <media id="idp10125920" alt=""><image src="../../media/4_01.png" mime-type="image/png"/></media>
+      <caption>The start of a field effect transistor</caption>
+    </figure>
+
+    <para id="para2">
+      Here we have a block of silicon, doped p-type.  Into it we have
+      made two regions which are doped n-type. To each of those n-type
+      regions we attach a wire, and connect a battery between them.
+      If we try to get some current, <m:math><m:ci>I</m:ci></m:math>,
+      to flow through this structure, nothing will happen, because the
+      n-p junction on the RHS is reverse biased (We have the positive
+      lead from the battery going to the n-side of the p-n junction).
+      If we attempt to remedy this by turning the battery around, we
+      will now have the LHS junction reverse biased, and again, no
+      current will flow.  If, for whatever reason, we want current to
+      flow, we will need to come up with some way of forming a layer
+      of n-type material between one n-region and the other.  This
+      will then connect them together, and we can run current in one
+      terminal and out the other.
+    </para>
+
+    <para id="para3">
+      To see how we will do this, let's do two things.  First we
+      will grow a layer of
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>Si</m:ci>
+	  <m:ci><m:msub>
+	      <m:mi>O</m:mi>
+
+	      <m:mn>2</m:mn>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math> (silicon dioxide, or just plain "oxide") on top of the
+      silicon.  (This turns out to be relatively easy, we just stick
+      the wafer in an oven with some oxygen flowing through it, and
+      heat everything up to about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>1100</m:cn>
+
+	  <m:ci>°C</m:ci>
+	</m:apply>
+      </m:math> for an hour or so, and we end up with a nice,
+      high-quality insulating
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>Si</m:ci>
+	  <m:ci><m:msub>
+
+	      <m:mi>O</m:mi>
+	      <m:mn>2</m:mn>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math> layer on top of the silicon).  On top of the oxide
+      layer we then deposit a conductor, which we call the gate.  In
+      the "old days" the gate would have been a layer of aluminum
+      (Hence the "metal-oxide-silicon" or MOS name).  Today, it is
+      much more likely that a heavily doped layer of polycrystalline
+      silicon (polysilicon, or more often just "poly") would be
+      deposited to form the gate structure.  (I guess "POS" sounded
+      funny to people in the field, because it never caught on as a
+      name for these devices).  Polysilicon is made from the reduction
+      of a gas, such as silane (
+      <m:math>
+	<m:apply>
+	  <m:times/>
+
+	  <m:ci>
+	    <m:mi>Si</m:mi>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>H</m:mi>
+	      <m:mn>4</m:mn>
+
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>) through the reaction
+
+      <equation id="eqn01">
+	<m:math>
+	  <m:apply>
+	    <m:tendsto/>
+	    <m:apply>
+
+	      <m:times/>
+	      <m:ci>Si</m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>H</m:mi>
+		  <m:mn>4</m:mn>
+		</m:msub>
+
+	      </m:ci>
+	      <m:ci>(g)</m:ci>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:plus/>
+	      <m:ci>Si (s)</m:ci>
+	      <m:apply>
+
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:ci>
+		  <m:mrow>
+		    <m:msub>
+		      <m:mi>H</m:mi>
+		      <m:mn>2</m:mn>
+
+		    </m:msub>
+		    <m:mi>(g)</m:mi>
+		  </m:mrow>
+		</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+
+      </equation>
+    </para>
+
+    <para id="para4">
+      The silicon is polycrystalline (composed of lots of small
+      silicon crystallites) because it is deposited on top of the
+      oxide, which is amorphous, and so it does not provide a single
+      crystal "matrix" which would allow the silicon to organize
+      itself into one single crystal.  If we had deposited the silicon
+      on top of a single crystal silicon wafer, we would have formed a
+      single crystal layer of silicon called an <term>epitaxial
+      layer</term>.  (<term>Epitaxy</term> comes from the Greek, and
+      it just means "ordered upon".  Thus an epitaxial layer is one
+      which follows the order of the substrate on which it is grown).
+      This is sometimes done to make structures for particular
+      applications.  For instance, growing a n-type epitaxial layer on
+      top of a p-type substrate permits the fabrication of a very
+      abrupt p-n junction.
+    </para>
+  
+
+  </content>
+  
+</document>

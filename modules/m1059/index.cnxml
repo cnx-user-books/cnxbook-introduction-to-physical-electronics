@@ -1,0 +1,194 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Introduction to Using the Smith Chart</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>2560f79c-ff8e-45e1-8dd6-cb212f9748d0</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">Using the <link target-id="fig1">Smith Chart</link>,
+    we will investigate some of the application and uses of the
+    <term>Smith Chart</term>. For the text, we will use my new "mini
+    Smith Chart" which is reproduced below.  Clearly, there is not
+    much detail here, and our answers will not be as accurate as they
+    would be if we used a full size chart, but we want to get ideas
+    across here, not the best number possible, and with the small
+    size, we won't run out of paper before everything is done.
+        
+      <figure id="fig1">
+	<title>The Smith Chart</title>
+	<media id="idm2086400" alt=""><image src="../../media/801.png" mime-type="image/png"/></media>
+      </figure>
+      
+      Note that we have a couple of "extras" on the chart.  The two
+      scales at the bottom of the chart can be used to either set or
+      measure radial variables such as the magnitude of the reflection
+      coefficient
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:ci>Γ</m:ci>
+	</m:apply>
+      </m:math>, or the VSWR, as it turns out that in practice, what
+      one can actually measure on a line is the VSWR.  Remember, there
+      is a direct relationship between the VSWR and the magnitude of
+      the reflection coefficient.
+      <equation id="eq1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>VSWR</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:abs/>
+		  <m:ci>Γ</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:abs/>
+		  <m:ci>Γ</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <equation id="eq2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:abs/>
+	      <m:ci>Γ</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:ci>VSWR</m:ci>
+		<m:cn>1</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:ci>VSWR</m:ci>
+		<m:cn>1</m:cn>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:abs/>
+	    <m:apply>
+	      <m:ci type="fn">r</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:abs/>
+	    <m:ci>Γ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, once we have the VSWR, we have
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:apply>
+	    <m:ci type="fn">r</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> and so we know how big a circle we need on the Smith
+      Chart in order to go from one place to the next.  Note also that
+      there is a scale around the outside of the chart which is given
+      in fractions of a wavelength. Since 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> rotates around at a rate
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>2</m:cn>
+	  <m:ci>β</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>β</m:ci>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>2</m:cn>
+	      <m:pi/>
+	    </m:apply>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, we could either show distance in cm or something, and
+      then change the scale whenever we change wavelength.  Or, we
+      could just use a distance scale in
+      <m:math><m:ci>λ</m:ci></m:math>, and measure all
+      distances in units of the wavelength.  This is what we shall do.
+      Since the rate of rotation is
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>2</m:cn>
+	  <m:ci>β</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>, one trip around the Smith Chart is the same as going
+      one half of a wavelength down the line. Rotation in a clockwise
+      direction is the same as moving away from the load towards the
+      generator, while motion along the line in the other direction
+      (towards the load) calls for counterclockwise rotation. The
+      scale is, of course, a relative one, and so we will have to
+      re-set our zero, depending upon where the load etc. are really
+      located. This will all become clearer as we do an example.
+    </para>
+
+    <para id="para2">Let's start out with the simplest thing we can,
+      with just a generator, line and load <link target-id="fig2"/>. Our
+      task will be to find the input impedance,
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mi>in</m:mi>
+	</m:msub>
+      </m:math>, for the line, so that we can figure the input
+      voltage.
+      
+      <figure id="fig2"><title>Transmission Line Problem</title><media id="idm4856912" alt=""><image src="../../media/802.png" mime-type="image/png" print-width="3in"/></media></figure>
+
+      For this first problem, we are going to start out with all the
+      basics. In later examples, we probably will only give lengths in
+      wavelengths, and impedances in terms of
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math>, but let's do this the whole way through.
+    
+
+
+    </para>   
+  </content>
+  
+</document>

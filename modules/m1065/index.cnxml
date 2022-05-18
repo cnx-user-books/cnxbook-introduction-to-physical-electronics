@@ -1,0 +1,511 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Single Stub Matching</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c7113844-3b4b-4e62-981e-e445cf722c00</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">Often, there are reasons why using a discrete
+      inductor or capacitor for matching is not such a good idea.  At
+      the high frequencies where matching is important, losses in both
+      L or C mean that you don't get a good match, and most of the
+      time (except for some air-dielectric adjustable capacitors) it
+      is hard to get <emphasis>just</emphasis> the value you want.
+    </para>
+
+    <para id="para2">There is another approach though.  A shorted or open
+      transmission line, when viewed at its input looks like a pure
+      reactance or pure susceptance.  With a short as a load, the
+      reflection coefficient has unity magnitude
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:abs/>
+	    <m:ci>Γ</m:ci>
+	  </m:apply>
+	  <m:cn>1.0</m:cn>
+	</m:apply>
+      </m:math> and so we move around the very outside of the <link target-id="fig1">Smith Chart</link> as the length of the line
+      increases or decreases, and
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>in</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> is purely imaginary.  When we did the bilinear transformation
+      from the
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> plane to the
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane, the imaginary axis transformed into the circle of
+      diameter 2, which ended up being the outside circle which
+      defined the Smith Chart.
+ 
+      <figure id="fig1">
+	<title>Input Impedance of a Shorted Line</title>
+	<media id="idm8931344" alt=""><image src="../../media/821.png" mime-type="image/png"/></media>
+      </figure>      
+
+      Another way to see this is to go back to <link document="m1054" target-id="eqn3">this equation</link>. There we found:
+      <equation id="eq1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:plus/>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mn>0</m:mn>
+		    </m:msub>
+		    <m:apply>
+		      <m:tan/>
+		      <m:apply>
+			<m:times/>
+			<m:ci>β</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:plus/>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub>
+		    <m:apply>
+		      <m:tan/>
+		      <m:apply>
+			<m:times/>
+			<m:ci>β</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      With 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> this reduces to
+      <equation id="eq2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:apply>
+		<m:tan/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>β</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Which, of course for various values of
+      <m:math><m:ci>s</m:ci></m:math>, can take on any value from
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:infinity/>
+	  </m:apply>
+	</m:apply>
+      </m:math> to
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:infinity/>
+	  </m:apply>
+	</m:apply>
+      </m:math>. We don't have to go to Radio Shack© and buy a
+      bunch of different inductor and capacitors.  We can just get
+      some transmission line and short it at various places!
+    </para>
+
+    <para id="para3"> Thus, instead of a discrete component, we can
+      use a section of shorted (or open) transmission line instead
+      <link target-id="fig2"/>.  These matching lines are called
+      <term>matching stubs</term>.  One of the major advantages here
+      is that with a line which has an adjustable short on the end of
+      it, we can get any reactance we need, simply by adjusting the
+      length of the stub.  How this all works will become obvious
+      after we take a look at an example.
+	
+      <figure id="fig2">
+	<title>A Shortened Stub</title>
+	<media id="idm1369200" alt=""><image src="../../media/822.png" mime-type="image/png"/></media>
+      </figure>   
+    </para>
+
+    <para id="para4">Let's do one.  In <link target-id="fig3"/> we can
+      see that, 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">0.2<m:sep/>0.5</m:cn>
+	</m:apply>
+      </m:math>, so we mark a point "A" on the Smith Chart.  Since we
+      will want to put the tuning or matching stub in shunt across the
+      line, the first thing we will do is convert
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> into a normalized admittance
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> by going
+      <m:math>
+	<m:msup>
+	  <m:mn>180</m:mn>
+	  <m:mo>°</m:mo>
+	</m:msup>
+      </m:math> around the <link target-id="fig4">Smith Chart</link> to
+      point "B", where
+      <m:math>
+	<m:apply>
+	  <m:mo>≂</m:mo>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">0.7<m:sep/>-1.7</m:cn>
+	</m:apply>
+      </m:math>. Now we rotate around on the constant radius,
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> circle until we hit the matching circle at point "C".  This is
+      shown in <link target-id="fig5"/>.  At "C",
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mi>S</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">1.0<m:sep/>2.0</m:cn>
+	</m:apply>
+      </m:math>. Using a "real" Smith Chart, I get that the distance
+      of rotation is about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.36</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math>. Remember, all the way around is
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>λ</m:ci>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>, so you can very often "eyeball" about how far you
+      have to go, and doing so is a good check on making a stupid math
+      error. If the distance doesn't look right on the Smith Chart,
+      you probably made a mistake!
+
+      <figure id="fig3">
+	<title>Another Load</title>
+	<media id="idp409888" alt=""><image src="../../media/823.png" mime-type="image/png"/></media>
+      </figure>   
+      
+      <figure id="fig4">
+	<title>Converting to Normalized Admittance</title>
+	<media id="idp7379760" alt=""><image src="../../media/824.png" mime-type="image/png"/></media>
+	<caption>Converting to
+	  <m:math>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>Y</m:mi>
+		<m:mi>L</m:mi>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Y</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	  </m:math>
+	</caption>
+      </figure>   
+
+      <figure id="fig5">
+	<title>Moving to the Matching Circle</title>
+	<media id="idp1836880" alt=""><image src="../../media/825.png" mime-type="image/png"/></media>
+      </figure>   
+
+      OK, at this point, the real part of the admittance is unity, so
+      all we have to do is add a stub to cancel out the imaginary
+      part.  As mentioned above, the stubs often come with adjustable,
+      or "sliding short" so we can make them whatever length we want
+      <link target-id="fig6"/>.
+
+      <figure id="fig6">
+	<title>Matching with a Shortened Stub</title>
+	<media id="idp4757952" alt=""><image src="../../media/826.png" mime-type="image/png"/></media>
+      </figure>  
+
+      Our task now, is to decide how much to push or pull on the
+      sliding handle on the stub, to get the reactance we want.  The
+      hint on what we should do is in <link target-id="fig1"/>.  The end
+      of the stub is a short circuit.  What is the admittance of a
+      short circuit?  Answer:
+      <m:math>
+	<m:infinity/>
+      </m:math>,
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:imaginaryi/>
+	  <m:infinity/>
+	</m:apply>
+      </m:math>! Where is this on the Smith Chart?  Answer: on the outside, on
+      the right hand side on the real axis.  Now, if we start at a
+      short, and start to make the line longer than
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>s</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>, what happens to
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Y</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>? It moves around on the outside of the Smith Chart.
+      What we need to do is move away from the short until we get
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Y</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:cn>2.0</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> and we will know how long the shorted tuning stub
+      should be <link target-id="fig7"/>.  In going from "A" to "B" we
+      traverse a distance of about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.07</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> and so that is where we should set the position of the sliding
+      short on the stub <link target-id="fig8"/>.
+
+      <figure id="fig7">
+	<title>Finding the Stub length</title>
+	<media id="idp4398832" alt=""><image src="../../media/827.png" mime-type="image/png"/></media>
+      </figure>  
+
+      <figure id="fig8">
+	<title>The Matched Line</title>
+	<media id="idp4913664" alt=""><image src="../../media/828.png" mime-type="image/png"/></media>
+      </figure>  
+
+      We sometimes think of the action of the tuning stub as allowing
+      us to move in along the
+      <m:math>
+	<m:apply>
+	  <m:real/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Y</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	</m:apply>
+      </m:math> to get to the center of the Smith Chart, or to a match
+      <link target-id="fig9"/>. We are not in this case, physically
+      moving down the line. Rather we are moving along a
+      <emphasis>contour of constant real part</emphasis> because all
+      the stub can do is change the imaginary part of the admittance,
+      it can do nothing to the real part!
+
+      <figure id="fig9">
+	<title>Moving With a Stub</title>
+	<media id="idp4189872" alt=""><image src="../../media/829.png" mime-type="image/png"/></media>
+	<caption>
+	  Moving along the
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:real/>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:ci type="fn">Y</m:ci>
+		    <m:ci>s</m:ci>
+		  </m:apply>
+		  <m:msub>
+		    <m:mi>Y</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	      <m:cn>1</m:cn>
+	    </m:apply>
+	  </m:math> circle with a stub.
+	</caption>
+      </figure> 
+
+    </para>   
+  </content>
+  
+</document>

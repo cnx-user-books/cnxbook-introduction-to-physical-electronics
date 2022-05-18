@@ -1,0 +1,234 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Integrated Circuit Well and Gate Creation</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>1e9ef7b0-a093-460c-9144-5b271b37cd58</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">We then remove the remaining resist, and perform
+      an activation/anneal/diffusion step, also sometimes called the
+      "drive-in". The purpose of this step is two fold. We want to
+      make the n-tank deep enough so that we can use it for our
+      p-channel MOS, and we want to build up an implant barrier so
+      that we can implant into the p-substrate region only. We
+      introduce oxygen into the reactor during the activation, so that
+      we grow a thicker oxide over the region where we implanted the
+      phosphorus. The nitride layer over the p-substrate on the LHS
+      protects that area from any oxide growth. We then end up with
+      the structure shown in <link target-id="fig1"/>.
+
+      <figure id="fig1">
+	<title>After the Anneal/Drive-In</title>
+	<media id="idm13947776" alt=""><image src="../../media/5.19.png" mime-type="image/png"/></media>
+      </figure>
+
+      Now we strip the remaining nitride. Since the only way we can
+      convert from p to n is to add a donor concentration which is
+      <emphasis>greater</emphasis> than the background acceptor
+      concentration, we had to keep the doping in the substrate fairly
+      light in order to be able to make the n-tank. The lightly doped
+      p-substrate would have too low a threshold voltage for good
+      n-MOS transistor operation, so we will do a
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>T</m:mi>
+	</m:msub>
+      </m:math> adjust implant through the thin oxide on the LHS, with
+      the thick oxide on the RHS blocking the boron from getting into
+      the n-tank. This is shown in <link target-id="fig2"/>, where boron
+      is implanted into the p-type substrate on the LHS, but is
+      blocked by the thick oxide in the region over the n-well.
+
+      <figure id="fig2">
+	<title>Adjust Implant</title>
+	<media id="idm70320" alt=""><image src="../../media/5.20.png" mime-type="image/png"/></media>
+	<caption>
+	  <m:math>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>T</m:mi>
+	    </m:msub>
+	  </m:math> adjust implant
+	</caption>
+      </figure>
+
+      Next, we strip off all the oxide, grow a new thin layer of
+      oxide, and then a layer of nitride <link target-id="fig3"/>. The
+      oxide layer is grown only because it is bad to grow
+      <m:math>
+	<m:msub>
+	  <m:mi>Si</m:mi>
+	  <m:mn>3</m:mn>
+	</m:msub>
+	<m:msub>
+	  <m:mi>N</m:mi>
+	  <m:mn>4</m:mn>
+	</m:msub>
+      </m:math>
+      directly on top of silicon, as the different coefficients of
+      thermal expansion between the two materials causes damage to the
+      silicon crystal structure. Also, it turns out to be nearly
+      impossible to remove nitride if it is deposited directly on to
+      silicon.
+
+      <figure id="fig3">
+	<title>Strip Oxide, New Nitride</title>
+	<media id="idm14845856" alt=""><image src="../../media/5.21.png" mime-type="image/png"/></media>
+      </figure>
+
+      The nitride is patterned (covered with photoresist, exposed,
+      developed, etched, and removal of photoresist) to make two areas
+      which are called "active" <link target-id="fig4"/>. (This is where
+      we will build our transistors.) The wafer is then subjected to a
+      high-pressure oxidation step which grows a thick oxide wherever
+      the nitride was removed. The nitride is a good barrier for
+      oxygen, so essentially no oxide grows underneath it. The thick
+      oxide is used to isolate individual transistors, and also to
+      make for an insulating layer over which conducting patterns can
+      be run. The thick oxide is called <term>field oxide</term> (or
+      FOX for short) <link target-id="fig5"/>.
+
+      <figure id="fig4" orient="horizontal">
+	<title>Nitride After Etching</title>
+	<media id="idm5317616" alt=""><image src="../../media/5.22.png" mime-type="image/png"/></media>
+      </figure>
+
+
+      <figure id="fig5">
+	<title>Growing Field Oxide</title>
+	<media id="idm5036224" alt=""><image src="../../media/5.23.png" mime-type="image/png"/></media>
+      </figure>
+
+      Then, the nitride, and some of the oxide are etched off. The
+      oxide is etched enough so that all of the oxide under the
+      nitride regions is removed, which will take a little off the
+      field oxide as well. This is because we now want to grow the
+      gate oxide, which must be very clean and pure <link target-id="fig6"/>. The oxide under the nitride is sometimes called
+      <emphasis>sacrificial</emphasis> oxide, because it is sacrificed
+      in the name of ultra performance.
+
+      <figure id="fig6">
+	<title>Ready to Grow Gate Oxide</title>
+	<media id="idm14703984" alt=""><image src="../../media/5.24.png" mime-type="image/png"/></media>
+      </figure>
+
+      Then the gate oxide is grown, and immediately thereafter, the
+      whole wafer is covered with polysilicon <link target-id="fig7"/>.
+  
+      <figure id="fig7">
+	<title>Poly Deposition Over Gate Oxide</title>
+	<media id="idm5434144" alt=""><image src="../../media/5.25.png" mime-type="image/png"/></media>
+      </figure>
+
+      The polysilicon is then patterned to form the two regions which
+      will be our gates. The wafer is covered once again with
+      photoresist. The resist is removed over the region that will be
+      the n-channel device, but is left covering the p-channel
+      device. A little area near the edge of the n-tank is also
+      uncovered <link target-id="fig8"/>. This will allow us to add some
+      additional phosphorus into the n-well, so that we can make a
+      contact there, so that the n-well can be connected to
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>dd</m:mi>
+	</m:msub>
+      </m:math>.
+
+      <figure id="fig8">
+	<title>Preparing for NMOS Channel/Drain Implant</title>
+	<media id="idm334320" alt=""><image src="../../media/5.26.png" mime-type="image/png"/></media>
+      </figure>
+
+      Back into the implanter we go, this time exposing the wafer to
+      phosphorus. The poly gate, the FOX and the photoresist all block
+      phosphorus from getting into the wafer, so we make two n-type
+      regions in the p-type substrate, and we have made our n-channel
+      MOS source/drain regions. We also add phosphorous to the
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>dd</m:mi>
+	</m:msub>
+      </m:math>
+      contact region in the n-well so as the make sure we get good
+      contact performance there <link target-id="fig9"/>.
+
+      <figure id="fig9">
+	<title>Phosphorus S/D Implant</title>
+	<media id="idm7323136" alt=""><image src="../../media/5.27.png" mime-type="image/png"/></media>
+      </figure>
+
+      Note that the formation of the source and drain were performed
+      with a <term>self-aligning technology</term>. This means that we
+      used the gate structure itself to define where the two inside
+      edges of the source and drain would be for the MOSFET. If we had
+      made the source/drain regions <emphasis>before</emphasis> we
+      defined the gate, and then tried to line the gate up right over
+      the space between them, we might have gotten something that
+      looks like what is shown in <link target-id="fig10"/>.  What's
+      going to be the problem with this transistor? Obviously, if the
+      gate does not extend all the way to both the source
+      <emphasis>and</emphasis> the drain, then the channel will not
+      either, and the transistor will never turn on! We could try
+      making the gate wider, to ensure that it will overlap both
+      active areas, even if it is slightly misaligned, but then you
+      get a lot of extraneous fringing capacitance which will
+      significantly slow down the speed of operation of the transistor
+      <link target-id="fig11"/>. This is bad! The development of the
+      self-aligned gate technique was one of the big breakthroughs
+      which has propelled us into the VLSI and ULSI era.
+   
+      <figure id="fig10">
+	<title>Misaligned Gate</title>
+	<media id="idp97888" alt=""><image src="../../media/5.28.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig11">
+	<title>Wide Gate</title>
+	<media id="idm6527712" alt=""><image src="../../media/5.29.png" mime-type="image/png"/></media>
+      </figure>
+
+      We pull the wafer out of the implanter, and strip off the
+      photoresist. This is sometimes difficult, because the act of ion
+      implantation can "bake" the photoresist into a very tough
+      film. Sometimes an rf discharge in an
+      <m:math>
+	<m:msub>
+	  <m:mi>O</m:mi>
+	  <m:mn>2</m:mn>
+	</m:msub>
+      </m:math>
+      atmosphere is used to "ash" the photoresist, and literally burn
+      it off the wafer! We now apply some more PR, and this time
+      pattern to have the moat area, and a substrate contact exposed,
+      for a boron p+ implant. This is shown in <link target-id="fig12"/>.
+
+      <figure id="fig12">
+	<title>Boron p-Channel S/D Implant</title>
+	<media id="idm7106496" alt=""><image src="../../media/5.30.png" mime-type="image/png"/></media>
+      </figure>
+
+      We are almost done. The next thing we do is remove all the
+      photoresist, and grow one more layer of oxide, which covers
+      everything, as shown in <link target-id="fig13"/>.  We put
+      photoresist over the whole wafer again, and pattern for contact
+      holes to go through the oxide. We will put contacts for the two
+      drains, and for each of the sources, make sure that the holes
+      are big enough to also allow us to connect the source contact to
+      either the p-substrate or the n-moat as is appropriate <link target-id="fig14"/>.
+
+      <figure id="fig13">
+	<title>Final Oxide Growth</title>
+	<media id="idm4447920" alt=""><image src="../../media/5.31.png" mime-type="image/png"/></media>
+      </figure>
+
+
+      <figure id="fig14">
+	<title>Contact Holes Etched</title>
+	<media id="idm1125040" alt=""><image src="../../media/5.32.png" mime-type="image/png"/></media>
+      </figure>
+    </para>
+  </content>
+  
+</document>

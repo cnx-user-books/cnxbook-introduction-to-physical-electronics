@@ -1,0 +1,238 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Models</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>0f2a4e40-7d97-43dd-a1c5-53b5a35a473b</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">
+      A second, and some people think more accurate, way to find
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math> is to look at the characteristics of
+      the MOS transistor in is <term>linear regime</term>. The test
+      circuit looks like what you see in <link target-id="fig31"/>. In
+      this case, <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> is kept quite small (0.2 Volts or so)
+      and the gate voltage
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math> is swept over some range. If you look
+      back at <link document="m1023" target-id="eqn35">equation in
+      another module</link>, which we can slightly re-write we see
+      that
+
+      <equation id="eqn49">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>d</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>μ</m:mi>
+		      <m:mi>s</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>c</m:mi>
+		      <m:mi>ox</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>W</m:ci>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>ds</m:mi>
+		    </m:msub>
+		  </m:ci>
+		</m:apply>
+		<m:ci>L</m:ci>
+	      </m:apply>
+
+	      <m:apply>
+		<m:minus/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>gs</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>T</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      This equation will obviously give us a linear plot of
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> as a function of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math>, which will look something like <link target-id="fig32"/>. Obviously, this is a device with
+      a threshold voltage of about 2 volts. Can you figure out what
+      <m:math><m:ci>k</m:ci></m:math> is for this transistor? If not,
+      go back a re-read some stuff.
+    </para>
+
+
+    <figure id="fig31">
+      <media id="idm5075856" alt=""><image src="../../media/4.31.png" mime-type="image/png"/></media> <caption>Circuit for
+      finding <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>
+      </caption>
+    </figure>
+
+
+    <figure id="fig32">
+      <media id="idm6846704" alt=""><image src="../../media/4.32.png" mime-type="image/png"/></media>
+      <caption><m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> as a function of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math> for a MOS transistor in its linear
+      range.
+      </caption>
+    </figure>
+
+
+    <para id="para2">
+      Now let's address a fundamental question concerning all of this:
+      So What? What do we have here? One answer is that we have
+      another device which in some way looks like the bipolar
+      transistor we studied in the last chapter. In the saturation
+      regime, the device looks and acts like a current source, and
+      could probably be used as an amplifier. It is pretty easy to
+      make a small signal model. The drain acts like a current source,
+      which is controlled by
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math>.  What should we do about the gate
+      terminal? The gate really is not connected to anything inside
+      the transistor, so it looks just like an open circuit. (In fact,
+      there is a capacitance
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>C</m:mi>
+	      <m:mi>gate</m:mi>
+	    </m:msub>
+	  </m:ci>
+
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>c</m:mi>
+		<m:mi>ox</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>A</m:mi>
+		<m:mi>gate</m:mi>
+	      </m:msub>
+	    </m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, where
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>A</m:mi>
+	      <m:mi>gate</m:mi>
+	    </m:msub>
+	  </m:ci>
+
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>W</m:ci>
+	    <m:ci>L</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, the area of the gate, but in most low frequency
+      linear applications, this capacitance is not significant.) Thus
+      our small signal model for the MOSFET, if it is operating in it
+      saturation mode, is as seen in <link target-id="fig33"/>.
+    </para>
+
+
+    <figure id="fig33"><media id="idm2476208" alt=""><image src="../../media/4.33b.png" mime-type="image/png"/></media>
+	<caption>Small signal MOSFET model</caption>
+</figure>
+
+
+    <para id="para3">
+      This seems to be a pretty good amplifier. It has infinite input
+      impedance (and hence will not load down the previous stage of
+      the amplifier) and it has a nice (but non-linear) voltage
+      controlled current source for its output. <link document="m1024" target-id="fig21">A figure</link> in the section
+      on MOS regimes shows that as
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> is increased, the channel length
+      <emphasis>does</emphasis>, in fact, get a bit shorter. The
+      increased <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> makes the <term>pinch off</term>
+      region expand a bit, which, of course, robs from the channel
+      region. A shorter channel means slightly less channel
+      resistance, and so
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> <emphasis>actually</emphasis>
+      increases a bit with increasing
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> instead of staying constant. We saw
+      from the bipolar transistor, that when this occurs, we must add
+      a resistor in parallel with our current source. Thus, let's
+      complete the model with an additional
+      <m:math><m:ci><m:msub><m:mi>r</m:mi><m:mi>o</m:mi>
+      </m:msub></m:ci></m:math> but in fact, we will put it in with a
+      dashed line, because except for very short channel devices, it
+      has very little effect on device performance (<link target-id="fig34"/>).
+    </para>
+
+
+    <figure id="fig34"><media id="idm629488" alt=""><image src="../../media/4.34b.png" mime-type="image/png"/></media>
+	<caption>Adding an
+      <m:math><m:ci><m:msub><m:mi>r</m:mi><m:mi>o</m:mi>
+				</m:msub></m:ci></m:math>
+	</caption>
+</figure>
+
+
+    <para id="para4">
+      The MOSFET has several advantages over the bipolar
+      transistor. One of the main ones, as we shall see, is that it is much
+      easier to make. You only need two n-regions in a single p-type
+      substrate. It is basically a surface device. This means you do not
+      have to pile up different layers of n and p type material as you do
+      with the bipolar transistor. Finally, we shall see that a variation on
+      the MOSFET technology offers a <emphasis>huge</emphasis> advantage
+      over bipolar devices when it comes to building logic circuits with a
+      large number of gates (VLSI and ULSI circuits).
+    </para>
+
+
+    <para id="para5">
+      To see why this is so, we have to digress for just a little bit,
+      and discuss <link document="m1027">logic circuits.</link>
+    </para>
+
+
+  </content> 
+</document>

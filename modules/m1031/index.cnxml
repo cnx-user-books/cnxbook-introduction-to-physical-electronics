@@ -1,0 +1,256 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Electrostatic Discharge and Latch-Up</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>a79added-0e70-4b2a-85b9-16d605aa43d8</md:uuid>
+</metadata>
+
+  <content>
+    <para id="pa1">
+      As you are probably aware, you have to be very careful when
+      handling MOS circuits, to be sure that you are properly
+      grounded, and that you do not transfer any static electricity to
+      the chip. The <term>standard human-body model</term> assumes a
+      static charge transfer of about 0.1 micro-Coulombs (
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>-7</m:cn>
+	  </m:apply>
+	  <m:ci>C</m:ci>
+	</m:apply>
+      </m:math>) upon static
+      electricity discharge between a human and a chip. This does not seem
+      like enough charge to do any harm until we remember the old formula:
+
+      <equation id="eqeqn56">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>Q</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>C</m:ci>
+	      <m:ci>V</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> or
+
+      <equation id="eqeqn56b">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>V</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>Q</m:ci>
+	      <m:ci>C</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+    </para>
+
+    <para id="pa2">
+      Last time I looked
+
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:cn>10</m:cn>
+	  <m:cn>-7</m:cn>
+	</m:apply>
+      </m:math> divided by
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:cn>10</m:cn>
+	  <m:cn>-14</m:cn>
+	</m:apply>
+      </m:math> is about
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:cn>10</m:cn>
+	  <m:cn>7</m:cn>
+	</m:apply>
+      </m:math> volts! Add to this the fact that the
+      gate oxide thickness is only about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>-6</m:cn>
+	  </m:apply>
+	  <m:ci>cm</m:ci>
+	</m:apply>
+      </m:math>, so that we have
+      electric fields in the gate oxide which are on the order of
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>13</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>V</m:ci>
+	    <m:ci>cm</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>! No wonder the things break. This problem is called
+      <term>electrostatic discharge</term>, or ESD, and is one
+      of the major concerns of IC manufacturers. Protecting against
+      ESD is still very much a "black art" and is something
+      that people are still studying quite a bit. JFET's are much more
+      rugged structures, and have much higher gate capacitances, and
+      are not nearly so prone to ESD failure.
+    </para>
+
+
+    <para id="pa3">
+      Since we are on the subject of problems, lets take a look at one
+      more "glitch" that plagues IC designers. We have to go back to
+      the CMOS circuit. Remember, the moat/substrate junction is
+      reverse biased, so we will have an electric field in the
+      depletion region of that junction, pointing as shown in <link target-id="fig57"/>. Suppose, somehow, we have one or more stray
+      electrons in the p-type substrate. They will be swept across the
+      substrate/moat junction by the electric field, and be attracted
+      to the moat contact by
+      <m:math><m:msub><m:mi>V</m:mi><m:mi>dd</m:mi>
+      </m:msub></m:math>. Let's focus on what happens as the electron
+      flows out the <m:math><m:msub><m:mi>V</m:mi><m:mi>DD</m:mi>
+      </m:msub></m:math> contact (<link target-id="fig58"/>). As the
+      electron moves through the (resistive) n-type moat material, it
+      develops a voltage drop between the n-type material under the
+      source, and the <m:math><m:msub><m:mi>V</m:mi><m:mi>DD</m:mi>
+      </m:msub></m:math> contact (Which is also at the source
+      potential since they are connected together by the interconnect
+      on the surface of the wafer.) Electron flow in one direction
+      means current flow in the other and so this makes the region
+      under the source slightly negative with respect to the source
+      region itself. This, of course, forward biases the source/moat
+      junction slightly, which causes a hole or two to be injected
+      into the moat from the p-source (<link target-id="fig59"/>). The
+      holes will be attracted by the field across the moat-substrate
+      depletion layer, and, once they get there, they will be swept
+      into the p-substrate (<link target-id="fig60"/>). Once the holes
+      get into the p-substrate, they will be attracted to the ground
+      connection so that they can leave the semiconductor. As these
+      holes flow past the n-source, and through the resistive
+      p-substrate, they build up a potential between the ground
+      contact (<link target-id="fig61"/>), and the material under the
+      source with a polarity which tends to forward bias the
+      source-substrate junction, and cause electrons to be injected
+      into the substrate. The electrons, in turn, are attracted to the
+      field across the substrate-moat junction (<link target-id="fig62"/>). Some of the electrons may recombine in the
+      p-region, but in today's high-quality substrates, there are very
+      few active recombination centers, and so even though the
+      electrons are minority carriers, they have quite a long minority
+      carrier lifetime, and most of them make it to the substrate-moat
+      junction.and are swept into the moat. Once inside the n-moat,
+      the electrons are then attracted to the +
+      <m:math><m:msub><m:mi>V</m:mi><m:mi>dd</m:mi></m:msub></m:math>
+      contact, where, of course, they build up a bigger forward bias
+      across the source-moat junction, causing more holes to be
+      emitted from the source into the moat (<link target-id="fig63"/>). These holes are swept across the
+      moat-substrate junction, flow to the ground contact and, well
+      ... you get the idea! It does not take long before we have a
+      dead short circuit between Vdd and ground. This is not healthy
+      for integrated circuit chips in the least, and is a process
+      called <term>latch up</term> (<link target-id="fig64"/>).
+    </para>
+
+
+    <figure id="fig57" orient="horizontal"><media id="idp3298512" alt=""><image src="../../media/4.57.png" mime-type="image/png" print-width="3in"/></media><caption>The start of trouble!</caption></figure>
+
+
+    <figure id="fig58" orient="horizontal"><media id="idm3620112" alt=""><image src="../../media/4.58.png" mime-type="image/png" print-width="2in"/></media><caption>Electron flow builds up voltage</caption></figure>
+
+
+    <figure id="fig59"><media id="idm3698912" alt=""><image src="../../media/4.59.png" mime-type="image/png" print-width="2in"/></media><caption>The forward biased source injects some holes
+      </caption></figure>
+
+
+    <figure id="fig60" orient="horizontal"><media id="idp819408" alt=""><image src="../../media/4.60.png" mime-type="image/png" print-width="3in"/></media><caption>The holes are swept into the substrate</caption></figure>
+
+
+    <figure id="fig61" orient="horizontal"><media id="idp2532672" alt=""><image src="../../media/4.61.png" mime-type="image/png" print-width="2in"/></media><caption>Voltage drop at the n-channel source end.</caption></figure>
+
+
+    <figure id="fig62" orient="horizontal"><media id="idm331520" alt=""><image src="../../media/4.62.png" mime-type="image/png" print-width="3in"/></media><caption>The electrons are swept into the moat</caption></figure>
+
+
+    <figure id="fig63">
+      <media id="idm2638224" alt=""><image src="../../media/4.63.png" mime-type="image/png"/></media>
+      <caption>More current means a bigger voltage and more holes
+	injected.</caption>
+    </figure>
+
+    <figure id="fig64" orient="horizontal">
+      <media id="idm1073152" alt=""><image src="../../media/4.64.png" mime-type="image/png"/></media>
+      <caption>Latch Up!</caption>
+    </figure>
+
+
+    <para id="pa4">
+      There is an interesting circuit you can draw which shows what is
+      happening from a somewhat different point of view. Note that we
+      can consider the p-source, n-moat, and p-substrate as a pnp
+      bipolar transistor. Also the n-source, p-substrate and n-moat
+      also make a fine npn bipolar transistor. The two transistors are
+      intermingled however, with the base of the pnp and the
+      collectors of the npn sharing the same n-moat, and the collector
+      of the pnp and the base of the npn sharing the p-substrate. The
+      n-moat and p-substrates are both collectors
+      <emphasis>and</emphasis> bases at the same time. A little
+      careful inspection of the cross section of the CMOS inverter
+      will lead you to the following schematic shown in <link target-id="fig65"/>. We need something to get this circuit started,
+      so say we have a little collector current coming out of the top
+      pnp transistor. This current flows down, through the resistor to
+      ground. As it flows through the resistor it builds up a little
+      voltage which forward biases the base-emitter junction of the
+      lower, npn, transistor, and causes some collector current to
+      flow into it. This current comes from
+      <m:math><m:msub><m:mi>V</m:mi><m:mi>dd</m:mi></m:msub></m:math>
+      through the upper resistor, and builds up a voltage across that
+      resistor which will forward bias the base-emitter junction of
+      the top, pnp, transistor. This, in turn, causes some additional
+      collector current to flow out of the pnp transistor, and away we
+      go! Latch-up is bad, and is something which IC designers work
+      very hard to avoid.
+    </para>
+
+
+    <figure id="fig65" orient="horizontal">
+      <media id="idm2397920" alt=""><image src="../../media/4.65.png" mime-type="image/png"/></media>
+      <caption>Schematic of latch up circuit</caption>
+    </figure>
+
+
+    <para id="pa5">
+      You might wonder what <emphasis>actually</emphasis> starts a
+      circuit going into latch-up. Refer back to the <link document="m1029" target-id="fig47">CMOS inverter</link>, and note
+      that the n-drain on the NMOS is connected to the output. The
+      output <emphasis>could</emphasis> be a real output, going beyond
+      the chip into the "real world". If the "customer" who is using
+      the chip is careless, and somehow drags the output down below
+      ground, the drain/p-substrate junction will be forward biased,
+      electrons will be injected into the p-substrate, and we are back
+      at <link target-id="fig57"/>. IC designers try to keep the n-moat/
+      <m:math><m:msub><m:mi>V</m:mi><m:mi>dd</m:mi></m:msub></m:math>
+      contact as close to the PMOS source, and the p-substrate/ground
+      contact as close to the NMOS source as they can to reduce the
+      resistance between the contact and the source regions, and hence
+      lower the chance of the circuit going into latch-up.
+    </para>
+  </content>
+  
+</document>

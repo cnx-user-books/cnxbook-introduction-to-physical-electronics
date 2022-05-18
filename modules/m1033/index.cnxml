@@ -1,0 +1,299 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Silicon Growth</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>d205d5e8-34c7-4020-ab5e-c39fbd68538e</md:uuid>
+</metadata>
+
+  <content>
+    <para id="pa1">
+      How is it possible for the IC industry to continue to make such
+      gains, and how do they build so many circuits on one chip
+      anyway? In order for us to be able to understand this, we have
+      to take a look at the <term>monolithic fabrication
+      process</term>.  <foreign>Lith</foreign> comes from the Greek
+      word for stone, and <foreign>mono</foreign> means one, of
+      course. Thus, monolithic construction refers to building the
+      circuit in "one stone" or in one single crystal substrate.
+    </para>
+
+
+    <para id="pa2">
+      In order for us to do this however, we first of all need the
+      "stone", so let's see where that comes from.
+    </para>
+
+
+    <para id="pa3">
+      We start out with a natural form of silicon which is
+      very abundant (and relatively pure); quartzite or
+
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>Si</m:ci>
+	  <m:ci>
+	    <m:msub><m:mi>O</m:mi><m:mn>2</m:mn></m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>
+
+      (sand). In fact, silicon is one of the most abundant elements on
+      the earth. This is reacted in a furnace with carbon (from coke
+      and/or coal) to make what is known as <term>metallurgical grade
+      silicon</term> (MGS) which is about 98% pure, via the reaction
+
+      <equation id="eqeqn01">
+	<m:math mode="display">
+	  <m:apply>
+	    <m:tendsto/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>Si</m:ci>
+		<m:ci>
+		  <m:msub><m:mi>O</m:mi><m:mn>2</m:mn></m:msub>
+		</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:ci>C</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:ci>Si</m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:ci>C</m:ci>
+		<m:ci>O</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="pa4">
+      We have seen that on the order of
+
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:cn>10</m:cn>
+	  <m:cn>14</m:cn>
+	</m:apply>
+      </m:math>
+
+      impurities will make major changes in the electrical behavior of
+      a piece of silicon. Since there are about
+
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>5</m:cn>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>22</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+
+      atoms/<m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:ci>cm</m:ci>
+	  <m:cn>3</m:cn>
+	</m:apply>
+      </m:math>
+
+      in a silicon crystal, this means we need a purity of better than
+      1 part in
+
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:cn>10</m:cn>
+	  <m:cn>8</m:cn>
+	</m:apply>
+      </m:math>
+
+      or 99.999999% pure material. Thus we have a long way to go from
+      the purity of the MGS if we want to make electronic devices that
+      we can use in silicon.
+    </para>
+
+
+    <para id="pa5">
+      The silicon is crushed and reacted with
+
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>H</m:ci>
+	  <m:ci>Cl</m:ci>
+	</m:apply>
+      </m:math>
+
+      (gas) to make trichlorosilane, a high vapor pressure liquid that
+      boils at 32°C as in:
+
+      <equation id="eqeqn02">
+	<m:math>
+	  <m:apply>
+	    <m:tendsto/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:ci>Si</m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:cn>3</m:cn>
+		<m:ci>H</m:ci>
+		<m:ci>Cl</m:ci>
+		<m:ci>(gas)</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>Si</m:ci>
+		<m:ci>H</m:ci>
+		<m:ci>
+		  <m:msub><m:mi>Cl</m:mi><m:mn>3</m:mn></m:msub>
+		</m:ci>
+	      </m:apply>
+	      <m:ci>
+		<m:msub><m:mi>H</m:mi><m:mn>2</m:mn></m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="pa6">
+      Many of the impurities in the silicon (aluminum, iron,
+      phosphorus, chromium, manganese, titanium, vanadium and carbon)
+      also react with the
+
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>H</m:ci>
+	  <m:ci>Cl</m:ci>
+	</m:apply>
+      </m:math>,
+
+      forming various chlorides. One of the nice things about the
+      halogens is that they will react with almost anything. Each of
+      these chlorides have different boiling points, and so, by
+      fractional distillation, it is possible to separate out the
+
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>Si</m:ci>
+	  <m:ci>H</m:ci>
+	  <m:ci>
+	    <m:msub><m:mi>Cl</m:mi><m:mn>3</m:mn></m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>
+
+      from most of the impurities. The (pure) trichlorosilane is then
+      reacted with hydrogen gas (again at an elevated temperature) to
+      form pure <term>electronic grade silicon</term> (EGS).
+
+      <equation id="eqeqn03">
+	<m:math>
+	  <m:apply>
+	    <m:tendsto/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>Si</m:ci>
+		<m:ci>H</m:ci>
+		<m:ci>
+		  <m:msub><m:mi>Cl</m:mi><m:mn>3</m:mn></m:msub>
+		</m:ci>
+	      </m:apply>
+	      <m:ci>
+		<m:msub><m:mi>H</m:mi><m:mn>2</m:mn></m:msub>
+	      </m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:ci>Si</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:cn>3</m:cn>
+		<m:ci>H</m:ci>
+		<m:ci>Cl</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="pa7">Although the EGS is relatively pure, it is in a polycrystalline
+      form which is not suitable for device manufacture. The next step
+      in the process is to grow single crystal silicon which is
+      usually done via the <term>Czochralski</term>(pronounced
+      "cha-krawl-ski") method to make what is sometimes called CZ
+      silicon. The Czochralski process involves melting the EGS in a
+      crucible, and then inserting a seed crystal on a rod called a
+      puller which is then slowly removed from the melt. If the
+      temperature gradient of the melt is adjusted so that the
+      melting/freezing temperature is just at the seed-melt interface,
+      a continuous single crystal rod of silicon, called a
+      <term>boule</term>, will grow as the puller is withdrawn.
+    </para>
+
+
+    <para id="pa8"><link target-id="fig05"/> is a diagram of how the Czochralski
+      process works. The entire apparatus must be enclosed in an argon
+      atmosphere to prevent oxygen from getting into the silicon. The
+      rod and the crucible are rotated in opposite directions to
+      minimize the effects of convection in the melt. The pull-rate,
+      the rotation rate and the temperature gradient must all be
+      carefully optimized for a particular wafer diameter and growth
+      direction. The &lt;111&gt; direction (along a diagonal of the
+      cubic lattice structure) is usually chosen for wafers to be used
+      for bipolar devices, while the &lt;100&gt; direction (along
+      one of the sides of the cube) is favored for MOS
+      applications. Currently, wafers are typically 6" or 8" in
+      diameter, although 12" diameter wafers (300 mm) are looming on
+      the horizon.
+    </para>
+
+
+    <figure id="fig05" orient="horizontal"><media id="idm3957136" alt=""><image src="../../media/5.05.png" mime-type="image/png"/></media>
+	<caption>Czochralski crystal growth</caption>
+</figure>
+
+
+    <para id="pa9">
+      Once the boule is grown, it is ground down to a standard
+      diameter (so the wafers can be used in automatic processing
+      machines) and sliced into wafers, much like a salami. The wafers
+      are etched and polished, and move on to the process line. A
+      point to note however, is that due to "kerf" losses (the width
+      of the saw blade) as well as polishing losses, more than half of
+      the carefully grown, very pure, single crystal silicon is thrown
+      away before the circuit fabrication process even begins!
+    </para>
+  </content>
+  
+</document>

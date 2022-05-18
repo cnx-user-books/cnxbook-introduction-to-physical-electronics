@@ -1,0 +1,212 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Common Emitter Models</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>b6d0e1cf-93a1-432f-87f4-4fbc99b294b4</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">
+      Let's go ahead and draw a model for the transistor in the <link target-id="fig10">common emitter configuration</link>. We again
+      have a diode connected between the base and the emitter, and a
+      new current controlled current source between collector and
+      emitter. There is one small caveat which we need to keep in mind
+      however when drawing the common emitter circuit.  The diode we
+      see in the base circuit is <emphasis>not</emphasis> the same one
+      as we had in the common base model. In the common base model, it
+      was true that
+
+    <equation id="eqn12">
+      <m:math>
+        <m:apply><m:eq/>
+          <m:ci><m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>E</m:mi>
+          </m:msub></m:ci>
+          <m:apply><m:times/>
+            <m:ci><m:msub>
+              <m:mi>I</m:mi>
+              <m:mi>sat</m:mi>
+            </m:msub></m:ci>
+            <m:apply><m:minus/>
+              <m:apply>
+               <m:exp/>
+                <m:apply><m:divide/>
+                  <m:apply><m:times/>
+                    <m:ci>q</m:ci>
+                    <m:ci><m:msub>
+                      <m:mi>V</m:mi>
+                      <m:mi>BE</m:mi>
+                    </m:msub></m:ci>
+                  </m:apply>
+                  <m:apply><m:times/>
+                    <m:ci>k</m:ci>
+                    <m:ci>T</m:ci>
+                  </m:apply>
+                </m:apply>
+              </m:apply>
+              <m:cn>1</m:cn>
+            </m:apply>
+          </m:apply>
+        </m:apply>
+      </m:math>
+    </equation>
+
+  </para>
+
+  <figure id="fig10">
+    <media id="idm4617280" alt=""><image src="../../media/3_10.png" mime-type="image/png"/></media>
+    <caption>Discrete model for the common emitter configuration
+    </caption>
+  </figure>
+
+  <para id="para3">
+    For the base however, only a small fraction of the
+    current that goes through this "diode" actually goes in
+    through the base, the rest is coming in through the collector.
+    Thus we have to make a couple of changes
+
+    <equation id="eqn13">
+      <m:math>
+        <m:apply><m:eq/>
+          <m:ci><m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>C</m:mi>
+          </m:msub></m:ci>
+
+          <m:apply><m:times/>
+            <m:ci>α</m:ci>
+            <m:ci><m:msub>
+              <m:mi>I</m:mi>
+              <m:mi>E</m:mi>
+            </m:msub></m:ci>
+          </m:apply>
+
+          <m:apply><m:times/>
+            <m:ci>α</m:ci>
+            <m:ci><m:msub>
+              <m:mi>I</m:mi>
+              <m:mi>sat</m:mi>
+            </m:msub></m:ci>
+             <m:apply><m:minus/>
+              <m:apply>
+                <m:exp/>
+                <m:apply><m:divide/>
+                  <m:apply><m:times/>
+                    <m:ci>q</m:ci>
+                    <m:ci><m:msub>
+                      <m:mi>V</m:mi>
+                      <m:mi>BE</m:mi>
+                    </m:msub></m:ci>
+                  </m:apply>
+                  <m:apply><m:times/>
+                    <m:ci>k</m:ci>
+                    <m:ci>T</m:ci>
+                  </m:apply>
+                </m:apply>
+              </m:apply>
+              <m:cn>1</m:cn>
+            </m:apply>
+          </m:apply>
+        </m:apply>
+      </m:math>
+    </equation>
+
+    <equation id="eqn14">
+      <m:math>
+        <m:apply><m:eq/>
+
+          <m:ci><m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>B</m:mi>
+          </m:msub></m:ci>
+
+          <m:apply><m:divide/>
+            <m:ci><m:msub>
+              <m:mi>I</m:mi>
+              <m:mi>C</m:mi>
+            </m:msub></m:ci>
+            <m:ci>β</m:ci>
+          </m:apply>
+
+          <m:apply><m:times/>
+            <m:apply><m:divide/>
+              <m:apply><m:times/>
+                <m:ci>α</m:ci>
+                <m:ci><m:msub>
+                  <m:mi>I</m:mi>
+                  <m:mi>sat</m:mi>
+                </m:msub></m:ci>
+              </m:apply>
+              <m:ci>β</m:ci>
+            </m:apply>
+            <m:apply><m:minus/>
+              <m:apply>
+               <m:exp/>
+                <m:apply><m:divide/>
+                  <m:apply><m:times/>
+                    <m:ci>q</m:ci>
+                    <m:ci><m:msub>
+                      <m:mi>V</m:mi>
+                      <m:mi>BE</m:mi>
+                    </m:msub></m:ci>
+                  </m:apply>
+                  <m:apply><m:times/>
+                    <m:ci>k</m:ci>
+                    <m:ci>T</m:ci>
+                  </m:apply>
+                </m:apply>
+              </m:apply>
+              <m:cn>1</m:cn>
+            </m:apply>
+          </m:apply>
+        </m:apply>
+      </m:math>
+    </equation>
+
+    So the operational equation for the diode in the base circuit
+    still is the usual exponential function of
+
+      <m:math>
+        <m:ci><m:msub>
+          <m:mi>V</m:mi>
+          <m:mi>BE</m:mi>
+        </m:msub>
+       </m:ci>
+      </m:math>,
+    except that it now has a saturation current of
+
+      <m:math>
+        <m:apply><m:divide/>
+          <m:apply><m:times/>
+            <m:ci>α</m:ci>
+            <m:ci><m:msub>
+              <m:mi>I</m:mi>
+              <m:mi>sat</m:mi>
+            </m:msub>
+           </m:ci>
+          </m:apply>
+          <m:ci>β</m:ci>
+        </m:apply>
+      </m:math>
+
+    instead of just
+
+      <m:math>
+        <m:ci><m:msub>
+          <m:mi>I</m:mi>
+          <m:mi>sat</m:mi>
+        </m:msub></m:ci>
+      </m:math>.
+  </para>
+
+  <para id="para7">
+    In principle you could put this model into a circuit, and
+    analyze it to find all of the necessary voltages and
+    currents. However, this would not be very convenient. The
+    base-emitter junction is connected by a diode, which as we know, has a very
+    non-linear I-V relationship. It would be nice if we could come up
+    with a <emphasis>linear</emphasis> model which, at least over some
+    limited range of inputs, we could use with confidence.
+  </para>
+  </content>
+  
+</document>

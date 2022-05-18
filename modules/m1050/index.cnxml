@@ -1,0 +1,2811 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Cascaded Lines</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>a6f51f2b-fe58-4e93-9421-eeefd2995141</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">We can use bounce diagrams to handle somewhat
+      more complicated problems as well. 
+    </para>
+
+    <para id="para2">Arnold Aggie decides to add an additional
+      ethernet interface to the one already connected to his
+      computer. He decides just to add a "T" to the terminal where the
+      cable is connected to his "thin-net" interface, and add on some
+      more wire. Unfortunately, he is not careful about the coaxial
+      cable he uses, and so he has some
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>75</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> TV co-ax instead of the
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>50</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> ethernet cable. He ends up with the situation shown
+      <link target-id="fig1">here</link>. This kind of problem is called
+      a <term>cascaded line problem</term> because we have two
+      different lines, one hooked up after the other. The analysis is
+      similar to what we have done before, just a little more
+      complicated is all.
+
+      <figure id="fig1"><title>Cascaded Line Problem</title><media id="idp1830064" alt=""><image src="../../media/cascade.png" mime-type="image/png" print-width="3in"/></media></figure>
+    </para>
+      
+    <para id="para3">We will have to do a little more thinking before
+      we can draw out the bounce diagram for this problem. The driver
+      for ethernet cable coming to Arnold's computer can be modeled as
+      a 10V (open circuit) source with a
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>50</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> internal impedance. Since the source does not
+      (initially) know anything about how the line it is driving is
+      terminated, the first signal
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math> will be the same as in our initial problem, in this
+      case just a +5V signal headed down the line.
+    </para>
+
+    <para id="para4">Let's focus on the "T" for a minute <link target-id="fig2"/>.
+
+      <figure id="fig2">
+	<title>At the Junction</title>
+	<media id="idp1760704" alt=""><image src="../../media/6.38.png" mime-type="image/png"/></media>
+      </figure>
+
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math> is incident on the junction. When it hits the
+      junction, there will be a reflected wave
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>-</m:mo>
+	</m:msubsup>
+      </m:math> and also now, a transmitted wave
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mrow>
+	    <m:mi>T</m:mi>
+	    <m:mo>​</m:mo>
+	    <m:mn>1</m:mn>
+	  </m:mrow>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>. Since the incident wave can not tell the difference
+      between a
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>75</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> resistor and a
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>75</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> transmission line, it <emphasis>thinks</emphasis> it
+      is seeing a termination resistor equal to a
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>50</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> resistor
+      (<m:math>
+	<m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mrow>
+	    <m:mi>L</m:mi>
+	    <m:mo>​</m:mo>
+	    <m:mn>1</m:mn>
+	  </m:mrow>
+	</m:msub>
+      </m:math>) in parallel with a
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>75</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> resistor (the second line).
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>50</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> in parallel with
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>75</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> is
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>30</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math>. Let's call this "apparent" load resistor
+      <m:math>
+	<m:msubsup>
+	  <m:mi>R</m:mi>
+	  <m:mi>L</m:mi>
+	  <m:mo>'</m:mo>
+	</m:msubsup>
+      </m:math>), so that we can then calculate
+      <m:math>
+	<m:msub>
+	  <m:mi>Γ</m:mi>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mrow>
+	      <m:mn>1</m:mn>
+	      <m:mo>​</m:mo>
+	      <m:mn>2</m:mn>
+	    </m:mrow>
+	  </m:msub>
+	</m:msub>
+      </m:math>, the first voltage reflection coefficient in going
+      from line 1 to line 2 as:
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mrow>
+		  <m:mn>1</m:mn>
+		  <m:mo>​</m:mo>
+		  <m:mn>2</m:mn>
+		</m:mrow>
+	      </m:msub>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:msubsup>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		  <m:mo>'</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mo>​</m:mo>
+		    <m:mn>1</m:mn>
+		  </m:mrow>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:msubsup>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		  <m:mo>'</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mo>​</m:mo>
+		    <m:mn>1</m:mn>
+		  </m:mrow>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>30</m:cn>
+		<m:cn>50</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>30</m:cn>
+		<m:cn>50</m:cn>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>-0.25</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Note that we <emphasis>could</emphasis> have started from
+      scratch and written down KVLs and KCLs for the junction
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>-</m:mo>
+	    </m:msubsup>
+	    </m:apply>
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mrow>
+		<m:mi>T</m:mi>
+		<m:mo>​</m:mo>
+		<m:mn>1</m:mn>
+	      </m:mrow>
+	      <m:mo>+</m:mo>
+	    </m:msubsup>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and
+      <equation id="eqn3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msubsup>
+		<m:mi>I</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:msubsup>
+		<m:mi>I</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>-</m:mo>
+	      </m:msubsup>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msub>
+		<m:mi>I</m:mi>
+		<m:mrow>
+		  <m:mi>R</m:mi>
+		  <m:mo>​</m:mo>
+		  <m:mi>L</m:mi>
+		</m:mrow>
+	      </m:msub>
+	      <m:msubsup>
+		<m:mi>I</m:mi>
+		<m:mrow>
+		  <m:mi>T</m:mi>
+		  <m:mo>​</m:mo>
+		  <m:mn>1</m:mn>
+		</m:mrow>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Then, by re-writing <link target-id="eqn3"/> in terms of voltage
+      and impedances we have:
+      <equation id="eqn4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mo>​</m:mo>
+		    <m:mn>1</m:mn>
+		  </m:mrow>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>-</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mo>​</m:mo>
+		    <m:mn>1</m:mn>
+		  </m:mrow>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mrow>
+		    <m:mi>T</m:mi>
+		    <m:mo>​</m:mo>
+		    <m:mn>1</m:mn>
+		  </m:mrow>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mo>​</m:mo>
+		    <m:mn>2</m:mn>
+		  </m:mrow>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mrow>
+		    <m:mi>T</m:mi>
+		    <m:mo>​</m:mo>
+		    <m:mn>1</m:mn>
+		  </m:mrow>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      We now have two equations with two unknowns
+      (<m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>-</m:mo>
+	</m:msubsup>
+      </m:math> and 
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mrow>
+	    <m:mi>T</m:mi>
+	    <m:mo>​</m:mo>
+	    <m:mn>1</m:mn>
+	  </m:mrow>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>). By solving <link target-id="eqn4"/> for 
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mrow>
+	    <m:mi>T</m:mi>
+	    <m:mo>​</m:mo>
+	    <m:mn>1</m:mn>
+	  </m:mrow>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math> and then plugging that into <link target-id="eqn2"/>, we
+      could get the ratio of
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>-</m:mo>
+	</m:msubsup>
+      </m:math> to
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>, or the voltage reflection coefficient. The interested
+      reader can confirm that indeed, you get the very same result
+      this way.
+    </para>
+
+    <para id="para5">In order to completely solve this problem, we
+    also need to know
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mrow>
+	    <m:mi>T</m:mi>
+	    <m:mo>​</m:mo>
+	    <m:mn>1</m:mn>
+	  </m:mrow>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>, the transmitted wave as well. Since <link target-id="eqn2"/> says
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mrow>
+	    <m:mi>T</m:mi>
+	    <m:mo>​</m:mo>
+	    <m:mn>1</m:mn>
+	  </m:mrow>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math> is just the sum of the incident and reflected waves on
+      the first line
+      <equation id="eqn5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mrow>
+		<m:mi>T</m:mi>
+		<m:mo>​</m:mo>
+		<m:mn>1</m:mn>
+	      </m:mrow>
+	      <m:mo>+</m:mo>
+	    </m:msubsup>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:apply>
+		<m:times/>
+		<m:msub>
+		  <m:mi>Γ</m:mi>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mrow>
+		      <m:mn>1</m:mn>
+		      <m:mo>​</m:mo>
+		      <m:mn>2</m:mn>
+		    </m:mrow>
+		  </m:msub>
+		</m:msub>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      We can thus write
+      <equation id="eqn6">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mrow>
+		    <m:mi>T</m:mi>
+		    <m:mo>​</m:mo>
+		    <m:mn>1</m:mn>
+		  </m:mrow>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mi>L</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:msub>
+		  <m:mi>Γ</m:mi>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mrow>
+		      <m:mn>1</m:mn>
+		      <m:mo>​</m:mo>
+		      <m:mn>2</m:mn>
+		    </m:mrow>
+		  </m:msub>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:plus/>
+		    <m:msubsup>
+		      <m:mi>R</m:mi>
+		      <m:mi>L</m:mi>
+		      <m:mo>'</m:mo>
+		    </m:msubsup>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mrow>
+			<m:mn>0</m:mn>
+			<m:mo>​</m:mo>
+			<m:mn>1</m:mn>
+		      </m:mrow>
+		    </m:msub>
+		  </m:apply>
+		  <m:apply>
+		    <m:plus/>
+		    <m:msubsup>
+		      <m:mi>R</m:mi>
+		      <m:mi>L</m:mi>
+		      <m:mo>'</m:mo>
+		    </m:msubsup>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mrow>
+			<m:mn>0</m:mn>
+			<m:mo>​</m:mo>
+			<m:mn>1</m:mn>
+		      </m:mrow>
+		    </m:msub>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:msubsup>
+		      <m:mi>R</m:mi>
+		      <m:mi>L</m:mi>
+		      <m:mo>'</m:mo>
+		    </m:msubsup>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mrow>
+			<m:mn>0</m:mn>
+			<m:mo>​</m:mo>
+			<m:mn>1</m:mn>
+		      </m:mrow>
+		    </m:msub>
+		  </m:apply>
+		  <m:apply>
+		    <m:plus/>
+		    <m:msubsup>
+		      <m:mi>R</m:mi>
+		      <m:mi>L</m:mi>
+		      <m:mo>'</m:mo>
+		    </m:msubsup>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mrow>
+			<m:mn>0</m:mn>
+			<m:mo>​</m:mo>
+			<m:mn>1</m:mn>
+		      </m:mrow>
+		    </m:msub>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>2</m:cn>
+		  <m:msubsup>
+		    <m:mi>R</m:mi>
+		    <m:mi>L</m:mi>
+		    <m:mo>'</m:mo>
+		  </m:msubsup>
+		</m:apply>
+		<m:apply>
+		  <m:plus/>
+		  <m:msubsup>
+		    <m:mi>R</m:mi>
+		    <m:mi>L</m:mi>
+		    <m:mo>'</m:mo>
+		  </m:msubsup>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mrow>
+		      <m:mn>0</m:mn>
+		      <m:mo>​</m:mo>
+		      <m:mn>1</m:mn>
+		    </m:mrow>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	      
+	      <m:apply>
+		<m:divide/>
+		<m:cn>60</m:cn>
+		<m:apply>
+		  <m:plus/>
+		  <m:cn>30</m:cn>
+		  <m:cn>50</m:cn>
+		</m:apply>
+	      </m:apply>
+
+	      <m:cn>0.75</m:cn>
+	    </m:apply>
+	    
+	    <m:msub>
+	      <m:mi>T</m:mi>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mrow>
+		  <m:mn>1</m:mn>
+		  <m:mo>​</m:mo>
+		  <m:mn>2</m:mn>
+		</m:mrow>
+	      </m:msub>
+	    </m:msub>
+	  </m:apply>
+	</m:math>
+      </equation>
+      An important thing to note is that
+      <equation id="eqn7">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>T</m:mi>
+	      <m:mi>V</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:plus/>
+	      <m:cn>1</m:cn>
+	      <m:msub>
+		<m:mi>Γ</m:mi>
+		<m:mi>V</m:mi>
+	      </m:msub>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      NOT
+      <equation id="eqn8">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msub>
+		<m:mi>T</m:mi>
+		<m:mi>V</m:mi>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Γ</m:mi>
+		<m:mi>V</m:mi>
+	      </m:msub>
+	    </m:apply>
+	    <m:cn>1</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+      We do not "conserve" voltage at a termination, in the sense that
+      the reflected and transmitted voltage have to add up to be the
+      incident voltage. Rather, the transmitted voltage is the
+      <emphasis>sum</emphasis> of the incident voltage and the
+      reflected voltage, so that we can obey Kirchoff's voltage law.
+    </para>
+
+    <para id="para6"> We can now start to make our bounce diagram. We
+      propagate a +5V wave and a -5V wave (separated by 100ns) down
+      towards the junction. Since the line is 40m long, and the waves
+      move at
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>2</m:cn>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>8</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>m</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, it takes 200ns for them to get to the
+      junction. There, a -1.25V wave is reflected back towards the
+      source, and a +3.75V wave is transmitted into the second
+      transmission line <link target-id="fig3"/>.
+
+      <figure id="fig3">
+	<title>Reflection and Transmission At the "T"</title>
+	<media id="idp7008112" alt=""><image src="../../media/6.39.png" mime-type="image/png"/></media>
+      </figure>
+      
+      Since the load for the second line is
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>50</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math>, and the characteristic impedance,
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mrow>
+	    <m:mn>0</m:mn>
+	    <m:mo>​</m:mo>
+	    <m:mn>2</m:mn>
+	  </m:mrow>
+	</m:msub>
+      </m:math> for the second line is
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>75</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math>, we will have a reflection coefficient,
+      <equation id="eqn9">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mn>2</m:mn>
+	      </m:msub>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mrow>
+		    <m:mi>L</m:mi>
+		    <m:mo>​</m:mo>
+		    <m:mn>2</m:mn>
+		  </m:mrow>
+		</m:msub>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mo>​</m:mo>
+		    <m:mn>2</m:mn>
+		  </m:mrow>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mrow>
+		    <m:mi>L</m:mi>
+		    <m:mo>​</m:mo>
+		    <m:mn>2</m:mn>
+		  </m:mrow>
+		</m:msub>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mo>​</m:mo>
+		    <m:mn>2</m:mn>
+		  </m:mrow>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>50</m:cn>
+		<m:cn>75</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>50</m:cn>
+		<m:cn>75</m:cn>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>-0.2</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Thus a -0.75V signal is reflected off of the second load <link target-id="fig4"/>.
+      
+      <exercise id="ex1">
+	<problem id="idp8630288">
+	  <para id="prob_1">What is the magnitude of the voltage which
+	  is developed across the second load?
+	  </para>
+	</problem>
+	<solution id="idp3736416">
+	  <para id="sol1">3 Volts!</para>
+	</solution>
+      </exercise>
+
+      <figure id="fig4">
+	<title>Reflection of Transmitted Pulse</title>
+	<media id="idm10096" alt=""><image src="../../media/6.40.png" mime-type="image/png"/></media>
+      </figure>
+
+      What happens to the 0.75V pulse when it gets to the "T"? Well
+      there is another mismatch here, with a reflection coefficient
+      <m:math>
+	<m:msub>
+	  <m:mi>Γ</m:mi>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mrow>
+	      <m:mn>2</m:mn>
+	      <m:mo>​</m:mo>
+	      <m:mn>1</m:mn>
+	    </m:mrow>
+	  </m:msub>
+	</m:msub>
+      </m:math> given by
+      <equation id="eqn10">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mrow>
+		  <m:mn>2</m:mn>
+		  <m:mo>​</m:mo>
+		  <m:mn>1</m:mn>
+		</m:mrow>
+	      </m:msub>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>25</m:cn>
+		<m:cn>75</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>25</m:cn>
+		<m:cn>75</m:cn>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>-0.5</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+      (The
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>50</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> resistor and the 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>50</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> transmission line look like a 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>25</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> termination to the
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>75</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> line) and a transmission coefficient
+      <equation id="eqn11">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>T</m:mi>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mrow>
+		  <m:mn>2</m:mn>
+		  <m:mo>​</m:mo>
+		  <m:mn>1</m:mn>
+		</m:mrow>
+	      </m:msub>
+	    </m:msub>
+	    <m:apply>
+	      <m:plus/>
+	      <m:cn>1</m:cn>
+	      <m:msub>
+		<m:mi>Γ</m:mi>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mrow>
+		    <m:mn>2</m:mn>
+		    <m:mo>​</m:mo>
+		    <m:mn>1</m:mn>
+		  </m:mrow>
+		</m:msub>
+	      </m:msub>
+	    </m:apply>
+	    <m:cn>0.5</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation> 
+      and so we add to the bounce diagram <link target-id="fig5"/>.
+
+      <figure id="fig5">
+	<title>When the Reflected Load Pulse Hits the Junction</title>
+	<media id="idp608944" alt=""><image src="../../media/6.41.png" mime-type="image/png"/></media>
+      </figure>
+
+      We <emphasis>could</emphasis> keep going, but the voltage
+      reflected off of the second load will only be 75mV now, and so
+      let's call it a day.
+    </para>
+
+    <para id="para7">There are a couple of other interesting
+      applications of bounce diagrams and the transient behavior of
+      transmission lines that we might look at before we move on to
+      other things. The first is called the <term>Charged Line
+      Problem</term>. <link target-id="fig6">Here</link> it is:
+
+      <figure id="fig6">
+	<title>The "Charged Line" Problem</title>
+	<media id="idm148896" alt=""><image src="../../media/6.42.png" mime-type="image/png"/></media>
+      </figure>
+
+      We have a transmission line with characteristic impedance
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math> and phase velocity
+      <m:math>
+	<m:msub>
+	  <m:mi>v</m:mi>
+	  <m:mi>p</m:mi>
+	</m:msub>
+      </m:math>.  It is <m:math><m:ci>L</m:ci></m:math> long, and for
+      some time has been connected to a battery of potential
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>g</m:mi>
+	</m:msub>
+      </m:math> <link target-id="fig7"/>. At time
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>t</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>, the switch S, is thrown, which removes the battery
+      from the circuit, and connects the line to a load resistor
+      <m:math>
+	<m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub>
+      </m:math>. The question is: what does the voltage across the
+      load resistor,
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub>
+      </m:math>, look like as a function of time? This is
+      <emphasis>almost</emphasis> like what we have done before, but
+      not quite.
+
+      <figure id="fig7">
+	<title>Initial Conditions</title>
+	<media id="idp2443200" alt=""><image src="../../media/6.43.png" mime-type="image/png"/></media>
+      </figure>
+
+      In the first place, we now have non-zero initial conditions. For
+      <m:math>
+	<m:apply>
+	  <m:lt/>
+	  <m:ci>t</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> we will have both voltages and current on the line. In
+      order to match boundary conditions, we must do more than have
+      one voltage and one current, because the voltage on the line
+      must be
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>g</m:mi>
+	</m:msub>
+      </m:math>, while the current flowing down the line must be
+      0. So, we will put in both a
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> and a
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup>
+      </m:math> and their corresponding currents. Note that 
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> is going to the left this time. Let's forget about the
+      switch and the load resistor for a minute and just look at the
+      line and battery. We have two equations we must satisfy
+      <equation id="eqn12">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>0</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>0</m:mn>
+		<m:mo>-</m:mo>
+	      </m:msubsup>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>g</m:mi>
+	    </m:msub>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and
+      <equation id="eqn13">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msubsup>
+		<m:mi>I</m:mi>
+		<m:mn>0</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:msubsup>
+		<m:mi>I</m:mi>
+		<m:mn>0</m:mn>
+		<m:mo>-</m:mo>
+	      </m:msubsup>
+	    </m:apply>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+      We can use the impedance relationship to change <link target-id="eqn13"/> to:
+      <equation id="eqn14">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>0</m:mn>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>0</m:mn>
+		  <m:mo>-</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+      I hope <emphasis>most</emphasis> of you can then see by
+      inspection that we must have
+      <equation id="eqn15">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mn>0</m:mn>
+	      <m:mo>+</m:mo>
+	    </m:msubsup>
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mn>0</m:mn>
+	      <m:mo>-</m:mo>
+	    </m:msubsup>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:cn>2</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      OK, the switch S is thrown at 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>t</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>. Now the end of the line looks like <link target-id="fig8">this</link>.
+
+      <figure id="fig8">
+	<title>After the Resistor is Connected</title>
+	<media id="idm11663200" alt=""><image src="../../media/6.44.png" mime-type="image/png"/></media>
+      </figure>
+
+      We have anticipated the fact that we are going to need another
+      voltage and current wave if we are going to be able to match
+      boundary conditions when the load resistor is connected, and
+      have added a
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math> and a
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi> 
+	  <m:mn>1</m:mn> 
+	  <m:mo>-</m:mo> 
+	</m:msubsup>
+      </m:math> to the line. These are new voltage and current
+      waves which originate at the load resistor position in order
+      to satisfy the new boundary conditions there. Now we do KVL
+      and KCL again.
+      <equation id="eqn16">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msubsup>
+		<m:mi>V</m:mi> 
+		<m:mn>0</m:mn> 
+		<m:mo>+</m:mo> 
+	      </m:msubsup>
+	      <m:msubsup>
+		<m:mi>V</m:mi> 
+		<m:mn>0</m:mn> 
+		<m:mo>-</m:mo> 
+	      </m:msubsup>
+	      <m:msubsup>
+		<m:mi>V</m:mi> 
+		<m:mn>1</m:mn> 
+		<m:mo>+</m:mo> 
+	      </m:msubsup>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and
+      <equation id="eqn17">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:divide/>
+		  <m:msubsup>
+		    <m:mi>V</m:mi> 
+		    <m:mn>0</m:mn> 
+		    <m:mo>+</m:mo> 
+		  </m:msubsup>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		</m:apply>
+		<m:apply>
+		  <m:divide/>
+		  <m:msubsup>
+		    <m:mi>V</m:mi> 
+		    <m:mn>0</m:mn> 
+		    <m:mo>-</m:mo> 
+		  </m:msubsup>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi> 
+		  <m:mn>1</m:mn> 
+		  <m:mo>+</m:mo> 
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:divide/>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+		<m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      We have already made the impedance substitution for the current
+      equation in <link target-id="eqn17"/>. We know what the sum and
+      difference of
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi> 
+	  <m:mn>0</m:mn> 
+	  <m:mo>+</m:mo> 
+	</m:msubsup>
+      </m:math> and
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi> 
+	  <m:mn>0</m:mn> 
+	  <m:mo>-</m:mo> 
+	</m:msubsup>
+      </m:math> are, so let's substitute in.
+      <equation id="eqn18">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msub>
+		<m:mi>V</m:mi> 
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:msubsup>
+		<m:mi>V</m:mi> 
+		<m:mn>1</m:mn> 
+		<m:mo>+</m:mo> 
+	      </m:msubsup>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>V</m:mi> 
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and
+      <equation id="eqn19">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msubsup>
+		<m:mi>V</m:mi> 
+		<m:mn>1</m:mn> 
+		<m:mo>+</m:mo> 
+	      </m:msubsup>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:divide/>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+		<m:msub>
+		  <m:mi>R</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      From this we get
+      <equation id="eqn20">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		</m:apply>
+		<m:msubsup>
+		  <m:mi>V</m:mi> 
+		  <m:mn>1</m:mn> 
+		  <m:mo>+</m:mo> 
+		</m:msubsup>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      which we substitute back into <link target-id="eqn18"/>
+      <equation id="eqn21">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:msubsup>
+		<m:mi>V</m:mi> 
+		<m:mn>1</m:mn> 
+		<m:mo>+</m:mo> 
+	      </m:msubsup>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		</m:apply>
+		<m:msubsup>
+		  <m:mi>V</m:mi> 
+		  <m:mn>1</m:mn> 
+		  <m:mo>+</m:mo> 
+		</m:msubsup>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      which we can solve for
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi> 
+	  <m:mn>1</m:mn> 
+	  <m:mo>+</m:mo> 
+	</m:msubsup>
+      </m:math>
+
+      <equation id="eqn22">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msubsup>
+	      <m:mi>V</m:mi> 
+	      <m:mn>1</m:mn> 
+	      <m:mo>+</m:mo> 
+	    </m:msubsup>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:divide/>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>g</m:mi>
+		</m:msub>
+		<m:apply>
+		  <m:plus/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:divide/>
+		    <m:msub>
+		      <m:mi>R</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mn>0</m:mn>
+		    </m:msub>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		  <m:apply>
+		    <m:plus/>
+		    <m:msub>
+		      <m:mi>R</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mn>0</m:mn>
+		    </m:msub>
+		  </m:apply>
+		</m:apply>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>g</m:mi>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      The voltage on the load is given by <link target-id="eqn18"/> and
+      is clearly just:
+      <equation id="eqn23">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:minus/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		  <m:apply>
+		    <m:plus/>
+		    <m:msub>
+		      <m:mi>R</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mn>0</m:mn>
+		    </m:msub>
+		  </m:apply>
+		</m:apply>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>g</m:mi>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and in particular, when 
+      <m:math>
+	<m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub>
+      </m:math> is chosen to be
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math> (which is usually done when this circuit is used), we have
+      <equation id="eqn24">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:cn>2</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Now what do we do? We build a bounce diagram! Let us stay with
+      the assumption that
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>R</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>, in which case the reflection coefficient at the
+      resistor end is 0. At the open circuit end of the transmission
+      line <m:math><m:ci>Γ</m:ci></m:math> is +1. So we have
+      <link target-id="fig9">this</link>.
+
+      <figure id="fig9">
+	<title>Bounce Diagram for the Charged Line Problem</title>
+	<media id="idp922528" alt=""><image src="../../media/6.45.png" mime-type="image/png"/></media>
+      </figure>
+
+      Note that for <emphasis>this</emphasis> bounce diagram, we have
+      added an additional voltage,
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>g</m:mi>
+	</m:msub>
+      </m:math>, on the baseline, to indicate that there is an initial
+      voltage on the line, before the switch is thrown, and
+      <m:math><m:ci>t</m:ci></m:math> starts on the bounce diagram.
+    </para>
+
+    <para id="para8">If we concentrate on the voltage across the load,
+    we add
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>g</m:mi>
+	  </m:msub>
+	</m:apply>
+      </m:math>
+      and
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>g</m:mi>
+	    </m:msub>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math> and find that the voltage across the load resistor
+      rises to
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>g</m:mi>
+	  </m:msub>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math> at time
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>t</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> <link target-id="fig10"/>. The
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>g</m:mi>
+	    </m:msub>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math> voltage wave travels down the line, hits the open
+      circuit, reflects back, and when it gets to the load resistor,
+      brings the voltage across the load resistor back down to
+      zero. We have made a pulse generator!
+
+    <figure id="fig10">
+      <title>Voltage Across the Load Resistor</title>
+      <media id="idp6528432" alt=""><image src="../../media/6.46.png" mime-type="image/png"/></media>
+      <caption>
+	<m:math>
+	  <m:apply>
+	    <m:ci type="fn">V</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:math> across
+	<m:math>
+	  <m:msub>
+	    <m:mi>R</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	</m:math>
+      </caption>
+    </figure>
+
+    In today's digital age, this might seem like a strange way to go
+    about creating a pulse. Imagine however, if you needed a pulse
+    with a very large potential (100s of thousands or even millions of
+    volts) for say, a particle accelerator. It is unlikely that a
+    MOSFET will ever be built which is up to the task! In fact, in a
+    field of study called <term>pulsed power electronics</term> just
+    such circuits are used all the time. Sometimes they are built with
+    real transmission lines, sometimes they are built from discrete
+    inductors and capacitors, hooked together just as in the <link document="m1043" target-id="fig5">distributed parameter
+    model</link>. Such circuits are called <term>pulse forming
+    networks</term> or PFNs for short.
+    </para>
+
+    <para id="para9">Finally, just because it affords us a good
+      opportunity to review how we got to where we are right now,
+      let's consider the problem of a non-resistive load on the end of
+      a line. Suppose the line is terminated with a capacitor! For
+      simplicity, let's let
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>R</m:mi>
+	    <m:mi>s</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>, so when S is closed a wave
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msubsup>
+	    <m:mi>V</m:mi>
+	    <m:mn>1</m:mn>
+	    <m:mo>+</m:mo>
+	  </m:msubsup>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>g</m:mi>
+	    </m:msub>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math> heads down the line <link target-id="fig11"/>. Let's
+      think about what happens when it hits the capacitor. We know we
+      need to generate a reflected signal
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>-</m:mo>
+	</m:msubsup>
+      </m:math>, so let's go ahead and put this in the <link target-id="fig12">figure</link>, along with its companion current
+      wave.
+
+      <figure id="fig11">
+	<title>Transient Problem with Capacitive Load</title>
+	<media id="idp2462752" alt=""><image src="../../media/6.47.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig12">
+	<title>Initial Pulse Hits the Load</title>
+	<media id="idp3754048" alt=""><image src="../../media/6.48.png" mime-type="image/png"/></media>
+      </figure>
+
+      The capacitor is initially uncharged, and we know we can not
+      instantaneously change the voltage across a capacitor (at least
+      without an infinite current!) and so the
+      <emphasis>initial</emphasis> voltage across the capacitor should
+      be zero, making
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>-</m:mo>
+	      </m:msubsup>
+	    </m:ci>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mn>1</m:mn>
+	      <m:mo>+</m:mo>
+	    </m:msubsup>
+	  </m:apply>
+	</m:apply>
+      </m:math>, if we make time
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>t</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> be when the initial wave just gets to the
+      capacitor. So, at
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>t</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>,
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">
+	      <m:msub>
+		<m:mi>Γ</m:mi>
+		<m:mi>V</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	  <m:cn>-1</m:cn>
+	</m:apply>
+      </m:math>. Note that we are making
+      <m:math><m:ci>Γ</m:ci></m:math> a function of time now, as
+      it will change depending upon the charge state of the capacitor.
+    </para>
+
+    <para id="para10">The current <emphasis>into</emphasis> the
+    capacitor, 
+      <m:math>
+	<m:msub>
+	  <m:mi>I</m:mi>
+	  <m:mi>C</m:mi>
+	</m:msub>
+      </m:math> is just
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:msubsup>
+	    <m:mi>I</m:mi>
+	    <m:mn>1</m:mn>
+	    <m:mo>+</m:mo>
+	  </m:msubsup>
+	  <m:apply>
+	    <m:ci type="fn">
+	      <m:msubsup>
+		<m:mi>I</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>-</m:mo>
+	      </m:msubsup>
+	    </m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>.
+
+      <equation id="eqn25">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>C</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:cn>0</m:cn>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msubsup>
+		<m:mi>I</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:msubsup>
+		    <m:mi>I</m:mi>
+		    <m:mn>1</m:mn>
+		    <m:mo>-</m:mo>
+		  </m:msubsup>
+		</m:ci>
+		<m:cn>0</m:cn>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      since
+      <equation id="eqn26">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msubsup>
+	      <m:mi>I</m:mi>
+	      <m:mn>1</m:mn>
+	      <m:mo>+</m:mo>
+	    </m:msubsup>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and
+      <equation id="eqn27">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msubsup>
+		  <m:mi>I</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>-</m:mo>
+		</m:msubsup>
+	      </m:ci>
+	      <m:cn>0</m:cn>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:divide/>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		</m:msub>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      How will the current into the capacitor
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">
+	    <m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>C</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> behave? We have to remember the capacitor equation:
+      <equation id="eqn28">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>C</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>C</m:ci>
+	      <m:apply>
+		<m:diff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>C</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    
+	    <m:apply>
+	      <m:ci>C</m:ci>
+	      <m:apply>
+		<m:partialdiff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:plus/>
+		  <m:msubsup>
+		    <m:mi>V</m:mi>
+		    <m:mn>1</m:mn>
+		    <m:mo>+</m:mo>
+		  </m:msubsup>
+		  <m:apply>
+		    <m:ci type="fn">
+		      <m:msubsup>
+			<m:mi>V</m:mi>
+			<m:mn>1</m:mn>
+			<m:mo>-</m:mo>
+		      </m:msubsup>
+		    </m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>C</m:ci>
+	      <m:apply>
+		<m:diff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:msubsup>
+		      <m:mi>V</m:mi>
+		      <m:mn>1</m:mn>
+		      <m:mo>-</m:mo>
+		    </m:msubsup>
+		  </m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      since
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math> is a constant and hence has a zero time
+      derivative. Well, we also know that
+      <equation id="eqn29">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>C</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:msubsup>
+		<m:mi>I</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:msubsup>
+		    <m:mi>I</m:mi>
+		    <m:mn>1</m:mn>
+		    <m:mo>-</m:mo>
+		  </m:msubsup>
+		</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:msubsup>
+		      <m:mi>V</m:mi>
+		      <m:mn>1</m:mn>
+		      <m:mo>-</m:mo>
+		    </m:msubsup>
+		  </m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      So we equate <link target-id="eqn28"/> and <link target-id="eqn29"/>
+      and we get
+      <equation id="eqn30">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>C</m:ci>
+	      <m:apply>
+		<m:diff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:msubsup>
+		      <m:mi>V</m:mi>
+		      <m:mn>1</m:mn>
+		      <m:mo>-</m:mo>
+		    </m:msubsup>
+		  </m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:msubsup>
+		      <m:mi>V</m:mi>
+		      <m:mn>1</m:mn>
+		      <m:mo>-</m:mo>
+		  </m:msubsup>
+		  </m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      or
+      <equation id="eqn31">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:diff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:msubsup>
+		      <m:mi>V</m:mi>
+		      <m:mn>1</m:mn>
+		      <m:mo>-</m:mo>
+		    </m:msubsup>
+		  </m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	      
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:times/>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mn>0</m:mn>
+		    </m:msub>
+		    <m:ci>C</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:msubsup>
+		      <m:mi>V</m:mi>
+		      <m:mn>1</m:mn>
+		      <m:mo>-</m:mo>
+		    </m:msubsup>
+		  </m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:ci>C</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      which gets us back to <emphasis>another</emphasis> Diff-E-Q!
+    </para>
+
+    <para id="para11">The homogeneous solution is easy. We have
+      <equation id="eqn32">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:diff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:msubsup>
+		      <m:mi>V</m:mi>
+		      <m:mn>1</m:mn>
+		      <m:mo>-</m:mo>
+		    </m:msubsup>
+		  </m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	      
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:times/>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mn>0</m:mn>
+		    </m:msub>
+		    <m:ci>C</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:msubsup>
+		      <m:mi>V</m:mi>
+		      <m:mn>1</m:mn>
+		      <m:mo>-</m:mo>
+		    </m:msubsup>
+		  </m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+      for which the solution is obviously
+      <equation id="eqn33">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mrow>
+		    <m:mn>1</m:mn>
+		    <m:mo>​</m:mo>
+		    <m:mi>homo</m:mi>
+		  </m:mrow>
+		  <m:mo>-</m:mo>
+		</m:msubsup>
+	      </m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:ci>t</m:ci>
+		    <m:apply>
+		      <m:times/>
+		      <m:msub>
+			<m:mi>Z</m:mi>
+			<m:mn>0</m:mn>
+		      </m:msub>
+		      <m:ci>C</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      After a long time, the derivative of the homogeneous solution is
+      zero, and so the particular solution (the constant part) is the
+      solution to
+      <equation id="eqn34">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		  <m:ci>C</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mrow>
+		  <m:mn>1</m:mn>
+		  <m:mo>​</m:mo>
+		  <m:mi>part</m:mi>
+		</m:mrow>
+		<m:mo>-</m:mo>
+	      </m:msubsup>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:ci>C</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      or
+      <equation id="eqn35">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mrow>
+		<m:mn>1</m:mn>
+		<m:mo>​</m:mo>
+		<m:mi>part</m:mi>
+	      </m:mrow>
+	      <m:mo>-</m:mo>
+	    </m:msubsup>
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mn>1</m:mn>
+	      <m:mo>+</m:mo>
+	    </m:msubsup>
+	  </m:apply>
+	</m:math>
+      </equation>
+      The complete solution is the sum of the two:
+      <equation id="eqn36">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>-</m:mo>
+		</m:msubsup>
+	      </m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:msubsup>
+		    <m:mi>V</m:mi>
+		    <m:mrow>
+		      <m:mn>1</m:mn>
+		      <m:mo>​</m:mo>
+		      <m:mi>homo</m:mi>
+		    </m:mrow>
+		    <m:mo>-</m:mo>
+		  </m:msubsup>
+		</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mrow>
+		  <m:mn>1</m:mn>
+		  <m:mo>​</m:mo>
+		  <m:mi>part</m:mi>
+		</m:mrow>
+		<m:mo>-</m:mo>
+	      </m:msubsup>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:ci>t</m:ci>
+		      <m:apply>
+			<m:times/>
+			<m:msub>
+			  <m:mi>Z</m:mi>
+			  <m:mn>0</m:mn>
+			</m:msub>
+			<m:ci>C</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Now all we need to do is find
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math>, the initial condition. We know, however, that
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>-</m:mo>
+	      </m:msubsup>
+	    </m:ci>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mn>1</m:mn>
+	      <m:mo>+</m:mo>
+	    </m:msubsup>
+	  </m:apply>
+	</m:apply>
+      </m:math>, so that makes
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>-2</m:cn>
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mn>1</m:mn>
+	      <m:mo>+</m:mo>
+	    </m:msubsup>
+	  </m:apply>
+	</m:apply>
+      </m:math>! So we have:
+      <equation id="eqn37">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>-</m:mo>
+		</m:msubsup>
+	      </m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>-2</m:cn>
+		<m:msubsup>
+		  <m:mi>V</m:mi>
+		  <m:mn>1</m:mn>
+		  <m:mo>+</m:mo>
+		</m:msubsup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:ci>t</m:ci>
+		      <m:apply>
+			<m:times/>
+			<m:msub>
+			  <m:mi>Z</m:mi>
+			  <m:mn>0</m:mn>
+			</m:msub>
+			<m:ci>C</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>1</m:mn>
+		<m:mo>+</m:mo>
+	      </m:msubsup>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>2</m:cn>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:apply>
+			<m:divide/>
+			<m:ci>t</m:ci>
+			<m:apply>
+			  <m:times/>
+			  <m:msub>
+			    <m:mi>Z</m:mi>
+			    <m:mn>0</m:mn>
+			  </m:msub>
+			  <m:ci>C</m:ci>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Since 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msubsup>
+	    <m:mi>V</m:mi>
+	    <m:mn>1</m:mn>
+	    <m:mo>+</m:mo>
+	  </m:msubsup>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>g</m:mi>
+	    </m:msub>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math> we can plot
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">
+	    <m:msubsup>
+	      <m:mi>V</m:mi>
+	      <m:mn>1</m:mn>
+	      <m:mo>-</m:mo>
+	    </m:msubsup>
+	  </m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> as a function of time from which we can make a <link target-id="fig13">plot</link> of
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:mi>V</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>
+
+      <figure id="fig13">
+	<title>Reflected Voltage as a Function of Time</title>
+	<media id="idp8255824" alt=""><image src="../../media/6.49.png" mime-type="image/png"/></media>
+      </figure>
+
+      The capacitor starts off looking like a short circuit, and
+      charges up to look like an open circuit, which makes perfect
+      sense. Can you figure out what the shape would be of a pulse
+      reflected off of the capacitor, given that the time constant
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	  <m:ci>C</m:ci>
+	</m:apply>
+      </m:math> was short compared to the width of the pulse?
+    </para>
+
+  </content>
+  
+</document>

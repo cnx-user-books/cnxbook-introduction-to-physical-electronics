@@ -1,0 +1,524 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>The Diode Equation</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>0e3b737f-6ba3-4c9e-8d34-b12dfe6596b4</md:uuid>
+</metadata>
+
+  <content>
+    <para id="isat">
+      The reason for calling the proportionality constant
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>sat</m:mi>
+      </m:msub></m:ci></m:math> will become obvious when we consider
+      reverse bias.  Let us now make
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>a</m:mi>
+      </m:msub></m:ci></m:math> <emphasis>negative</emphasis> instead
+      of positive.  The applied electric field now
+      <emphasis>adds in the same direction</emphasis> to the built-in field.  This means the
+      barrier will <emphasis>increase</emphasis> instead of decrease,
+      and so we have what is shown in <link target-id="reverse"/>.  Note
+      that we have marked the barrier height as
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>q</m:ci>
+	  <m:apply>
+	    <m:minus/>
+	    <m:ci><m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>bi</m:mi>
+	      </m:msub></m:ci>
+	    <m:ci><m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>a</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> as before.  It is just that now,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>a</m:mi>
+      </m:msub></m:ci></m:math> is negative, and so the barrier is
+      bigger.
+      <figure id="reverse">
+	<media id="idm6136912" alt=""><image src="../../media/2_41.png" mime-type="image/png"/></media>
+	<caption>P-N junction under reverse bias (
+	  <m:math>
+	    <m:apply>
+	      <m:lt/>
+	      <m:ci><m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>a</m:mi>
+		</m:msub></m:ci>
+	      <m:cn>0</m:cn>
+	    </m:apply>
+	  </m:math>)  
+	</caption>
+      </figure>
+    </para>
+    <para id="para1">
+      Remember, the electrons fall off exponentially as we move up in
+      energy, so it does not take much of a shift of the bands before
+      there are essentially <emphasis>no</emphasis> electrons on the
+      n-side with enough energy to get over the barrier.  This is
+      reflected in the <link document="m1007" target-id="final">diode
+      equation</link> where, if we let
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>a</m:mi>
+      </m:msub></m:ci></m:math> be a negative number,
+      <m:math>
+	<m:apply>
+	  <m:exp/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>q</m:ci>
+	      <m:ci><m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>a</m:mi>
+		</m:msub></m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>k</m:ci>
+	      <m:ci>T</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> very quickly goes to zero and we are left with 
+      <equation id="simple">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>I</m:ci>
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>sat</m:mi>
+		</m:msub></m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>     
+      Thus, while in the forward bias direction, the current increases
+      exponentially with voltage, in the reverse direction it simply
+      saturates at
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci><m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>sat</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math>. A plot of <m:math><m:ci>I</m:ci> </m:math> as a
+      function of voltage or an <term>I-V characteristic curve</term>
+      might look something like <link target-id="idealcurve"/>.
+      <figure id="idealcurve">
+	<media id="idm5774672" alt=""><image src="../../media/2_42.png" mime-type="image/png"/></media>
+	<caption>Idealized I-V curve for a p-n diode</caption>
+      </figure>
+      
+      In fact, for <emphasis>real diodes</emphasis> (ones made from
+      silicon)
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>sat</m:mi></m:msub></m:ci>
+      </m:math> is such a small value (on the order of 
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:cn>10</m:cn>
+	  <m:cn>-10</m:cn>
+	</m:apply>
+      </m:math> amps) that you can not even see it on most common
+      measuring devices (oscilloscope, digital volt meter etc.) and if
+      you were to look on a device called a <term>curve tracer</term>
+      (which you will learn more about in Electronic Circuits [ELEC
+      342]) what you would really see would be something like <link target-id="realcurve"/>.
+      <figure id="realcurve">
+	<media id="idm12611152" alt=""><image src="../../media/2_43.png" mime-type="image/png"/></media>
+	<caption>Realistic I-V curve</caption>
+      </figure>      
+      We see what looks like zero current in the reverse direction,
+      and in fact, what appears to be no current until we get a
+      certain amount of voltage across the diode, after which it very
+      quickly "turns on" with a very rapidly increasing forward
+      current.  For silicon, this "turn on" voltage is about 0.6 to
+      0.7 volts.
+    </para>
+    <para id="dmv">      
+      Digital volt meters (DVM's) use this characteristic for their
+      "diode check" function.  What they do is, when the "red" or
+      positive lead is connected to the p-side (anode, or arrow in the
+      diagram) and the "black" or negative lead is connected to the
+      n-side (cathode, or bar in the diagram) of a diode, the meter
+      attempts to pass (usually) 1 mA of current through the diode.
+      If the 1 mA of current is allowed to flow, the meter then
+      indicates the amount of forward voltage developed across the
+      diode.  If it reads something like 0.673 volts, then you can be
+      pretty sure the diode is OK.  Reverse the leads, and the diode
+      is reverse biased, and the meter should read "OL" (overload) or
+      something like that to indicate that no current is flowing.
+    </para>
+    <para id="diodequation">
+      <link document="m1007" target-id="final">The diode
+      equation</link> is usually approximated by two somewhat simpler
+      equations, depending upon whether the diode is forward or
+      reverse biased:
+      <equation id="piecewise">
+	<m:math>
+	  <m:apply>
+	    <m:approx/>
+	    <m:ci>I</m:ci>
+	    <m:piecewise>
+	      <m:piece>
+		<m:cn>0</m:cn>
+		<m:apply>
+		  <m:lt/>
+		  <m:ci><m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>a</m:mi>
+		    </m:msub></m:ci>
+		  <m:cn>0</m:cn>
+		</m:apply>
+	      </m:piece>
+	      <m:piece>
+		<m:apply>
+		  <m:times/>
+		  <m:ci><m:msub>
+		      <m:mi>I</m:mi>
+		      <m:mi>sat</m:mi>
+		    </m:msub></m:ci>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:apply>
+			<m:times/>
+			<m:ci>q</m:ci>
+			<m:ci><m:msub>
+			    <m:mi>V</m:mi>
+			    <m:mi>a</m:mi>
+			  </m:msub></m:ci>
+		      </m:apply>
+		      <m:apply>
+			<m:times/>
+			<m:ci>k</m:ci>
+			<m:ci>T</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:gt/>
+		  <m:ci><m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>a</m:mi>
+		    </m:msub></m:ci>
+		  <m:cn>0</m:cn>
+		</m:apply>
+	      </m:piece>
+	    </m:piecewise>
+	  </m:apply>
+	</m:math>
+      </equation>
+      
+      For reverse bias, as we said, the current is essentially nil.
+      In the forward bias case, the exponential term quickly gets much
+      larger than unity, and so we can forget the "-1" term in the
+      <link document="m1007" target-id="final">diode
+      equation</link>.  Remember, we said that 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>k</m:ci>
+	  <m:ci>T</m:ci>
+	</m:apply>
+      </m:math> at room temperature had a value of about 1/40 of an
+      eV, so 
+      <m:math>
+	<m:apply>
+	  <m:approx/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>q</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>k</m:ci>
+	      <m:ci>T</m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>40</m:cn>
+	    <m:apply>
+	      <m:power/>
+	      <m:ci>V</m:ci>
+	      <m:cn>-1</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>, this means we can also say for forward bias that 
+      <equation id="simpleforward">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>I</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>sat</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>40</m:cn>
+		  <m:ci><m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>a</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> 
+      From this equation it is easy to see that only a small positive
+      value for <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>a</m:mi>
+      </m:msub></m:ci></m:math> is needed in order to make the
+      exponential much greater than unity.
+    </para>
+    <para id="connect">
+      Now let's connect this "ideal diode equation" to the real world.
+      One thing you might ask yourself is "How could I check to see if
+      an actual diode follows the equation given <link document="m1007" target-id="increased">here</link>?"  As we said,
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>sat</m:mi>
+      </m:msub></m:ci></m:math> is a very small current, and so trying
+      to do the reverse test is probably not going to be successful.
+      What is usually done is to measure the diode current (and
+      forward voltage) over several orders of magnitude of current.
+      <note type="Note" id="idm4770272"><label>Note</label>While the current can vary by many orders of
+      magnitude, the voltage is more or less limited to values between
+      0 and 0.6 to 0.7 volts, not by any fundamental process, but
+      rather simply by the fact that too much forward current will
+      burn up the diode.</note>
+    </para>
+    <para id="ln">
+      If we take the natural log of both sides of the second piece of
+      <link target-id="piecewise"/>, we find:
+      <equation id="play">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ln/>
+	      <m:ci>I</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:ln/>
+		<m:ci><m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>sat</m:mi>
+		  </m:msub></m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>q</m:ci>
+		  <m:ci><m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>a</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>k</m:ci>
+		  <m:ci>T</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Thus, a plot of 
+      <m:math>
+	<m:apply>
+	  <m:ln/>
+	  <m:ci>I</m:ci>
+	</m:apply>
+      </m:math> as a function of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>a</m:mi>
+      </m:msub></m:ci></m:math> should yield a straight line with a
+      slope of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>q</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>k</m:ci>
+	    <m:ci>T</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, or 40.
+    </para>
+    <para id="realmeasurements">
+      Well, I went into the lab, grabbed a real diode and made some
+      measurements.  <link target-id="plot"/> is a plot of the natural
+      log of the current as a function of voltage from 0.05 to 0.70
+      volts.  Included with this plot, is a linear curve fit to the
+      data which is plotted as a dotted line.  The linear fit goes
+      through the data points quite nicely, so the current is surely
+      an exponential function of the applied voltage!  From the
+      expression for the best fit, which is printed above the graph,
+      we see that
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ln/>
+	    <m:ci><m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>sat</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	  <m:cn>-19.68</m:cn>
+	</m:apply>
+      </m:math>.  That means that 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>sat</m:mi>
+	    </m:msub></m:ci>
+	  <m:apply>
+	    <m:exp/>
+	    <m:cn>-19.68</m:cn>
+	  </m:apply>
+	  <m:cn type="e-notation">2.89<m:sep/>-9</m:cn>
+	</m:apply>
+      </m:math> amps, which is indeed a very small current.  Look at
+      the slope however.  Its supposed to be 40, and yet it turns out
+      to be slightly more than 20!  This comes about because of
+      some complex details of exactly what happens to the electrons
+      and holes when they cross the junction.  In what is called the
+      <term>diffusion dominated situation</term> electrons and holes
+      are injected across the junction, after which they diffuse away
+      from the junction, and also recombine, until eventually they are
+      all gone. This is shown schematically in <link target-id="diffusion"/>.  The other regime is called
+      <term>recombination dominated</term> and here, the majority of
+      the current is made up of the electrons and holes recombining
+      directly with each other at the junction.  This is shown in
+      <link target-id="recombination"/>.  For recombination dominated
+      diode behavior, it turns out that the current is given by
+      <equation id="recombeq">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>I</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>sat</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>q</m:ci>
+		    <m:ci><m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>a</m:mi>
+		      </m:msub></m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:cn>2</m:cn>
+		    <m:ci>k</m:ci>
+		    <m:ci>T</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      <figure id="plot">
+	<media id="idp1031984" alt=""><image src="../../media/2_44.png" mime-type="image/png"/></media>
+	<caption>	  
+	  Plot showing
+	  <m:math>
+	    <m:apply>
+	      <m:ln/>
+	      <m:ci>I</m:ci>
+	    </m:apply>
+	  </m:math> as a function of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>a</m:mi>
+      </m:msub></m:ci></m:math> for a 1N4123 silicon diode
+	</caption>
+      </figure>
+      <figure id="diffusion">
+	<media id="idm5951136" alt=""><image src="../../media/2_45.png" mime-type="image/png"/></media> 
+	<caption>Diffusion dominated diode behavior</caption>
+      </figure>
+      <figure id="recombination">
+	<media id="idm13365952" alt=""><image src="../../media/2_46.png" mime-type="image/png"/></media>
+	<caption>Recombination dominated diode behavior</caption>
+      </figure>      
+      In general, a particular diode might have a combination of these
+      two effects going on, and so people often use a more general
+      form for the diode equation:
+      <equation id="generalform">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>I</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>sat</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>q</m:ci>
+		    <m:ci><m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>a</m:mi>
+		      </m:msub></m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>n</m:ci>
+		    <m:ci>k</m:ci>
+		    <m:ci>T</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>      
+      where <m:math><m:ci>n</m:ci></m:math> is called the
+      <term>ideality factor</term> and is a number somewhere between 1
+      and 2.  For the diode which gave the data for our example
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>n</m:ci>
+	  <m:cn>1.92</m:cn>
+	</m:apply>
+      </m:math> and so most of the current is dominated by
+      recombination of electrons and holes in the depletion region.
+    </para>
+  </content>
+</document>

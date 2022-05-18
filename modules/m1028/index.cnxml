@@ -1,0 +1,249 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Transistor Loads for Inverters</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>f99dd11c-ebbe-4601-ab1a-a4700c1125f4</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">
+      There are other kinds of MOSFET's besides the one we have
+      studied so far. Strictly speaking, what we have seen up to now
+      is called an <term>n-channel enhancement mode MOSFET</term>. It
+      turns out that you can build a MOSFET which looks just like a
+      <link document="m1023" target-id="fig14">previous figure</link>,
+      except that by putting some additional impurities under the gate
+      region, we can arrange it so that there is a channel formed,
+      even with
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>g</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>.
+
+      The transistor now has a <emphasis>negative</emphasis>
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>.  The process by which the additional
+      impurities are added is called a <term>
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math> adjust</term>.
+    </para>
+
+
+    <para id="para2">
+      A MOSFET with a negative
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math> can be expected to have
+
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math> curves similar to those for a positive
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math> device, except for one thing. For
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>gs</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>, the device is already turned on, and so we get a
+      usual MOSFET-type curve.  <emphasis>Positive</emphasis> gate
+      voltage turns it on even more, while negative
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math> tends to reduce the drain current. It
+      takes a <emphasis>negative</emphasis> gate voltage to turn the
+      thing off. <link target-id="fig40"/> shows comparative
+      characteristic curves for an enhancement and depletion mode
+      devices.
+    </para>
+
+
+    <figure id="fig40">
+      <media id="idm9658704" alt=""><image src="../../media/4.40.png" mime-type="image/png"/></media>
+      <caption>Enhancement and depletion characteristic curves</caption></figure>
+
+
+    <para id="para3">
+      For an enhancement mode transistor, you have to get
+      <m:math>
+	<m:apply>
+	  <m:gt/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>g</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>T</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math> (-1 Volt in this example) to
+      <emphasis>enhance</emphasis> the conductivity or channel to make
+      it conduct. For a depletion mode device, a gate voltage Vgs of
+      0, still finds the device conducting. You have to put some
+      negative voltage on the gate to <emphasis>deplete</emphasis> the
+      channel, in order to turn it off. We now have a <term>depletion
+      mode n-channel MOSFET</term>.
+    </para>
+
+
+    <para id="para4">
+      How would we use a depletion mode device in an inverter gate?
+      The answer is fairly straight-forward. In the schematic in <link target-id="fig41"/>, we indicate a depletion mode MOSFET by adding
+      a second line, under the gate, to suggest that a channel already
+      exists in the device, even with no
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>g</m:mi>
+      </m:msub></m:ci></m:math>.  Note that the gate of the depletion
+      mode transistor (also sometimes called the <term>pull up</term>
+      transistor) is connected to its source, so, in fact,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math> does equal 0 for this device. The
+      input transistor (or the <term>pull down</term> transistor) is
+      just an enhancement mode MOSFET like we had before. It is not
+      hard to choose appropriate <m:math><m:ci>W</m:ci></m:math> and
+      <m:math><m:ci>L</m:ci></m:math> so that
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math> for the pull up transistor is on the
+      order of the 500 μA that we need to get our 1 ns rise time
+      on the capacitive load.
+    </para>
+
+
+    <figure id="fig41">
+      <media id="idp5066048" alt=""><image src="../../media/4.41.png" mime-type="image/png"/></media>
+      <caption>Depletion mode load</caption>
+    </figure>
+
+
+    <para id="para5">
+      In order to get the transfer characteristic for this circuit,
+      we first note that
+
+      <equation id="eqn55">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>sdd</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>dd</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>sde</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      where <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>sde</m:mi>
+      </m:msub></m:ci></m:math> is the source-drain voltage for the
+      pull-down, or enhancement transistor, and
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>sdd</m:mi>
+      </m:msub></m:ci></m:math>, is the source-drain voltage for the
+      depletion-mode transistor. If we want to plot the
+      <term>load-line</term> for the pull-down transistor that is
+      created by the pull-up or depletion mode transistor, we should
+      take its
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>gs</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> characteristic curve, shift it over by an amount
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dd</m:mi>
+      </m:msub></m:ci></m:math>, and then reverse its polarity. When
+      we do this we get the following shown in <link target-id="fig42"/>. Noting the intersection points of the
+      <term>load line</term> and the characteristic curves allows us
+      the opportunity for drawing the <link target-id="fig43">transfer
+      characteristic</link>. This is a better looking curve. It is
+      symmetric around the mid-voltage point, and gets closer to zero
+      for its output "low" condition. The transition from "high" to
+      "low" is also somewhat more abrupt, which is advantageous. Can
+      you figure out why?
+    </para>
+
+
+    <figure id="fig42">
+      <media id="idm9232832" alt=""><image src="../../media/4.42.png" mime-type="image/png"/></media>
+      <caption>Characteristic curve and load line for a depletion MOS
+	load</caption>
+    </figure>
+
+
+    <figure id="fig43">
+      <media id="idm1868672" alt=""><image src="../../media/4.43.png" mime-type="image/png"/></media>
+      <caption>Transfer characteristics for a depletion load
+	inverter</caption>
+    </figure>
+
+
+    <para id="para6">
+      Well, we solved one problem. At least we have a pull up
+      structure that we can manufacture. It turns out not to be too hard to
+      build an enhancement MOSFET that has an equivalent resistance in the
+      range we need without taking up too much chip area. We have not
+      solved the other problem however. We are still looking at a
+      <emphasis>huge</emphasis> current draw for large circuits. Since on
+      average, half of the inverter gates will be "on" in a
+      logic circuit, we still have a large current sink to ground. This is
+      something that would be completely prohibitive in a modern-day VLSI
+      integrated circuit.
+    </para>
+
+
+    <para id="para7">
+      Fortunately, we have not run out of options for <link document="m1029">MOS structures</link> yet.
+    </para>
+  </content>
+  
+</document>

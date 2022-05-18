@@ -1,0 +1,215 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Introduction to Parallel Matching</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>7d3eeae1-e851-45de-9f1c-cd863df0284f</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">Let's start with the load. With the same
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>25</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> resistor for the load, and plot its
+      <term>admittance</term>
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>. If we start moving away from the load towards the
+      generator, in about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.10</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> we again run into the circle which represents
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:real/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:ci type="fn">Y</m:ci>
+		<m:ci>s</m:ci>
+	      </m:apply>
+	      <m:msub>
+		<m:mi>Y</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	  </m:apply>
+	  <m:cn>1</m:cn>
+	</m:apply>
+      </m:math>. This is such an important circle is has gained its own
+      name, and it is frequently called the <term>matching
+      circle</term> <link target-id="fig1"/>.
+
+      <figure id="fig1">
+	<title>Getting to the Matching Circle</title>
+	<media id="idm957184" alt=""><image src="../../media/818.png" mime-type="image/png"/></media>
+      </figure>
+
+      Note that to find out how far we had to move, we had to
+      start at relative position
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.25</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> as our zero, or reference location. Point "B" seems to
+      be at about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.35</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> on the scale, and since we started at
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.25</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math>, the distance is
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:minus/>
+	    <m:cn>0.35</m:cn>
+	    <m:cn>0.25</m:cn>
+	  </m:apply>
+	  <m:cn>0.10</m:cn>
+	</m:apply>
+      </m:math>. At "B",
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mi>s</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">-1.0<m:sep/>0.7</m:cn>
+	</m:apply>
+      </m:math>. Thus, if we add a susceptance 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:imaginaryi/>
+	  <m:ci>B</m:ci>
+	</m:apply>
+      </m:math> with a value of
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:cn>0.014</m:cn>
+	    <m:apply>
+	      <m:power/>
+	      <m:ci>Ω</m:ci>
+	      <m:cn>-1</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> we would again match the line. Positive susceptance
+      comes from a capacitor as well, and so <link target-id="fig2"/>
+      shows how we match.
+
+      <figure id="fig2">
+	<title>Matching With a Shunt Capacitor</title>
+	<media id="idm104016" alt=""><image src="../../media/819.png" mime-type="image/png"/></media>
+      </figure>
+
+      Note that we are not <emphasis>required</emphasis> to go to
+      point "B". Any point on the matching circle that we can get to
+      is fair game. Another such point is "C" in <link target-id="fig1"/>. This is at a distance of about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.40</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> from the load. At "C",
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mi>s</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">1.0<m:sep/>0.7</m:cn>
+	</m:apply>
+      </m:math> and so we would put in an inductor, with a susceptance
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>1</m:cn>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>ω</m:ci>
+	      <m:ci>L</m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:cn>0.014</m:cn>
+	      <m:apply>
+		<m:power/>
+		<m:ci>Ω</m:ci>
+		<m:cn>-1</m:cn>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> <link target-id="fig3"/>.      
+
+      <figure id="fig3">
+	<title>Matching With a Shunt Inductor</title>
+	<media id="idm3129984" alt=""><image src="../../media/820.png" mime-type="image/png"/></media>
+      </figure>
+
+    </para>
+  </content>
+  
+</document>

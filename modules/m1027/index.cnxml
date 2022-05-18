@@ -1,0 +1,524 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Inverters and Logic</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>cad404f5-2fd4-485c-959b-5ee6a1b0d351</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">
+      As you already know, or will find out shortly, from taking a
+      class in digital logic, logic circuits are primarily based upon a
+      circuit called an inverter. An inverter simply takes a signal and
+      gives you the opposite one. For instance, if a high voltage (a
+      "one") is placed on the input of an inverter, it returns a
+      low voltage (a "zero"). <link target-id="fig35"/> is a simple
+      inverter based on a MOSFET transistor:
+    </para>
+
+
+    <figure id="fig35">
+      <media id="idm15338560" alt=""><image src="../../media/4.35.png" mime-type="image/png"/></media>
+      <caption>Inverter circuit</caption>
+    </figure>
+
+
+    <para id="para2">
+      If <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>in</m:mi>
+      </m:msub></m:ci></m:math> is zero, the MOSFET is turned off
+      (<m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math> is
+      <m:math>
+	<m:apply>
+	  <m:mo>&lt;</m:mo>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>T</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>) and so no current flows through the resistor, and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>out</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>dd</m:mi>
+	    </m:msub>
+	  </m:ci>
+
+	</m:apply>
+      </m:math>, a high. If
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>in</m:mi>
+      </m:msub></m:ci></m:math> is high (and we assume that
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math> for the MOSFET is significantly less
+      than <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>in</m:mi>
+      </m:msub></m:ci></m:math>) then the transistor is turned on, and
+      if <m:math><m:ci>R</m:ci></m:math> and
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>W</m:ci>
+	  <m:ci>L</m:ci>
+	</m:apply>
+      </m:math> are chosen so that enough current flows through
+      <m:math><m:ci>R</m:ci></m:math> to drop most of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dd</m:mi>
+      </m:msub></m:ci></m:math> across it, then
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>out</m:mi>
+      </m:msub></m:ci></m:math> will be low.
+    </para>
+
+
+    <para id="para3">
+      The way this is usually described is through a <term>transfer
+      function</term> which tells us what the output voltage is as a
+      function of the input voltage. Let's digress for just a minute
+      and see how such a function can be arrived at. Looking back at
+      <link target-id="fig35"/> it should be easy to see that
+
+      <equation id="eqn50">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>dd</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>d</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>d</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>ds</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para4">
+      We can re-write this as an equation for
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math>.
+
+      <equation id="eqn51">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>d</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>dd</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>d</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+
+	      <m:apply>
+		<m:divide/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>ds</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>R</m:mi>
+		    <m:mi>d</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para5">
+      This is called a <term>load-line</term> equation. It says that
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> varies linearly with
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> (with a negative slope) and has a
+      vertical off-set of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>dd</m:mi>
+	    </m:msub>
+	  </m:ci>
+
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>R</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>. Let's suppose we have the MOSFET transistor for which
+      we have already plotted the characteristic curves in a <link document="m1025" target-id="fig27">previous plot</link>. We will
+      let
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>dd</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:cn>5</m:cn>
+	</m:apply>
+      </m:math> Volts, and let
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>R</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>1</m:cn>
+	    <m:ci>kΩ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>.  From <link target-id="eqn51"/> we can see
+      that when
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>, <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> will be 5 mA, and when
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>dd</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>, <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> will be 0. This then gives us a
+      straight line on the characteristic curve plot which is called
+      the <term>load line</term>. This is shown in <link target-id="fig36"/>. By looking back at the schematic for the
+      inverter in <link target-id="fig35"/> we see that the same current
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> flows through the load resistor,
+      <m:math><m:ci><m:msub><m:mi>R</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math>, and through the transistor. Thus, the
+      correct value of current and voltage for the circuit for any
+      given gate voltage is the simultaneous solution of the load line
+      equation and the transistor behavior, which, of course, is just
+      the intersection of the load line with the appropriate
+      characteristic curve. Thus it is a simple matter of drawing
+      vertical lines down from each
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>in</m:mi>
+      </m:msub></m:ci></m:math> curve or
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math> value down to the horizontal axis to
+      find out what the appropriate
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dd</m:mi>
+      </m:msub></m:ci></m:math> or output voltage will be for the
+      inverter. Assuming that
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>in</m:mi>
+      </m:msub></m:ci></m:math> only goes up to 5 Volts, the resulting
+      curve that we get look like <link target-id="fig37"/>. This is not
+      a great transfer characteristic.
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>in</m:mi>
+      </m:msub></m:ci></m:math> has to get fairly large before
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>out</m:mi>
+      </m:msub></m:ci></m:math> starts to fall, and even with the full
+      5 Volt input,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>out</m:mi>
+      </m:msub></m:ci></m:math> is still greater than 1 Volt. Picking
+      a transistor with a small
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math> and a bigger load resistor would give
+      us a better response, but at least with this example you can see
+      what is going on.
+    </para>
+
+
+    <figure id="fig36"><media id="idm7210432" alt=""><image src="../../media/4.36.png" mime-type="image/png" print-width="4in"/></media><caption>Characteristic curves with load line</caption></figure>
+
+
+    <figure id="fig37">
+      <media id="idp4158992" alt=""><image src="../../media/4.37.png" mime-type="image/png"/></media>
+      <caption>Transfer characteristics for the inverter circuit.</caption>
+    </figure>
+
+
+    <para id="para6">
+      Based on this simple inverter circuit, we can build
+      circuits which perform the NOR and NAND function.
+
+      <equation id="eqn52">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>C</m:mi>
+		<m:mi>out</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:apply>
+	      <m:not/>
+	      <m:apply>
+		<m:plus/>
+		<m:ci>A</m:ci>
+		<m:ci>B</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      and
+
+      <equation id="eqn52a">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>C</m:mi>
+		<m:mi>out</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:not/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>A</m:ci>
+		<m:ci>B</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      It should, by now, be obvious to you how the two circuits in
+      <link target-id="fig38"/> can perform the NAND and NOR function. It
+      turns out that with the capability to do NAND and NOR, we can
+      build up any kind of logic function we desire.
+    </para>
+
+
+    <figure id="fig38"><media id="idm4212848" alt=""><image src="../../media/4.38.png" mime-type="image/png" print-width="3in"/></media><caption>NAND and NOR circuits</caption></figure>
+
+
+    <para id="para7">
+      Let's look at the inverter a little more <link target-id="fig39">closely</link>. Usually, the load for the
+      inverter will be the next stage of logic which, along with the
+      associated interconnect wiring, we can model as a simple
+      capacitor. The value of the capacitance will vary, but it will
+      be on the order of
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:cn>10</m:cn>
+	  <m:cn>-12</m:cn>
+	</m:apply>
+      </m:math>F.
+    </para>
+
+
+    <figure id="fig39"><media id="idm4852208" alt=""><image src="../../media/4.39.png" mime-type="image/png" print-width="3in"/></media><caption>Driving a capacitive load</caption></figure>
+
+
+    <para id="para8">
+      When the input to the inverter switches instantaneously to a
+      low value, current will stop flowing through the transistor, and
+      instead will start to charge up the load capacitance. The output
+      voltage will follow the usual <m:math><m:ci>RC</m:ci></m:math>
+      charging curve with a time constant given just by the product of
+      <m:math><m:ci>R</m:ci></m:math> times
+      <m:math><m:ci>C</m:ci></m:math>. If
+      <m:math><m:ci>C</m:ci></m:math> is
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:cn>10</m:cn>
+	  <m:cn>-13</m:cn>
+	</m:apply>
+      </m:math>F, then to get a rise time of 1 ns we would have to
+      make <m:math><m:ci>R</m:ci></m:math> about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>4</m:cn>
+	  </m:apply>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math>.
+    </para>
+
+
+    <para id="para9">
+      As we shall see later, it is virtually impossible to make a 10
+      kΩ resistor using integrated circuit techniques. Remember:
+
+      <equation id="fig53">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>R</m:ci>
+
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>ρ</m:ci>
+		<m:ci>L</m:ci>
+	      </m:apply>
+	      <m:ci>A</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para10">
+      And thus, to get a really big resistance we need either a very
+      tiny A (Too hard to achieve and control.), a really BIG L (Takes
+      up too much room on the chip) or a huge
+      <m:math><m:ci>ρ</m:ci></m:math> (Again, very hard to control
+      when you get to the very low doping densities that would be
+      required.)
+    </para>
+
+
+    <para id="para11">
+      Even if we could find a way to build such big integrated circuit
+      resistors, there would still be a problem. The current flowing
+      through the resistor when the MOSFET is on would be
+      approximately
+
+      <equation id="eqn54">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>I</m:ci>
+
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>V</m:ci>
+	      <m:ci>R</m:ci>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>5</m:cn>
+		<m:ci>V</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:power/>
+		  <m:cn>10</m:cn>
+		  <m:cn>4</m:cn>
+		</m:apply>
+		<m:ci>Ω</m:ci>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>5</m:cn>
+	      <m:apply>
+		<m:power/>
+		<m:cn>10</m:cn>
+		<m:cn>-4</m:cn>
+	      </m:apply>
+	      <m:ci>A</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Which doesn't seem like much current until you consider that a
+      Pentium© microprocessor has about 6 million gates in
+      it. This would mean a net current of <m:math><m:cn>-300</m:cn>
+      </m:math> <m:math><m:ci>Amps</m:ci> </m:math> flowing into the
+      CPU chip! We've got to come up with a <link document="m1028">better solution</link>.
+    </para>
+  </content>
+  
+</document>

@@ -1,0 +1,779 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Simple Conduction</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>d6c29b47-d560-4571-bef0-b51fa3461d3b</md:uuid>
+</metadata>
+
+  <content>
+    <para id="goodtoknow">
+      Our initial studies will more or less be a review of topics in
+      electricity that you may have seen before in physics.  However,
+      if experience is any guide, there is no great harm in going back
+      over this material, for it seems that for many students, the
+      whole concept of just how electricity actually works is just a
+      little hazy.  Considering that you hope to be called an
+      electrical engineer one of these days, this might even be a good
+      thing to know!
+    </para>
+    <para id="laws">
+      Most of the "laws" of how electricity behaves are really just
+      mathematical representations of a number of empirical
+      observations, based on some assumptions and guesses which were
+      made in attempt to bring the "laws" into a coherent whole.
+      Early investigators (Faraday, Gauss, Coulomb, Henry etc....all
+      those guys) determined certain things about this strange
+      "invisible" thing called electricity.  In fact, the electron
+      itself was only discovered a little over 100 years ago.  Even before
+      the electron itself was observed, people knew that there were
+      two kinds of electric charge, which were called
+      <term>positive</term> and <term>negative</term>.  Like charges
+      exhibit a repulsive force between them and opposite charges
+      attract one another.  This force is proportional to the product
+      of the absolute value of positive and negative charge, and
+      varies inversely with the square of the distance between them.
+      Different charge carriers have different mass, some are very
+      light, and others are significantly heavier.  Electrical charges
+      can experience forces, and can move about.  Since force times
+      distance equals work, a whole system of energy
+      (<term>potential</term> as well as <term>kinetic</term>) and
+      energy loss had to be described.  This has lead to our current
+      system of electrostatics and electrodynamics, which we will not
+      review now but bring up along the way as things are needed.
+    </para>
+    <para id="equalfooting">
+      Just to make sure everyone is on the same footing however, let's
+      define a few quantities now, and then we will see how they
+      interact with one another as we go along.
+    </para>
+    <para id="charge">
+      The total charge in some region is defined by the symbol
+      <m:math><m:ci>Q</m:ci></m:math> and it has units of Coulombs.
+      The fundamental unit of charge (that of an electron or a proton)
+      is symbolized either by a little <m:math><m:ci>q</m:ci>
+      </m:math> or by <m:math><m:ci>e</m:ci></m:math>.  Since we'll
+      use <m:math><m:ci>e</m:ci></m:math> for other things, in this course we will try to stick
+      with <m:math><m:ci>q</m:ci> </m:math>.  The <term>charge of an
+      electron</term>, <m:math><m:ci>q</m:ci> </m:math>, has a value of
+      <m:math>
+	  <m:cn type="e-notation">1.6<m:sep/>-19</m:cn>
+      </m:math> Coulombs.
+    </para>
+    <para id="chargedensity">
+      
+      Since charge can be distributed throughout a region with varying
+      concentrations, we will also talk about the <term>charge
+      density</term>,
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">ρ</m:ci>
+	  <m:ci>ν</m:ci>
+	</m:apply>
+      </m:math>, which has units of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>Coulombs</m:ci>
+	  <m:apply>
+	    <m:power/>
+	    <m:ci>cm</m:ci>
+	    <m:cn>3</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>.  (In this book, we will use a modified MKS system of
+      units.  In keeping with most workers in the solid-state device
+      field, volume will usually be expressed as a cubic centimeter,
+      rather than a cubic meter - a cubic meter of silicon is just far
+      too much!)  In most cases, the charge density is not uniform but is a
+      function of where we are in space.  Thus, when we have
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">ρ</m:ci>
+	  <m:ci>ν</m:ci>
+	</m:apply>
+      </m:math> distributed throughout some volume, <m:math><m:ci>V</m:ci></m:math>
+      <equation id="chargeeq">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>Q</m:ci>
+	    <m:apply>
+	      <m:int/>
+	      <m:bvar>
+		<m:ci>ν</m:ci>
+	      </m:bvar>
+	      <m:domainofapplication>
+		<m:ci>V</m:ci>
+	      </m:domainofapplication>
+	      <m:apply>
+		<m:ci type="fn">ρ</m:ci>
+		<m:ci>ν</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> describes the total charge in that volume.
+    </para>
+    <para id="para1">
+      We know that when we apply an electric field to a charge that
+      there is a force exerted on it, and that if the charge is able
+      to move it will do so.  The motion of charge gives rise to an
+      <term>electric current</term>, which we call <m:math><m:ci>I</m:ci></m:math>.
+      The current is a measure of how much charge is passing a given
+      point per unit time (
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>Coulombs</m:ci>
+	  <m:ci>second</m:ci>
+	</m:apply>
+      </m:math>).
+    </para> 
+    <para id="drude">
+      It will be helpful if we have some kind of model of how
+      electricity flows in a conductor.  There are several approaches
+      which one can take, some more intuitive than others.  The one we
+      will look at, while not correct in the strictest sense, still
+      gives a very good picture of how electrical conduction works,
+      and is perfectly fine to use in a variety of situations.  In the
+      <term>Drude theory</term> of conduction, the initial hypothesis
+      consists of a solid, which contains mobile charges which are
+      free to move about under the influence of an applied electric
+      field.  There are also fixed charges of polarity opposite that
+      of the mobile charges, so that everywhere within the solid, the
+      net charge density is zero.  (This hypothesis is based on the
+      model of the atom, with a positively charged nucleus and
+      negatively charged electrons surrounding it.  In a solid, the
+      atoms are fixed in position in the lattice, but it is assumed
+      that some of the electrons can break free of their "host" atom
+      and move about to other places within the solid.)  In our model,
+      let us choose the polarity of the mobile charges to be positive;
+      this is not usually the case, but we can avoid a lot of
+      "minus ones" this way, and have a better chance of ending up
+      with the right answer in the end.
+
+      <figure id="modelconductor">
+	<media id="idm7669440" alt=""><image src="../../media/201.png" mime-type="image/png"/></media>
+	<caption>Model of a conductor.</caption>
+      </figure>
+
+      As shown in <link target-id="modelconductor"/>, the model of the
+      conductor consists of a number of mobile positive charges
+      (represented by the balls with the "+" sign in them) and an
+      equal number of fixed negative charges (represented by the bare
+      "-" sign).  In subsequent figures, we will leave out the fixed
+      charge, since it can not contribute in any way to the conduction
+      process, but keep in mind that it is there, and that the total
+      net charge is zero within the material.  Each of the mobile
+      charge carriers has a mass, <m:math><m:ci>m</m:ci></m:math>, and
+      an amount of charge, <m:math><m:ci>q</m:ci></m:math>.
+
+      <figure id="potential">
+	<media id="idm7418368" alt=""><image src="../../media/2_02.png" mime-type="image/png"/></media>
+	<caption>Applying a potential to a conductor</caption>
+      </figure>
+
+      In order to have some conduction, we have to apply a potential
+      or voltage across the sample (<link target-id="potential"/>).  We do this with a battery, which
+      creates a potential difference, <m:math><m:ci>V</m:ci></m:math>,
+      between one end of the sample and the other.  We will make the
+      simplest assumption that we can, and say that the voltage,
+      <m:math><m:ci>V</m:ci></m:math>, gives rise to a uniform electric
+      field within the sample.  The magnitude of the electric field is
+      given simply by
+      <equation id="magnitude">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>E</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>V</m:ci>
+	      <m:ci>L</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      where <m:math><m:ci>L</m:ci></m:math> is the length of the
+      sample, and <m:math><m:ci>V</m:ci></m:math> is the voltage which
+      is placed across it.  (In truth, we should be showing
+      <m:math><m:ci>E</m:ci></m:math> as well as subsequent forces
+      etc. as vectors in our equations, but since their direction will
+      be obvious, and unambiguous, let's keep things simple, and just
+      write them as scalers.)  <term>Electric potential</term>, or
+      voltage, is just a measure of the change in potential energy per
+      unit charge going from one place to another.  Since energy, or
+      work is simply force times distance, if we divide the energy per
+      unit charge by the distance over which that potential exists, we
+      will end up with force per unit charge, or electric field,
+      <m:math><m:ci>E</m:ci></m:math>.  If you are not sure about what
+      you just read, write it out as equations, and see that it is so.
+    </para>
+    <para id="fieldforce">
+      The electric field will exert a force on the movable charges
+      (And the fixed ones too for that matter, but since they can not
+      go anywhere, nothing happens to them).  The force is given
+      simply as the product of the electric field strength times the
+      charge
+      <equation id="force">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>F</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>q</m:ci>
+	      <m:ci>E</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      The force acts on the charges and causes them to accelerate
+      according to Newton's equations of motion
+      <equation id="moreforce"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:ci>F</m:ci>
+			<m:apply>
+				<m:times/>
+				<m:ci>m</m:ci>
+				<m:apply>
+					<m:diff/>
+					<m:bvar>
+						<m:ci>t</m:ci>
+					</m:bvar>
+					<m:apply>
+						<m:ci type="fn">v</m:ci>
+						<m:ci>t</m:ci>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+			<m:apply>
+				<m:times/>
+				<m:ci>q</m:ci>
+				<m:ci>E</m:ci>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation> or 
+      <equation id="eq1"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:apply>
+				<m:diff/>
+				<m:bvar>
+					<m:ci>t</m:ci>
+				</m:bvar>
+				<m:apply>
+					<m:ci type="fn">v</m:ci>
+					<m:ci>t</m:ci>
+				</m:apply>
+			</m:apply>
+			<m:apply>
+				<m:divide/>
+				<m:apply>
+					<m:times/>
+					<m:ci>q</m:ci>
+					<m:ci>E</m:ci>
+				</m:apply>
+				<m:ci>m</m:ci>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation>
+      Thus, the velocity of a particle with no initial velocity will
+      increase linearly with time as:
+      <equation id="velocity">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">v</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>q</m:ci>
+		  <m:ci>E</m:ci>
+		</m:apply>
+		<m:ci>m</m:ci>
+	      </m:apply>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      The rate of acceleration is proportional to the strength of
+      the electric field, and inversely proportional to the mass of
+      the particle.  The particle can not continue to accelerate forever
+      however.  Since it is located within a solid, sooner or later it
+      will collide with either another carrier, or perhaps one of the
+      fixed atoms within the solid.  We will assume that the collision
+      is completely inelastic, and that after a collision, the
+      particle comes to a stop, only to be accelerated again by the
+      electric field.  If we were to make a plot of the particles
+      velocity as a function of time, it might look something like
+      <link target-id="velocityfunction"/>.
+
+      <figure id="velocityfunction">
+	<media id="idp6822384" alt=""><image src="../../media/2_03.png" mime-type="image/png"/></media> 
+	<caption>
+	  Velocity as a function of time for charge carrier
+	</caption>
+      </figure>
+
+      Although the particle achieves various velocities, depending
+      upon how much time there is between collisions, there will be
+      some average velocity,
+      <m:math>
+	<m:apply>
+	  <m:mean/>
+	  <m:ci>v</m:ci>
+	</m:apply>
+      </m:math>, which will depend upon the details of the collision
+      process.  Let us define a scattering time
+      <m:math><m:ci><m:msub><m:mi>τ</m:mi><m:mi>s</m:mi>
+      </m:msub></m:ci> </m:math> which will give us that average
+      velocity when we multiply it times the acceleration of the
+      particle.  That is:
+      <equation id="averagevelocity">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:mean/>
+	      <m:ci>v</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>q</m:ci>
+		<m:ci>E</m:ci>
+		<m:ci><m:msub>
+		    <m:mi>τ</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub></m:ci>
+	      </m:apply>
+	      <m:ci>m</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      or
+      <equation id="scatteringtime">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:ci><m:msub>
+		<m:mi>τ</m:mi>
+		<m:mi>s</m:mi>
+	      </m:msub></m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>m</m:ci>
+		<m:apply>
+		  <m:mean/>
+		  <m:ci>v</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:ci>q</m:ci>
+		<m:ci>E</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Now let's take a look at just a small section of the conductor (<link target-id="section"/>).
+      It will have the cross section of the sample,
+      <m:math><m:ci>A</m:ci></m:math>, but will only be
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:mean/>
+	    <m:ci>v</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:mo>Δ</m:mo>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> long, where
+      <m:math>
+	<m:apply>
+	  <m:mo>Δ</m:mo>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> is just some arbitrary time interval.
+
+      <figure id="section">
+	<media id="idp11442272" alt=""><image src="../../media/2_04.png" mime-type="image/png"/></media>
+	<caption>Section of the conductor</caption>
+      </figure>
+
+      After a time
+      <m:math>
+	<m:apply>
+	  <m:mo>Δ</m:mo>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> has passed, all of the charges within the box will
+      have left it, as they are all moving with the same average
+      velocity, 
+      <m:math>
+	<m:apply>
+	  <m:mean/>
+	  <m:ci>v</m:ci>
+	</m:apply>
+      </m:math>.  If the density of charge carriers in the conductor
+      is <m:math><m:ci>n</m:ci></m:math> per unit volume, then the
+      number of carriers <m:math><m:ci>N</m:ci></m:math> within our
+      little box is just <m:math><m:ci>n</m:ci></m:math> times the
+      volume of the box
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:mean/>
+	    <m:ci>v</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:mo>Δ</m:mo>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	  <m:ci>A</m:ci>
+	</m:apply>
+      </m:math>
+      <equation id="carriers">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>N</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>n</m:ci>
+	      <m:apply>
+		<m:mean/>
+		<m:ci>v</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:mo>Δ</m:mo>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	      <m:ci>A</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Thus the total charge, <m:math><m:ci>Q</m:ci></m:math>, which
+      leaves the box in time
+      <m:math>
+	<m:apply>
+	  <m:mo>Δ</m:mo>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> is just
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>q</m:ci>
+	  <m:ci>N</m:ci>
+	</m:apply>
+      </m:math>.  The current flow, <m:math><m:ci>I</m:ci></m:math>,
+      is just the amount of charge which flows out of the box per unit
+      time 
+      <!--change equations?-->
+      <equation id="current">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>I</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>q</m:ci>
+		<m:ci>n</m:ci>
+		<m:apply>
+		  <m:mean/>
+		  <m:ci>v</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>t</m:ci>
+		</m:apply>
+		<m:ci>A</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:mo>Δ</m:mo>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>q</m:ci>
+	      <m:ci>n</m:ci>
+	      <m:apply>
+		<m:mean/>
+		<m:ci>v</m:ci>
+	      </m:apply>
+	      <m:ci>A</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:power/>
+		  <m:ci>q</m:ci>
+		  <m:cn>2</m:cn>
+		</m:apply>
+		<m:ci>n</m:ci>
+		<m:ci><m:msub>
+		    <m:mi>τ</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub></m:ci>
+		<m:ci>E</m:ci>
+		<m:ci>A</m:ci>
+	      </m:apply>
+	      <m:ci>m</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>Q</m:ci>
+	      <m:apply>
+		<m:mo>Δ</m:mo>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      We now have two choices, we can look at our result from a field
+      quantity point of view, in which case we will be interested in
+      the <term>current density</term>, <m:math><m:ci>J</m:ci></m:math>, which is
+      just the current, <m:math><m:ci>I</m:ci></m:math>, divided by the
+      cross-sectional area 
+      <equation id="currentdensity">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>J</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>I</m:ci>
+	      <m:ci>A</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:power/>
+		    <m:ci>q</m:ci>
+		    <m:cn>2</m:cn>
+		  </m:apply>
+		  <m:ci>n</m:ci>
+		  <m:ci><m:msub>
+		      <m:mi>τ</m:mi>
+		      <m:mi>s</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+		<m:ci>m</m:ci>
+	      </m:apply>
+	      <m:ci>E</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>σ</m:ci>
+	      <m:ci>E</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      where <m:math><m:ci>σ</m:ci></m:math> is called the
+      <term>conductivity</term> of the material.  If we look at the
+      conductor from a macroscopic point of view, then we are
+      interested in the relationship between the voltage and the
+      current.  The voltage is just the electric field times the
+      length of the sample, and the current is just the current
+      density times is cross sectional area.  Thus we have
+      <equation id="conductivity">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>I</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>A</m:ci>
+	      <m:ci>J</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>A</m:ci>
+	      <m:ci>σ</m:ci>
+	      <m:ci>E</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>A</m:ci>
+	      <m:ci>σ</m:ci>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>V</m:ci>
+		<m:ci>L</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      or
+      <equation id="voltage">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>V</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>L</m:ci>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>σ</m:ci>
+		  <m:ci>A</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:ci>I</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>R</m:ci>
+	      <m:ci>I</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      where <m:math><m:ci>R</m:ci></m:math> is the resistance of the
+      sample.  We have discovered <term>Ohm's law</term>!
+    </para> 
+    <para id="resistance">
+      Note that <link target-id="voltage"/> tells us that the resistance
+      of the sample is proportional to its length (the longer the
+      sample, the higher the resistance) and inversely proportional to
+      its cross sectional area (the fatter the sample, the lower the
+      resistance).  The sample resistance is also inversely
+      proportional to the conductivity <m:math><m:ci>σ</m:ci>
+      </m:math> of the sample.  Sometimes, instead of conductivity,
+      the <term>resistivity</term>, <m:math><m:ci>ρ</m:ci>
+      </m:math>, is specified for a resistive material.  The
+      resistivity is simply the inverse of the conductivity
+      <equation id="resistivity">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>σ</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:ci>ρ</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and thus:
+      <equation id="resistance2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>R</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>ρ</m:ci>
+		<m:ci>L</m:ci>
+	      </m:apply>
+	      <m:ci>A</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      And, in an effort towards completeness, there is one other
+      quantity which you might run into, and that is the carrier
+      <term>mobility</term>, <m:math><m:ci>μ</m:ci></m:math>.  The
+      mobility is just the proportionality factor between the average
+      velocity of the particle and the electric field.  That is:
+      <equation id="avgvelocity">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:mean/>
+	      <m:ci>v</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>μ</m:ci>
+	      <m:ci>E</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      You should check that the following two relationships are
+      correct:
+      <equation id="sigmarel">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>σ</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>n</m:ci>
+	      <m:ci>q</m:ci>
+	      <m:ci>μ</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      <equation id="mobility">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>μ</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>q</m:ci>
+		<m:ci><m:msub>
+		    <m:mi>τ</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub></m:ci>
+	      </m:apply>
+	      <m:ci>m</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      If we take an ordinary conductor (and we will have to define
+      later what we mean by that) and heat it up, the atoms within the
+      material start to vibrate faster due to the elevated
+      temperature, and the carriers suffer significantly more
+      collisions.  The mean collision time <m:math><m:ci><m:msub>
+      <m:mi>τ</m:mi> <m:mi>s</m:mi> </m:msub></m:ci> </m:math>
+      decreases, and hence the conductivity goes down, and the
+      resistance of the sample goes up.
+    </para>
+
+  </content>
+</document>

@@ -1,0 +1,625 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>P-N Junction: Part II</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>7c8aec1b-8284-40ed-9179-a247e0494176</md:uuid>
+</metadata>
+
+  <content>
+    <para id="notice">       
+      If you look closely at these pictures, you will notice
+      something.  As we remove more and more electrons and holes, we
+      are starting to "uncover" the fixed charges associated with the
+      donors and acceptors.  We are making what is known as a
+      <term>depletion region</term>, so named because it is
+      <emphasis>depleted</emphasis> of mobile carriers (holes and
+      electrons).  The uncovered net charge in the depletion region is
+      separated, with negative charge in the p-region, and positive
+      charge in the n-region.  What will such a charge separation give
+      rise to?  Why, an electric field!  Of course!  Which way will the
+      field point?  The electric field which arises from a separation
+      of charges always goes from the positive charge, towards the
+      negative charge.  This is shown in <link target-id="builtin"/>.
+    </para>
+      <figure id="builtin">
+	<media id="idm5871280" alt=""><image src="../../media/2_27.png" mime-type="image/png"/></media>
+	<caption>	  
+	  The pn-junction with the resultant built-in electric field
+	</caption>
+      </figure> 
+    <para id="para1">
+      What effect will this field have on our device?  It will have
+      the tendency to push the holes back into the p-region and the
+      electrons into the n-region.  This is just what we need to
+      counteract the recombination which has been going on, and
+      hopefully bring it to a stop.
+    </para>
+    <para id="effect">      
+      Now try to think through what effect this field could have on
+      our energy band diagram.  The band diagram is for electrons, so
+      if an electron moves from the right hand side of the device (the
+      n-region) towards the left hand side (the p-region), it will
+      have to move through an electric field which is opposing its
+      motion.  This means it has do some work, or in other words, the
+      potential energy for the electron must go up.  We can show this
+      on the band diagram by simply shifting the bands on the left
+      hand side upward, to indicate that there is a shift in potential
+      energy as electrons move from right to left across the junction.
+    </para>
+      <figure id="pnjunction">
+	<media id="idp686864" alt=""><image src="../../media/2_28.png" mime-type="image/png"/></media>
+	<caption>	  
+	  Energy band diagram for a p-n junction at equilibrium
+	</caption>
+      </figure> 
+    <para id="para2">
+      The shift of the bands, which is just the difference between the
+      location of the Fermi level in the n-region and the Fermi level
+      is the p-region, is called the <term>built-in potential</term>,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>bi</m:mi>
+      </m:msub></m:ci> </m:math>.  This built-in potential keeps the
+      majority of holes in the p-region, and the electrons in the
+      n-region.  It provides a potential barrier, which prevents
+      current flow across the junction.  (On the band diagram we have
+      to multiply the built-in potential
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>bi</m:mi>
+      </m:msub></m:ci> </m:math> by the charge of an electron,
+      <m:math><m:ci>q</m:ci> </m:math>, so that we can represent the
+      shift in energy in terms of <term>electron volts</term>, the
+      unit of potential energy used in band diagrams.)
+    </para>
+    <para id="bigvbi">
+      How big is <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>bi</m:mi>
+      </m:msub></m:ci> </m:math>?  This is not too hard to figure out.
+      Let's look at <link target-id="pnjunction"/> a little more
+      carefully.  Remember, we know from <link document="m1002" target-id="ntypeq">this equation</link> and <link document="m1002" target-id="ptypeq">this equation</link>
+      that since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>n</m:ci>
+	  <m:ci><m:msub>
+	      <m:mi>N</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math> in the n-region and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>p</m:ci>
+	  <m:ci><m:msub>
+	      <m:mi>N</m:mi>
+	      <m:mi>a</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math>
+      in the p-region, we can relate the distance of the Fermi level
+      from
+      <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>c</m:mi></m:msub></m:ci>
+      </m:math> and
+      <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>f</m:mi></m:msub></m:ci>
+      </m:math> by
+      <equation id="relateone">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci><m:msub>
+		  <m:mi>E</m:mi>
+		  <m:mi>c</m:mi>
+		</m:msub></m:ci>
+	      <m:ci><m:msub>
+		  <m:mi>E</m:mi>
+		  <m:mi>f</m:mi>
+		</m:msub></m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>k</m:ci>
+	      <m:ci>T</m:ci>
+	      <m:apply>
+		<m:ln/>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci><m:msub>
+		      <m:mi>N</m:mi>
+		      <m:mi>c</m:mi>
+		    </m:msub></m:ci>
+		  <m:ci><m:msub>
+		      <m:mi>N</m:mi>
+		      <m:mi>d</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and
+      <equation id="relatetwp">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci><m:msub>
+		  <m:mi>E</m:mi>
+		  <m:mi>f</m:mi>
+		</m:msub></m:ci>
+	      <m:ci><m:msub>
+		  <m:mi>E</m:mi>
+		  <m:mi>v</m:mi>
+		</m:msub></m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>k</m:ci>
+	      <m:ci>T</m:ci>
+	      <m:apply>
+		<m:ln/>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci><m:msub>
+		      <m:mi>N</m:mi>
+		      <m:mi>v</m:mi>
+		    </m:msub></m:ci>
+		  <m:ci><m:msub>
+		      <m:mi>N</m:mi>
+		      <m:mi>a</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>     
+    </para>
+    <para id="para3">
+      Look at <link target-id="pnjunction"/> and see if you can agree
+      that 
+     <equation id="eqnadded">
+      <m:math display="block">
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>q</m:ci>
+	    <m:ci><m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>BI</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci><m:msub>
+		  <m:mi>E</m:mi>
+		  <m:mi>g</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:minus/>
+		<m:ci><m:msub>
+		    <m:mi>E</m:mi>
+		    <m:mi>c</m:mi>
+		  </m:msub></m:ci>
+		<m:ci><m:msub>
+		    <m:mi>E</m:mi>
+		    <m:mi>f</m:mi>
+		  </m:msub></m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci><m:msub>
+		  <m:mi>E</m:mi>
+		  <m:mi>f</m:mi>
+		</m:msub></m:ci>
+	      <m:ci><m:msub>
+		  <m:mi>E</m:mi>
+		  <m:mi>v</m:mi>
+		</m:msub></m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci><m:msub>
+		  <m:mi>E</m:mi>
+		  <m:mi>g</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:ci>k</m:ci>
+		<m:ci>T</m:ci>
+		<m:apply>
+		  <m:ln/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:ci><m:msub>
+			<m:mi>N</m:mi>
+			<m:mi>c</m:mi>
+		      </m:msub></m:ci>
+		    <m:ci><m:msub>
+			<m:mi>N</m:mi>
+			<m:mi>d</m:mi>
+		      </m:msub></m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>k</m:ci>
+	      <m:ci>T</m:ci>
+	      <m:apply>
+		<m:ln/>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci><m:msub>
+		      <m:mi>N</m:mi>
+		      <m:mi>c</m:mi>
+		    </m:msub></m:ci>
+		  <m:ci><m:msub>
+		      <m:mi>N</m:mi>
+		      <m:mi>d</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:ci><m:msub>
+		<m:mi>E</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub></m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>k</m:ci>
+	      <m:ci>T</m:ci>
+	      <m:apply>
+		<m:ln/>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci><m:msub>
+			<m:mi>N</m:mi>
+			<m:mi>c</m:mi>
+		      </m:msub></m:ci>
+		    <m:ci><m:msub>
+			<m:mi>N</m:mi>
+			<m:mi>v</m:mi>
+		      </m:msub></m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci><m:msub>
+			<m:mi>N</m:mi>
+			<m:mi>d</m:mi>
+		      </m:msub></m:ci>
+		    <m:ci><m:msub>
+			<m:mi>N</m:mi>
+			<m:mi>a</m:mi>
+		      </m:msub></m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+     </equation>
+    </para>
+    <para id="para4">
+      Where <m:math><m:ci><m:msub><m:mi>N</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> and
+      <m:math><m:ci><m:msub><m:mi>N</m:mi><m:mi>a</m:mi>
+      </m:msub></m:ci></m:math> are the doping densities in the n and
+      p sinc respectively.  Remember, 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>k</m:ci>
+	    <m:ci>T</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn type="rational">1<m:sep/>40</m:cn>
+	    <m:ci>eV</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>0.025</m:cn>
+	    <m:ci>eV</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>E</m:mi>
+	      <m:mi>g</m:mi>
+	    </m:msub></m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>1.1</m:cn>
+	    <m:ci>eV</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> and <m:math><m:ci><m:msub><m:mi>N</m:mi><m:mi>c</m:mi>
+      </m:msub></m:ci></m:math> and
+      <m:math><m:ci><m:msub><m:mi>N</m:mi><m:mi>v</m:mi>
+      </m:msub></m:ci></m:math> are both 
+      <m:math>
+	<m:apply>
+	  <m:mo>≈</m:mo>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>19</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>.  Thus, 
+      <m:math display="block">
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>q</m:ci>
+	    <m:ci><m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>BI</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>1.1</m:cn>
+	      <m:ci>eV</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>0.025</m:cn>
+	      <m:ci>eV</m:ci>
+	      <m:apply>
+		<m:ln/>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:power/>
+		    <m:cn>10</m:cn>
+		    <m:cn>38</m:cn>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci><m:msub>
+			<m:mi>N</m:mi>
+			<m:mi>d</m:mi>
+		      </m:msub></m:ci>
+		    <m:ci><m:msub>
+			<m:mi>N</m:mi>
+			<m:mi>a</m:mi>
+		      </m:msub></m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> Here the <m:math><m:ci>q</m:ci></m:math> in front of
+      the <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>BI</m:mi>
+      </m:msub></m:ci></m:math> and the
+      <m:math><m:ci>e</m:ci></m:math> in
+      <m:math><m:ci>eV</m:ci></m:math> are both the charge of 1
+      electron and they cancel out making
+      <m:math display="block">
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>BI</m:mi>
+	    </m:msub></m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:cn>1.1</m:cn>
+	      <m:apply>
+		<m:times/>
+		<m:cn>0.025</m:cn>
+		<m:apply>
+		  <m:ln/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:power/>
+		      <m:cn>10</m:cn>
+		      <m:cn>38</m:cn>
+		    </m:apply>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci><m:msub>
+			  <m:mi>N</m:mi>
+			  <m:mi>d</m:mi>
+			</m:msub></m:ci>
+		      <m:ci><m:msub>
+			  <m:mi>N</m:mi>
+			  <m:mi>a</m:mi>
+			</m:msub></m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:ci>volts</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+    Suppose both <m:math><m:ci><m:msub><m:mi>N</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> and <m:math><m:ci><m:msub><m:mi>N</m:mi><m:mi>a</m:mi>
+      </m:msub></m:ci></m:math> are both about [10 to the 15th] - not uncommon values. How big would the built-in potential be in this case?</para>
+    <para id="para5">
+      It turns out that we can actually derive some specific details
+      about the depletion region if we make only a coupled of
+      simplifying (and often justified) assumptions.  In order to make
+      the math easier, and also because many p-n
+      junctions are built this way, we will consider what is known as
+      a <term>one sided junction</term>.  <link target-id="oneside"/> is
+      a picture of such a beast: In this diode, one side is much more heavily doped
+      than the other.  In this particular example, the p-side is heavily doped, and the n-side is relatively lightly doped. We can not show the
+      true picture here, because typically, the more heavily doped
+      side will be doped <emphasis>several orders of
+      magnitude</emphasis> greater than the lightly doped
+      side. Typical values might be
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>N</m:mi>
+	      <m:mi>a</m:mi>
+	    </m:msub></m:ci>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>19</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>N</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub></m:ci>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>16</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>.  Regardless of how big the difference is however,
+      there must be exactly the same amount of "uncovered" charge on
+      both side of the junction.  Why?  Because each time a hole and
+      electron recombine to form the depletion region, they each leave
+      behind either a donor or an acceptor.  A careful count of the
+      exposed charge in <link target-id="oneside"/> shows that I was careful enough to draw my figure accurately for you.  We do not need to have a one-sided
+      diode to do the analysis that will follow, but the equations are
+      easier to solve if we do.
+      <figure id="oneside">
+	<media id="idp3577520" alt=""><image src="../../media/2_29.png" mime-type="image/png"/></media>
+	<caption>
+	  An example of a one-sided diode
+	</caption>
+      </figure>
+    </para>
+    <para id="para6">
+      In order to proceed from here, the first thing we do is make a
+      plot of the charge density
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">ρ</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> as we move through the junction.  Naturally, in the
+      bulk, since the holes and the acceptors (in the p-side), or the
+      electrons and the donors (in the n-side) just equal one another,
+      the net charge density is zero.  In the depletion region, the
+      charge density is -
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:minus/>
+	    <m:ci>q</m:ci>
+	  </m:apply>
+	  <m:ci><m:msub>
+	      <m:mi>N</m:mi>
+	      <m:mi>a</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math> on the p-side and
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:plus/>
+	    <m:ci>q</m:ci>
+	  </m:apply>
+	  <m:ci><m:msub>
+	      <m:mi>N</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math> on the donor side.  (All the mobile carriers are gone,
+      and we are left with just the charged acceptors or donors.)  We
+      will make the assumption that on the n-side, the depletion
+      extends a distance
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci><m:msub>
+	      <m:mi>x</m:mi>
+	      <m:mi>n</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math> from the junction.  On the p-side, the acceptor charge
+      density is so large, that we will treat it is a
+      δ-function, with essentially no width.  The areas of the
+      two boxes must be the same (equal amount of positive and
+      negative charge) and hence, the tall thin box actually has a
+      width of 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci><m:msub>
+		<m:mi>N</m:mi>
+		<m:mi>d</m:mi>
+	      </m:msub></m:ci>
+	    <m:ci><m:msub>
+		<m:mi>N</m:mi>
+		<m:mi>a</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	  <m:ci><m:msub>
+	      <m:mi>x</m:mi>
+	      <m:mi>n</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math>, which, since
+      <m:math><m:ci><m:msub><m:mi>N</m:mi><m:mi>a</m:mi></m:msub></m:ci>
+      </m:math> is several orders of magnitude greater than
+      <m:math><m:ci><m:msub><m:mi>N</m:mi><m:mi>d</m:mi></m:msub></m:ci>
+      </m:math>, means that the tall box has a very very small width
+      compared to the lower, wider one, which is
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>q</m:ci>
+	  <m:ci><m:msub>
+	      <m:mi>N</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math> tall, and has a width of
+      <m:math><m:ci><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub></m:ci>
+      </m:math>.
+      <figure id="function">
+	<media id="idp160560" alt=""><image src="../../media/2_30.png" mime-type="image/png"/></media>
+	<caption>
+	  Charge density as a function of position
+	</caption>
+      </figure>
+	  
+    </para> 
+  </content> 
+</document>

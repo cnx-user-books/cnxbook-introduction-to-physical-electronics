@@ -1,0 +1,230 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Solar Cells</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>35c3eaf6-5712-4e75-a759-222299ea633a</md:uuid>
+</metadata>
+
+  <content>
+    <para id="opposite"> 
+      Now let us look at the opposite process of light generation for
+      a moment. Consider the following situation.
+      <figure id="illumination">
+	<title>P-N diode under illlumination</title> 
+	<media id="idm6122192" alt=""><image src="../../media/2_63.png" mime-type="image/png"/></media> 
+      </figure> 
+      
+      We have just a plain old normal p-n junction, only now, instead
+      of applying an external voltage, we imagine that the junction is
+      being illuminated with light whose photon energy is greater than
+      the band-gap.  In this situation, instead of recombination, we
+      will get photo-generation of electron hole pairs.  The photons
+      simply excite electrons from the full states in the valence
+      band, and "kick" them up into the conduction band, leaving a
+      hole behind<footnote id="idp202160">This is similiar to the thermal
+      excitation process we talked about earlier.</footnote>.  As you can
+      see from <link target-id="illumination"/>, this creates excess
+      electrons in the conduction band in the p-side of the diode, and
+      excess holes in the valence band of the n-side.  These carriers
+      can diffuse over to the junction, where they will be swept
+      across by the built-in electric field in the depletion region.
+      If we were to connect the two sides of the diode together with a
+      wire, a current would flow through that wire as a result of the
+      electrons and holes which move across the junction.
+    </para>
+    <para id="flow">
+      Which way would the current flow?  A quick look at <link target-id="illumination"/> shows that holes (positive charge
+      carriers) are generated on the n-side and they float up to the
+      p-side as they go across the junction.  Hence positive current
+      must be coming out of the anode, or p-side of the junction.
+      Likewise, electrons generated on the p-side fall down the
+      junction potential, and come out the n-side, but since they have
+      negative charge, this flow represents current going
+      <emphasis>into</emphasis> the cathode.  We have constructed a
+      <term>photovoltaic diode</term>, or <term>solar cell</term>!
+      <link target-id="cell"/> is a picture of what this would look like
+      schematically.  We might like to consider the possibility of
+      using this device as a source of energy, but the way we have
+      things set up now, since the voltage across the diode is zero,
+      and since power equals current times voltage, we see that we are
+      getting nada from the cell.  What we need, obviously, is a load
+      resistor, so let's put one in.  It should be clear from <link target-id="loadresistor"/> that the photo current flowing through
+      the load resistor will develop a voltage which it biases the
+      diode in the <emphasis>forward</emphasis> direction, which, of
+      course will cause current to flow back into the anode.  This
+      complicates things, it seems we have current coming
+      <emphasis>out</emphasis> of the diode and current going
+      <emphasis>into</emphasis> the diode all at the same time!  How
+      are we going to figure out what is going on?
+    </para>
+      <figure id="cell">
+	<title>Schematic representation of a photovoltaic cell</title>
+	<media id="idp2794880" alt=""><image src="../../media/2_64.png" mime-type="image/png"/></media>
+      </figure>
+      <figure id="loadresistor">
+	<title>Photovoltaic cell with a load resistor</title>
+	<media id="idm6551680" alt=""><image src="../../media/2_65.png" mime-type="image/png"/></media>
+      </figure> 
+    <para id="para1">
+      The answer is to make a model.  The current which arises due to
+      the photon flux can be conveniently represented as a current
+      source.  We can leave the diode as a diode, and we have the
+      circuit shown in <link target-id="model"/>.  Even though we show
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>out</m:mi>
+      </m:msub></m:ci></m:math> coming out of the device, we know by
+      the usual polarity convention that when we define
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>out</m:mi>
+      </m:msub></m:ci></m:math> as being positive at the top, then we
+      should show the current for the photovoltaic,
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>pv</m:mi>
+      </m:msub></m:ci></m:math> as current going into the top, which
+      is what was done in <link target-id="model"/>.  Note that
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>pv</m:mi>
+	    </m:msub></m:ci>
+	  <m:apply>
+	    <m:minus/>
+	    <m:ci><m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>diode</m:mi>
+	    </m:msub></m:ci>
+	    <m:ci><m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>photo</m:mi>
+	    </m:msub></m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, so all we need to do is to subtract the two currents;
+      we do this graphically in <link target-id="combination"/>.  Note
+      that we have numbered the four quadrants in the I-V plot of the
+      total PV current.  In quadrant I and III, the product of
+      <m:math><m:ci>I</m:ci></m:math> and
+      <m:math><m:ci>V</m:ci></m:math> is a positive number, meaning
+      that power is being <emphasis>dissipated</emphasis> in the cell.
+      For quadrant II and IV, the product of
+      <m:math><m:ci>I</m:ci></m:math> and
+      <m:math><m:ci>V</m:ci></m:math> is negative, and so we are
+      getting power <emphasis>from</emphasis> the device.  Clearly we
+      want to operate in quadrant IV.  In fact, without the addition
+      of an external battery or current source, the circuit, will
+      <emphasis>only</emphasis> run in the IV'th quadrant.  Consider
+      adjusting <m:math><m:ci><m:msub><m:mi>R</m:mi><m:mi>L</m:mi>
+      </m:msub></m:ci></m:math>, the load resistor from 0 (a short) to
+      <m:math><m:infinity/></m:math> (an open). With
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>R</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub></m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>, we would be at point A on <link target-id="combination"/>.  As
+      <m:math><m:ci><m:msub><m:mi>R</m:mi><m:mi>L</m:mi>
+      </m:msub></m:ci></m:math> starts to increase from zero, the
+      voltage across both the diode and the resistor will start to
+      increase also, and we will move to point B, say.  As
+      <m:math><m:ci><m:msub><m:mi>R</m:mi><m:mi>L</m:mi>
+      </m:msub></m:ci></m:math> gets bigger and bigger, we keep moving
+      along the curve until, at point C, where
+      <m:math><m:ci><m:msub><m:mi>R</m:mi><m:mi>L</m:mi>
+      </m:msub></m:ci></m:math> is an open and we have the maximum
+      voltage across the device, but, of course, no current coming
+      out!
+   </para>
+    <figure id="model">
+      <title>Model of PV cell</title>
+      <media id="idp629648" alt=""><image src="../../media/2_66.png" mime-type="image/png"/></media>
+    </figure>  
+    <figure id="combination">
+      <title>Combining the diode and the current source</title>
+      <media id="idp2017424" alt=""><image src="../../media/2_67.png" mime-type="image/png"/></media>
+    </figure>       
+    <para id="para2">
+      Power is 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>V</m:ci>
+	  <m:ci>I</m:ci>
+	</m:apply>
+      </m:math> so at B for instance, the power coming out would be
+      represented by the area enclosed by the two dotted lines and the
+      coordinate axes.  Someplace about where I have point B would be
+      where we would be getting the most power out of out solar cell.
+    </para>
+    <para id="real">      
+      <link target-id="solarcell"/> shows you what a real solar cell
+      would look like.  They are usually made from a complete wafer of
+      silicon, to maximize the usable area.  A shallow (0.25 μm)
+      junction is made on the top, and top contacts are applied as
+      stripes of metal conductor as shown.  An anti-reflection (AR)
+      coating is applied on top of that, which accounts for the bluish
+      color which a typical solar cell has.
+      <figure id="solarcell">
+	<title>A real solar cell</title>
+	<media id="idm5678688" alt=""><image src="../../media/2_68.png" mime-type="image/png"/></media>
+      </figure> 
+    </para>
+
+    <para id="para4">
+      The solar power flux on the earth's surface is (conveniently)
+      about 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>1</m:cn>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>kW</m:ci>
+	    <m:apply>
+	      <m:power/>
+	      <m:ci>m</m:ci>
+	      <m:cn>2</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> or 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>100</m:cn>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>mW</m:ci>
+	    <m:apply>
+	      <m:power/>
+	      <m:ci>cm</m:ci>
+	      <m:cn>2</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>. So if we made a solar cell from a 4 inch diameter
+      wafer (typical) it would have an area of about 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>81</m:cn>
+	  <m:apply>
+	    <m:power/>
+	    <m:ci>cm</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math> and so would be receiving a flux of about 8.1 Watts.
+      Typical cell efficiencies run from about 10% to maybe 15% unless
+      special (and costly) tricks are made.  This means that we will
+      get about 1.2 Watts out from a single wafer.  Looking at B on
+      2.59 we could guess that
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>out</m:mi>
+      </m:msub></m:ci></m:math> will be about 0.5 to 0.6 volts, thus
+      we could expect to get maybe around 2.5 amps from a 4 inch wafer
+      at 0.5 volts with 15% efficiency under the illumination of one
+      sun.  
+    </para>
+  </content>
+  
+</document>

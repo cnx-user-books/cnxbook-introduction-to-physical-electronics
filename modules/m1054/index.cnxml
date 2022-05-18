@@ -1,0 +1,456 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Line Impedance</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>85877341-4664-496e-b7a1-bd13ca7f78f9</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">Unfortunately, since we don't know what value
+      the phasor
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> has, these equations do not do us a whole lot of good!
+      One way to deal with this is to simply divide <link document="m1053" target-id="eqn18">this equation</link> into <link document="m1053" target-id="eqn17">this equation</link>. That gets
+      rid of
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> and the
+      <m:math>
+	<m:apply>
+	  <m:exp/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>β</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> and so we now come up with a <emphasis>new</emphasis>
+      variable, which we shall call <term>line impedance</term>,
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">Z</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>.
+
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:ci type="fn">V</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:ci type="fn">I</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:plus/>
+		    <m:cn>1</m:cn>
+		    <m:apply>
+		      <m:times/>
+		      <m:msub>
+			<m:mi>Γ</m:mi>
+			<m:mi>ν</m:mi>
+		      </m:msub>
+		      <m:apply>
+			<m:exp/>
+			<m:apply>
+			  <m:times/>
+			  <m:cn>-2</m:cn>
+			  <m:imaginaryi/>
+			  <m:ci>β</m:ci>
+			  <m:ci>s</m:ci>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		  <m:apply>
+		    <m:minus/>
+		    <m:cn>1</m:cn>
+		    <m:apply>
+		      <m:times/>
+		      <m:msub>
+			<m:mi>Γ</m:mi>
+			<m:mi>ν</m:mi>
+		      </m:msub>
+		      <m:apply>
+			<m:exp/>
+			<m:apply>
+			  <m:times/>
+			  <m:cn>-2</m:cn>
+			  <m:imaginaryi/>
+			  <m:ci>β</m:ci>
+			  <m:ci>s</m:ci>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">Z</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> represents the ratio of the total voltage to the total
+      current anywhere on the line. Thus, if we have a line
+      <m:math><m:ci>L</m:ci></m:math> long, terminated with a load
+      impedance
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub>
+      </m:math>, which gives rise to a terminal reflection coefficient 
+      <m:math>
+	<m:msub>
+	  <m:mi>Γ</m:mi>
+	  <m:mi>ν</m:mi>
+	</m:msub>
+      </m:math>, then if we substitute
+       <m:math>
+	<m:msub>
+	  <m:mi>Γ</m:mi>
+	  <m:mi>ν</m:mi>
+	</m:msub>
+      </m:math> and <m:math><m:ci>L</m:ci></m:math> into <link target-id="eqn1"/>, the
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">Z</m:ci>
+	  <m:ci>L</m:ci>
+	</m:apply>
+      </m:math> which we calculate will be the "apparent" impedance
+      which we would see looking into the input terminals to the line!
+    </para>   
+
+    <para id="para2">There are several ways in which we can look at
+      <link target-id="eqn1"/>. One is to try to put it into a more
+      tractable form, that we might be able to use to find
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">Z</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>, given some line impedance 
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math>, a load impedance 
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub>
+      </m:math> and a distance, <m:math><m:ci>s</m:ci></m:math> away
+      from the load. We can start out by multiplying top and bottom by
+      <m:math>
+	<m:apply>
+	  <m:exp/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>β</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, substituting in for
+      <m:math>
+	<m:msub>
+	  <m:mi>Γ</m:mi>
+	  <m:mi>ν</m:mi>
+	</m:msub>
+      </m:math>, and then multiplying top and bottom by
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>.
+
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:plus/>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:plus/>
+		      <m:msub>
+			<m:mi>Z</m:mi>
+			<m:mi>L</m:mi>
+		      </m:msub>
+		      <m:msub>
+			<m:mi>Z</m:mi>
+			<m:mn>0</m:mn>
+		      </m:msub>
+		    </m:apply>
+		    <m:apply>
+		      <m:exp/>
+		      <m:apply>
+			<m:times/>
+			<m:imaginaryi/>
+			<m:ci>β</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:msub>
+			<m:mi>Z</m:mi>
+			<m:mi>L</m:mi>
+		      </m:msub>
+		      <m:msub>
+			<m:mi>Z</m:mi>
+			<m:mn>0</m:mn>
+		      </m:msub>
+		    </m:apply>
+		    <m:apply>
+		      <m:exp/>
+		      <m:apply>
+			<m:minus/>
+			<m:apply>
+			  <m:times/>
+			  <m:imaginaryi/>
+			  <m:ci>β</m:ci>
+			  <m:ci>s</m:ci>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:plus/>
+		      <m:msub>
+			<m:mi>Z</m:mi>
+			<m:mi>L</m:mi>
+		      </m:msub>
+		      <m:msub>
+			<m:mi>Z</m:mi>
+			<m:mn>0</m:mn>
+		      </m:msub>
+		    </m:apply>
+		    <m:apply>
+		      <m:exp/>
+		      <m:apply>
+			<m:times/>
+			<m:imaginaryi/>
+			<m:ci>β</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:msub>
+			<m:mi>Z</m:mi>
+			<m:mi>L</m:mi>
+		      </m:msub>
+		      <m:msub>
+			<m:mi>Z</m:mi>
+			<m:mn>0</m:mn>
+		      </m:msub>
+		    </m:apply>
+		    <m:apply>
+		      <m:exp/>
+		      <m:apply>
+			<m:minus/>
+			<m:apply>
+			  <m:times/>
+			  <m:imaginaryi/>
+			  <m:ci>β</m:ci>
+			  <m:ci>s</m:ci>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      
+      Next, we use Euler's relation, and substitute
+      <m:math>
+	<m:apply>
+	  <m:mo>±</m:mo>
+	  <m:apply>
+	    <m:cos/>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>β</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:apply>
+	      <m:sin/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>β</m:ci>
+		<m:ci>s</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> for the exponential. Lots of things will cancel out,
+      and if we do the math carefully, we end up with
+      <equation id="eqn3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:plus/>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mn>0</m:mn>
+		    </m:msub>
+		    <m:apply>
+		      <m:tan/>
+		      <m:apply>
+			<m:times/>
+			<m:ci>β</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+
+		<m:apply>
+		  <m:plus/>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mi>L</m:mi>
+		    </m:msub>
+		    <m:apply>
+		      <m:tan/>
+		      <m:apply>
+			<m:times/>
+			<m:ci>β</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      For some people, this equation is more satisfying than <link target-id="eqn1"/>, but for me, both are about equally opaque in
+      terms if seeing how
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">Z</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> is going to behave with various loads, as we move down
+      the line towards the generator. <link target-id="eqn3"/>
+      <emphasis>does</emphasis> have the nice property that it is easy
+      to calculate, and hence could be put into MATLAB or a
+      programmable calculator. (In fact you could program <link target-id="eqn1"/> just as well for that matter.) You could specify
+      a certain set of conditions and easily find
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">Z</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>, but you would not get much insight into how a
+      transmission line actually behaves.
+    </para>
+
+  </content>
+  
+</document>

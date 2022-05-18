@@ -1,0 +1,486 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Standing Waves/VSWR</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>30914739-c06a-4fd2-9bc3-6d2820903bc2</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">
+
+      <figure id="fig1">
+	<title>A Standing Wave Pattern</title>
+	<media id="idm3546768" alt=""><image src="../../media/713.png" mime-type="image/png"/></media>
+      </figure>
+
+      In making <link target-id="fig1">this plot</link>,
+      we have made use of the fact that the propagation constant
+      <m:math><m:ci>β</m:ci></m:math> can also be expressed as
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>2</m:cn>
+	    <m:pi/>
+	  </m:apply>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math>, and so for the independent variable, instead of
+      showing <m:math><m:ci>s</m:ci></m:math> in meters or whatever,
+      we normalize the distance away from the load to the wavelength
+      of the excitation signal, and hence show distance in
+      wavelengths. What we are showing here is called a <term>standing
+      wave</term>. There are places along the line where the magnitude
+      of the voltage
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:apply>
+	    <m:ci type="fn">V</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> has a maximum value. This is where
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> and 
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup>
+      </m:math> are adding up in phase with one another, and places
+      where there is a voltage minimum, where
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> and 
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup>
+      </m:math> add up out of phase. Since 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:abs/>
+	    <m:msup>
+	      <m:mi>V</m:mi>
+	      <m:mo>-</m:mo>
+	    </m:msup>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:apply>
+	      <m:abs/>
+	      <m:msub>
+		<m:mi>Γ</m:mi>
+		<m:mi>ν</m:mi>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:abs/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>, the maximum value of the standing wave pattern is 
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:cn>1</m:cn>
+	  <m:apply>
+	    <m:abs/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:mi>ν</m:mi>
+	    </m:msub>
+	  </m:apply>
+	</m:apply>
+      </m:math> times
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:msup>
+	    <m:mi>V</m:mi>
+	    <m:mo>+</m:mo>
+	  </m:msup>
+	</m:apply>
+      </m:math> and the minimum is 
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:cn>1</m:cn>
+	  <m:apply>
+	    <m:abs/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:mi>ν</m:mi>
+	    </m:msub>
+	  </m:apply>
+	</m:apply>
+      </m:math> times
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:msup>
+	    <m:mi>V</m:mi>
+	    <m:mo>+</m:mo>
+	  </m:msup>
+	</m:apply>
+      </m:math>. Note that anywhere on the line, the voltage is
+      <emphasis>still</emphasis> oscillating at
+      <m:math>
+	<m:apply>
+	  <m:exp/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>ω</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, and so it is not a constant, it is just that the
+      <term>magnitude</term> of the oscillating signal changes as we
+      move down the line. If we were to put an oscilloscope across the
+      line, we would see an AC signal, oscillating at a frequency
+      <m:math><m:ci>ω</m:ci></m:math>.
+    </para>   
+
+    <para id="para2">A number of considerable interest is the ratio of
+      the maximum voltage amplitude to the minimum voltage amplitude,
+      called the <term>voltage standing wave ratio</term>, or VSWR for
+      short.  It is easy to see that:
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>VSWR</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:abs/>
+		  <m:ci>Γ</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:abs/>
+		  <m:ci>Γ</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> Note that because
+      <m:math>
+	<m:apply>
+	  <m:in/>
+	  <m:apply>
+	    <m:abs/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:mi>ν</m:mi>
+	    </m:msub>
+	  </m:apply>
+	  <m:interval>
+	    <m:cn>0</m:cn>
+	    <m:cn>1</m:cn>
+	  </m:interval>
+	</m:apply>
+      </m:math>,
+      <m:math>
+	<m:apply>
+	  <m:in/>
+	  <m:ci>VSWR</m:ci>
+	  <m:interval>
+	    <m:cn>1</m:cn>
+	    <m:infinity/>
+	  </m:interval>
+	</m:apply>
+      </m:math>.
+    </para>
+
+    <para id="para3">Although <link target-id="fig1"/> looks like the
+      standing wave pattern is more or less sinusoidal, if we increase
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:ci>Γ</m:ci>
+	</m:apply>
+      </m:math> to 0.8, we see that it most definitely is not. There
+      is also a temptation to say that the spacing between minima (or
+      maxima) of the standing wave pattern is
+      <m:math><m:ci>λ</m:ci></m:math> , the wavelength of the
+      signal, but a closer inspection of either <link target-id="fig1"/>
+      or <link target-id="fig2"/>, shows that in fact the spacing between
+      features is only <emphasis>half</emphasis> a wavelength, or
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>λ</m:ci>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>. Why is this?  Well,
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">φ</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> goes as
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>-2</m:cn>
+	  <m:ci>β</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> and 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>β</m:ci>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>2</m:cn>
+	      <m:pi/>
+	    </m:apply>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, and so every time <m:math><m:ci>s</m:ci></m:math>
+      increases by
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>λ</m:ci>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>,
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">φ</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> decreases by
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>2</m:cn>
+	  <m:pi/>
+	</m:apply>
+      </m:math> and we have come one full cycle on the way 
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:apply>
+	    <m:ci type="fn">V</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> behaves.
+
+      <figure id="fig2">
+	<title>Standing Wave Pattern with a Larger Reflection Coefficient</title>
+	<media id="idm4140816" alt=""><image src="../../media/714.png" mime-type="image/png"/></media>
+      </figure>
+      
+      Now let's go back to the <link document="m1055" target-id="fig1">Crank Diagram</link>. At the position shown,
+      we are at a voltage maximum, and
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> just equals the VSWR.
+
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:ci type="fn">Z</m:ci>
+		<m:msub>
+		  <m:mi>s</m:mi>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>max</m:mi>
+		  </m:msub>
+		</m:msub>
+	      </m:apply>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	    <m:ci>VSWR</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:abs/>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>ν</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:abs/>
+		   <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>ν</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Note also that at this particular point, that the voltage and
+      current phasors are in phase with one another (lined up in the
+      same direction) and hence the impedance must be
+      <emphasis>real</emphasis> or resistive.
+    </para>
+
+    <para id="para4">We can move further down the line, and now the 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> phasor starts shrinking, and the
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> phasor starts to get bigger <link target-id="fig3"/>.
+
+      <figure id="fig3">
+	<title>Moving Further Down the Line</title>
+	<media id="idp1519136" alt=""><image src="../../media/715.png" mime-type="image/png"/></media>
+	<caption>Moving further down the line from a 
+	  <m:math>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>max</m:mi>
+	    </m:msub>
+	  </m:math>
+	</caption>
+      </figure>
+      
+      If we move even further down the line, we get to a point where
+      the current phasor is now at a maximum value, and the voltage
+      phasor is at a minimum value <link target-id="fig4"/>. We are now
+      at a voltage minimum, the impedance is again real (the voltage
+      and current phasors are lined up with one another, so they must
+      be in phase) and
+
+      <equation id="eqn3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:msub>
+		<m:mi>s</m:mi>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>min</m:mi>
+		</m:msub>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:ci>VSWR</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:abs/>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>ν</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:abs/>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>ν</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <figure id="fig4">
+	<title>Moving Even Further Down the Line</title>
+	<media id="idp3191344" alt=""><image src="../../media/716.png" mime-type="image/png"/></media>
+	<caption>Crank diagram at a
+	  <m:math>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>min</m:mi>
+	    </m:msub>
+	  </m:math>
+	</caption>
+      </figure>
+
+      The only problem we have here is that except at a voltage
+      minimum or maximum, finding
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">Z</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> from the crank diagram is not very straightforward,
+      since the voltage and current are out of phase, and dividing the
+      two vectors becomes somewhat tedious.
+    </para>
+
+  </content>
+  
+</document>

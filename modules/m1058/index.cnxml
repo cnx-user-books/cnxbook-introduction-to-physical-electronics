@@ -1,0 +1,962 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>The Smith Chart</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>4a6e6e8e-5b11-4c00-affb-8899d65d6620</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">Now let's see how we can use <link document="m1057" target-id="eqn5">The Bilinear Transform</link> to get the
+    co-ordinates on the
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> plane transferred over onto the 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane. <link document="m1057" target-id="eqn5">The
+    Bilinear Transform</link> tells us how to take
+    <emphasis>any</emphasis>
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> and generate an
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> from it. Let's start with an easy one. We will assume
+      that
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:apply>
+	    <m:plus/>
+	    <m:cn>1</m:cn>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>X</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>, which is a vertical line, which passes through 1, and
+    can take on whatever imaginary part it wants <link target-id="fig1"/>.
+
+      <figure id="fig1">
+	<title>Complex Impedence With Real Part = +1</title>
+	<media id="idm3624544" alt=""><image src="../../media/723.png" mime-type="image/png"/></media>
+      </figure>
+    </para>
+
+    <para id="para2">According to <link document="m1057" target-id="eqn5">The Bilinear Transform</link>, the first thing
+    we should do is add 1 to
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>. This gives us the line
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:cn>2</m:cn>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>X</m:ci>
+	    </m:apply>
+	</m:apply>
+      </m:math> <link target-id="fig2"/>.
+
+      <figure id="fig2">
+	<title>Adding 1</title>
+	<media id="idp1655680" alt=""><image src="../../media/724.png" mime-type="image/png"/></media>
+      </figure>
+
+      Now, we take the inverse of this, which will give us a circle,
+      of diameter 1/2 <link target-id="fig3"/>. Now, according to <link document="m1057" target-id="eqn5">The Bilinear Transform</link> we
+      take this circle and multiply by -2 <link target-id="fig4"/>.
+
+      <figure id="fig3">
+	<title>Inverting</title>
+	<media id="idm11322400" alt=""><image src="../../media/725.png" mime-type="image/png"/></media>
+      </figure>
+
+
+      <figure id="fig4">
+	<title>Multiplying by -2</title>
+	<media id="idm1476448" alt=""><image src="../../media/726.png" mime-type="image/png"/></media>
+      </figure>
+
+      And finally, we take the circle and add +1 to it: as shown <link target-id="fig5">here</link>. There, we are done with the
+      transform. The vertical line on the
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> plane that represents an impedance with a real part of
+      +1 and an imaginary part with any value from
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:infinity/>
+	  </m:apply>
+	</m:apply>
+      </m:math> to
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:infinity/>
+	  </m:apply>
+	</m:apply>
+      </m:math> has been reduced to a circle with diameter 1, passing
+      through 0 and 1 on the complex
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane.
+
+      <figure id="fig5">
+	<title>Adding 1 Once Again</title>
+	<media id="idm11819264" alt=""><image src="../../media/727.png" mime-type="image/png"/></media>
+      </figure>
+
+      Let's do the same thing for
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply> 
+	  <m:apply>
+	    <m:plus/>
+	    <m:cn>0.5</m:cn>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>X</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:apply>
+	    <m:plus/>
+	    <m:cn>2</m:cn>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>X</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>. We'll call these lines A and B respectively, and just
+      add these to the sketches we already have <link target-id="fig6"/>.
+      Follow along with <link document="m1057" target-id="eqn5">The
+      Bilinear Transform</link>, and see if you can figure out where
+      each of these sketches comes from.  We will simply be doing the
+      same things again:
+      <list id="list1" list-type="labeled-item" display="inline">
+	<item>add 1</item>
+	<item>invert</item>
+	<item>multiply by -2</item>
+	<item>add 1</item>
+      </list> 
+
+      once again. As you can see in <link target-id="fig7"/>, <link target-id="fig8"/>, <link target-id="fig9"/>, and <link target-id="fig10"/> we get more circles.  For lines inside the +1
+      real part, we end up with a circle that is
+      <emphasis>larger</emphasis> than the +1 circle, and for lines
+      which have a real part greater than +1, we end up with circles
+      which are smaller in diameter than the +1 circle.  All circles
+      pass through the +1 point on the
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane and are tangent to one another.
+
+      <figure id="fig6">
+	<title>Two More Examples</title>
+	<media id="idm3353408" alt=""><image src="../../media/728.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig7">
+	<title>Add +1 to Each</title>
+	<media id="idp2675312" alt=""><image src="../../media/729.png" mime-type="image/png"/></media>
+      </figure>
+
+
+      <figure id="fig8">
+	<title>Inverting</title>
+	<media id="idm497168" alt=""><image src="../../media/730.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig9">
+	<title>Multiply By -2</title>
+	<media id="idm701616" alt=""><image src="../../media/731.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig10">
+	<title>The Final Result</title>
+	<media id="idp6001712" alt=""><image src="../../media/732.png" mime-type="image/png"/></media>
+      </figure>
+
+      There are two special lines we should worry about. One is
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>X</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, the imaginary axis. We will put all of the transform
+      steps together on <link target-id="fig11"/>. We start on the axis,
+      shift over one, get a circle with unity diameter when we invert,
+      grow by two and flip around the imaginary axis when we multiply
+      by -2, and then hop one to the right when +1 is added. Once
+      again, you should work your way through the various steps to
+      make sure you have a good understanding as to how this procedure
+      is supposed to happen. Note that even the imaginary axis on the
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	    </m:msub>
+	</m:apply>
+      </m:math> plane gets transformed into a circle when we go over
+      onto the 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane.
+
+      <figure id="fig11"><title>Another Transform</title><media id="idm668208" alt=""><image src="../../media/733.png" mime-type="image/png" print-width="3in"/></media><caption>Transforming
+	  <m:math>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>X</m:ci>
+	    </m:apply>
+	  </m:math> to the 
+	  <m:math>
+	    <m:apply>
+	      <m:ci type="fn">r</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	  </m:math> plane.
+	</caption></figure>
+
+      The other line we should worry about is
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:apply>
+	    <m:plus/>
+	    <m:infinity/>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>X</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>. Now
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:plus/>
+	    <m:infinity/>
+	    <m:cn>1</m:cn>
+	  </m:apply>
+	  <m:infinity/>
+	</m:apply>
+      </m:math>, and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>-2</m:cn>
+	    <m:infinity/>
+	  </m:apply>
+	  <m:apply>
+	    <m:plus/>
+	    <m:cn>0.0</m:cn>
+	    <m:cn>1</m:cn>
+	  </m:apply>
+	  <m:cn>1</m:cn>
+	</m:apply>
+      </m:math>, and so the line
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:cn>1</m:cn>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>X</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> gets mapped into a point at 1 when we do our
+      transformation onto the 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane. Even points at
+      <m:math>
+	<m:infinity/>
+      </m:math> on the
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> plane end up on the 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane, and are easily accessible!
+    </para>
+
+    <para id="para3">OK, <link target-id="fig12"/> is a plot of the 
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> plane. The lines shown represent the real part of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	    </m:msub>
+	</m:apply>
+      </m:math> that we want to transform. We run them all through
+      <link document="m1057" target-id="eqn5">The Bilinear
+      Transform</link>, to get them onto the
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane. Now we have a whole family of circles, the
+      biggest of which has a diameter of 2 (which corresponds to the
+      imaginary axis) and the smallest of which has a diameter of 0
+      (which corresponds to points at <m:math><m:infinity/></m:math>)
+      <link target-id="fig13"/>.  The circles all fit within one another,
+      and since a +1 was added to every transform as the final bit of
+      manipulation, all of the circles pass through the point +1,
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0</m:cn>
+	  <m:imaginaryi/>
+	</m:apply>
+      </m:math>. Circles with smaller diameters correspond to larger
+      values of real
+       <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	    </m:msub>
+	</m:apply>
+      </m:math>, while the larger circles correspond to the lesser
+      values of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	    </m:msub>
+	</m:apply>
+      </m:math>.
+
+      <figure id="fig12">
+	<title>Other Constant Real Part Lines</title>
+	<media id="idp6550112" alt=""><image src="../../media/734.png" mime-type="image/png"/></media>
+	<caption>Adding other constant real part line to the
+	  <m:math>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:ci type="fn">Z</m:ci>
+		<m:ci>s</m:ci>
+	      </m:apply>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	  </m:math> plane.
+	</caption>
+      </figure>
+
+      <figure id="fig13">
+	<title>Family of Circles</title>
+	<media id="idp2769120" alt=""><image src="../../media/735.png" mime-type="image/png"/></media>
+	<caption>Family of
+	  <m:math>
+	    <m:apply>
+	      <m:real/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:ci type="fn">Z</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+		<m:msub>
+		<m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</caption>
+      </figure>
+
+      Well, we're half way there.  Now all we have to do is find the
+      transform for the co-ordinate lines which correspond to the
+      imaginary part of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+		<m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>.  Let's look at 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:apply>
+	    <m:plus/>
+	    <m:ci>R</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:cn>1</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>.  When we add +1 to this, nothing happens!  The line
+      just slides over 1 unit, and looks just the same <link target-id="fig14"/>.  Now we take its inverse.  This will gives us
+      a circle, but since the line we are inverting lies at an angle
+      of
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:msup>
+	    <m:mn>90</m:mn>
+	    <m:mo>°</m:mo>
+	  </m:msup>
+	</m:apply>
+      </m:math> with respect to the real axis, the major diameter of
+      the circle will lie at an angle of
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:msup>
+	    <m:mn>90</m:mn>
+	    <m:mo>°</m:mo>
+	  </m:msup>
+	</m:apply>
+      </m:math> when we go through the inversion process.  This gives
+      us a circle which is lying in the 
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:imaginaryi/>
+	</m:apply>
+      </m:math> region of the complex plane <link target-id="fig15"/>.
+
+      <figure id="fig14">
+	<title>A Line of Constant Imaginary Part</title>
+	<media id="idp8630384" alt=""><image src="../../media/736.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig15">
+	<title>After Inverting</title>
+	<media id="idm229472" alt=""><image src="../../media/737.png" mime-type="image/png"/></media>
+      </figure>
+
+      The next thing we do is to take this circle and multiply by -2.
+      This will make the circle twice as large, but will also reflect
+      it back up into the
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:imaginaryi/>
+	</m:apply>
+      </m:math> region of the complex plane <link target-id="fig16"/>.
+
+      <figure id="fig16">
+	<title>Mulitply By -2</title>
+	<media id="idp647536" alt=""><image src="../../media/738.png" mime-type="image/png"/></media>
+      </figure>
+
+      And, finally, we add 1 to it, which causes the circle to hop
+      one over to the right <link target-id="fig17"/>.
+
+      <figure id="fig17">
+	<title>And Add 1</title>
+	<media id="idp4633984" alt=""><image src="../../media/739.png" mime-type="image/png"/></media>
+      </figure>
+
+      We can do the same thing to other lines of constant imaginary
+      part and we can then add more circles.  (Or partial circles, for
+      it makes no sense to go beyond the
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:real/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:ci type="fn">Z</m:ci>
+		<m:ci>s</m:ci>
+	      </m:apply>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	  </m:apply>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> circles, as beyond that is the region corresponding to
+      negative real part, which we would not expect to encounter in
+      most transmission lines.)  Take at least one of the other
+      circles drawn <link target-id="fig18">here</link> and see if you
+      can get it to end up in about the right place.
+      
+      <figure id="fig18">
+	<title>The Complete Transformation</title>
+	<media id="idm1332624" alt=""><image src="../../media/740.png" mime-type="image/png"/></media>
+      </figure>
+
+      There is one line of interest which we have a take a little care
+      with. That is the real axis, 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:apply>
+	    <m:plus/>
+	    <m:cn>0</m:cn>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>X</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>. This line is a distance 0 away from the origin, and
+      so when we invert it, we get a circle with
+      <m:math><m:infinity/></m:math> diameter.  That's OK though,
+      because that is just a straight line.  So, the real axis of the
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	    </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> plane transforms into the real axis on the
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane.
+    </para> 
+    
+    <para id="para4">We have done a most wondrous thing! (Although you
+      may not realize it yet.) We have taken the
+      <emphasis>entire</emphasis> half plane of complex impedance
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	    </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> and mapped the whole thing into a circle with diameter
+      1! Let's put the two of them side by side. (Although we can't
+      show the whole
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> plane of course.)  These are shown <link target-id="fig19">here</link>, where we show how each line on
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	    </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> maps into a (curved) line on the
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane.  Note also, that for every point on the 
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	    </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> plane ("A" and "B") there is a corresponding point on
+      the 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane. Pick a couple more points, "C" and "D" and
+      locate them either on the
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	    </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> plane, or the 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane, and then find the corresponding point on the
+      other plane.
+
+      <figure id="fig19">
+	<title>The Mapping</title>
+	<media id="idp1373744" alt=""><image src="../../media/741.png" mime-type="image/png"/></media>
+      </figure>
+
+      Note that the mapping is not very uniform. All of the region
+      where either the real or imaginary part of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	    </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> is
+      <m:math>
+	<m:apply>
+	  <m:lt/>
+	  <m:cn>1</m:cn>
+	</m:apply>
+      </m:math> (a small square on
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	    </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> maps into a major fraction of the 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane <link target-id="fig20"/>  whereas all the rest of the
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	    </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> plane, all the way out to infinity in three directions
+      (<m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:infinity/>
+	</m:apply>
+      </m:math>, 
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:infinity/>
+	  </m:apply>
+	</m:apply>
+      </m:math>, and
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:infinity/>
+	  </m:apply>
+	</m:apply>
+      </m:math>) map into the rest of the 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> circle <link target-id="fig21"/>.
+
+      <figure id="fig20">
+	<title>Mapping</title>
+	<media id="idp1654976" alt=""><image src="../../media/742.png" mime-type="image/png"/></media>
+	<caption>Mapping 1,
+	  <m:math>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>1</m:cn>
+	      <m:imaginaryi/>
+	    </m:apply>
+	  </m:math>
+	</caption>
+      </figure>
+
+      <figure id="fig21">
+	<title>Mapping the Rest</title>
+	<media id="idm2641584" alt=""><image src="../../media/743.png" mime-type="image/png"/></media>
+      </figure>
+
+      This graph or transformation is called a <term>Smith
+      Chart</term>, after the Bell Labs worker who first thought it
+      up. It is a most useful and powerful graphical solution to the
+      transmission line problem. In <link document="m1059">Introduction to Using the Smith Chart</link> we
+      will spend a little time seeing how and why it can be so useful.
+
+
+    </para>   
+  </content>
+  
+</document>

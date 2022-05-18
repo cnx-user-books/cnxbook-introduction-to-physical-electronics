@@ -1,0 +1,1380 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Terminated Lines</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>a415df51-ccc6-4a4e-83e5-a58c0f02ea3d</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1"> If, on the other hand, we have a finite line,
+      terminated with some load impedance, we have a somewhat more
+      complicated problem to deal with <link target-id="fig1"/>.
+
+      <figure id="fig1"><title>A Finite Terminated Transmission Line</title><media id="idm12438656" alt=""><image src="../../media/7_05.png" mime-type="image/png" print-width="3in"/></media></figure>
+
+      There are several things we should note
+      <emphasis>before</emphasis> we head off into equation-land
+      again. First of all, unlike the transient problems we looked at
+      in a <link document="m1048">previous chapter</link>, there can
+      be no more than <emphasis>two</emphasis> voltage and current
+      signals on the line, just
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> and
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup>
+      </m:math>, (and
+      <m:math>
+	<m:msup>
+	  <m:mi>I</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> and
+      <m:math>
+	<m:msup>
+	  <m:mi>I</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup>
+      </m:math>). We no longer have the luxury of having
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>1</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>,
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>2</m:mn>
+	  <m:mo>+</m:mo>
+	</m:msubsup>
+      </m:math>, etc., because we are talking now about a
+      <emphasis>steady state system</emphasis>.  All of the transient
+      solutions which built up when the generator was first connected
+      to the line have been summed together into just two waves.  
+    </para>   
+
+    <para id="para2">Thus, on the line we have a single <term>total
+    voltage function</term>, which is just the sum of the positive and
+    negative going voltage waves
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:ci>β</m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>-</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:plus/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:ci>β</m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and a total current function
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">I</m:ci>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:msup>
+		  <m:mi>I</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:ci>β</m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:msup>
+		  <m:mi>I</m:mi>
+		  <m:mo>-</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:plus/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:ci>β</m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Note also that until we have solved for
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> and
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup>
+      </m:math>, we do not know
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> or 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> anywhere on the line. In particular, we do not know
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> and 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> which would tell us what the apparent impedance is
+      looking into the line.
+      <equation id="eqn3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:cn>0</m:cn>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:plus/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>-</m:mo>
+		</m:msup>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:msup>
+		  <m:mi>I</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:msup>
+		  <m:mi>I</m:mi>
+		  <m:mo>-</m:mo>
+		</m:msup>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Until we know what kind of impedance the generator is seeing, we
+      can not figure out how much of the generator's voltage will be
+      coupled to the line! The input impedance looking into the line
+      is now a function of the load impedance, the length of the line,
+      and the phase velocity on the line. We have to solve this
+      <emphasis>before</emphasis> we can figure out how the line and
+      generator will interact.
+    </para>
+
+    <para id="para3"> The approach we shall have to take is the
+      following. We will start at the <emphasis>load</emphasis> end of
+      the line, and in a manner similar to the one we used
+      previously<!-- possible cxnx, though i have no idea where it
+      would point to!!! -->, find a relationship between
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> and
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup>
+      </m:math>, leaving their actual magnitude and phase as something
+      to be determined later. We can then propagate the two voltages
+      (and currents) back down to the input, determine what the input
+      impedance is by finding the ratio of (<m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:msup>
+	    <m:mi>V</m:mi>
+	    <m:mo>+</m:mo>
+	  </m:msup>
+	  <m:msup>
+	    <m:mi>V</m:mi>
+	    <m:mo>-</m:mo>
+	  </m:msup>
+	</m:apply>
+      </m:math>) to (<m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:msup>
+	    <m:mi>I</m:mi>
+	    <m:mo>+</m:mo>
+	  </m:msup>
+	  <m:msup>
+	    <m:mi>I</m:mi>
+	    <m:mo>-</m:mo>
+	  </m:msup>
+	</m:apply>
+      </m:math>), and from this, and knowledge of properties of the
+      generator and its impedance, determine what the actual voltages
+      and currents are.
+    </para>
+
+    <para id="para4">Let's take a look at the load.  We again use KVL
+      and KCL (<link target-id="fig2"/>) to match voltages and currents
+      in the line and voltages and currents in the load:
+      <equation id="eqn4">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:plus/>
+					<m:apply>
+						<m:times/>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>+</m:mo>
+						</m:msup>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:minus/>
+								<m:apply>
+									<m:times/>
+									<m:imaginaryi/>
+									<m:ci>β</m:ci>
+									<m:ci>L</m:ci>
+								</m:apply>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+					<m:apply>
+						<m:times/>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>-</m:mo>
+						</m:msup>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:plus/>
+								<m:apply>
+									<m:times/>
+									<m:imaginaryi/>
+									<m:ci>β</m:ci>
+									<m:ci>L</m:ci>
+								</m:apply>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+				<m:msub>
+					<m:mi>V</m:mi>
+					<m:mi>L</m:mi>
+				</m:msub>
+			</m:apply>
+		</m:math>
+	</equation>
+      and
+      <equation id="eqn5">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:plus/>
+					<m:apply>
+						<m:times/>
+						<m:msup>
+							<m:mi>I</m:mi>
+							<m:mo>+</m:mo>
+						</m:msup>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:minus/>
+								<m:apply>
+									<m:times/>
+									<m:imaginaryi/>
+									<m:ci>β</m:ci>
+									<m:ci>L</m:ci>
+								</m:apply>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+					<m:apply>
+						<m:times/>
+						<m:msup>
+							<m:mi>I</m:mi>
+							<m:mo>-</m:mo>
+						</m:msup>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:plus/>
+								<m:apply>
+									<m:times/>
+									<m:imaginaryi/>
+									<m:ci>β</m:ci>
+									<m:ci>L</m:ci>
+								</m:apply>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+				<m:msub>
+					<m:mi>I</m:mi>
+					<m:mi>L</m:mi>
+				</m:msub>
+			</m:apply>
+		</m:math>
+	</equation>
+	<figure id="fig2"><title>Doing Kirchoff at the End of the Line</title><media id="idp574448" alt=""><image src="../../media/7_06.png" mime-type="image/png" print-width="3in"/></media><caption>Change variables!</caption></figure>
+
+      Now, we <emphasis>could</emphasis> substitute 
+      <m:math>
+		<m:apply>
+			<m:divide/>
+			<m:apply>
+				<m:mo>±</m:mo>
+				<m:ci>V</m:ci>
+			</m:apply>
+			<m:msub>
+				<m:mi>Z</m:mi>
+				<m:mn>0</m:mn>
+			</m:msub>
+		</m:apply>
+	</m:math> for the two currents on the line and
+      <m:math>
+		<m:apply>
+			<m:divide/>
+			<m:msub>
+				<m:mi>V</m:mi>
+				<m:mi>L</m:mi>
+			</m:msub>
+			<m:msub>
+				<m:mi>Z</m:mi>
+				<m:mi>L</m:mi>
+			</m:msub>
+		</m:apply>
+	</m:math> for
+      <m:math>
+		<m:msub>
+			<m:mi>I</m:mi>
+			<m:mi>L</m:mi>
+		</m:msub>
+	</m:math>, and then try to solve for 
+      <m:math>
+		<m:msup>
+			<m:mi>V</m:mi>
+			<m:mo>-</m:mo>
+		</m:msup>
+	</m:math> in terms of
+      <m:math>
+		<m:msup>
+			<m:mi>V</m:mi>
+			<m:mo>+</m:mo>
+		</m:msup>
+	</m:math> using <link target-id="eqn4"/> and <link target-id="eqn5"/>
+      but we can be a little clever at the outset, and make our
+      (complex) algebra a good bit cleaner <link target-id="fig3"/>. Let's make a change of variable and let
+      <equation id="eqn6">
+		<m:math>
+			<m:apply>
+				<m:equivalent/>
+				<m:ci>s</m:ci>
+				<m:apply>
+					<m:minus/>
+					<m:ci>L</m:ci>
+					<m:ci>x</m:ci>
+				</m:apply>
+			</m:apply>
+		</m:math>
+	</equation>
+	<figure id="fig3">
+		<title>s=0 at the Load and So the Exponentials Go Away!</title>
+		<media id="idm1456704" alt=""><image src="../../media/7_07.png" mime-type="image/png"/></media>
+	</figure>
+
+      This then gives us for the voltage on the line (using
+      <m:math>
+		<m:apply>
+			<m:eq/>
+			<m:ci>x</m:ci>
+			<m:apply>
+				<m:minus/>
+				<m:ci>L</m:ci>
+				<m:ci>s</m:ci>
+			</m:apply>
+		</m:apply>
+	</m:math>)
+
+      <equation id="eqn7"><m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:ci type="fn">V</m:ci>
+					<m:ci>s</m:ci>
+				</m:apply>
+				<m:apply>
+					<m:plus/>
+					<m:apply>
+						<m:times/>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>+</m:mo>
+						</m:msup>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:minus/>
+								<m:apply>
+									<m:times/>
+									<m:imaginaryi/>
+									<m:ci>β</m:ci>
+									<m:ci>L</m:ci>
+								</m:apply>
+							</m:apply>
+						</m:apply>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:times/>
+								<m:imaginaryi/>
+								<m:ci>β</m:ci>
+								<m:ci>s</m:ci>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+					<m:apply>
+						<m:times/>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>-</m:mo>
+						</m:msup>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:times/>
+								<m:imaginaryi/>
+								<m:ci>β</m:ci>
+								<m:ci>L</m:ci>
+							</m:apply>
+						</m:apply>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:minus/>
+								<m:apply>
+									<m:times/>
+									<m:imaginaryi/>
+									<m:ci>β</m:ci>
+									<m:ci>s</m:ci>
+								</m:apply>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:math>
+	</equation>
+      Usually, we just fold the (constant) phase terms
+      <m:math>
+		<m:apply>
+			<m:exp/>
+			<m:apply>
+				<m:mo>±</m:mo>
+				<m:apply>
+					<m:times/>
+					<m:imaginaryi/>
+					<m:ci>β</m:ci>
+					<m:ci>L</m:ci>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:math> terms in with the
+      <m:math>
+		<m:msup>
+			<m:mi>V</m:mi>
+			<m:mo>+</m:mo>
+		</m:msup>
+	</m:math> and
+      <m:math>
+		<m:msup>
+			<m:mi>V</m:mi>
+			<m:mo>-</m:mo>
+		</m:msup>
+	</m:math> and so we have:
+      <equation id="eqn8">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:ci type="fn">V</m:ci>
+					<m:ci>s</m:ci>
+				</m:apply>
+				<m:apply>
+					<m:plus/>
+					<m:apply>
+						<m:times/>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>+</m:mo>
+						</m:msup>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:times/>
+								<m:imaginaryi/>
+								<m:ci>β</m:ci>
+								<m:ci>s</m:ci>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+					<m:apply>
+						<m:times/>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>-</m:mo>
+						</m:msup>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:minus/>
+								<m:apply>
+									<m:times/>
+									<m:imaginaryi/>
+									<m:ci>β</m:ci>
+									<m:ci>s</m:ci>
+								</m:apply>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:math>
+	</equation>
+
+      Note that when we do this, we now have a
+      <emphasis>positive</emphasis> exponential in the first term
+      associated with
+      <m:math>
+		<m:msup>
+			<m:mi>V</m:mi>
+			<m:mo>+</m:mo>
+		</m:msup>
+	</m:math> and a <emphasis>negative</emphasis> exponential
+      associated with the
+      <m:math>
+		<m:msup>
+			<m:mi>V</m:mi>
+			<m:mo>-</m:mo>
+		</m:msup>
+	</m:math> term. Of course, we also get for
+      <m:math>
+		<m:apply>
+			<m:ci type="fn">I</m:ci>
+			<m:ci>s</m:ci>
+		</m:apply>
+	</m:math>:
+      <equation id="eqn9">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:ci type="fn">I</m:ci>
+					<m:ci>s</m:ci>
+				</m:apply>
+				<m:apply>
+					<m:plus/>
+					<m:apply>
+						<m:times/>
+						<m:msup>
+							<m:mi>I</m:mi>
+							<m:mo>+</m:mo>
+						</m:msup>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:times/>
+								<m:imaginaryi/>
+								<m:ci>β</m:ci>
+								<m:ci>s</m:ci>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+					<m:apply>
+						<m:times/>
+						<m:msup>
+							<m:mi>I</m:mi>
+							<m:mo>-</m:mo>
+						</m:msup>
+						<m:apply>
+							<m:exp/>
+							<m:apply>
+								<m:minus/>
+								<m:apply>
+									<m:times/>
+									<m:imaginaryi/>
+									<m:ci>β</m:ci>
+									<m:ci>s</m:ci>
+								</m:apply>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:math>
+	</equation>
+      This change now moves our origin to the
+      <emphasis>load</emphasis> end of the line, and reverses the
+      direction of positive motion. <emphasis>But</emphasis>, now when
+      we plug into
+      <m:math>
+		<m:apply>
+			<m:exp/>
+			<m:apply>
+				<m:times/>
+				<m:imaginaryi/>
+				<m:ci>β</m:ci>
+				<m:ci>s</m:ci>
+			</m:apply>
+		</m:apply>
+	</m:math> the value for <m:math><m:ci>s</m:ci></m:math> at the load
+      (<m:math>
+		<m:apply>
+			<m:eq/>
+			<m:ci>s</m:ci>
+			<m:cn>0</m:cn>
+		</m:apply>
+	</m:math>), the equations simplify to:
+      <equation id="eqn10">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:plus/>
+					<m:msup>
+						<m:mi>V</m:mi>
+						<m:mo>+</m:mo>
+					</m:msup>
+					<m:msup>
+						<m:mi>V</m:mi>
+						<m:mo>-</m:mo>
+					</m:msup>
+				</m:apply>
+				<m:msub>
+					<m:mi>V</m:mi>
+					<m:mi>L</m:mi>
+				</m:msub>
+			</m:apply>
+		</m:math>
+	</equation> 
+      and
+      <equation id="eqn11">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:plus/>
+					<m:msup>
+						<m:mi>I</m:mi>
+						<m:mo>+</m:mo>
+					</m:msup>
+					<m:msup>
+						<m:mi>I</m:mi>
+						<m:mo>-</m:mo>
+					</m:msup>
+				</m:apply>
+				<m:msub>
+					<m:mi>I</m:mi>
+					<m:mi>L</m:mi>
+				</m:msub>
+			</m:apply>
+		</m:math>
+	</equation>
+      which we then re-write as
+      <equation id="eqn12">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:minus/>
+					<m:apply>
+						<m:divide/>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>+</m:mo>
+						</m:msup>
+						<m:msub>
+							<m:mi>Z</m:mi>
+							<m:mn>0</m:mn>
+						</m:msub>
+					</m:apply>
+					<m:apply>
+						<m:divide/>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>-</m:mo>
+						</m:msup>
+						<m:msub>
+							<m:mi>Z</m:mi>
+							<m:mn>0</m:mn>
+						</m:msub>
+					</m:apply>
+				</m:apply>
+				<m:apply>
+					<m:divide/>
+					<m:msub>
+						<m:mi>V</m:mi>
+						<m:mi>L</m:mi>
+					</m:msub>
+					<m:msub>
+						<m:mi>Z</m:mi>
+						<m:mi>L</m:mi>
+					</m:msub>
+				</m:apply>
+			</m:apply>
+		</m:math>
+	</equation>
+
+      This is beginning to look almost exactly like a <link document="m1043">previous chapter</link>. As a reminder, we
+      solve <link target-id="eqn12"/> for
+      <m:math>
+		<m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>L</m:mi>
+		</m:msub>
+	</m:math>
+	<equation id="eqn13">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:msub>
+					<m:mi>V</m:mi>
+					<m:mi>L</m:mi>
+				</m:msub>
+				<m:apply>
+					<m:times/>
+					<m:apply>
+						<m:divide/>
+						<m:msub>
+							<m:mi>Z</m:mi>
+							<m:mi>L</m:mi>
+						</m:msub>
+						<m:msub>
+							<m:mi>Z</m:mi>
+							<m:mn>0</m:mn>
+						</m:msub>
+					</m:apply>
+					<m:apply>
+						<m:minus/>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>+</m:mo>
+						</m:msup>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>-</m:mo>
+						</m:msup>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:math>
+	</equation>
+      and substitute for
+      <m:math>
+		<m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>L</m:mi>
+		</m:msub>
+	</m:math> in <link target-id="eqn10"/>
+	<equation id="eqn14">
+		<m:math>
+			<m:apply>
+				<m:eq/>
+				<m:apply>
+					<m:plus/>
+					<m:msup>
+						<m:mi>V</m:mi>
+						<m:mo>+</m:mo>
+					</m:msup>
+					<m:msup>
+						<m:mi>V</m:mi>
+						<m:mo>-</m:mo>
+					</m:msup>
+				</m:apply>
+				<m:apply>
+					<m:times/>
+					<m:apply>
+						<m:divide/>
+						<m:msub>
+							<m:mi>Z</m:mi>
+							<m:mi>L</m:mi>
+						</m:msub>
+						<m:msub>
+							<m:mi>Z</m:mi>
+							<m:mn>0</m:mn>
+						</m:msub>
+					</m:apply>
+					<m:apply>
+						<m:minus/>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>+</m:mo>
+						</m:msup>
+						<m:msup>
+							<m:mi>V</m:mi>
+							<m:mo>-</m:mo>
+						</m:msup>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:math>
+	</equation>
+
+      From which we then solve for the reflection coefficient
+      <m:math>
+		<m:msub>
+			<m:mi>Γ</m:mi>
+			<m:mi>ν</m:mi>
+		</m:msub>
+	</m:math>, the ratio of
+      <m:math>
+		<m:msup>
+			<m:mi>V</m:mi>
+			<m:mo>-</m:mo>
+		</m:msup>
+	</m:math> to
+      <m:math>
+		<m:msup>
+			<m:mi>V</m:mi>
+			<m:mo>+</m:mo>
+		</m:msup>
+	</m:math>.
+
+      <equation id="eqn15">
+		<m:math>
+			<m:apply>
+				<m:equivalent/>
+				<m:apply>
+					<m:divide/>
+					<m:msup>
+						<m:mi>V</m:mi>
+						<m:mo>-</m:mo>
+					</m:msup>
+					<m:msup>
+						<m:mi>V</m:mi>
+						<m:mo>+</m:mo>
+					</m:msup>
+				</m:apply>
+				<m:apply>
+					<m:eq/>
+					<m:msub>
+						<m:mi>Γ</m:mi>
+						<m:mi>ν</m:mi>
+					</m:msub>
+					<m:apply>
+						<m:divide/>
+						<m:apply>
+							<m:minus/>
+							<m:msub>
+								<m:mi>Z</m:mi>
+								<m:mi>L</m:mi>
+							</m:msub>
+							<m:msub>
+								<m:mi>Z</m:mi>
+								<m:mn>0</m:mn>
+							</m:msub>
+						</m:apply>
+						<m:apply>
+							<m:plus/>
+							<m:msub>
+								<m:mi>Z</m:mi>
+								<m:mi>L</m:mi>
+							</m:msub>
+							<m:msub>
+								<m:mi>Z</m:mi>
+								<m:mn>0</m:mn>
+							</m:msub>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:math>
+	</equation>
+
+      Note that since, in general,
+      <m:math>
+		<m:msub>
+			<m:mi>Z</m:mi>
+			<m:mi>L</m:mi>
+		</m:msub>
+	</m:math> will be complex, we can expect that
+      <m:math>
+		<m:msub>
+			<m:mi>Γ</m:mi>
+			<m:mi>ν</m:mi>
+		</m:msub>
+	</m:math> will also be a complex number with both a magnitude
+      <m:math>
+		<m:apply>
+			<m:abs/>
+			<m:msub>
+				<m:mi>Γ</m:mi>
+				<m:mi>ν</m:mi>
+			</m:msub>
+		</m:apply>
+	</m:math> and a phase angle
+      <m:math>
+		<m:msub>
+			<m:mi>θ</m:mi>
+			<m:mi>Γ</m:mi>
+		</m:msub>
+	</m:math>. Also, as with the case when we were looking at
+      transients,
+      <m:math>
+		<m:apply>
+			<m:lt/>
+			<m:apply>
+				<m:abs/>
+				<m:msub>
+					<m:mi>Γ</m:mi>
+					<m:mi>ν</m:mi>
+				</m:msub>
+			</m:apply>
+			<m:cn>1</m:cn>
+		</m:apply>
+	</m:math>.
+    </para>
+
+    <para id="para5">Since we now know 
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup>
+      </m:math> in terms of
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math>, we can now write an expression for
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> the voltage anywhere on the line.
+      <equation id="eqn16">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:ci>β</m:ci>
+		    <m:ci>s</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>-</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:ci>β</m:ci>
+		      <m:ci>s</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Note again the change in signs in the two exponentials. Since
+      our spatial variable <m:math><m:ci>s</m:ci></m:math> is going in
+      the opposite direction from <m:math><m:ci>x</m:ci></m:math>, the
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> phasor now goes as
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>β</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> and the
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup>
+      </m:math> phasor now goes as
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>β</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>.
+    </para>
+
+    <para id="para6">We now substitute in
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:msub>
+	    <m:mi>Γ</m:mi>
+	    <m:mi>ν</m:mi>
+	  </m:msub>
+	  <m:msup>
+	    <m:mi>V</m:mi>
+	    <m:mo>+</m:mo>
+	  </m:msup>
+	</m:apply>
+      </m:math> for
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup>
+      </m:math> in <link target-id="eqn16"/>, and for reasons that will
+      become apparent soon, factor out an
+      <m:math>
+	<m:apply>
+	  <m:exp/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>β</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>.
+
+      <equation id="eqn17">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:ci>β</m:ci>
+		    <m:ci>s</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:msub>
+		  <m:mi>Γ</m:mi>
+		  <m:mi>ν</m:mi>
+		</m:msub>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:ci>β</m:ci>
+		      <m:ci>s</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:plus/>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:ci>β</m:ci>
+		    <m:ci>s</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>ν</m:mi>
+		  </m:msub>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:apply>
+			<m:times/>
+			<m:imaginaryi/>
+			<m:ci>β</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>β</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>ν</m:mi>
+		  </m:msub>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:apply>
+			<m:times/>
+			<m:cn>2</m:cn>
+			<m:imaginaryi/>
+			<m:ci>β</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      We could have also written down an equation for
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>, the current along the line. It will be a good test
+      of your understanding of the basic equations we are developing
+      here to show yourself that indeed
+      <equation id="eqn18">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">I</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:msup>
+		    <m:mi>V</m:mi>
+		    <m:mo>+</m:mo>
+		  </m:msup>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:ci>β</m:ci>
+		      <m:ci>s</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>ν</m:mi>
+		  </m:msub>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:apply>
+			<m:times/>
+			<m:cn>2</m:cn>
+			<m:imaginaryi/>
+			<m:ci>β</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+  </content>
+  
+</document>

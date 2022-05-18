@@ -1,0 +1,919 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Small Signal Model for Bipolar Transistor</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>6d6fb48f-0a5f-4048-ba61-7911226631d3</md:uuid>
+</metadata>
+
+  <content>
+
+    <para id="para1">
+      Thus if we go back to <link document="m1017" target-id="fig10">the
+      circuit model</link> for the common emitter transistor, and
+      re-draw it as a <term>small signal model</term> it would look
+      something like <link target-id="fig16"/>. Here we have replaced the
+      diode with a linear element (a resistor, called
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>r</m:mi>
+            <m:mi>π</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>)
+
+    and we have changed the notation for the currents from
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>B</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    and
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>C</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    to
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>i</m:mi>
+            <m:mi>b</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    and
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>i</m:mi>
+            <m:mi>c</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    respectively, to remind us that we are now talking about small signal
+    ac quantities, not large signal ones. The bias currents
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>B</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    and
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>C</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    are still flowing through the device (and we will leave it to ELEC 342
+    to discuss how these are generated and set up) but they do not appear
+    in the small signal model. This model is only used to figure out how
+    the transistor behaves for the ac signal going through it, not have
+    it responds to large DC values.
+
+  </para>
+
+  <figure id="fig16">
+    <media id="idp1427728" alt=""><image src="../../media/3.16.png" mime-type="image/png"/></media>
+    <caption>Small signal linear model for the common emitter transistor
+    </caption>
+  </figure>
+
+  <para id="para2">
+    Now
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>r</m:mi>
+            <m:mi>π</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    the equivalent small signal resistance of the base-emitter diode
+    is given simply by the inverse of the conductance of the
+    equivalent diode. Remember, we found
+
+      <equation id="eqn26">
+        <m:math>
+          <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>r</m:mi>
+		<m:mi>π</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+            <m:apply>
+	      <m:divide/>
+              <m:cn>1</m:cn>
+              <m:apply><m:times/>
+                <m:apply><m:divide/>
+                  <m:ci>q</m:ci>
+                  <m:apply><m:times/>
+                    <m:ci>k</m:ci>
+                    <m:ci>T</m:ci>
+                  </m:apply>
+                </m:apply>
+                <m:ci>
+                  <m:msub>
+                    <m:mi>I</m:mi>
+                    <m:mi>B</m:mi>
+                  </m:msub>
+                </m:ci>
+              </m:apply>
+            </m:apply>
+
+
+            <m:apply><m:divide/>
+              <m:cn>1</m:cn>
+              <m:apply><m:times/>
+                <m:apply><m:divide/>
+                  <m:ci>q</m:ci>
+                  <m:apply><m:times/>
+                    <m:ci>k</m:ci>
+                    <m:ci>T</m:ci>
+                  </m:apply>
+                </m:apply>
+                <m:apply><m:divide/>
+                  <m:ci>
+                    <m:msub>
+                      <m:mi>I</m:mi>
+                      <m:mi>C</m:mi>
+                    </m:msub>
+                  </m:ci>
+                  <m:ci>β</m:ci>
+                </m:apply>
+              </m:apply>
+            </m:apply>
+
+            <m:apply><m:divide/>
+              <m:ci>β</m:ci>
+              <m:apply><m:times/>
+                <m:cn>40</m:cn>
+                <m:ci>
+                  <m:msub>
+                    <m:mi>I</m:mi>
+                    <m:mi>C</m:mi>
+                  </m:msub>
+                </m:ci>
+              </m:apply>
+            </m:apply>
+
+          </m:apply>
+        </m:math>
+      </equation>
+
+
+    where we have used the fact that
+
+     <m:math>
+       <m:apply><m:eq/>
+         <m:ci>
+           <m:msub>
+             <m:mi>I</m:mi>
+             <m:mi>C</m:mi>
+           </m:msub>
+         </m:ci>
+         <m:apply><m:times/>
+           <m:ci>β</m:ci>
+           <m:ci>
+             <m:msub>
+               <m:mi>I</m:mi>
+               <m:mi>B</m:mi>
+             </m:msub>
+           </m:ci>
+         </m:apply>
+       </m:apply>
+     </m:math>
+
+    and
+
+    <m:math>
+      <m:apply><m:eq/>
+        <m:apply><m:divide/>
+          <m:ci>q</m:ci>
+          <m:apply><m:times/>
+            <m:ci>k</m:ci>
+            <m:ci>T</m:ci>
+          </m:apply>
+        </m:apply>
+        <m:apply>
+	    <m:times/>
+	    <m:cn>40</m:cn>
+	    <m:apply>
+	      <m:power/>
+	      <m:ci>V</m:ci>
+	      <m:cn>-1</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>.
+
+    As we said earlier, typical values for <m:math><m:ci>β</m:ci>
+    </m:math>in a standard bipolar transistor will be around
+    100. Thus, for a typical collector bias current of
+
+      <m:math>
+        <m:apply><m:eq/>
+          <m:ci>
+            <m:msub>
+              <m:mi>I</m:mi>
+              <m:mi>C</m:mi>
+            </m:msub>
+          </m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>1</m:cn>
+	    <m:ci>mA</m:ci>
+	  </m:apply>
+        </m:apply>
+      </m:math>,
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>r</m:mi>
+            <m:mi>π</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    will be about 2.5 kΩ.
+
+  </para>
+
+  <para id="para3">
+    There is one more item we should consider in putting together our
+    model for the bipolar transistor. We did not get things completely
+    right when we drew the <link document="m1016" target-id="fig09">common emitter characteristic curves</link> for the
+    transistor. There is a somewhat subtle effect going on when
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>CE</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+    is increased. Remember, we said that the current coming out of the
+    collector is not effected by how big the drop was in the reverse
+    biased base-collector junction. The collector current just depends
+    on how many electrons are injected into the base by the emitter,
+    and how many of them make it across the base to the base-collector
+    junction. As the base-collector reverse bias is increased (by
+    increasing
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>CE</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    the depletion width of the base-collector junction increases as
+    well. This has the effect of making the base region somewhat
+    shorter. This means that a few more electrons are able to make it
+    across the base region without recombining and as a result
+    <m:math><m:ci>α</m:ci> </m:math> and hence
+    <m:math><m:ci>β</m:ci> </m:math> increase somewhat. This then
+    means that
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>C</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    goes up slightly with increasing
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>CE</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>.
+
+    The effect is called <term>base width modulation</term>.
+    Let us now include that effect in the common emitter
+    characteristic curves. As you can see in <link target-id="fig18"/>,
+    there is now a slope to the
+
+     <m:math>
+      <m:apply>
+        <m:ci type="fn"><m:msub>
+          <m:mi>I</m:mi>
+          <m:mi>C</m:mi>
+        </m:msub></m:ci>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>CE</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:apply>
+    </m:math>
+
+    curve, with
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>C</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    increasing somewhat as
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>CE</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    increases. The effect has been somewhat exaggerated in <link target-id="fig17"/>, and I will now make the slope even bigger so
+    that we may define a new quantity, called the <term>Early
+    Voltage</term>.
+
+  </para>
+
+
+  <figure id="fig17"><media id="idp9098480" alt=""><image src="../../media/3.17b.png" mime-type="image/png"/></media>
+	<caption>Common emitter response with base-width modulation
+      effect</caption>
+</figure>
+
+  <figure id="fig18"><media id="idm3176784" alt=""><image src="../../media/3.18b.png" mime-type="image/png"/></media>
+	<caption>Finding the Early Voltage</caption>
+</figure>
+
+  <para id="para4">
+    Back in the very beginning of the transistor era, an engineer
+    at Bell Labs, Jim Early, predicted that there would be a slope to the
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>C</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    curves, and that they would all project back to the same
+    intersection point on the horizontal axis. Having made that
+    prediction, Jim went down into the lab, made the measurement, and
+    confirmed his prediction, thus showing that the theory of
+    transistor behavior was being properly understood. The point of
+    intersection of the
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>CE</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    axis is known as the <term>Early Voltage</term>.  Since
+    the symbol
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>E</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>,
+
+    for the emitter voltage was already taken, they had to label the
+    Early Voltage
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>A</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    instead. (Even though the intersection point in on the negative
+    half of the
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>CE</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    axis,
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>A</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    is universally quoted as a positive number.)
+
+  </para>
+
+    <para id="para5">
+      How can we model the sloping I-V curve? We can do almost the
+      same thing as we did with the solar cell. The horizontal part of
+      the curve is still a current source, and the sloped part is
+      simply a resistor in parallel with it. Here is a graphical
+      explanation in <link target-id="fig19"/>.
+    </para>
+
+
+    <figure id="fig19">
+      <media id="idm1345408" alt=""><image src="../../media/3.19.png" mime-type="image/png"/></media>
+      <caption>Combining a current course and a resistor in parallel</caption>
+    </figure>
+
+  <para id="para6">
+    Usually, the slope is much less than we have shown here, and so
+    for any given value of
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>C</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>,
+
+    we can just take the slope of the line as
+
+     <m:math>
+       <m:apply><m:divide/>
+         <m:ci>
+           <m:msub>
+             <m:mi>I</m:mi>
+             <m:mi>C</m:mi>
+           </m:msub>
+         </m:ci>
+         <m:ci>
+           <m:msub>
+             <m:mi>V</m:mi>
+             <m:mi>A</m:mi>
+           </m:msub>
+         </m:ci>
+       </m:apply>
+     </m:math>,
+
+    and hence the resistance, which is usually called
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>r</m:mi>
+            <m:mi>o</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    is just
+
+      <m:math>
+        <m:apply><m:divide/>
+          <m:ci>
+            <m:msub>
+              <m:mi>V</m:mi>
+              <m:mi>A</m:mi>
+            </m:msub>
+          </m:ci>
+          <m:ci>
+            <m:msub>
+              <m:mi>I</m:mi>
+              <m:mi>c</m:mi>
+            </m:msub>
+          </m:ci>
+        </m:apply>
+      </m:math>.
+
+    Thus, we add
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>r</m:mi>
+            <m:mi>o</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    to the small signal model for the bipolar transistor. This is
+    shown in <link target-id="fig20"/>. In a good quality modern
+    transistor, the Early Voltage,
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>A</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    will be on the order of 150-250 Volts. So if we let
+
+      <m:math>
+        <m:apply><m:eq/>
+          <m:ci>
+            <m:msub>
+              <m:mi>V</m:mi>
+              <m:mi>A</m:mi>
+            </m:msub>
+          </m:ci>
+          <m:cn>200</m:cn>
+        </m:apply>
+      </m:math>,
+
+      and we imagine that we have our transistor biased at 1 mA, then
+
+      <equation id="eqn27">
+        <m:math>
+          <m:apply><m:eq/>
+            <m:ci>
+              <m:msub>
+                <m:mi>r</m:mi>
+                <m:mi>o</m:mi>
+              </m:msub>
+            </m:ci>
+            <m:apply><m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>200</m:cn>
+		<m:ci>V</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:cn>1</m:cn>
+		<m:ci>mA</m:ci>
+	      </m:apply>
+            </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>200</m:cn>
+	      <m:ci>kΩ</m:ci>
+	    </m:apply>
+          </m:apply>
+        </m:math>
+      </equation>
+
+
+    which is usually much larger than most of the other resistors you
+    will encounter in a typical circuit.  In most instances,
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>r</m:mi>
+            <m:mi>o</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    can be ignored with no problem. If you get into high impedance
+    circuits however, as you might find in a instrumentation
+    amplifier, then
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>v</m:mi>
+            <m:mi>be</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    has to be taken into account.
+
+  </para>
+
+
+   <figure id="fig20">
+    <media id="idp8856336" alt=""><image src="../../media/3.20.png" mime-type="image/png"/></media>
+    <caption>Including ro in the small signal linear model</caption>
+  </figure>
+
+  <para id="para7">
+    Sometimes it is advantageous to use a mutual transconductance
+    model instead of a current gain model for the transistor. If we
+    call the input small signal voltage
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>v</m:mi>
+            <m:mi>be</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>,
+
+    then obviously
+
+  </para>
+
+  <para id="para8">
+
+     <equation id="eqn28">
+       <m:math>
+           <m:apply><m:eq/>
+             <m:ci>
+               <m:msub>
+                 <m:mi>i</m:mi>
+                 <m:mi>b</m:mi>
+               </m:msub>
+             </m:ci>
+             <m:apply><m:divide/>
+               <m:ci>
+                 <m:msub>
+                   <m:mi>v</m:mi>
+                   <m:mi>be</m:mi>
+                 </m:msub>
+               </m:ci>
+               <m:ci>
+                 <m:msub>
+                   <m:mi>r</m:mi>
+                   <m:mi>π</m:mi>
+                 </m:msub>
+               </m:ci>
+             </m:apply>
+
+             <m:apply><m:divide/>
+               <m:ci>
+                 <m:msub>
+                   <m:mi>v</m:mi>
+                   <m:mi>be</m:mi>
+                 </m:msub>
+               </m:ci>
+               <m:apply><m:divide/>
+                 <m:ci>β</m:ci>
+                 <m:apply><m:times/>
+                   <m:cn>40</m:cn>
+                   <m:ci>
+                     <m:msub>
+                       <m:mi>I</m:mi>
+                       <m:mi>C</m:mi>
+                     </m:msub>
+                   </m:ci>
+                 </m:apply>
+               </m:apply>
+             </m:apply>
+
+          </m:apply>
+         </m:math>
+       </equation>
+
+  </para>
+
+  <para id="para9">
+    But
+  </para>
+
+  <para id="para10">
+
+    <equation id="eqn29">
+      <m:math>
+           <m:apply><m:equivalent/>
+             <m:apply><m:eq/>
+               <m:ci>
+                 <m:msub>
+                   <m:mi>i</m:mi>
+                   <m:mi>c</m:mi>
+                 </m:msub>
+               </m:ci>
+               <m:apply><m:times/>
+                 <m:ci>β</m:ci>
+                 <m:ci>
+                   <m:msub>
+                     <m:mi>i</m:mi>
+                     <m:mi>b</m:mi>
+                   </m:msub>
+                 </m:ci>
+               </m:apply>
+
+               <m:apply><m:divide/>
+                 <m:apply><m:times/>
+                   <m:ci>β</m:ci>
+                   <m:ci>
+                     <m:msub>
+                       <m:mi>v</m:mi>
+                       <m:mi>be</m:mi>
+                     </m:msub>
+                   </m:ci>
+                 </m:apply>
+                 <m:apply><m:divide/>
+                   <m:ci>β</m:ci>
+                   <m:apply><m:times/>
+                     <m:cn>40</m:cn>
+                     <m:ci>
+                       <m:msub>
+                         <m:mi>I</m:mi>
+                         <m:mi>C</m:mi>
+                       </m:msub>
+                     </m:ci>
+                   </m:apply>
+                 </m:apply>
+               </m:apply>
+
+               <m:apply><m:times/>
+                 <m:cn>40</m:cn>
+                 <m:ci>
+                   <m:msub>
+                     <m:mi>I</m:mi>
+                     <m:mi>C</m:mi>
+                   </m:msub>
+                 </m:ci>
+                 <m:ci>
+                   <m:msub>
+                     <m:mi>v</m:mi>
+                     <m:mi>be</m:mi>
+                   </m:msub>
+                 </m:ci>
+               </m:apply>
+
+             </m:apply>
+
+             <m:apply><m:times/>
+               <m:ci>
+                 <m:msub>
+                   <m:mi>g</m:mi>
+                   <m:mi>m</m:mi>
+                 </m:msub>
+               </m:ci>
+               <m:ci>
+                 <m:msub>
+                   <m:mi>v</m:mi>
+                   <m:mi>be</m:mi>
+                 </m:msub>
+               </m:ci>
+             </m:apply>
+
+           </m:apply>
+         </m:math>
+       </equation>
+
+  </para>
+
+  <para id="para11">
+    Where
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>g</m:mi>
+            <m:mi>m</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    is called the mutual transconductance of the transistor.
+    Notice that <m:math><m:ci>β</m:ci></m:math>
+    has completely cancelled out in the expression for
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>g</m:mi>
+            <m:mi>m</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    and that
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>g</m:mi>
+            <m:mi>m</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    depends only upon the bias current,
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>C</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>,
+
+    flowing through the collector and not on any of the physical
+    properties of the transistor itself!
+
+  </para>
+
+
+   <figure id="fig21">
+    <media id="idp1776544" alt=""><image src="../../media/3.21.png" mime-type="image/png"/></media>
+    <caption>Transconductance small signal linear model</caption>
+  </figure>
+
+  <para id="para12">
+    Finally, there is one last physical consideration we should make
+    concerning the operation of the bipolar transistor. The
+    base-collector junction is reverse biased. We know that if we
+    apply too much reverse bias to a pn junction, it can breakdown
+    through avalanche multiplication. Breakdown in a transistor is
+    somewhat "softer" than for a simple diode, because once a small
+    amount of avalanche multiplication starts, extra holes are
+    generated within the base-collector junction. These holes fall up,
+    into the base, where they act as additional base current, which,
+    in turn, causes
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>C</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+    to increase. This is shown in <link target-id="fig22"/>.
+
+  </para>
+
+   <figure id="fig22">
+    <media id="idp213328" alt=""><image src="../../media/3.22.png" mime-type="image/png"/></media>
+    <caption>Ionization at the base-collector junction causes additional
+      base current</caption>
+  </figure>
+
+  <para id="para13">A set of characteristic curves for a transistor going into
+    breakdown is also shown in <link target-id="fig23"/>.
+  </para>
+
+  <figure id="fig23"><media id="idp1524352" alt=""><image src="../../media/3.23b.png" mime-type="image/png"/></media>
+	<caption>Bipolar Transistor going into breakdown</caption>
+</figure>
+
+  <para id="para14">
+    Well, we have learned quite a bit about bipolar transistors in a
+    very short space.  Go back over this chapter and see if you can
+    pick out the two or three most important ideas of equations which
+    would make up a set of "facts" that you could stick away in you
+    head someplace. Do this so you will always have them to refer to
+    when the subject of bipolars comes up (In say, a job interview or
+    something!).
+  </para>
+
+  </content>
+  
+</document>

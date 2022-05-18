@@ -1,0 +1,398 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Introduction to Semiconductors</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>d2a8876b-34f0-4633-8229-511cc7b0b97f</md:uuid>
+</metadata>
+
+  <content>
+    <para id="conductor">
+      If we only had to worry about simple conductors, life would not
+      be very complicated, but on the other hand we wouldn't be able
+      to make computers, CD players, cell phones, i-Pods and a lot of other
+      things which we have found to be useful.  We will now move on,
+      and talk about another class of conductors called
+      semiconductors.
+    </para>
+    <para id="understanding">
+      In order to understand semiconductors and in fact to get a more
+      accurate picture of how metals, or normal conductors actually
+      work, we really have to resort to quantum mechanics.  Electrons
+      in a solid are very tiny objects, and it turns out that when
+      things get small enough, they no longer exactly following the
+      classical "Newtonian" laws of physics that we are all familiar
+      with from everyday experience.  It is not the purpose of this
+      course to teach you quantum mechanics, so what we are going to
+      do instead is describe the results which come from looking at
+      the behavior of electrons in a solid from a quantum mechanical
+      point of view.
+    </para>
+    <para id="solids">
+      Solids (at least the ones we will be talking about, and
+      especially semiconductors) are crystalline materials, which
+      means that they have their atoms arranged in a ordered
+      fashion. We can take silicon (the most important semiconductor)
+      as an example.  Silicon is a group IV element, which means it
+      has four electrons in its outer or valence shell.  Silicon
+      crystallizes in a structure called the <term>diamond</term>
+      crystal lattice.  This is shown in <link target-id="silicon"/>.
+      Each silicon atom has four covalent bonds, arranged in a
+      tetrahedral formation about the atom center.
+      <figure id="silicon">
+	<media id="idm8114784" alt=""><image src="../../media/2_05.png" mime-type="image/png"/></media>
+	<caption>
+	  Crystal structure of silicon
+	</caption>
+      </figure>
+      In two dimensions, we can schematically represent a piece of
+      single-crystal silicon as shown in <link target-id="twod"/>.  Each
+      silicon atom shares its four valence electrons with valence
+      electrons from four nearest neighbors, filling the shell to 8
+      electrons, and forming a stable, periodic structure.  Once the
+      atoms have been arranged like this, the outer valence electrons
+      are no longer strongly bound to the host atom.  The outer shells
+      of all of the atoms blend together and form what is called a
+      <term>band</term>.  The electrons are now free to move about
+      within this band, and this can lead to electrical conductivity
+      as we discussed earlier.
+      <figure id="twod">
+	<media id="idp860032" alt=""><image src="../../media/2_06.png" mime-type="image/png"/></media>
+	<caption>
+	  A 2-D representation of a silicon crystal
+	</caption>
+      </figure>
+      This is not the complete story however, for it turns out that
+      due to quantum mechanical effects, there is not just one band
+      which holds electrons, but several of them.  What will follow is
+      a very qualitative picture of how the electrons are distributed
+      when they are in a periodic solid, and there are necessarily
+      some details which we will be forced to gloss over.  On the
+      other hand this will give you a pretty good picture of what is
+      going on, and may enable you to have some understanding of how a
+      semiconductor really works.  Electrons are not only distributed 
+      throughout the solid crystal spatially, but they also have a distribution in energy
+      as well.  The potential energy function within the solid is
+      periodic in nature.  This potential function comes from the
+      positively charged atomic nuclei which are arranged in
+      the crystal in a regular array.  A detailed analysis
+      of how electron <term>wave functions</term>, the mathematical
+      abstraction which one must use to describe how small quantum
+      mechanical objects behave when they are in a periodic potential,
+      gives rise to an energy distribution somewhat like that shown in <link target-id="schematic"/>.
+      <figure id="schematic">
+	<media id="idm7750752" alt=""><image src="../../media/2_07.png" mime-type="image/png"/></media>
+	<caption>
+	  Schematic of the first two bands in a periodic solid showing
+	  energy levels and bands
+	</caption>
+      </figure>
+      Firstly, unlike the case for free electrons, in a periodic solid,
+      electrons are not free to take on any energy value they wish.
+      They are forced into specific energy levels called <term>allowed
+      states</term> which are represented by the cups in the figure.  The allowed states are not distributed uniformly
+      in energy either.  They are grouped into specific configurations
+      called <term>energy bands</term>.  There are no allowed levels
+      at zero energy and for some distance above that.  Moving up from
+      zero energy, we then encounter the first energy band.  At the
+      bottom of the band there are very few allowed states, but as we
+      move up in energy, the number of allowed states first increases,
+      and then falls off again.  We then come to a region with no
+      allowed states, called an energy <term>band gap</term>.  Above the band gap,
+      another band of allowed states exists.  This goes on and on,
+      with any given material having many such bands and band gaps.
+      This situation is shown schematically in <link target-id="schematic"/>, where the small cups represent allowed
+      energy levels, and the vertical axis represents electron energy.
+    </para>
+    <para id="allowedstates">
+      
+      It turns out that each band has exactly 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>2</m:cn>
+	  <m:ci>N</m:ci>
+	</m:apply>
+      </m:math> allowed states in it, where <m:math><m:ci>N</m:ci>
+      </m:math> is the total number of atoms in the particular crystal
+      sample we are talking about.  (Since there are 10 cups in each
+      band in the figure, it must represent a crystal with just 5
+      atoms in it.  Not a very big crystal at all!)  Into these bands
+      we must now distribute all of the valence electrons associated
+      with the atoms, with the restriction that we can <emphasis>only
+      put one electron into each allowed state</emphasis>.  (This is
+      the result of something called the <term>Pauli exclusion
+      principle</term>.)  Since in the case of silicon there are 4
+      valence electrons per atom, we would <emphasis>just</emphasis>
+      fill up the first two bands, and the next would be empty.  (If
+      we make the logical assumption that the electrons will fill in
+      the levels with the lowest energy first, and only go into higher
+      lying levels if the ones below are already filled.)  This
+      situation is shown in <link target-id="fullbands"/>.
+    </para>
+    <para id="electrons">
+      Here, we have represented electrons as small black balls with a
+      "-" sign on them.  Indeed, the first two bands are completely
+      full, and the next is empty.  What will happen if we apply an
+      electric field to the sample of silicon?  Remember the diagram
+      we have at hand right now is an <emphasis>energy</emphasis>
+      based one, we are showing how the electrons are distributed in
+      energy, not how they are arranged spatially.  On this diagram we
+      can not show how they will move about, but only how they will
+      change their energy as a result of the applied field.  The
+      electric field will exert a force on the electrons and attempt
+      to accelerate them.  If the electrons are accelerated, then they
+      must increase their kinetic energy.  Unfortunately, there are no
+      empty allowed states in either of the filled bands.  An electron
+      would have to jump all the way up into the next (empty) band in
+      order to take on more energy.  In silicon, the gap between the
+      top of the highest most occupied band and the lowest unoccupied
+      band is 1.1 eV.
+(One eV is the potential energy gained by an electron moving 
+across an electrical potential of one volt.) 
+    The <term>mean free path</term> or distance
+      over which an electron would normally move before it suffers a
+      collision is only a few hundred angstroms (
+      <m:math>
+	<m:apply>
+	  <m:mo>≈</m:mo>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>300</m:cn>
+	    <m:apply>
+	      <m:power/>
+	      <m:cn>10</m:cn>
+	      <m:cn>-8</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> cm) and so you would need a very large electric field
+      (several hundred thousand 
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>volts</m:ci>
+	  <m:ci>cm</m:ci>
+	</m:apply>
+      </m:math>) in order for the electron to pick up enough energy to
+      "jump the gap".  This makes it appear that silicon would be a
+      very bad conductor of electricity, and in fact, very pure
+      silicon is very poor electrical conductor.
+      <figure id="fullbands">
+	<media id="idp2060048" alt=""><image src="../../media/2_08.png" mime-type="image/png"/></media>
+	<caption>
+	  Silicon, with first two bands full and the next empty
+	</caption>
+      </figure>
+      A metal is an element with an <emphasis>odd</emphasis> number of
+      valence electrons so that a metal ends up with an upper band
+      which is just half full of electrons.  This is illustrated in
+      <link target-id="metal"/>.  Here we see that one band is full, and
+      the next is just half full.  This would be the situation for the
+      Group III element aluminum for instance.  If we apply an
+      electric field to these carriers, those near the top of the
+      distribution can indeed move into higher energy levels by
+      acquiring some kinetic energy of motion, and easily move from
+      one place to the next.  In reality, the whole situation is a bit
+      more complex than we have shown here, but this is not too far
+      from how it actually works.
+      <figure id="metal">
+	<media id="idm5898000" alt=""><image src="../../media/2_09.png" mime-type="image/png"/></media>
+	<caption>
+	  Electron distribution for a metal or good conductor
+	</caption>
+      </figure>
+      So, back to our silicon sample.  If there are no places for
+      electrons to "move" into, then how does silicon work as a
+      "semiconductor"?  Well, in the first place, it turns out that
+      not all of the electrons are in the bottom two bands.  In
+      silicon, unlike say quartz or diamond, the band gap between the
+      top-most full band, the next empty one is not so large.  As we
+      mentioned above it is only about 1.1 eV.  So long as the silicon
+      is not at absolute zero temperature, some electrons near the top
+      of the full band can acquire enough thermal energy that they can
+      "hop" the gap, and end up in the upper band, called the
+      <term>conduction band</term>.  This situation is shown in <link target-id="thermal"/>.
+      <figure id="thermal">
+	<media id="idm724992" alt=""><image src="../../media/2_10.png" mime-type="image/png"/></media>
+	<caption>
+	  Thermal excitation of electrons across the band gap
+	</caption>
+      </figure>
+      In silicon at room temperature, roughly
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:cn>10</m:cn>
+	  <m:cn>10</m:cn>
+	</m:apply>
+      </m:math> electrons per cubic centimeter are thermally excited
+      across the band-gap at any one time.  It should be noted that
+      the excitation process is a continuous one.  Electrons are being
+      excited across the band, but then they fall back down into empty
+      spots in the lower band.  On average however, the
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:cn>10</m:cn>
+	  <m:cn>10</m:cn>
+	</m:apply>
+      </m:math> in each
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:ci>cm</m:ci>
+	  <m:cn>3</m:cn>
+	</m:apply>
+      </m:math> of silicon is what you will find at any given instant.
+      Now 10 billion electrons per cubic centimeter
+      <emphasis>seems</emphasis> like a lot of electrons, but lets do
+      a simple calculation.  The mobility of electrons in silicon is
+      about 1000
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:power/>
+	    <m:ci>cm</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	  <m:mtext>volt-sec</m:mtext>
+	</m:apply>
+      </m:math>.  Remember, mobility times electric field yields the
+      average velocity of the carriers.  Electric field has units of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>volts</m:ci>
+	  <m:ci>cm</m:ci>
+	</m:apply>
+      </m:math>, so with these units we get velocity in 
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>cm</m:ci>
+	  <m:ci>sec</m:ci>
+	</m:apply>
+      </m:math> as we should.)  The charge on an electron is
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>1.6</m:cn>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>-19</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math> coulombs. Thus from <link document="m1000" target-id="sigmarel">this equation</link>:
+      <equation id="sigma">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>σ</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>n</m:ci>
+	      <m:ci>q</m:ci>
+	      <m:ci>μ</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:power/>
+		<m:cn>10</m:cn>
+		<m:cn>10</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:cn>1.6</m:cn>
+		<m:apply>
+		  <m:power/>
+		  <m:cn>10</m:cn>
+		  <m:cn>-19</m:cn>
+		</m:apply>
+	      </m:apply>
+	      <m:cn>1000</m:cn>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>1.6</m:cn>
+	      <m:apply>
+		<m:power/>
+		<m:cn>10</m:cn>
+		<m:cn>-6</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>mhos</m:ci>
+		<m:ci>cm</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      If we have a sample of silicon 1 cm long by 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>1</m:cn>
+	    <m:ci>mm</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>1</m:cn>
+	    <m:ci>mm</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> square, it would have a resistance of
+      <equation id="resistance">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>R</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>L</m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:ci>σ</m:ci>
+		<m:ci>A</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>1.6</m:cn>
+		  <m:apply>
+		    <m:power/>
+		    <m:cn>10</m:cn>
+		    <m:cn>-6</m:cn>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:power/>
+		  <m:cn>0.1</m:cn>
+		  <m:cn>2</m:cn>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>62.5</m:cn>
+	      <m:ci>MΩ</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      which does not make it much of a "conductor".  In fact, if this
+      were all there was to the silicon story, we could pack up and
+      move on, because at <emphasis>any</emphasis> reasonable
+      temperature, silicon would conduct electricity very poorly.
+    </para>
+  </content>
+  
+</document>

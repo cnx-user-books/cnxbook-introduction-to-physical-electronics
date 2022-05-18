@@ -1,0 +1,312 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Fick's Second Law</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>adeee213-d439-4cc7-b4e9-edf25a0d71ab</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      Taking the derivative with respect to
+      <m:math><m:ci>x</m:ci></m:math> of Fick's first law
+      
+      <equation id="eqn07"> <m:math>
+	  <m:apply><m:eq/>
+	    <m:apply><m:diff/>
+	      <m:bvar><m:ci>x</m:ci></m:bvar>
+	      <m:ci>Flux</m:ci>
+	    </m:apply>
+	    <m:apply><m:minus/><m:apply><m:times/>
+		<m:ci>D</m:ci>
+		<m:apply><m:partialdiff/>
+		  <m:bvar><m:ci>x</m:ci><m:degree><m:cn>2</m:cn></m:degree></m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">N</m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> and then substituting the continuity equation into it,
+      we have <term>Fick's second law of diffusion</term>:
+
+      <equation id="eqn08"> <m:math>
+	  <m:apply><m:eq/>
+	    <m:apply><m:partialdiff/>
+	      <m:bvar><m:ci>t</m:ci></m:bvar>
+	      <m:apply>
+		<m:ci type="fn">N</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply><m:times/>
+	      <m:ci>D</m:ci>
+	      <m:apply><m:partialdiff/>
+		<m:bvar><m:ci>x</m:ci><m:degree><m:cn>2</m:cn></m:degree></m:bvar>
+		<m:apply>
+		  <m:ci type="fn">N</m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> This is a standard diffusion equation, and one which
+      shows up over and over again when one is dealing with such phenomena.
+    </para>
+
+    <para id="p2">
+      In order to get a solution to the diffusion equation, we must
+      first assume some boundary conditions. We will deal with a
+      semi-infinite wafer, and assume that
+
+      <equation id="eqn09">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:limit/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:lowlimit>
+		<m:infinity/>
+	      </m:lowlimit>
+
+	      <m:apply>
+		<m:ci type="fn">N</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      This is a reasonable assumption, since at most our diffusion will only
+      penetrate a micron or so into the wafer, and the whole wafer itself is
+      several hundred microns thick.
+    </para>
+
+    <para id="p3">We also have to decide something about initial conditions. We
+      will make the assumption that we have at time <m:math>
+	<m:apply><m:eq/><m:ci>t</m:ci><m:cn>0</m:cn></m:apply>
+      </m:math> and <m:math>
+	<m:apply><m:eq/><m:ci>x</m:ci><m:cn>0</m:cn></m:apply>
+      </m:math>
+      some surface concentration of impurities which we will call
+      <m:math>
+	<m:ci><m:msub><m:mi>Q</m:mi><m:mn>0</m:mn></m:msub></m:ci>
+      </m:math> (<m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>impurities</m:ci>
+	  <m:apply>
+	    <m:power/>
+	    <m:ci>cm</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>). This is the situation we would have if we introduce
+      the impurities using a relatively shallow implant step. An
+      alternative surface boundary condition would be one where the
+      concentration of impurities remains at some fixed value. This is
+      what happens when there are impurities in the gas flow over the
+      wafer during the time that they are in the diffusion oven. This is
+      called an <term>infinite source diffusion</term>.
+    
+</para>
+
+    <para id="p4">
+      The first condition is called a <term>limited source
+	diffusion</term> and that is what we shall consider further
+	here. It is not too hard to show that with this initial
+	condition, the solution to the diffusion equation is:
+
+      <equation id="eqn10"> 
+	<m:math>
+	  <m:apply><m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">N</m:ci>
+	      <m:ci>x</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:ci><m:msub>
+		    <m:mi>Q</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub></m:ci>
+		<m:apply>
+		  <m:root/>
+		  <m:apply>
+		    <m:times/>
+		    <m:pi/>
+		    <m:ci>D</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:power/>
+		      <m:ci>x</m:ci>
+		      <m:cn>2</m:cn>
+		    </m:apply>
+		    <m:apply>
+		      <m:times/>
+		      <m:cn>4</m:cn>
+		      <m:ci>D</m:ci>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+    <para id="p5">
+      Note that 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">N</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> is a function of distance into the wafer, and time
+	<m:math> <m:ci>t</m:ci></m:math>. The time is, of course, the
+	time of the diffusion process. <m:math>
+	<m:ci>D</m:ci></m:math>, the diffusion constant, depends on
+	the temperature at which the diffusion takes place. <link target-id="fig10"/> is a plot of <m:math><m:ci>D</m:ci></m:math>
+	for three of the most commonly used dopants in
+	silicon. Phosphorus and boron are the most common acceptor and
+	donor respectively. Arsenic is sometimes used because it is
+	significantly bigger in diameter than either P or B and thus,
+	moves around less after an implant. </para>
+
+    <figure id="fig10">
+      <media id="idp2356752" alt=""><image src="../../media/5.10.png" mime-type="image/png"/></media>
+      <caption>Diffusion constant as a function of 1000/T</caption>
+    </figure>
+
+    <para id="p6">Suppose we do a relatively shallow implant of boron into our
+      p-type wafer, and deposit a
+      <m:math>
+		<m:ci><m:msub><m:mi>Q</m:mi><m:mn>0</m:mn></m:msub></m:ci>
+	</m:math> of <m:math><m:cn type="e-notation">5<m:sep/>13</m:cn></m:math> phosphorus
+      <m:math>
+		<m:apply>
+			<m:divide/>
+			<m:ci>atoms</m:ci>
+			<m:apply>
+				<m:power/>
+				<m:ci>cm</m:ci>
+				<m:cn>2</m:cn>
+			</m:apply>
+		</m:apply>
+	</m:math>. We then perform an anneal diffusion at 1100 °C
+	for 60 minutes. At 1100°C, <m:math><m:ci>D</m:ci></m:math> for
+	phosphorus seems to be about 
+      <m:math>
+		<m:apply>
+			<m:times/>
+			<m:cn type="e-notation">2<m:sep/>-13</m:cn>
+			<m:apply>
+				<m:divide/>
+				<m:apply>
+					<m:power/>
+					<m:ci>cm</m:ci>
+					<m:cn>2</m:cn>
+				</m:apply>
+				<m:ci>sec</m:ci>
+			</m:apply>
+		</m:apply>
+	</m:math>. We will make a plot of
+      <m:math>
+		<m:apply>
+			<m:ci type="fn">N</m:ci>
+			<m:ci>x</m:ci>
+		</m:apply>
+	</m:math> for various times. If you do this at home, be sure to
+      put time in seconds, not minutes, hours, or fortnights. Looking
+      at <link target-id="fig10"/>, is pretty easy to see
+      how the impurities move into the semiconductor, and how the
+      concentration at the surface, 
+      <m:math>
+		<m:apply>
+			<m:ci type="fn">N</m:ci>
+			<m:cn>0</m:cn>
+			<m:ci>t</m:ci>
+		</m:apply>
+	</m:math>, decreases as more and more of the impurities moves
+      deeper into the wafer.
+    </para>
+    <exercise id="ex1">
+      <problem id="idm7896048">
+	<para id="qp1">If the substrate had been doped at
+	  <m:math>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply><m:power/><m:cn>10</m:cn><m:cn>16</m:cn></m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>acceptors</m:ci>
+		<m:apply><m:power/><m:ci>cm</m:ci><m:cn>3</m:cn></m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:math> where would be the location of the p-n junction
+	  between the implanted phosphorus layer, and the background
+	  boron?
+	</para>
+      </problem>
+      <solution id="idm980448"> <para id="solp1"> About 1.2 μm after 1 hour of
+	  diffusion time. You know this because for
+	  <m:math>
+	    <m:apply>
+	      <m:lt/>
+	      <m:ci>x</m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:cn>1.2</m:cn>
+		<m:ci>μm</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:math> the phosphorus concentration is greater than that
+	  of boron, and so the material is n-type. For
+	  <m:math>
+	    <m:apply>
+	      <m:gt/>
+	      <m:ci>x</m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:cn>1.2</m:cn>
+		<m:ci>μm</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>, the boron concentration exceeds
+	  that of the phosphorous, and so the material is now p-type.)
+	</para>
+      </solution>
+    </exercise>
+
+    <figure id="fig11">
+      <media id="idp6650960" alt=""><image src="../../media/5.11.png" mime-type="image/png"/></media>
+      <caption>Diffusion distribution at different times</caption>
+    </figure>
+
+  </content>
+</document>

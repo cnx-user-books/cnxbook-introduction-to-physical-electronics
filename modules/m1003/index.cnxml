@@ -1,0 +1,103 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>P-N Junction: Part I</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>8c8d95ff-8ac8-421c-a009-6bff6b862903</md:uuid>
+</metadata>
+
+  <content>
+    <para id="figures">
+      <figure id="nband">
+	<media id="idp7404176" alt=""><image src="../../media/2_21.png" mime-type="image/png"/></media>
+	<caption>
+	  Band diagram for a p-type semiconductor
+	</caption>
+      </figure>
+      <figure id="noneq">
+	<media id="idp7868368" alt=""><image src="../../media/2_22.png" mime-type="image/png"/></media>
+	<caption>
+	  A non-equilibrium p-n junction
+	</caption>
+      </figure>
+      We are now ready to make an actual useful device!  Let's take a
+      piece of n-type material, and a piece of p-type material, and
+      stick them together, as shown in <link target-id="noneq"/>.  This
+      way we will be making a <term>pn-junction</term>, or <term>diode</term>,
+      which will be our first real electric device other than a simple
+      resistor.
+    </para>
+    <para id="wrong">
+      There are a couple of things wrong with <link target-id="noneq"/>.
+      First of all, one of the rules regarding the Fermi level is that
+      when you have a system at <term>equilibrium</term> (that is,
+      when it is a rest, and is not being influenced by external
+      forces such as thermal gradients, electrical potentials etc.),
+      the Fermi level must be the same everywhere.  Secondly, we have
+      a big bunch of holes on the right and a big bunch of electrons on
+      the left, and so we would expect, that in the absence of some
+      force to keep them this way, they will start to spread out until
+      their distribution is more or less equal everywhere.  Finally,
+      we remember that a hole is just an absence of an electron, and
+      since an electron in the conduction band can lower the system
+      energy by falling down into one of the empty hole states, it
+      seems likely that this will happen.  This process is called
+      <term>recombination</term>.  The place where this is most likely
+      to occur, of course, would be right at the junction between the
+      n and p regions.  This is shown in <link target-id="recombfig"/>.
+    </para>
+      <figure id="recombfig">
+	<media id="idp6222272" alt=""><image src="../../media/2_23.png" mime-type="image/png"/></media>
+	<caption>
+	  Recombination of holes and electrons
+	</caption>
+      </figure>      
+    <para id="para1">
+      Now is might seem that this recombination effect might just go
+      on and on, until there are no carriers left in the sample.  This
+      is not the case however.  In order to see what brings everything
+      to a halt, we need yet another diagram. <link target-id="spatial"/>
+      is more physical than what we have been looking at so far.  It is a
+      picture of the actual p-n junction, showing both the holes and
+      the electrons.  We also need to put in the donors and acceptors
+      however, if we want to see what goes on.  The fixed (can't move around)
+      charges of the donors and acceptors are represented by simple
+      "+" and "-" signs.  They are arranged in a nice lattice-like
+      arrangement to remind us that they are stuck to the crystal
+      lattice.  (In reality however, even though they are stuck in the
+      crystal lattice, there are so few of them compared to the
+      silicon atoms that their distribution would be quite random.)
+      For the mobile holes and electrons, we will stay with the little
+      circles with charge signs in them. These are randomly
+      distributed, to remind us that they are free to move about the
+      crystal.
+    </para>
+      <figure id="spatial">
+	<media id="idp1023232" alt=""><image src="../../media/2_24.png" mime-type="image/png"/></media>
+	<caption>
+	  Spatial schematic of a p-n junction
+	</caption>
+      </figure>    
+    <para id="para2">
+      We will now have to allow some of the holes and electrons (again
+      near the junction) to recombine.  Remember, when an electron and
+      a hole recombine, they both are annihilated and disappear.  Note
+      that this process conserves charge (and if we could calculate
+      it) momentum as well.  There is obviously some energy lost, but
+      this will simply show up as vibrations, or heat, within the crystal
+      lattice. Or, in the case of an LED, as light emitted from the device. See, already we know enough about semiconductors to understand (somewhat) how an actual device works. Light comming from an LED is simply the energy which is realeased when an electron and hole recombine. We will take a look at this in more detail later. Let's allow some recombination to occur, as shown in
+      <link target-id="junction"/>.
+      <figure id="junction">
+	<media id="idm905632" alt=""><image src="../../media/2_25.png" mime-type="image/png"/></media>
+	<caption>	  
+	  The junction after some recombination has occurred
+	</caption>
+      </figure>
+      And then in <link target-id="recombmore"/> some more.....
+      <figure id="recombmore">
+	<media id="idp6238768" alt=""><image src="../../media/2_25.png" mime-type="image/png"/></media>
+	<caption>
+	  After further recombination
+	</caption>
+      </figure>
+    </para>
+  </content>
+  
+</document>

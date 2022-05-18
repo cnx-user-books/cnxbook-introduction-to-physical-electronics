@@ -1,0 +1,1009 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Crank Diagram</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>2fb85c74-2cdc-49eb-bc9f-4bfab07796e8</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">We actually still have some options open to
+    us. One of thenicest, at least in terms of getting some insight,
+    is call a <term>crank diagram</term>. Note that <link document="m11384" target-id="eqn1">this equation</link> is a complex
+    equation, which requires us to take a the ratio of two complex
+    numbers;
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:cn>1</m:cn>
+	  <m:apply>
+	    <m:times/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:mi>ν</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:exp/>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:cn>2</m:cn>
+		  <m:ci>β</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> and 
+       <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:cn>1</m:cn>
+	  <m:apply>
+	    <m:times/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:mi>ν</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:exp/>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:cn>2</m:cn>
+		  <m:ci>β</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>.
+    </para>
+
+    <para id="para2">Let's plot these two quantities on the complex
+      plane, starting at
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>s</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> (the load end of the line).  We can represent
+      <m:math>
+	<m:msub>
+	  <m:mi>Γ</m:mi>
+	  <m:mi>ν</m:mi>
+	</m:msub>
+      </m:math>, the reflection coefficient, by its magnitude and its
+      phase,
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:msub>
+	    <m:mi>Γ</m:mi>
+	    <m:mi>ν</m:mi>
+	  </m:msub>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:msub>
+	  <m:mi>φ</m:mi>
+	  <m:mi>Γ</m:mi>
+	</m:msub>
+      </m:math>. For the numerator we plot a 1, and then add the
+      complex vector <m:math><m:ci>Γ</m:ci></m:math> which has a
+      length
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:ci>Γ</m:ci>
+	</m:apply>
+      </m:math> and sits at an angle
+      <m:math>
+	<m:msub>
+	  <m:mi>φ</m:mi>
+	  <m:mi>Γ</m:mi>
+	</m:msub>
+      </m:math> with respect to the real axis <link target-id="fig1"/>.
+      The denominator is just the same thing, except the
+      <m:math><m:ci>Γ</m:ci></m:math> vector points in the
+      opposite direction <link target-id="fig2"/>.
+   
+      <figure id="fig1">
+	<title>Plot</title>
+	<media id="idm7643136" alt=""><image src="../../media/7_08.png" mime-type="image/png"/></media>
+	<caption>Plotting
+	  <m:math>
+	    <m:apply>
+	      <m:plus/>
+	      <m:cn>1</m:cn>
+	      <m:msub>
+		<m:mi>Γ</m:mi>
+		<m:mi>ν</m:mi>
+	      </m:msub>
+	    </m:apply>
+	  </m:math>
+	</caption>
+      </figure>
+
+      <figure id="fig2">
+	<title>Another Plot</title>
+	<media id="idp2501280" alt=""><image src="../../media/7_09.png" mime-type="image/png"/></media>
+	<caption>Plotting
+	  <m:math>
+	    <m:apply>
+	      <m:minus/>
+	      <m:cn>1</m:cn>
+	      <m:msub>
+		<m:mi>Γ</m:mi>
+		<m:mi>ν</m:mi>
+	      </m:msub>
+	    </m:apply>
+	  </m:math>
+	</caption>
+      </figure>
+
+      The top vector is proportional to
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> and the bottom vector is proportional to
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> <link target-id="fig3"/>. Of course, for
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>s</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> we are at the load so
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">V</m:ci>
+	    <m:apply>
+	      <m:eq/>
+	      <m:ci>s</m:ci>
+	      <m:cn>0</m:cn>
+	    </m:apply>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">I</m:ci>
+	    <m:apply>
+	      <m:eq/>
+	      <m:ci>s</m:ci>
+	      <m:cn>0</m:cn>
+	    </m:apply>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	</m:apply>
+      </m:math>.
+
+      <figure id="fig3">
+	<title>Another Crank Diagram</title>
+	<media id="idp6694416" alt=""><image src="../../media/7_10.png" mime-type="image/png"/></media>
+	<caption>Showing that
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:msub>
+		  <m:mi>Γ</m:mi>
+		  <m:mi>ν</m:mi>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+	      </m:apply>
+	    </m:apply>
+	  </m:math> and 
+	  <m:math>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:msub>
+		  <m:mi>Γ</m:mi>
+		  <m:mi>ν</m:mi>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		  <m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>L</m:mi>
+		  </m:msub>
+		</m:apply>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</caption>
+      </figure>
+      
+      As we move down the line, the two
+      "<m:math><m:ci>Γ</m:ci></m:math>" vectors rotate around at
+      a rate of
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>-2</m:cn>
+	  <m:ci>β</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> <link target-id="fig4"/>. As they rotate, one vector gets
+      longer and the other gets shorter, and then the opposite
+      occurs. In any event, to get
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">Z</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> we have to divide the first vector by the second. In
+      general, this is not easy to do, but there are
+      <emphasis>some</emphasis> places where it is not too bad. One of
+      these is when
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>2</m:cn>
+	    <m:ci>β</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:msub>
+	      <m:mi>θ</m:mi>
+	      <m:mi>Γ</m:mi>
+	    </m:msub>
+	  </m:apply>
+	</m:apply>
+      </m:math> <link target-id="fig5"/>.
+
+      <figure id="fig4">
+	<title>Rotating the Phasors On the Crank Diagram</title>
+	<media id="idm8032128" alt=""><image src="../../media/7_11.png" mime-type="image/png"/></media>
+      </figure>
+	
+      <figure id="fig5">
+	<title>Rotating a Crank Diagram</title>
+	<media id="idm7866112" alt=""><image src="../../media/7_12.png" mime-type="image/png"/></media>
+	<caption>Rotating to a 
+	  <m:math>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>max</m:mi>
+	    </m:msub>
+	  </m:math>
+	</caption>
+      </figure> 
+
+      At this point, the voltage vector has rotated around so that it
+      is just lying on the real axis.  Obviously its length is now
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:cn>1</m:cn>
+	  <m:apply>
+	    <m:abs/>
+	    <m:ci>Γ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. By the same token, the current vector is also lying
+      on the real axis, and has a length
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:cn>1</m:cn>
+	  <m:apply>
+	    <m:abs/>
+	    <m:ci>Γ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. Dividing one by the other, and multiplying by 
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math> gives us 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">Z</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> at this point.
+
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:plus/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:abs/>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>ν</m:mi>
+		    </m:msub>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:minus/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:abs/>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>ν</m:mi>
+		    </m:msub>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Where is this point, and does it have any special meaning? For
+      this, we need to go back to our expression for
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> in <link document="m11383" target-id="eq17">this
+      equation</link>.
+      
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>β</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:msub>
+		    <m:mi>Γ</m:mi>
+		    <m:mi>ν</m:mi>
+		  </m:msub>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:times/>
+		      <m:cn>-2</m:cn>
+		      <m:imaginaryi/>
+		      <m:ci>β</m:ci>
+		      <m:ci>s</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>β</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:abs/>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>ν</m:mi>
+		    </m:msub>
+		  </m:apply>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:apply>
+			<m:minus/>
+			<m:msub>
+			  <m:mi>θ</m:mi>
+			  <m:mi>Γ</m:mi>
+			</m:msub>
+			<m:apply>
+			  <m:times/>
+			  <m:cn>2</m:cn>
+			  <m:ci>β</m:ci>
+			  <m:ci>s</m:ci>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>   
+
+	    <m:apply>
+	      <m:times/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>β</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:abs/>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>ν</m:mi>
+		    </m:msub>
+		  </m:apply>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:apply>
+			<m:ci type="fn">φ</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      where we have substituted
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:abs/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:mi>ν</m:mi>
+	    </m:msub>
+	  </m:apply>
+	  <m:apply>
+	    <m:exp/>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>θ</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> for the phasor
+      <m:math>
+	<m:msub>
+	  <m:mi>Γ</m:mi>
+	  <m:mi>ν</m:mi>
+	</m:msub>
+      </m:math> and then defined a new angle
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">φ</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:msub>
+	      <m:mi>θ</m:mi>
+	      <m:mi>Γ</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>2</m:cn>
+	      <m:ci>β</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>.
+    </para>
+
+    <para id="para3">Now let's find the magnitude of
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>. To do this we need to square the real and imaginary
+      parts, add them, and then take the square root.
+      <equation id="eqn3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:abs/>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:ci>s</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:abs/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:abs/>
+		    <m:msub>
+		      <m:mi>Γ</m:mi>
+		      <m:mi>ν</m:mi>
+		    </m:msub>
+		  </m:apply>
+		  <m:apply>
+		    <m:exp/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:apply>
+			<m:ci type="fn">φ</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:abs/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+	      </m:apply>
+	      <m:apply>
+		<m:root/>
+		<m:apply>
+		  <m:plus/>
+		  <m:apply>
+		    <m:power/>
+		    <m:apply>
+		      <m:plus/>
+		      <m:cn>1</m:cn>
+		      <m:apply>
+			<m:times/>
+			<m:apply>
+			  <m:abs/>
+			  <m:msub>
+			    <m:mi>Γ</m:mi>
+			    <m:mi>ν</m:mi>
+			  </m:msub>
+			</m:apply>
+			<m:apply>
+			  <m:cos/>
+			  <m:apply>
+			    <m:ci type="fn">φ</m:ci>
+			    <m:ci>s</m:ci>
+			  </m:apply>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		    <m:cn>2</m:cn>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:power/>
+		      <m:apply>
+			<m:abs/>
+			<m:msub>
+			  <m:mi>Γ</m:mi>
+			  <m:mi>ν</m:mi>
+			</m:msub>
+		      </m:apply>
+		      <m:cn>2</m:cn>
+		    </m:apply>
+		    <m:apply>
+		      <m:power/>
+		      <m:apply>
+			<m:sin/>
+			<m:apply>
+			  <m:ci type="fn">φ</m:ci>
+			  <m:ci>s</m:ci>
+			</m:apply>
+		      </m:apply>
+		      <m:cn>2</m:cn>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>so,
+      <equation id="eqn4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:abs/>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:ci>s</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:abs/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+	      </m:apply>
+	      <m:apply>
+		<m:root/>
+		<m:apply>
+		  <m:plus/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:times/>
+		    <m:cn>2</m:cn>
+		    <m:apply>
+		      <m:abs/>
+		      <m:msub>
+			<m:mi>Γ</m:mi>
+			<m:mi>ν</m:mi>
+		      </m:msub>
+		    </m:apply>
+		    <m:apply>
+		      <m:cos/>
+		      <m:apply>
+			<m:ci type="fn">φ</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:power/>
+		      <m:apply>
+			<m:abs/>
+			<m:msub>
+			  <m:mi>Γ</m:mi>
+			  <m:mi>ν</m:mi>
+			</m:msub>
+		      </m:apply>
+		      <m:cn>2</m:cn>
+		    </m:apply>
+		    <m:apply>
+		      <m:power/>
+		      <m:apply>
+			<m:cos/>
+			<m:apply>
+			  <m:ci type="fn">φ</m:ci>
+			  <m:ci>s</m:ci>
+			</m:apply>
+		      </m:apply>
+		      <m:cn>2</m:cn>
+		    </m:apply>
+		  </m:apply>
+
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:power/>
+		      <m:apply>
+			<m:abs/>
+			<m:msub>
+			  <m:mi>Γ</m:mi>
+			  <m:mi>ν</m:mi>
+			</m:msub>
+		      </m:apply>
+		      <m:cn>2</m:cn>
+		    </m:apply>
+		    <m:apply>
+		      <m:power/>
+		      <m:apply>
+			<m:sin/>
+			<m:apply>
+			  <m:ci type="fn">φ</m:ci>
+			  <m:ci>s</m:ci>
+			</m:apply>
+		      </m:apply>
+		      <m:cn>2</m:cn>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>which, since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:plus/>
+	    <m:apply>
+	      <m:power/>
+	      <m:apply>
+		<m:sin/>
+		<m:ci>·</m:ci>
+	      </m:apply>
+	      <m:cn>2</m:cn>
+	    </m:apply>
+	    <m:apply>
+	      <m:power/>
+	      <m:apply>
+		<m:cos/>
+		<m:ci>·</m:ci>
+	      </m:apply>
+	      <m:cn>2</m:cn>
+	    </m:apply>
+	  </m:apply>
+	  <m:cn>1</m:cn>
+	</m:apply>
+      </m:math>
+
+      <equation id="eqn5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:abs/>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:ci>s</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:abs/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+	      </m:apply>
+	      <m:apply>
+		<m:root/>
+		<m:apply>
+		  <m:plus/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:power/>
+		    <m:apply>
+		      <m:abs/>
+		      <m:msub>
+			<m:mi>Γ</m:mi>
+			<m:mi>ν</m:mi>
+		      </m:msub>
+		    </m:apply>
+		    <m:cn>2</m:cn>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:cn>2</m:cn>
+		    <m:apply>
+		      <m:abs/>
+		      <m:msub>
+			<m:mi>Γ</m:mi>
+			<m:mi>ν</m:mi>
+		      </m:msub>
+		    </m:apply>
+		    <m:apply>
+		      <m:cos/>
+		      <m:apply>
+			<m:ci type="fn">φ</m:ci>
+			<m:ci>s</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Remember,
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">φ</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> is an angle which changes with
+      <m:math><m:ci>s</m:ci></m:math>. In particular,
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">φ</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:msub>
+	      <m:mi>θ</m:mi>
+	      <m:mi>Γ</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>2</m:cn>
+	      <m:ci>β</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>. Thus, as we move down the line
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:apply>
+	    <m:ci type="fn">V</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> will oscillate as 
+      <m:math>
+	<m:apply>
+	  <m:cos/>
+	  <m:apply>
+	    <m:ci type="fn">φ</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> oscillates. A typical plot for
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> (for
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:abs/>
+	    <m:msub>
+	      <m:mi>Γ</m:mi>
+	      <m:mi>ν</m:mi>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn>0.5</m:cn>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>θ</m:mi>
+	    <m:mi>Γ</m:mi>
+	  </m:msub>
+	  <m:msup>
+	    <m:mn>45</m:mn>
+	    <m:mo>°</m:mo>
+	  </m:msup>
+	</m:apply>
+      </m:math>) is shown <link target-id="fig6">here</link>.
+
+      <figure id="fig6">
+	<title>Standing Wave Pattern</title>
+	<media id="idp5773088" alt=""><image src="../../media/7_13.png" mime-type="image/png"/></media>
+      </figure>
+
+    </para>
+  </content>
+  
+</document>

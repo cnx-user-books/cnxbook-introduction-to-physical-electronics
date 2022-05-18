@@ -1,0 +1,192 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Fick's First Law</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>4adf53e5-2965-4e67-a9c0-6961c5380965</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1"> We talked about diffusion in the context of diodes,
+      and described Fick's First Law of Diffusion for some particle
+      concentration
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">N</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>:
+      <rule id="eqn04" type="law">
+	<title>Fick's First Law of Diffusion</title>
+	<statement id="idm1401824">
+	  <para id="law">
+	    <m:math>
+	      <m:apply>
+		<m:eq/>
+		<m:ci>Flux</m:ci>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:ci>D</m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:diff/>
+		    <m:bvar>
+		      <m:ci>x</m:ci>
+		    </m:bvar>
+		    <m:apply>
+		      <m:ci type="fn">N</m:ci>
+		      <m:ci>x</m:ci>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:math>
+	  </para>
+	</statement>
+      </rule>
+
+      <m:math><m:ci>D</m:ci></m:math> is the <term>diffusion
+      coefficient</term> and has units of cm/sec.  
+    </para>
+
+    <para id="p2"> In a semiconductor, impurities move about either
+      <term>interstitially</term>, which means they travel around
+      in-between the lattice sites (<link target-id="fig07"/>). Or, they
+      move by <term>substitutional diffusion</term>, which means they
+      hop from lattice site to lattice site (<link target-id="fig08"/>). Substitutional diffusion is only possible if
+      the lattice has a number of <term>vacancies</term>, or empty
+      lattice sites, scattered throughout the crystal, so that there
+      are places into which the impurity can move. Moving
+      interstitially requires energy to get over the potential barrier
+      of the regions between the lattice sites. Energy is required to
+      form the vacancies for substitutional diffusion. Thus, for
+      either form of diffusion, the diffusion coefficient
+      <m:math><m:ci>D</m:ci></m:math>, is a strong function of
+      temperature.
+    </para>
+
+    <figure id="fig07">
+      <media id="idp60272" alt=""><image src="../../media/5.07.png" mime-type="image/png"/></media>
+      <caption>Interstitial diffusion</caption>
+    </figure>
+
+    <figure id="fig08">
+      <media id="idp6821904" alt=""><image src="../../media/5.08.png" mime-type="image/png"/></media>
+      <caption>Substitutional diffusion</caption>
+    </figure>
+
+    <para id="p3"> To a very good degree of accuracy, one can describe
+      the temperature dependence of the diffusion coefficient with an
+      <term>activation energy</term> <m:math>
+      <m:ci><m:msub><m:mi>E</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+      </m:math>, such that:
+
+      <equation id="eqn05"> 
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci>D</m:ci>
+	      <m:ci>T</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci><m:msub>
+		  <m:mi>D</m:mi>
+		  <m:mi>o</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:ci><m:msub>
+			<m:mi>E</m:mi>
+			<m:mi>a</m:mi>
+		      </m:msub></m:ci>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>k</m:ci>
+		      <m:ci>T</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+    <para id="p4"> The activation energy <m:math>
+	<m:ci><m:msub><m:mi>E</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+	</m:math> and coefficient
+      <m:math>
+	<m:ci><m:msub><m:mi>D</m:mi><m:mi>o</m:mi></m:msub></m:ci>
+      </m:math> are obtained from a plot of the
+      natural log of <m:math><m:ci>D</m:ci></m:math>
+      vs. <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:cn>1</m:cn>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>k</m:ci>
+	    <m:ci>T</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, called an <term>Arrhenius plot</term> (<link target-id="fig09"/>).  The slope gives <m:math>
+      <m:ci><m:msub><m:mi>E</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+      </m:math> and the projection to infinite <m:math><m:ci>T</m:ci></m:math> (
+      <m:math>
+	<m:apply>
+	  <m:tendsto/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>1</m:cn>
+	    <m:ci>T</m:ci>
+	  </m:apply>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>) gives <m:math>
+      <m:apply><m:ln/>
+      <m:ci><m:msub><m:mi>D</m:mi><m:mi>o</m:mi></m:msub></m:ci>
+	</m:apply>
+      </m:math>.</para>
+
+    <figure id="fig09">
+      <media id="idm191136" alt=""><image src="../../media/5.09.png" mime-type="image/png"/></media>
+      <caption>Arrhenius plot of diffusion constant</caption>
+    </figure>
+
+    <para id="p5"> The continuity equation holds for
+      motion of impurities just like it does for anything else, so the
+      divergence of the flux, <m:math>
+	<m:apply><m:divergence/><m:ci>F</m:ci></m:apply>
+      </m:math> must equal the negative of the time rate of change of the
+      concentration of the impurities, or, in one dimension:
+      <equation id="eqn06"> 
+	<m:math>
+	  <m:apply><m:eq/>
+	    <m:apply><m:diff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:ci>Flux</m:ci>
+	    </m:apply>
+	    <m:apply><m:minus/>
+	      <m:apply><m:diff/>
+		<m:bvar><m:ci>x</m:ci></m:bvar>
+		<m:apply><m:ci>N</m:ci>
+		  <m:ci>x</m:ci><m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply></m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+  </content>
+  
+</document>

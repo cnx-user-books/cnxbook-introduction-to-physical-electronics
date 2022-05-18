@@ -1,0 +1,645 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Forward Biased PN Junctions</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>aae224c0-ae2a-413c-9dfa-5593d574776d</md:uuid>
+</metadata>
+
+  <content>
+    <para id="contact">       
+      Now let's take a look at what happens when we apply an external
+      voltage to this junction. First we need some conventions. We
+      make connections to the device using <term>contacts</term>,
+      which we show as cross-hatched blocks. These contacts allow the
+      free passage of current into and out of the device. Current
+      usually flows through wires in the form of electrons, so it is
+      easy to imagine electrons flowing into or out of the
+      n-region. In the p-region, when electrons flow
+      <emphasis>out</emphasis> of the device <emphasis>into</emphasis>
+      the wire, holes will flow into the p-region (so as to maintain
+      continuity of current through the contact.) When electrons flow
+      into the p-region, they will recombine with holes, and so we
+      have the net effect of holes flowing out of the p-region.
+    </para>
+      <figure id="external">
+	<media id="idp3148576" alt=""><image src="../../media/2_36.png" mime-type="image/png"/></media>
+	<caption>
+	  A p-n diode with contacts and external bias
+	</caption>
+      </figure>      
+    <para id="para1">
+      With the convention that a <term>positive applied voltage</term>
+      means that the terminal connected to the p-region is positive
+      with respect to the terminal connected to the n-region. This is easy to remember; "p is positive, n is negative". Let us
+      try to figure out what will happen when we apply a positive
+      applied voltage
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>a</m:mi>
+      </m:msub></m:ci> </m:math>.  If
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>a</m:mi>
+      </m:msub></m:ci> </m:math> is positive, then that means that the
+      potential energy for electrons on the p-side must be
+      <emphasis>lower</emphasis> than it was under the equilibrium
+      condition.  We reflect this on the band diagram by
+      <emphasis>lowering</emphasis> the bands on the p-side from where
+      they were originally.  This is shown in <link target-id="forward"/>.
+    </para>
+      <figure id="forward">
+	<media id="idm11249632" alt=""><image src="../../media/2_37.png" mime-type="image/png"/></media>
+	<caption>
+	  A p-n junction under forward bias
+	</caption>
+      </figure> 
+    <para id="para2">
+      As we can see from <link target-id="forward"/>, when the p-region
+      is lowered a couple of things happen.  First of all, the Fermi
+      level (the dotted line) is no longer a flat line, but rather it
+      bends upward in going from the p-region to the n-region.  The
+      amount it bends (and hence the amount of shift of the bands) is
+      just given by
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>q</m:ci>
+	  <m:ci><m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>a</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math>, where the energy scale we are using for the band
+      diagram is in <term>electron-volts</term> which, as we said
+      before, is a common measure of potential energy when we are
+      talking about electronic materials.  The other thing we can
+      notice is that the electrons on the n-side and the holes on the
+      p-side now "see" a lower potential energy barrier than they saw
+      when no voltage was applied.  In fact, it looks as if a lot of
+      electrons now have sufficient energy such that they could move
+      across from the n-region and flow into the p-region.  Likewise,
+      we would expect to see holes moving across from the p-region
+      into the n-region.
+    </para>
+    <para id="flow">
+      This flow of carriers across the junction will result in a
+      current flow across the junction.  In order to see how this
+      current will behave with applied voltage, we have to use a
+      result from statistical thermodynamics concerning the
+      distribution of electrons in the conduction band, and holes in
+      the valence band . We saw from our "cups" analogy, that the
+      electrons tend to fill in the lowest states first, with fewer
+      and fewer of them as we go up in energy.  For most situations, a
+      very good description of just how the electrons are distributed
+      in energy is given by a simple exponential decay.  (This comes
+      about from a statistical analysis of electrons, which belong to
+      a class of particles called <term>Fermions</term>.  Fermions
+      have the properties that they are: 
+      <list id="list1" list-type="labeled-item" display="inline">
+	<item><label>a)</label>
+	   indistinguishable from one another
+	</item>
+	<item><label>b)</label>
+	   obey the <term>Pauli Exclusion
+	  Principle</term> which says that two Fermions can not occupy
+	  the same exact <term>state</term> (energy and spin) </item>
+	<item><label>c)</label>
+	   remain at some fixed total number
+	  <m:math><m:ci>N</m:ci></m:math>.)
+	</item>
+      </list>
+    </para>
+    <para id="electrons">
+      If 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">n</m:ci>
+	  <m:ci>E</m:ci>
+	</m:apply>
+      </m:math> tells us how many electrons there are with an energy
+      greater than some value
+      <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>c</m:mi>
+      </m:msub></m:ci></m:math> then 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">n</m:ci>
+	  <m:ci>E</m:ci>
+	</m:apply>
+      </m:math>
+      is given simply as:
+      <equation id="energy">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">n</m:ci>
+	      <m:ci>E</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci><m:msub>
+		  <m:mi>N</m:mi>
+		  <m:mi>d</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:ci>E</m:ci>
+		      <m:ci><m:msub>
+			  <m:mi>E</m:mi>
+			  <m:mi>c</m:mi>
+			</m:msub></m:ci>
+		    </m:apply>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>k</m:ci>
+		      <m:ci>T</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>  
+      The expression in the denominator is just Boltzman's constant
+      times the temperature in Kelvins.  At room temperature
+      <m:math>
+	<m:apply>
+	  <m:times/> 
+	  <m:ci>k</m:ci> 
+	  <m:ci>T</m:ci> 
+	</m:apply>
+      </m:math> has a value of about <m:math><m:cn type="rational">1<m:sep/>40</m:cn></m:math> of an eV or 25
+      meV. This number is sometimes called the <term>thermal
+      voltage</term>,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>, but it's ok for you to just think of
+      it as a constant which comes from the thermodynamics of the
+      problem.  Because 
+      <m:math>
+	<m:apply>
+	  <m:approx/>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>k</m:ci>
+	    <m:ci>T</m:ci>
+	  </m:apply>
+	  <m:cn type="rational">1<m:sep/>40</m:cn>
+	</m:apply>
+      </m:math>, you will sometimes see <link target-id="energy"/> and
+      similar equations written as 
+      <equation id="similar">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">n</m:ci>
+	      <m:ci>E</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci><m:msub>
+		  <m:mi>N</m:mi>
+		  <m:mi>d</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>-40</m:cn>
+		  <m:apply>
+		    <m:minus/>
+		    <m:ci>E</m:ci>
+		    <m:ci><m:msub>
+			<m:mi>E</m:mi>
+			<m:mi>c</m:mi>
+		      </m:msub></m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Which looks a little strange if you forget where the 40 came
+      from, and just see it sitting there.
+    </para>
+    <para id="conduction">      
+      If the energy <m:math><m:ci>E</m:ci></m:math> is
+      <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>c</m:mi>
+      </m:msub></m:ci></m:math> the energy level of the conduction
+      band, then 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">n</m:ci>
+	    <m:ci><m:msub>
+		<m:mi>E</m:mi>
+		<m:mi>c</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	  <m:ci><m:msub>
+	      <m:mi>N</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math>, the density of electrons in the n-type material.  As
+      <m:math><m:ci>E</m:ci></m:math> increases above
+      <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>c</m:mi>
+      </m:msub></m:ci></m:math>, the density of electrons falls off
+      exponentially, as depicted schematically in <link target-id="distribution"/>: Now let's go back to the unbiased
+      junction.
+    </para>
+      <figure id="distribution">
+	<media id="idm3446272" alt=""><image src="../../media/2_38.png" mime-type="image/png"/></media> 
+	<caption>	
+	  Distribution of electrons in the conduction band with energy
+	</caption>
+      </figure>
+    <para id="para3">
+      Remember, as we said before, there are currents flowing across
+      the junction, even if there is no bias.  The current we have
+      shown as <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>f</m:mi>
+      </m:msub></m:ci></m:math> is due to those electrons which have
+      an energy greater than the built-in potential.  They are flowing
+      from right to left, as shown by the open arrow, which, of
+      course, gives a current flowing from left to right, as shown by
+      the solid arrows.  Based on <link target-id="energy"/> the current
+      should be proportional to:
+      <equation id="current">
+	<m:math>
+	  <m:apply>
+	    <m:mo>∝</m:mo>
+	    <m:ci><m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>f</m:mi>
+	      </m:msub></m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci><m:msub>
+		  <m:mi>N</m:mi>
+		  <m:mi>d</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>q</m:ci>
+		      <m:ci><m:msub>
+			  <m:mi>V</m:mi>
+			  <m:mi>bi</m:mi>
+			</m:msub></m:ci>
+		    </m:apply>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>k</m:ci>
+		      <m:ci>T</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      <figure id="balancedflow">
+	<media id="idm74144" alt=""><image src="../../media/2_39.png" mime-type="image/png"/></media>
+	<caption>Balanced flow across a junction</caption>
+      </figure>      
+      The principle of detailed balance says that at zero bias,
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>f</m:mi>
+	    </m:msub></m:ci>
+	  <m:apply>
+	    <m:minus/>
+	    <m:ci><m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>r</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> and so 
+      <equation id="currentneg">
+	<m:math>
+	  <m:apply>
+	    <m:mo>∝</m:mo>
+	    <m:ci><m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>R</m:mi>
+	      </m:msub></m:ci>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:ci><m:msub>
+		    <m:mi>N</m:mi>
+		    <m:mi>d</m:mi>
+		  </m:msub></m:ci>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:apply>
+			<m:times/>
+			<m:ci>q</m:ci>
+			<m:ci><m:msub>
+			    <m:mi>V</m:mi>
+			    <m:mi>bi</m:mi>
+			  </m:msub></m:ci>
+		      </m:apply>
+		      <m:apply>
+			<m:times/>
+			<m:ci>k</m:ci>
+			<m:ci>T</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>     
+      <equation id="eq1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci><m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>R</m:mi>
+	      </m:msub></m:ci>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci><m:msub>
+		      <m:mi>I</m:mi>
+		      <m:mi>f</m:mi>
+		    </m:msub></m:ci>
+		  <m:ci>α</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:ci><m:msub>
+		    <m:mi>N</m:mi>
+		    <m:mi>d</m:mi>
+		  </m:msub></m:ci>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:apply>
+			<m:times/>
+			<m:ci>q</m:ci>
+			<m:ci><m:msub>
+			    <m:mi>V</m:mi>
+			    <m:mi>BI</m:mi>
+			  </m:msub></m:ci>
+		      </m:apply>
+		      <m:apply>
+			<m:times/>
+			<m:ci>k</m:ci>
+			<m:ci>T</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+    <para id="para4">
+      Now, what happens when we apply the bias?  For the electrons
+      over on the n-side, the barrier has been reduced from a height
+      of 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>q</m:ci>
+	  <m:ci><m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>bi</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math> to 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>q</m:ci>
+	  <m:apply>
+	    <m:minus/>
+	    <m:ci><m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>bi</m:mi>
+	      </m:msub></m:ci>
+	    <m:ci><m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>a</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> and hence the forward current will be significantly
+      increased.
+      <equation id="increased">
+	<m:math>
+	  <m:apply>
+	    <m:mo>∝</m:mo>
+	    <m:ci><m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>f</m:mi>
+	      </m:msub></m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci><m:msub>
+		  <m:mi>N</m:mi>
+		  <m:mi>d</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>q</m:ci>
+		      <m:apply>
+			<m:minus/>
+			<m:ci><m:msub>
+			    <m:mi>V</m:mi>
+			    <m:mi>bi</m:mi>
+			  </m:msub></m:ci>
+			<m:ci><m:msub>
+			    <m:mi>V</m:mi>
+			    <m:mi>a</m:mi>
+			  </m:msub></m:ci>
+		      </m:apply>
+		    </m:apply>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>k</m:ci>
+		      <m:ci>T</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> 
+      The reverse current however, will remain just the <link target-id="currentneg">same as it was before</link>.
+      <figure id="forwardbias">
+	<media id="idp2444048" alt=""><image src="../../media/2_40.png" mime-type="image/png"/></media>
+	<caption>Current when the junction is forward biased</caption>
+      </figure>      
+      The total current across the junction is just
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:ci><m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>f</m:mi>
+	    </m:msub></m:ci>
+	  <m:ci><m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>r</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math>
+      <equation id="total">
+	<m:math>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci><m:msub>
+		<m:mi>N</m:mi>
+		<m:mi>d</m:mi>
+	      </m:msub></m:ci>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:exp/>
+		  <m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>q</m:ci>
+		    <m:ci><m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>a</m:mi>
+		      </m:msub></m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>k</m:ci>
+		    <m:ci>T</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:cn>1</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      where we have factored out the
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci><m:msub>
+	      <m:mi>N</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub></m:ci>
+	  <m:apply>
+	    <m:exp/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>q</m:ci>
+		  <m:ci><m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>bi</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>k</m:ci>
+		  <m:ci>T</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> term out of both expressions.  We are not prepared,
+      with what we know at this point, to get the other terms in the
+      proportionality that are involved here.  Also, the astute reader
+      will note that we have not said anything about the holes, but it
+      should be obvious that they will also contribute to the current,
+      and the arguments we have made for electrons will hold for the
+      holes just as well.
+    </para>
+    <para id="effect"> We can take the effect of the holes, and the
+      other unknowns about the proportionality, and bind them all into
+      one constant called
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>sat</m:mi>
+      </m:msub></m:ci></m:math>, so that we write:
+      <equation id="final">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>I</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>sat</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>q</m:ci>
+		      <m:ci><m:msub>
+			  <m:mi>V</m:mi>
+			  <m:mi>a</m:mi>
+			</m:msub></m:ci>
+		    </m:apply>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>k</m:ci>
+		      <m:ci>T</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+		<m:cn>1</m:cn>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> This is the famous <term>diode equation</term> and
+      is a very important result.
+
+</para> </content> </document>

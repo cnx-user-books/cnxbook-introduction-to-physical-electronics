@@ -1,0 +1,654 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Telegrapher's Equations</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c0f91d33-8373-4d75-8e09-9a0a4e1b3c18</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">
+      Let's look at just one little section of the line, and define
+      some voltages and currents <link target-id="fig1"/>.
+
+      <figure id="fig1"><title>Applying Kirchoff's Laws</title><media id="idp8513344" alt=""><image src="../../media/6_07.png" mime-type="image/png" print-width="3in"/></media></figure>
+
+      For the section of line
+      <m:math>
+	<m:apply>
+	  <m:mo>Δ</m:mo>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>
+      long, the voltage at its input is just
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>
+      and the voltage at the output is
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:apply>
+	    <m:plus/>
+	    <m:ci>x</m:ci>
+	    <m:apply>
+	      <m:mo>Δ</m:mo>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>.  Likewise, we have a current
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>
+      entering the section, and another current
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:apply>
+	    <m:plus/>
+	    <m:ci>x</m:ci>
+	    <m:apply>
+	      <m:mo>Δ</m:mo>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>
+      leaving the section of line. Note that both the voltage and the
+      current are functions of <emphasis>time</emphasis> as well as
+      position.
+    </para>
+
+    <para id="para2">
+      The voltage drop across the inductor is just:
+      
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:mi fontweight="bold">L</m:mi>
+	      <m:apply>
+		<m:mo>Δ</m:mo>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:partialdiff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn">I</m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Likewise, the current flowing down through the capacitor is
+
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>C</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:mi fontweight="bold">C</m:mi>
+	      <m:apply>
+		<m:mo>Δ</m:mo>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:partialdiff/>
+	      <m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn">V</m:ci>
+		  <m:apply>
+		    <m:plus/>
+		    <m:ci>x</m:ci>
+		    <m:apply>
+		      <m:mo>Δ</m:mo>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      
+      Now we do a <link document="m0014" target-id="voltage">KVL</link>
+      around the outside of the section of line and we get
+
+      <equation id="eqn3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:ci type="fn">V</m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>L</m:mi>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:apply>
+		  <m:plus/>
+		  <m:ci>x</m:ci>
+		  <m:apply>
+		    <m:mo>Δ</m:mo>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+      
+      Substituting <link target-id="eqn1"/> for
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub>
+      </m:math> and taking it over to the RHS we have
+      
+      <equation id="eqn4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:apply>
+		  <m:plus/>
+		  <m:ci>x</m:ci>
+		  <m:apply>
+		    <m:mo>Δ</m:mo>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:mi fontweight="bold">L</m:mi>
+	      <m:apply>
+		<m:mo>Δ</m:mo>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:partialdiff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn">I</m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Let's multiply by -1, and bring the
+      <m:math>
+	<m:apply>
+	  <m:mo>Δ</m:mo>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>
+      over to the left hand side.
+
+      <equation id="eqn5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:ci type="fn">V</m:ci>
+		  <m:apply>
+		    <m:plus/>
+		    <m:ci>x</m:ci>
+		    <m:apply>
+		      <m:mo>Δ</m:mo>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		  <m:ci>t</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:ci type="fn">V</m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:mo>Δ</m:mo>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:apply>
+		  <m:partialdiff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">I</m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      We take the limit as
+      <m:math>
+	<m:apply>
+	  <m:tendsto/>
+	  <m:apply>
+	    <m:mo>Δ</m:mo>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>
+      and the LHS becomes a derivative:
+
+      <equation id="eqn6">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:apply>
+		  <m:partialdiff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">I</m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Now we can do a <link document="m0015" target-id="current">KCL</link> at the node where the inductor and
+      capacitor come together.
+    
+      <equation id="eqn7">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:ci type="fn">I</m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:mi fontweight="bold">C</m:mi>
+		  <m:apply>
+		    <m:mo>Δ</m:mo>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:partialdiff/>
+		    <m:bvar>
+		      <m:ci>t</m:ci>
+		    </m:bvar>
+		    <m:apply>
+		      <m:ci type="fn">V</m:ci>
+		      <m:apply>
+			<m:plus/>
+			<m:ci>x</m:ci>
+			<m:apply>
+			  <m:mo>Δ</m:mo>
+			  <m:ci>x</m:ci>
+			</m:apply>
+		      </m:apply>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:ci type="fn">I</m:ci>
+		<m:apply>
+		  <m:plus/>
+		  <m:ci>x</m:ci>
+		  <m:apply>
+		    <m:mo>Δ</m:mo>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      And upon rearrangement:
+
+      <equation id="eqn8">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:ci type="fn">I</m:ci>
+		  <m:apply>
+		    <m:plus/>
+		    <m:ci>x</m:ci>
+		    <m:apply>
+		      <m:mo>Δ</m:mo>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		  <m:ci>t</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:ci type="fn">I</m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:mo>Δ</m:mo>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">C</m:mi>
+		<m:apply>
+		  <m:partialdiff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">V</m:ci>
+		    <m:apply>
+		      <m:plus/>
+		      <m:ci>x</m:ci>
+		      <m:apply>
+			<m:mo>Δ</m:mo>
+			<m:ci>x</m:ci>
+		      </m:apply>
+		    </m:apply>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Now when we let
+      <m:math>
+	<m:apply>
+	  <m:tendsto/>
+	  <m:apply>
+	    <m:mo>Δ</m:mo>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>, the left hand side again becomes a derivative, and on
+      the right hand side,
+      <m:math>
+	<m:apply>
+	  <m:tendsto/>
+	  <m:apply>
+	    <m:ci type="fn">V</m:ci>
+	    <m:apply>
+	      <m:plus/>
+	      <m:ci>x</m:ci>
+	      <m:apply>
+		<m:mo>Δ</m:mo>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:ci type="fn">V</m:ci>
+	    <m:ci>x</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, so we have:
+
+      <equation id="eqn9">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">I</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">C</m:mi>
+		<m:apply>
+		  <m:partialdiff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">V</m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <link target-id="eqn6"/> and <link target-id="eqn9"/> are so important
+      we will write them out again together:
+
+      <equation id="eqn10">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:apply>
+		  <m:partialdiff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">I</m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <equation id="eqn11">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">I</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">C</m:mi>
+		<m:apply>
+		  <m:partialdiff/>
+		  <m:bvar>
+		    <m:ci>t</m:ci>
+		  </m:bvar>
+		  <m:apply>
+		    <m:ci type="fn">V</m:ci>
+		    <m:ci>x</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      These are called the <term>telegrapher's equations</term> and
+      they are all we really need to derive how electrical signals
+      behave as they move along on transmission lines. Note what they
+      say. The first one says that at some point
+      <m:math><m:ci>x</m:ci></m:math> along the line, the incremental
+      voltage drop that we experience as we move down the line is just
+      the distributed inductance <m:math><m:mi fontweight="bold">L</m:mi></m:math> times the time derivative of
+      the current flowing in the line at that point. The second
+      equation simply tells us that the loss of current as we go down
+      the line is proportional to the distributed capacitance
+      <m:math><m:mi fontweight="bold">C</m:mi></m:math> times
+      the time rate of change of the voltage on the line. As you
+      should be easily aware, what we have here are a pair of
+      <term>coupled linear differential equations in time and
+      position</term> for
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>
+    </para>
+  </content>
+  
+</document>

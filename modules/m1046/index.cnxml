@@ -1,0 +1,365 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Transmission Line Examples</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>188d8f40-1494-4123-9035-76de3b56aadb</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1"> As an example, and also because it even has some
+      practical importance, let's look at one kind of transmission
+      line. It is called a <term>stripline</term> and it looks like
+      <link target-id="fig1"/>. It consists of a flat conductor, located
+      between two ground planes. It is supported by an insulating
+      dielectric with dielectric constant
+      <m:math><m:ci>ε</m:ci></m:math>. This is kind of like
+      the situation you would find on a multi-level PC board, where
+      perhaps the bus lines would be running on an inner layer with
+      ground planes above and below them.
+
+      <figure id="fig1">
+	<title>A Stripline</title>
+	<media id="idp2030880" alt=""><image src="../../media/6.10.png" mime-type="image/png"/></media>
+      </figure>
+
+      Between the center conductor and the ground plane, there will be
+      some capacitance, <m:math><m:ci>C</m:ci></m:math>. If we can
+      assume that the electric field is more or less confined to the
+      regions between the strip conductor and the ground plane (which
+      occurs when the ratio of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>W</m:ci>
+	  <m:ci>B</m:ci>
+	</m:apply>
+      </m:math> is not too small) then for either capacitor (assuming
+      unit length into the picture) we will get a value
+
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>C</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>ε</m:ci>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>B</m:ci>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      since the value of a capacitor is just the dielectric constant
+      times the area of the plates, divided by the spacing of the
+      plates.
+    </para>
+
+    <para id="para2">Looking quickly at <link target-id="fig1"/> you
+      might think the two capacitors are in series, but you would be
+      wrong! Note that each capacitor has one lead connected to the
+      center conductor and the other lead connected to ground, and so
+      the two capacitors are in fact, in parallel, and hence their
+      capacitances add. Thus, for the capacitance per unit length for
+      this line, we can write:
+
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:mi fontweight="bold">C</m:mi>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>4</m:cn>
+		<m:ci>ε</m:ci>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	      <m:ci>B</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      It can be shown (although we won't do it here) that for
+      <emphasis>any</emphasis> transmission line where the electric
+      and magnetic fields are perpendicular to one another (called
+      <term>TEM</term> or <term>transverse electromagnetic</term>) the
+      speed of propagation of the wave down the line is just
+
+      <equation id="eqn3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>v</m:mi>
+	      <m:mi>p</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>c</m:ci>
+	      <m:apply>
+		<m:root/>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci>ε</m:ci>
+		  <m:msub>
+		    <m:mi>ε</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>3</m:cn>
+		<m:apply>
+		  <m:power/>
+		  <m:cn>10</m:cn>
+		  <m:cn>8</m:cn>
+		</m:apply>
+		<m:apply>
+		  <m:divide/>
+		  <m:mi>m</m:mi>
+		  <m:mi>s</m:mi>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:root/>
+		<m:msub>
+		  <m:mi>ε</m:mi>
+		  <m:mi>r</m:mi>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Where
+      <m:math>
+	<m:msub>
+	  <m:mi>ε</m:mi>
+	  <m:mi>r</m:mi>
+	</m:msub>
+      </m:math> is called the <term>relative dielectric constant
+      </term> for the material. Well, we also know that
+      
+      <equation id="eqn4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>v</m:mi>
+	      <m:mi>p</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:apply>
+		<m:root/>
+		<m:apply>
+		  <m:times/>
+		  <m:mi fontweight="bold">L</m:mi>
+		  <m:mi fontweight="bold">C</m:mi>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      From which we can write
+      <equation id="eqn5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:mi fontweight="bold">L</m:mi>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:power/>
+		  <m:msub>
+		    <m:mi>v</m:mi>
+		    <m:mi>p</m:mi>
+		  </m:msub>
+		  <m:cn>2</m:cn>
+		</m:apply>
+		<m:mi fontweight="bold">C</m:mi>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>B</m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:power/>
+		  <m:msub>
+		    <m:mi>v</m:mi>
+		    <m:mi>p</m:mi>
+		  </m:msub>
+		  <m:cn>2</m:cn>
+		</m:apply>
+		<m:cn>4</m:cn>
+		<m:ci>ε</m:ci>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      We can now insert this value for <m:math><m:mi fontweight="bold">L</m:mi></m:math>
+      into the expression for
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math>, the impedance of the line.
+
+      <equation id="eqn6">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	    <m:apply>
+	      <m:root/>
+	      <m:apply>
+		<m:divide/>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:mi fontweight="bold">C</m:mi>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:root/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci>B</m:ci>
+		  <m:apply>
+		    <m:times/>
+		    <m:apply>
+		      <m:power/>
+		      <m:msub>
+			<m:mi>v</m:mi>
+			<m:mi>p</m:mi>
+		      </m:msub>
+		      <m:cn>2</m:cn>
+		    </m:apply>
+		    <m:cn>4</m:cn>
+		    <m:ci>ε</m:ci>
+		    <m:ci>W</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:times/>
+		    <m:cn>4</m:cn>
+		    <m:ci>ε</m:ci>
+		    <m:ci>W</m:ci>
+		  </m:apply>
+		  <m:ci>B</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>B</m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:cn>4</m:cn>
+		<m:ci>ε</m:ci>
+		<m:ci>W</m:ci>
+		<m:msub>
+		  <m:mi>v</m:mi>
+		  <m:mi>p</m:mi>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>B</m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:cn>4</m:cn>
+		<m:ci>ε</m:ci>
+		<m:ci>W</m:ci>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci>c</m:ci>
+		  <m:apply>
+		    <m:root/>
+		    <m:msub>
+		      <m:mi>ε</m:mi>
+		      <m:mi>r</m:mi>
+		    </m:msub>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      And so, we have derived an equation for the impedance
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math> of the line in terms of the dimensions
+      <m:math><m:ci>W</m:ci></m:math> and
+      <m:math><m:ci>B</m:ci></m:math>, the dielectric constant of the
+      insulating material, <m:math><m:ci>ε</m:ci></m:math>,
+      and <m:math><m:ci>c</m:ci></m:math>, the speed of light.  How
+      good is this expression, and in particular how good is our
+      assumption that the electric field is all confined to the region
+      under the conductor? Not so great actually <link target-id="fig2"/>.
+
+      <figure id="fig2">
+	<title>Exact and Approximate Impedance For a Stripline</title>
+	<media id="idp515216" alt=""><image src="../../media/6.11.png" mime-type="image/png"/></media>
+	<caption>Exact and approximate
+	  <m:math>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:math> for a stripline
+	</caption>
+      </figure>
+
+      <link target-id="fig2"/> shows the results from using <link target-id="eqn6"/> and a more exact calculation, which takes into
+      account the fringing fields. As you can see we have to get the
+      ratio
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>W</m:ci>
+	  <m:ci>B</m:ci>
+	</m:apply>
+      </m:math> up to about 4 or so before the two match. But at least
+      we get the right behavior and we're not totally out of the ball park.
+    </para>
+  </content>
+  
+</document>

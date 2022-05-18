@@ -1,0 +1,923 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Bilinear Transform</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>f60cc029-a5cd-4610-9cf3-91dc3962184b</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">There <emphasis>is</emphasis> a way that we can
+      make things a good bit easier for ourselves however. The only
+      drawback is that we have to do some complex analysis first, and
+      look at a <term>bilinear transform</term>! Let's do one more
+      substitution, and define another complex vector, which we can
+      call
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>:
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:apply>
+	      <m:ci type="fn">r</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:abs/>
+		<m:msub>
+		  <m:mi>Γ</m:mi>
+		  <m:mi>ν</m:mi>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:msub>
+		      <m:mi>θ</m:mi>
+		      <m:mi>r</m:mi>
+		    </m:msub>
+		    <m:apply>
+		      <m:times/>
+		      <m:cn>2</m:cn>
+		      <m:ci>β</m:ci>
+		      <m:ci>s</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>The vector 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> is just the rotating part of the crank diagram which
+      we have been looking at <link target-id="fig1"/>. It has a
+      magnitude equal to that of the reflection coefficient, and it
+      rotates around at a rate
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>2</m:cn>
+	  <m:ci>β</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> as we move down the line.  For every 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> there is a corresponding 
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">Z</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> which is given by:
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:plus/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:ci type="fn">r</m:ci>
+		    <m:ci>s</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:minus/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:ci type="fn">r</m:ci>
+		    <m:ci>s</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <figure id="fig1">
+	<title>The Vector r(s)</title>
+	<media id="idm841392" alt=""><image src="../../media/717.png" mime-type="image/png"/></media>
+      </figure>
+
+      Now, it turns out to be easier if we talk about a <term>normalized
+      impedance</term>, which we get by dividing
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">Z</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> by
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math>.
+      <equation id="eqn3">
+      <m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:ci type="fn">Z</m:ci>
+		<m:ci>s</m:ci>
+	      </m:apply>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:plus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:ci type="fn">r</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:ci type="fn">r</m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>which we can solve for
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>
+      <equation id="eqn4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">r</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:ci type="fn">Z</m:ci>
+		    <m:ci>s</m:ci>
+		  </m:apply>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		</m:apply>
+		<m:cn>1</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:ci type="fn">Z</m:ci>
+		    <m:ci>s</m:ci>
+		  </m:apply>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		</m:apply>
+		<m:cn>1</m:cn>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      This relationship is called a <term>bilinear
+      transform</term>. For every
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> that we can imagine, there is one and only one
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> and for every
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> there is one and only one
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>. What we would like to be able to do, is find
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>, given an
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>. The reason for this should be readily
+      apparent. Whereas, as we move along in <m:math><m:ci>s</m:ci></m:math>,
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> behaves in a most difficult manner (dividing one
+      phasor by another),
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> simply rotates around on the complex plane. Given one
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:msub>
+	    <m:mi>s</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> it is <emphasis>easy</emphasis> to find another
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>. We just rotate around!
+    </para>
+
+    <para id="para2">We shall find the required relationship in a
+      graphical manner.  Suppose I have a complex plane, representing
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>.  And then suppose I have some point "A" on that plane
+      and I want to know what impedance it represents.  I just read
+      along the two axes, and find that, for the example in <link target-id="fig2"/>, "A" represents an impedance of
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">4<m:sep/>2</m:cn>
+	</m:apply>
+      </m:math>. What I would like to do would be to get a grid
+      similar to that on the
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>plane, but on the
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> plane instead. That way, if I knew one impedence (say
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:cn>0</m:cn>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	</m:apply>
+      </m:math> then I could find any other impedance, at any other
+      <m:math><m:ci>s</m:ci></m:math>, by simply rotating
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>around by
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>2</m:cn>
+	  <m:ci>β</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>, and then reading off the new
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> from the grid I had developed. This is what we shall
+      attempt to do.
+
+      <figure id="fig2">
+	<title>The Complex Impedance Plane</title>
+	<media id="idp4606160" alt=""><image src="../../media/718.png" mime-type="image/png"/></media>
+      </figure>
+
+      Let's start with <link target-id="eqn4"/> and re-write it as:
+      <equation id="eqn5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">r</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:plus/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:ci type="fn">Z</m:ci>
+		      <m:ci>s</m:ci>
+		    </m:apply>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mn>0</m:mn>
+		    </m:msub>
+		  </m:apply>
+		  <m:cn>1</m:cn>
+		</m:apply>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:ci type="fn">Z</m:ci>
+		    <m:ci>s</m:ci>
+		  </m:apply>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		</m:apply>
+		<m:cn>1</m:cn>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:cn>1</m:cn>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>-2</m:cn>
+		<m:apply>
+		  <m:plus/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:ci type="fn">Z</m:ci>
+		      <m:ci>s</m:ci>
+		    </m:apply>
+		    <m:msub>
+		      <m:mi>Z</m:mi>
+		      <m:mn>0</m:mn>
+		    </m:msub>
+		  </m:apply>
+		  <m:cn>1</m:cn>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      In order to use <link target-id="eqn5"/>, we are going to have to
+      interpret it in a way which might seem a little odd to you. The
+      way we will read the equation is to say: "Take
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> and add 1 to it. Invert what you get, and multiply by
+      -2. Then add 1 to the result." Simple isn't it? The only hard
+      part we have in doing this is inverting
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci type="fn">Z</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn>1</m:cn>
+	</m:apply>
+      </m:math>. This, it turns out, is pretty easy once we learn one
+      very important fact.
+    </para>
+
+    <para id="para3">The <emphasis>one</emphasis> fact about algebra
+      on the complex plane that we need is as follows. Consider a
+      vertical line, <m:math><m:ci>s</m:ci></m:math>, on the complex
+      plane, located a distance <m:math><m:ci>d</m:ci></m:math> away
+      from the imaginary axis <link target-id="fig3"/>. There are a lot
+      of ways we could express the line
+      <m:math><m:ci>s</m:ci></m:math>, but we will choose one which
+      will turn out to be convenient for us. Let's let:
+      <equation id="eqn6">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>s</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>d</m:ci>
+	      <m:apply>
+		<m:minus/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:apply>
+		    <m:tan/>
+		    <m:ci>φ</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:forall/>
+	    <m:bvar>
+	      <m:ci>φ</m:ci>
+	    </m:bvar>
+	    <m:apply>
+	      <m:in/>
+	      <m:ci>φ</m:ci>
+	      <m:interval>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:pi/>
+		    <m:cn>2</m:cn>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:divide/>
+		  <m:pi/>
+		  <m:cn>2</m:cn>
+		</m:apply>
+	      </m:interval>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <figure id="fig3">
+	<title>A Vertical Line, s, a Distance, d, Away From the
+	Imaginary Axis</title>
+	<media id="idp2450416" alt=""><image src="../../media/719.png" mime-type="image/png"/></media>
+      </figure>
+
+      Now we ask ourselves the question: what is the inverse of s?
+      <equation id="eqn7">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:ci>d</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:minus/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:apply>
+		      <m:tan/>
+		      <m:ci>φ</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      We can substitute for 
+      <m:math>
+	<m:apply>
+	  <m:tan/>
+	  <m:ci>φ</m:ci>
+	</m:apply>
+      </m:math>:
+      <equation id="eqn8">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:ci>d</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:minus/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:apply>
+		      <m:divide/>
+		      <m:apply>
+			<m:sin/>
+			<m:ci>φ</m:ci>
+		      </m:apply>
+		      <m:apply>
+			<m:cos/>
+			<m:ci>φ</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:ci>d</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:cos/>
+		  <m:ci>φ</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:cos/>
+		    <m:ci>φ</m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:apply>
+		      <m:sin/>
+		      <m:ci>φ</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      And then, since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:minus/>
+	    <m:apply>
+	      <m:cos/>
+	      <m:ci>φ</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:apply>
+		<m:sin/>
+		<m:ci>φ</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:exp/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:imaginaryi/>
+		<m:ci>φ</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+
+      <equation id="eqn9">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:ci>d</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:cos/>
+		  <m:ci>φ</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:ci>φ</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:ci>d</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:cos/>
+		<m:ci>φ</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>φ</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <figure id="fig4">
+	<title>A Plot of 1/s</title>
+	<media id="idp5695280" alt=""><image src="../../media/720.png" mime-type="image/png"/></media>
+      </figure>
+
+      A careful look at <link target-id="fig4"/> should allow you to
+      convince yourself that <link target-id="eqn9"/> is an equation for
+      a circle on the complex plane, with a diameter
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>1</m:cn>
+	    <m:ci>d</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. If <m:math><m:ci>s</m:ci></m:math> is not parallel to
+      the imaginary axis, but rather has its perpendicular to the
+      origin at some angle <m:math><m:ci>φ</m:ci></m:math>, to make a line
+      <m:math>
+	<m:msup>
+	  <m:mi>s</m:mi>
+	  <m:mi>′</m:mi>
+	</m:msup>
+      </m:math> <link target-id="fig5"/>. Since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msup>
+	    <m:mi>s</m:mi>
+	    <m:mi>′</m:mi>
+	  </m:msup>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>s</m:ci>
+	    <m:apply>
+	      <m:exp/>
+	      <m:apply>
+		<m:times/>
+		<m:imaginaryi/>
+		<m:ci>φ</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>, taking
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:cn>1</m:cn>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> simply will give us a circle with a diameter of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:cn>1</m:cn>
+	  <m:ci>d</m:ci>
+	</m:apply>
+      </m:math>, which has been rotated by an angle
+      <m:math><m:ci>φ</m:ci></m:math> from the real axis <link target-id="fig6"/>. And so we come to the <emphasis>one</emphasis>
+      fact we have to keep in mind: <emphasis>"The inverse of a
+      straight line on the complex plane is a circle, whose diameter
+      is the inverse of the distance between the line and the
+      origin."</emphasis>
+    </para>
+
+    <figure id="fig5">
+      <title>The Line s'</title>
+      <media id="idp6728768" alt=""><image src="../../media/721.png" mime-type="image/png"/></media>
+      <caption>The line <m:math><m:ci>s</m:ci></m:math> multiplied by
+	<m:math>
+	  <m:apply>
+	    <m:exp/>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>φ</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </caption>
+    </figure>
+    
+    <figure id="fig6">
+      <title>Inverse of a Rotated Line</title>
+      <media id="idp5285056" alt=""><image src="../../media/722.png" mime-type="image/png"/></media>
+    </figure>
+
+
+   
+  </content>
+  
+</document>

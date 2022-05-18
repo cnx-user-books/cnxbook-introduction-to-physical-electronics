@@ -1,0 +1,188 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Diffused Resistor</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>45eb3945-870d-455d-b3ce-9a24e2697481</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">Sometimes, in a circuit design, we will need a
+      resistor. This is usually made either with poly or with a <link target-id="fig1">diffusion</link>. If we took our n-tank or similar
+      n-type diffusion, we could make a long narrow strip of it, and
+      use it as a resistor. As long as we keep the substrate at
+      ground, and any voltages on the resistor greater than ground,
+      the n-p junction will be reverse biased and the resistor will be
+      isolated from the substrate. Now we all know
+      
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>R</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>ρ</m:ci>
+		<m:ci>L</m:ci>
+	      </m:apply>
+	      <m:ci>A</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>L</m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:ci>n</m:ci>
+		<m:ci>q</m:ci>
+		<m:ci>μ</m:ci>
+		<m:ci>t</m:ci>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <figure id="fig1">
+	<title>A Diffused Resistor</title>
+	<media id="idm709728" alt=""><image src="../../media/5.43.png" mime-type="image/png"/></media>
+      </figure>
+
+      The only trouble is, what is n for a diffused resistor? A quick
+      look at the <link document="m1036" target-id="fig11">chart</link> showing carrier concentration as a function of depth after a diffusion shows that when we do a diffusion,
+      <m:math><m:ci>n</m:ci></m:math> is not a constant, but varies as
+      we go down into the wafer. We will have to do some kind of
+      integral, assuming lots of parallel, thin resistors, each with a
+      different carrier concentration!  This is not very satisfactory.
+    </para>
+
+    <para id="paraw">In fact, it is so unsatisfactory that IC
+      engineers have come up with a better description resistance than
+      one involving
+      <m:math>
+	<m:ci>n</m:ci>
+      </m:math>
+      and <m:math><m:ci>μ</m:ci></m:math>. Note that we could write
+      <link target-id="eqn1"/> as
+
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>R</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>n</m:ci>
+		  <m:ci>q</m:ci>
+		  <m:ci>μ</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>L</m:ci>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      
+      We define the first fraction (which contains the carrier
+      concentration, thickness etc.) as the <term>sheet
+      resistance</term>
+      <m:math>
+	<m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>s</m:mi>
+	</m:msub>
+      </m:math> of the diffusion. While this can be more-or-less
+      predicted, it is usually also a post-fabrication measured value.
+
+      <equation id="eqn3">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:msub>
+	      <m:mi>R</m:mi>
+	      <m:mi>s</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1</m:cn>
+	      <m:apply>
+		<m:times/>
+		<m:ci>n</m:ci>
+		<m:ci>q</m:ci>
+		<m:ci>μ</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <m:math>
+	<m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>s</m:mi>
+	</m:msub>
+      </m:math> has units of "ohms/square", and you are probably
+      tempted to ask "per square what?". Well it can be any square at
+      all, cm, μm, km, since all we really need to know is
+      <m:math>
+	<m:msub>
+	  <m:mi>R</m:mi>
+	  <m:mi>s</m:mi>
+	</m:msub>
+      </m:math> and the length to width ratio of the resistor
+      structure to find the resistance of a resistor. We do not need
+      to know what units are used to measure the length and the width,
+      so long as they are the same for both. For instance if the
+      resistor in <link target-id="fig1"/> has a sheet resistivity of 50
+      Ω/square, then by blocking the resistor off into squares
+      <m:math><m:ci>W</m:ci></m:math>x<m:math><m:ci>W</m:ci>
+      </m:math> in dimension, we see that the resistor is 7 squares
+      long (<link target-id="fig2"/>) and so its resistance is given as:
+
+      <equation id="eqn4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>R</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:cn>50</m:cn>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci>Ω</m:ci>
+		  <m:mtext>square</m:mtext>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:cn>7</m:cn>
+		<m:mtext>squares</m:mtext>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:cn>350</m:cn>
+	      <m:ci>Ω</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <figure id="fig2">
+	<title>Counting the Squares</title>
+	<media id="idm3306528" alt=""><image src="../../media/5.44.png" mime-type="image/png"/></media>
+      </figure>
+    </para>
+   
+  </content>
+  
+</document>

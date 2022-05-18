@@ -1,0 +1,452 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Depletion Width</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c586024a-4381-4fe9-a1fa-64c5da5d6e11</md:uuid>
+</metadata>
+
+  <content>
+    <para id="goingback">
+      We can now go back to the <link document="m1004" target-id="function">charge density as a function of position
+      graph</link> and easily find the electric field in the depletion
+      region as a function of position.  If we integrate <link document="m1005" target-id="anotherform">Gauss' Law</link>, we get
+      for the electric field:
+      <equation id="electric">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="vector">E</m:ci>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:ci>ε</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:int/>
+		<m:bvar>
+		  <m:ci>x</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn">ρ</m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> 
+      We <emphasis>could</emphasis> write down an expression for
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">ρ</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> and then formally integrate it to get 
+      <m:math>
+	<m:apply>
+	  <m:ci type="vector">E</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> but we can also just do it graphically, which is a lot
+      easier, and gives us a much more intuitive feeling for what is
+      going on. Let's start doing our integral at [x equals -infinity] Whenever we perform an integral such as <link target-id="electric"/>, we've got to remember to add a constant to
+      our answer.  Since we can not have an electric field which
+      extends to infinity (either plus or minus) however, we can
+      safely assume 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="vector">E</m:ci>
+	    <m:ci>-infinity</m:ci>
+	  </m:apply>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> and remains at that value until we get to the edge of the depletion region at
+      (essentially) x equals zero.
+Since the charge density is zero all the way up to the edge of depletion region, Gauss tells us that the electric field can not change here either.  When we get to x=0 we encounter the large negative delta-function of negative charge at the edge of the depletion region. If you can remember back to your calculus, when you integrate a delta function, you get a step. Since the charge in the p-side delta function is negative, when we integrate it, we get a negative step. Since we don't know (yet) how big the step will be, let's just call it -|Emax|.</para>
+
+    <figure id="findelec">
+      <media id="idm1837392" alt=""><image src="../../media/2_33.png" mime-type="image/png"/></media>
+      <caption>
+	Finding the electric field in the p-type region
+      </caption>
+    </figure>
+
+    <figure id="integral">
+      <media id="idm1519408" alt=""><image src="../../media/2_34.png" mime-type="image/png"/></media>
+      <caption>Finishing the integral</caption>
+    </figure>
+
+    <para id="para1">
+      In the n-side of the depletion region
+      <equation id="ntypeq">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">ρ</m:ci>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:plus/>
+		<m:ci>q</m:ci>
+	      </m:apply>
+	      <m:ci><m:msub>
+		  <m:mi>N</m:mi>
+		  <m:mi>d</m:mi>
+		</m:msub></m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>ε</m:ci>
+	      <m:apply>
+		<m:partialdiff/>
+		<m:bvar>
+		  <m:ci>x</m:ci>
+		</m:bvar>
+		<m:ci type="vector">E</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and so we plot
+      <m:math>
+	<m:apply>
+	  <m:ci type="vector">E</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> with a (positive) slope of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>q</m:ci>
+	    <m:ci><m:msub>
+		<m:mi>N</m:mi>
+		<m:mi>d</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	  <m:ci>ε</m:ci>
+	</m:apply>
+      </m:math>, starting at 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">E</m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	  <m:cn>-Emax</m:cn>
+	</m:apply>
+      </m:math> at 
+      x = 0.  
+This line continues with this positive slope until it reaches a value of 0 at x = <m:math><m:ci><m:msub><m:mi>x</m:mi><m:mi>n</m:mi>
+      </m:msub></m:ci> </m:math>. We know that E(x) must equal 0 at x = <m:math><m:ci><m:msub><m:mi>x</m:mi><m:mi>n</m:mi>
+      </m:msub></m:ci> </m:math> because there is no further charge outside of the depletion region and E must be 0 outside this region. 
+   </para>
+    <para id="doneint">     
+      We are now done doing the integral.  We would know everything
+      about this problem, if we just knew what
+      <m:math><m:ci><m:msub><m:mi>x</m:mi><m:mi>n</m:mi>
+      </m:msub></m:ci> </m:math> was. Note that since we know the slope of the triangle now, we can find <m:math><m:ci><m:msub><m:mi>-E</m:mi><m:mi>max</m:mi>
+      </m:msub></m:ci> </m:math> in terms of the slope and <m:math><m:ci><m:msub><m:mi>x</m:mi><m:mi>n</m:mi>
+      </m:msub></m:ci> </m:math>.  We can derive an expression for
+      <m:math><m:ci><m:msub><m:mi>x</m:mi><m:mi>n</m:mi>
+      </m:msub></m:ci> </m:math>, if we remember that the integral of
+      the electric field over a distance is the potential drop across that distance.  What is the potential
+      drop in going from the p-side to the n-side of the diode?
+    </para>
+    <para id="remind"> 
+      As a reminder, <link target-id="junction"/> shows the junction band
+      diagram again.  The potential drop must just be
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>bi</m:mi>
+      </m:msub></m:ci> </m:math> the "built-in" potential of the
+      junction.  Obviously
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>bi</m:mi>
+      </m:msub></m:ci> </m:math> can not be greater than 1.1 V, the
+      band-gap potential.  On the other hand, by looking at <link target-id="junction"/>, and remembering that the bandgap in silicon
+      is 1.1 eV, it will not be some value like 0.2 or 0.4 volts
+      either.  Let's make life easy for ourselves, and say
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>bi</m:mi>
+	    </m:msub></m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>1</m:cn>
+	    <m:ci>Volt</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. This will not be too far off, and as you will see
+      shortly, the answer is not very sensitive to the
+      <emphasis>exact</emphasis> value of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>bi</m:mi>
+      </m:msub></m:ci> </m:math> anyway.
+
+      <figure id="junction">
+	<media id="idp4141344" alt=""><image src="../../media/2_35.png" mime-type="image/png"/></media>
+	<caption>Band diagram for a p-n junction</caption>
+      </figure>   
+   
+      The integral of
+      <m:math>
+	<m:apply>
+	  <m:ci type="vector">E</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> is now just the area of the triangle in <link target-id="integral"/>.  Getting the area is easy:
+      <equation id="area">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>area</m:ci>
+	    <m:mrow>
+	      <m:mfrac>
+		<m:mn>1</m:mn>
+		<m:mn>2</m:mn>
+	      </m:mfrac>
+	      <m:mo/>
+	      <m:mi>base</m:mi>
+	      <m:mo>×</m:mo>
+	      <m:mi>height</m:mi>
+	    </m:mrow>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn type="rational">1<m:sep/>2</m:cn>
+	      <m:ci><m:msub>
+		  <m:mi>x</m:mi>
+		  <m:mi>n</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>q</m:ci>
+		  <m:ci><m:msub>
+		      <m:mi>N</m:mi>
+		      <m:mi>d</m:mi>
+		    </m:msub></m:ci>
+		  <m:ci><m:msub>
+		      <m:mi>x</m:mi>
+		      <m:mi>n</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+		<m:ci>ε</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>q</m:ci>
+		<m:ci><m:msub>
+		    <m:mi>N</m:mi>
+		    <m:mi>d</m:mi>
+		  </m:msub></m:ci>
+		<m:apply>
+		  <m:power/>
+		  <m:ci><m:msub>
+		      <m:mi>x</m:mi>
+		      <m:mi>n</m:mi>
+		    </m:msub></m:ci>
+		  <m:cn>2</m:cn>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:ci>ε</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:ci><m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>bi</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	</m:math>
+      </equation>    
+      We can simply turn <link target-id="area"/> around and solve for
+      <m:math><m:ci><m:msub><m:mi>x</m:mi><m:mi>n</m:mi>
+      </m:msub></m:ci> </m:math>.
+      <equation id="xn">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci><m:msub>
+		<m:mi>x</m:mi>
+		<m:mi>n</m:mi>
+	      </m:msub></m:ci>
+	    <m:apply>
+	      <m:root/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>2</m:cn>
+		  <m:ci>ε</m:ci>
+		  <m:ci><m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>bi</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>q</m:ci>
+		  <m:ci><m:msub>
+		      <m:mi>N</m:mi>
+		      <m:mi>d</m:mi>
+		    </m:msub></m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>      
+      As we said, for silicon,
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>ε</m:mi>
+	      <m:mi>Si</m:mi>
+	    </m:msub></m:ci>
+	  <m:cn type="e-notation">1.1<m:sep/>-12</m:cn>
+	</m:apply>
+      </m:math>.  Let's let 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>N</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub></m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:apply>
+	      <m:power/>
+	      <m:cn>10</m:cn>
+	      <m:cn>16</m:cn>
+	    </m:apply>
+	    <m:apply>
+	      <m:power/>
+	      <m:ci>cm</m:ci>
+	      <m:cn>-3</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> donors.  As we already know from before, 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>q</m:ci>
+	  <m:cn type="e-notation">1.6<m:sep/>-19</m:cn>
+	</m:apply>
+      </m:math> Coulombs.  This makes 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci><m:msub>
+	      <m:mi>x</m:mi>
+	      <m:mi>n</m:mi>
+	    </m:msub></m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn type="e-notation">3.7<m:sep/>-5</m:cn>
+	    <m:ci>cm</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> or 0.37 μm long.  Not a very wide depletion region!
+      How big is 
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:ci><m:msub>
+	      <m:mi>E</m:mi>
+	      <m:mi>max</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math>? Plugging in 
+      <equation id="emax">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci><m:msub>
+		<m:mi>E</m:mi>
+		<m:mi>max</m:mi>
+	      </m:msub></m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>q</m:ci>
+		<m:ci><m:msub>
+		    <m:mi>N</m:mi>
+		    <m:mi>d</m:mi>
+		  </m:msub></m:ci>
+		<m:ci><m:msub>
+		    <m:mi>x</m:mi>
+		    <m:mi>n</m:mi>
+		  </m:msub></m:ci>
+	      </m:apply>
+	      <m:ci>ε</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>     
+      We find
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:abs/>
+	    <m:ci><m:msub>
+		<m:mi>E</m:mi>
+		<m:mi>max</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>53,000</m:cn>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>V</m:ci>
+	      <m:ci>cm</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>!  Why such a big electric field?  Well, we've got to
+      shift the potential by about a volt, and we do not have much
+      distance to do it in (less than a micron), and so there must be,
+      by default, a fairly large field in the depletion region.
+      Remember, potential is electric field <emphasis>times</emphasis>
+      distance.
+    </para>
+    <para id="electrostat">      
+      Enough p-n junction electrostatics.  The point of this exercise
+      was two-fold;
+      <list id="list1" list-type="labeled-item" display="inline">
+	<item><label>a)</label>
+	  so you would know something about the details of what is
+	  really going on in a p-n junction
+	</item>
+	<item><label>b)</label>
+	  to show you that with just some very simple electrostatics
+	  and a little thinking, it is not so hard to figure these things
+	  out!
+	</item>
+      </list>
+	    
+    </para>
+  </content>
+</document>

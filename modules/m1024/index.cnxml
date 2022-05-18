@@ -1,0 +1,1165 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>MOS Regimes</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c2a08a92-4c45-4b4d-946b-68339baa599d</md:uuid>
+</metadata>
+
+  <content>
+
+    <para id="para1">
+      This equation looks a lot like the I-V characteristics of a
+      resistor!  <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> is simply proportional to the drain
+      voltage <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math>.  The proportionality constant depends
+      on the dimensions of the device, W and L as they intuitively
+      should. The current increases as the transistor gets wider, it
+      decreases as it gets longer. It also depends on
+      <m:math><m:ci><m:msub><m:mi>c</m:mi><m:mi>ox</m:mi>
+      </m:msub></m:ci></m:math> and
+      <m:math><m:ci><m:msub><m:mi>μ</m:mi><m:mi>s</m:mi>
+      </m:msub></m:ci></m:math>, and on the difference between the
+      gate voltage and the threshold voltage
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>.  Note that if we adjust
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math> we can change the slope of the I-V
+      curve. We have made a voltage-controlled resistor!
+    </para>
+
+
+    <figure id="fig16">
+      <media id="idm10022976" alt=""><image src="../../media/4.16.png" mime-type="image/png"/></media>
+      <caption>The MOSFET I-V in the linear regime</caption>
+    </figure>
+
+
+    <para id="para2">
+      Caution is advised with this result however, because we have
+      overlooked something quite important. Lets go back to our picture of
+      the gate and the batteries involved in the operation of the MOS
+      transistor. Here we have explicitly shown the channel as a black band
+      and we have introduced a new quantity,
+
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>c</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>,
+
+      the voltage along the channel, and a coordinate
+      <m:math><m:ci>x</m:ci> </m:math>, which tells us where we are on
+      the channel relative to the source and drain. Note that once we
+      apply a drain source potential,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math>, the potential in the channel
+
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>c</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> changes with distance along the channel. At the source
+      end,
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>c</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>, as the source is grounded. At the drain end,
+
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>c</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:ci>L</m:ci>
+	  </m:apply>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>. We will define a voltage
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gc</m:mi>
+      </m:msub></m:ci></m:math> which is the potential difference
+      between the gate voltage and the voltage in the channel.
+
+      <equation id="eqn36">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>gc</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>gs</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>c</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Thus, <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gc</m:mi>
+      </m:msub></m:ci></m:math> goes from
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math> at the source end to
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>gs</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math> at the drain end.
+    </para>
+
+
+    <figure id="fig17">
+      <media id="idm2649856" alt=""><image src="../../media/4.17.png" mime-type="image/png"/></media> <caption>Effect of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> on channel potential </caption>
+    </figure>
+
+
+    <para id="para3">
+      The net charge density in the channel depends upon the
+      potential difference between the <emphasis>gate and the channel at
+	each point along the channel</emphasis>, not just
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>gs</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>T</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>. Thus we have to modify <link document="m1023" target-id="eqn30">the equation of another module</link> to take
+	this into account
+
+      <equation id="eqn37">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>Q</m:mi>
+		<m:mi>chan</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>c</m:mi>
+		  <m:mi>ox</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>gc</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>T</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>c</m:mi>
+		  <m:mi>ox</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>gs</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:apply>
+		    <m:ci type="fn">
+		      <m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>c</m:mi>
+		      </m:msub>
+		    </m:ci>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>T</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para4">This, in turn, modifies the <link document="m1023" target-id="eqn34">integral relation</link> between <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> and
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math>. 
+
+      <equation id="eqn38">
+	<m:math display="block">
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:int/>
+	      <m:bvar>
+		<m:apply>
+		  <m:ci type="fn"><m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>c</m:mi>
+		    </m:msub></m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+	      </m:bvar>
+	      <m:lowlimit>
+		<m:cn>0</m:cn>
+	      </m:lowlimit>
+	      <m:uplimit>
+		<m:ci><m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>ds</m:mi>
+		  </m:msub></m:ci>
+	      </m:uplimit>
+	      <m:apply>
+		<m:times/>
+		<m:ci><m:msub>
+		    <m:mi>μ</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub></m:ci>
+		<m:ci><m:msub>
+		    <m:mi>c</m:mi>
+		    <m:mi>ox</m:mi>
+		  </m:msub></m:ci>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:ci><m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>gs</m:mi>
+		      </m:msub></m:ci>
+		    <m:ci><m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>T</m:mi>
+		      </m:msub></m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:ci type="fn"><m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>c</m:mi>
+		      </m:msub></m:ci>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:int/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:lowlimit>
+		<m:cn>0</m:cn>
+	      </m:lowlimit>
+	      <m:uplimit>
+		<m:ci>L</m:ci>
+	      </m:uplimit>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>d</m:mi>
+		</m:msub></m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+    <para id="para5">
+      <link target-id="eqn38"/> is only slightly harder to integrate than
+      the one before (Now what <emphasis>is</emphasis> the integral of
+      xdx), and so we get for the drain current
+
+      <equation id="eqn39">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>d</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>μ</m:mi>
+		      <m:mi>s</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>c</m:mi>
+		      <m:mi>ox</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>W</m:ci>
+		</m:apply>
+		<m:ci>L</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>gs</m:mi>
+		      </m:msub>
+		    </m:ci>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>T</m:mi>
+		      </m:msub>
+		    </m:ci>
+		  </m:apply>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>ds</m:mi>
+		    </m:msub>
+		  </m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci>
+		    <m:msubsup>
+		      <m:mi>V</m:mi>
+		      <m:mi>ds</m:mi>
+		      <m:mn>2</m:mn>
+		    </m:msubsup>
+		  </m:ci>
+		  <m:cn>2</m:cn>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para6">
+      This equation is called the <term>Sah Equation</term> after
+      C.T. Sah, who first described the MOS transistor operation this
+      way back in 1964. It is very important because it describes the
+      basic behavior of the MOS transistor.
+    </para>
+
+
+    <para id="para7">
+      Note that for small values of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math>, <link document="m1023" target-id="eqn35">a previous equation</link> and <link target-id="eqn39"/> will give us the same
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math> behavior, because we can ignore the
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:ci><m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub></m:ci>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>
+
+      term in <link target-id="eqn39"/>. This is called the <term>linear
+      regime</term> because we have a straight-line relationship
+      between the drain current and the drain-source voltage. As
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> starts to get larger however, the
+      squared term will begin to kick in and the plot will start to
+      curve over. Obviously, something is causing the current to drop
+      off as <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> gets larger. This is because the
+      voltage difference between the gate and the channel is becoming
+      less, which means there is less charge in the channel to provide
+      conduction. We can graphically show this by making the channel
+      layer look thinner as we move from the source to the
+      drain. <link target-id="eqn39"/>, and in fact, <link target-id="fig18"/> would make us think that if
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> gets large enough, that the drain
+      current <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> should actually start decreasing
+      again, and maybe even become negative!. This does not seem very
+      intuitive, so lets take a look in more detail at the place where
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> becomes a maximum. We can define
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math> as the source-drain voltage where
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> becomes a maximum. We can find this by
+      taking the derivative of
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> with respect to
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> and setting the derivative to 0.
+
+      <equation id="eqn40">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:diff/>
+	      <m:bvar>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>ds</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:bvar>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>d</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+
+	    <m:cn>0</m:cn>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>μ</m:mi>
+		      <m:mi>s</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>c</m:mi>
+		      <m:mi>ox</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>W</m:ci>
+		</m:apply>
+		<m:ci>L</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>gs</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>T</m:mi>
+		    </m:msub>
+		  </m:ci>
+		</m:apply>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>dsat</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+
+      </equation>
+
+      On dropping constants:
+
+      <equation id="eqn41">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>dsat</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>gs</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>T</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Rearranging this equation gives us a little more insight into
+      what is going on.
+
+      <equation id="eqn42">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>gs</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>dsat</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>T</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>gc</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>L</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <figure id="fig18">
+      <media id="idp3160880" alt=""><image src="../../media/4.18.png" mime-type="image/png"/></media>
+      <caption>I-V characteristics showing turn-over</caption>
+    </figure>
+
+
+    <figure id="fig19">
+      <media id="idp1852208" alt=""><image src="../../media/4.19.png" mime-type="image/png"/></media>
+      <caption>Effect of <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi></m:msub></m:ci></m:math> on the channel</caption>
+    </figure>
+
+
+    <para id="para8">
+      At the drain end of the channel, when
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> just equals
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>, the difference between the gate
+      voltage and the channel voltage,
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>gc</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>L</m:ci>
+	</m:apply>
+      </m:math>
+
+      is just equal to
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>, the threshold voltage. Any further
+      increase in <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> and the difference between the gate
+      and the channel (<emphasis>in the channel region just near the
+      drain</emphasis>) will drop below the threshold voltage. This
+      means that when
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> gets bigger than
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>, the channel just near the drain
+      region disappears! We no longer have sufficient voltage between
+      the gate and the channel region to maintain an inversion layer,
+      so we simply revert to a depletion condition. This is called
+      <term>pinch off</term>, as seen in <link target-id="fig20"/>.
+    </para>
+
+
+    <figure id="fig20">
+      <media id="idm1020784" alt=""><image src="../../media/4.20.png" mime-type="image/png"/></media>
+      <caption>Channel in pinch-off</caption>
+    </figure>
+
+
+    <para id="para9">
+      What happens to the drain current when we hit pinch off? It
+      looks like it might go to zero, but that is not the right
+      answer!  Although there is no active channel in the pinch-off
+      region, there is still silicon - it just happens to be depleted
+      of all free carriers. There is an electric field, going from the
+      drain to the channel, and any electrons which move along the
+      channel to the pinch-off region are sucked across by the field,
+      and enter the drain. This is just like the current that flows in
+      the reverse saturation condition of a diode. There are no free
+      carriers in the depletion region of the diode, yet
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>sat</m:mi>
+      </m:msub></m:ci></m:math> <emphasis>does</emphasis> flow across
+      the junction region.
+    </para>
+
+
+    <para id="para10">
+      Under pinch-off conditions, further increases in
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math>, does not result in more drain
+      current. You can think of the pinched-off channel as a resistor,
+      with a voltage of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math> across it. When
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> gets bigger than
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>, the excess voltage appears across the
+      pinch-off region, and the voltage across the channel remains
+      fixed at <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>.  If the channel keeps the same
+      charge, and has the same voltage across it, then the current
+      through the channel (and into the drain) will remain fixed, at a
+      value we will call
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>.
+    </para>
+
+
+    <para id="para11">
+      There is one other figure which sometimes helps in seeing what
+      is going on. We will plot potential energy for an electron, as it
+      traverses across the channel. Since the source is at zero potential
+      and the drain is at
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>, an electron will loose potential energy as it flows
+      from the source to the drain. <link target-id="fig21"/> shows some
+      examples for various values of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math>:
+    </para>
+
+
+    <figure id="fig21">
+      <media id="idm10948496" alt=""><image src="../../media/4.21.png" mime-type="image/png"/></media> <caption>Electron
+      potential energy drop going from source to drain.</caption>
+    </figure>
+
+
+    <para id="para12">
+      For the first two drain voltages,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds1</m:mi>
+      </m:msub></m:ci></m:math> and
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds2</m:mi>
+      </m:msub></m:ci></m:math>, we are below pinch-off, and so the
+      voltage drop across
+      <m:math><m:ci><m:msub><m:mi>R</m:mi><m:mi>channel</m:mi>
+      </m:msub></m:ci></m:math> increases as
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> increases, and hence, so does
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math>.  At
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>, we have just reached pinch-off, and
+      we are starting to see the "high field" depletion region begin
+      to develop. Since electric field is just the derivative of the
+      potential, the slope of curves in <link target-id="fig21"/> gives
+      you an idea of how big the electric field will be. For further
+      increases in <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math>,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds4</m:mi>
+      </m:msub></m:ci></m:math> and
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds5</m:mi>
+      </m:msub></m:ci></m:math> all of the additional voltage just
+      shows up as a high field drop at the end of the channel. The
+      voltage drop across the conducting part of the channel stays
+      fixed (more or less) at
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math> and so the drain current stays more or
+      less fixed at
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>.
+    </para>
+
+
+    <para id="para13">
+      Substituting the expression for
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math> into the expression for
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> we can get an expression for
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>
+
+      <equation id="eqn43">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>dsat</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>μ</m:mi>
+		      <m:mi>s</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>c</m:mi>
+		      <m:mi>ox</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>W</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>2</m:cn>
+		  <m:ci>L</m:ci>
+		</m:apply>
+	      </m:apply>
+
+	      <m:apply>
+		<m:power/>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>gs</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>T</m:mi>
+		    </m:msub>
+		  </m:ci>
+		</m:apply>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      We can define a new constant, <m:math><m:ci>k</m:ci></m:math>, where
+
+      <equation id="eqn44">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>k</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>μ</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>c</m:mi>
+		    <m:mi>ox</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	      <m:ci>L</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      So that
+
+      <equation id="eqn45">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>dsat</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>k</m:ci>
+		<m:cn>2</m:cn>
+	      </m:apply>
+
+	      <m:apply>
+		<m:power/>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>gs</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>T</m:mi>
+		    </m:msub>
+		  </m:ci>
+		</m:apply>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para14">
+      What this means for <link target-id="fig18"/> is that when
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math> gets to
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>, we simply hold
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+      </m:msub></m:ci></m:math> fixed from then on, with a value of
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>.  For different values of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>g</m:mi>
+      </m:msub></m:ci></m:math>, the gate voltage, we are going to
+      have a different
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math> curve, and so once again, we end up with a family of
+      "characteristic curves" for the MOSFET. These are shown in <link target-id="fig23"/>.
+    </para>
+
+
+    <figure id="fig22">
+      <media id="idm1988656" alt=""><image src="../../media/4.22.png" mime-type="image/png"/></media>
+      <caption>Complete I-V curve for the MOSFET</caption>
+    </figure>
+
+
+    <figure id="fig23">
+      <media id="idm4052416" alt=""><image src="../../media/4.23.png" mime-type="image/png"/></media>
+      <caption>Characteristic curves for a MOSFET</caption>
+    </figure>
+
+
+    <para id="para15">
+      This also gives us a fairly easy way in which to "sketch" a set
+      of characteristic curves for a given device. Suppose we have a
+      MOS field effect transistor which has a threshold voltage of 2
+      volts, a width of 10 microns, and a channel length of 1 micron,
+      an oxide thickness of 150 angstroms, and a surface mobility of
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>400</m:cn>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>c</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>V</m:ci>
+	      <m:ci>sec</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>. using
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>ε</m:mi>
+	      <m:mi>ox</m:mi>
+	    </m:msub>
+	  </m:ci>
+
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>3.3</m:cn>
+	    <m:apply>
+	      <m:power/>
+	      <m:cn>10</m:cn>
+	      <m:cn>-13</m:cn>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>F</m:ci>
+	      <m:ci>cm</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>, we get a value of
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>2.2</m:cn>
+	  <m:apply>
+	    <m:power/>
+	    <m:cn>10</m:cn>
+	    <m:cn>-7</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>F</m:ci>
+	    <m:ci>c</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> for
+      <m:math><m:ci><m:msub><m:mi>c</m:mi><m:mi>ox</m:mi>
+      </m:msub></m:ci></m:math>. This then makes k have a value of
+
+      <equation id="fig46">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>k</m:ci>
+
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>μ</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>c</m:mi>
+		    <m:mi>ox</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	      <m:ci>L</m:ci>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>400</m:cn>
+		<m:cn>2.2</m:cn>
+		<m:apply>
+		  <m:power/>
+		  <m:cn>10</m:cn>
+		  <m:cn>-7</m:cn>
+		</m:apply>
+		<m:cn>10</m:cn>
+	      </m:apply>
+	      <m:cn>1</m:cn>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>8.8</m:cn>
+	      <m:apply>
+		<m:power/>
+		<m:cn>10</m:cn>
+		<m:cn>-4</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>amp</m:ci>
+		<m:apply>
+		  <m:power/>
+		  <m:ci>volt</m:ci>
+		  <m:cn>2</m:cn>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+  </content>
+  
+</document>

@@ -1,0 +1,285 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Matching</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>fa24ce69-5328-49db-87b5-bb1d9517f785</md:uuid>
+</metadata>
+
+  <content>
+    <para id="Matching">
+      This gets us to "B", and we find that
+      
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>L</m:mn>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">1<m:sep/>1.2</m:cn>
+	</m:apply>
+      </m:math>.
+      
+      Now this is a very interesting
+    
+    <figure id="fig8.12" orient="horizontal">
+      <media id="idm2719984" alt=""><image src="../../media/812.png" mime-type="image/png"/></media>
+      <caption>The load impedance</caption>
+    </figure>
+      result. Suppose we take the load off the line, and add, in
+      series, an additional capacitor, whose reactance is
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>1</m:cn>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>j</m:cn>
+	      <m:cn>ω</m:cn>
+	      <m:cn>C</m:cn>
+	    </m:apply>
+	  </m:apply>
+	  
+	  <m:apply>
+	    <m:minus/>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:cn>1.2</m:cn>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>.
+    </para>
+    
+    <figure id="fig8.13">
+      <title>Matching the load with a capacitor</title>
+      <media id="idm2378112" alt=""><image src="../../media/813.png" mime-type="image/png"/></media>
+    </figure>
+    
+    <para id="ResonanceLuck">
+      The capacitor and the inductor just cancel each other out (series
+      resonance) and so the apparent load for the line is just
+      <m:math>
+	<m:apply>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>,
+      the magnitude of the reflection coefficient (Γ)
+      = 0 and the
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>VSWR</m:ci>
+	  <m:cn>1.0</m:cn>
+	</m:apply>
+      </m:math>! All of the energy flowing down the line is coupled to the load
+      resistor, and nothing is reflected back towards the load.
+    </para>
+    
+    <para id="LuckyLucky">We were lucky that the real part of
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>L</m:mn>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:cn>1</m:cn>
+	</m:apply>
+      </m:math>. If there were not that case, we would not be able to
+      "match" the load to the line, right? Not completely. Let's
+      consider another example. <link target-id="fig8.17"> The next figure</link> shows a line
+      with a
+      
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:ci>
+	  </m:apply>
+	  <m:cn>50</m:cn>
+	</m:apply>
+      </m:math>, terminated with a
+      <m:math>
+	<m:apply>
+	  <m:cn>25</m:cn>
+	  <m:cn>Ω</m:cn>
+	</m:apply>
+      </m:math>
+      resistor.
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>Γ</m:mi>
+		<m:mn>L</m:mn>
+	      </m:msub>
+	    </m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:minus/>
+	      <m:cn>1</m:cn>
+	    </m:apply>
+	    <m:cn>3</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>, and we end up with the VSWR circle shown in the <link target-id="fig8.15">subsequent figure</link>.
+    </para>
+
+    <figure id="fig8.17">
+      <media id="idm10095648" alt=""><image src="../../media/817.png" mime-type="image/png"/></media>
+      <caption>Matching with a series capacitor</caption>
+    </figure>    
+
+    <figure id="fig8.15">
+      <media id="idp3704224" alt=""><image src="../../media/815.png" mime-type="image/png"/></media>
+      <caption>Plotting
+	<m:math>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>L</m:mn>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </caption>
+    </figure>
+    
+    <para id="MatchingPowerToLine">
+      How could we match this load? We could add another 25Ω in
+      series with the first resistor, but if we want to maximize the
+      power we deliver to the first one, this would not be a very
+      satisfactory approach. Let's move down the line a ways. If we go
+      to point "B", we find that
+      
+    </para>
+    
+    <figure id="fig8.16">
+      <media id="idm2033472" alt=""><image src="../../media/816.png" mime-type="image/png"/></media>
+      <caption>Moving to the "right spot"</caption>
+    </figure>
+    <para id="RightSpot">
+      at this spot,
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>s</m:mn>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">1<m:sep/>0.8</m:cn>
+	</m:apply>
+      </m:math>. Once again we have an impedance with a normalized
+      real part equals 1! How far do we go? It looks like it's a little
+      more than
+      <m:math>
+	<m:apply>
+	  <m:cn>0.15</m:cn>
+	  <m:mo>λ</m:mo>
+	</m:apply>
+      </m:math>. If we add a negative reactance in series with the
+      line at this point, with a normalized value of
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>0.8</m:cn>
+	    <m:imaginaryi/>
+	  </m:apply>
+	</m:apply>
+      </m:math>, then from that point on back to the generator, the
+      line would "look" like it was terminated with a matched load.
+    </para>
+    
+    <para id="Awkwardness">
+      There's one awkward feature to this solution, and that is we
+      have to cut the line to insert the capacitor. It would be a lot
+      easier if we could simply add something across the line, instead
+      of having to cut it. This is easily done, if we go over into the
+      admittance world.
+    </para>
+    
+
+  </content>
+  
+</document>

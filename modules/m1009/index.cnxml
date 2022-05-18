@@ -1,0 +1,86 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Reverse Biased/Breakdown</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>9dc51082-0130-4170-8ce5-78a0e65db4a4</md:uuid>
+</metadata>
+
+  <content>
+    <para id="operation">
+       
+      Before we leave diodes, it would be worthwhile exploring some
+      other modes of operation, as well as some specific applications
+      which will be of interest. We said that when the diode was
+      reverse-biased (p-region negative with respect to the n-region)
+      that the only current which flows is the reverse saturation
+      current, resulting from the few thermally generated minority
+      carriers which can fall down (or up) the barrier (<link target-id="reverse"/>).
+      <figure id="reverse">
+	<media id="idp11499744" alt=""><image src="../../media/f2_47.png" mime-type="image/png"/></media> 
+	<caption>Reverse saturation current</caption> 
+      </figure>
+      If we make the reverse bias even greater, the same current
+      flows, but the carriers pick up more energy as they fall down
+      the (now larger) junction potential. As they do this, it is
+      possible for them to pick up so much energy, that when they
+      collide with a lattice site, they create an additional
+      electron-hole pair through a process called <term>impact
+      ionization</term> (<link target-id="impact"/>). When this occurs,
+      we now have current consisting of two electrons and one
+      hole. These additional carriers can themselves collide and
+      generate additional electron hole pairs as well. The current now
+      consists of five electrons and two holes. This process is called
+      <term>avalanche multiplication</term> (<link target-id="avalanche"/>), because we start with one carrier, and
+      through a succession of impacts create more and more
+      current. This process can in fact run away, much like an
+      avalanche on a snowy mountain side, in a process called
+      <term>avalanche breakdown</term>.
+      <figure id="impact">
+	<media id="idp13844480" alt=""><image src="../../media/f2_48.png" mime-type="image/png"/></media>
+	<caption>Impact Ionization</caption>
+      </figure>     
+      The net effect is to change the reverse characteristics of the
+      diode somewhat. If we include the effect of breakdown in the I-V
+      curve for the diode, we would see something like that in
+      <link target-id="diodecurve"/>.
+    </para>
+      <figure id="avalanche">
+	<media id="idp6967536" alt=""><image src="../../media/f2_49.png" mime-type="image/png"/></media>
+	<caption>Avalanche multiplication</caption>
+      </figure>
+    <figure id="diodecurve">
+      <media id="idp10597680" alt=""><image src="../../media/f2_50.png" mime-type="image/png"/></media>
+      <caption>	  
+	Diode I-V Curve showing both the forward characteristics and
+	reverse breakdown
+      </caption>
+    </figure> 
+    <para id="para1">
+      There is now a sudden onset of current after the avalanche
+      breakdown voltage has been exceeded. Do not be confused into
+      thinking that this "breakdown" means that the diode has been
+      damaged. The process of avalanching itself is not
+      destructive. But as you can see from <link target-id="impact"/>,
+      the diode current increases very rapidly once the breakdown
+      threshold has been exceeded. Thus, if there is not something in
+      series with the diode to limit the maximum current through it,
+      it could be damaged by overheating. Diodes in breakdown are used
+      as voltage references (the voltage across them is more or less
+      independent of the current running through them) but you will
+      always find a series current limiting resistor used along with
+      them. Such diodes are called <term>Zener Diodes</term> (named
+      after the grandfather of Will Rice's George Zener who graduated
+      a few years ago...that is George did, not his grandfather) but
+      the name is kind of a misnomer. The <term>Zener Effect</term> is
+      also a reverse breakdown phenomena, but comes from direct field
+      generation of extra carriers, rather than as a result of impact
+      ionization. In truth, you can not tell the one effect from the
+      other by looking at the diode I-V curve, and so all diodes used
+      in reverse breakdown are called Zener Diodes. A circuit using a
+      Zener diode as a voltage reference is shown in <link target-id="regulator"/>.
+    </para>
+      <figure id="regulator">
+	<media id="idp1013856" alt=""><image src="../../media/f2_51.png" mime-type="image/png"/></media>
+	<caption>Voltage regulator circuit</caption>
+      </figure>
+      
+  </content> 
+</document>

@@ -1,0 +1,1555 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>A/C Line Behavior</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>1f3f2dca-adf4-4821-a31c-4837408f7d7c</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">If we are going to try to use phasors on a
+      transmission line, then we have to allow for spatial variation
+      as well. This is simple to do, if we just let the phasor be a
+      function of <m:math><m:ci>x</m:ci></m:math>, so we have
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">
+	    <m:mover>
+	      <m:mi>V</m:mi>
+	      <m:mo>∼</m:mo>
+	    </m:mover>
+	  </m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>. How the phasor varies in
+      <m:math><m:ci>x</m:ci></m:math> is one of the things we now have
+      to find out.
+    </para>   
+
+    <para id="para2">Let's start with the <term>Telegrapher's
+    Equations</term> again.
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:minus/>
+		<m:mi fontweight="bold">L</m:mi>
+	      </m:apply>
+	      <m:apply>
+		<m:partialdiff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn">I</m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">I</m:ci>
+		<m:ci>x</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:minus/>
+		<m:mi fontweight="bold">C</m:mi>
+	      </m:apply>
+	      <m:apply>
+		<m:partialdiff/>
+		<m:bvar>
+		  <m:ci>t</m:ci>
+		</m:bvar>
+		<m:apply>
+		  <m:ci type="fn">V</m:ci>
+		  <m:ci>x</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      For
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> we can now substitute
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:ci type="fn">
+	      <m:mover>
+		<m:mi>V</m:mi>
+		<m:mo>∼</m:mo>
+	      </m:mover>
+	    </m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:exp/>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>ω</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> and for
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> we plug in
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:ci type="fn">
+	      <m:mover>
+		<m:mi>I</m:mi>
+		<m:mo>∼</m:mo>
+	      </m:mover>
+	    </m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:exp/>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>ω</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>. So we get:
+      <equation id="eqn3"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:apply>
+				<m:partialdiff/>
+				<m:bvar>
+					<m:ci>x</m:ci>
+				</m:bvar>
+				<m:apply>
+					<m:times/>
+					<m:apply>
+						<m:ci type="fn">
+							<m:mover>
+								<m:mi>V</m:mi>
+								<m:mo>∼</m:mo>
+							</m:mover>
+						</m:ci>
+						<m:ci>x</m:ci>
+					</m:apply>
+					<m:apply>
+						<m:exp/>
+						<m:apply>
+							<m:times/>
+							<m:imaginaryi/>
+							<m:ci>ω</m:ci>
+							<m:ci>t</m:ci>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+			<m:apply>
+				<m:times/>
+				<m:apply>
+					<m:minus/>
+					<m:mi fontweight="bold">L</m:mi>
+				</m:apply>
+				<m:apply>
+					<m:partialdiff/>
+					<m:bvar>
+						<m:ci>t</m:ci>
+					</m:bvar>
+					<m:apply>
+					<m:times/>
+					<m:apply>
+						<m:ci type="fn">
+							<m:mover>
+								<m:mi>I</m:mi>
+								<m:mo>∼</m:mo>
+							</m:mover>
+						</m:ci>
+						<m:ci>x</m:ci>
+					</m:apply>
+					<m:apply>
+						<m:exp/>
+						<m:apply>
+							<m:times/>
+							<m:imaginaryi/>
+							<m:ci>ω</m:ci>
+							<m:ci>t</m:ci>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation>
+      and
+      <equation id="eqn4"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:apply>
+				<m:partialdiff/>
+				<m:bvar>
+					<m:ci>x</m:ci>
+				</m:bvar>
+				<m:apply>
+					<m:times/>
+					<m:apply>
+						<m:ci type="fn">
+							<m:mover>
+								<m:mi>I</m:mi>
+								<m:mo>∼</m:mo>
+							</m:mover>
+						</m:ci>
+						<m:ci>x</m:ci>
+					</m:apply>
+					<m:apply>
+						<m:exp/>
+						<m:apply>
+							<m:times/>
+							<m:imaginaryi/>
+							<m:ci>ω</m:ci>
+							<m:ci>t</m:ci>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+			<m:apply>
+				<m:times/>
+				<m:apply>
+					<m:minus/>
+					<m:mi fontweight="bold">C</m:mi>
+				</m:apply>
+				<m:apply>
+					<m:partialdiff/>
+					<m:bvar>
+						<m:ci>t</m:ci>
+					</m:bvar>
+					<m:apply>
+					<m:times/>
+					<m:apply>
+						<m:ci type="fn">
+							<m:mover>
+								<m:mi>V</m:mi>
+								<m:mo>∼</m:mo>
+							</m:mover>
+						</m:ci>
+						<m:ci>x</m:ci>
+					</m:apply>
+					<m:apply>
+						<m:exp/>
+						<m:apply>
+							<m:times/>
+							<m:imaginaryi/>
+							<m:ci>ω</m:ci>
+							<m:ci>t</m:ci>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation>
+      We take the derivative with respect to time, which brings down a 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:imaginaryi/>
+	  <m:ci>ω</m:ci>
+	</m:apply>
+      </m:math> and then we cancel the 
+      <m:math>
+	<m:apply>
+	  <m:exp/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>ω</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> from both sides of each equation:
+      <equation id="eqn5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:mover>
+		    <m:mi>V</m:mi>
+		    <m:mo>∼</m:mo>
+		  </m:mover>
+		</m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:imaginaryi/>
+		<m:ci>ω</m:ci>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:mover>
+		      <m:mi>I</m:mi>
+		      <m:mo>∼</m:mo>
+		    </m:mover>
+		  </m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and 
+      <equation id="eqn6">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:mover>
+		    <m:mi>I</m:mi>
+		    <m:mo>∼</m:mo>
+		  </m:mover>
+		</m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:imaginaryi/>
+		<m:ci>ω</m:ci>
+		<m:mi fontweight="bold">C</m:mi>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:mover>
+		      <m:mi>V</m:mi>
+		      <m:mo>∼</m:mo>
+		    </m:mover>
+		  </m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      <foreign>Viola</foreign>! In one simple motion, we have
+      completely eliminated the time variable,
+      <m:math><m:ci>t</m:ci></m:math>, from our equations! It is not
+      really gone, of course, for once we figure out what
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">
+	    <m:mover>
+	      <m:mi>V</m:mi>
+	      <m:mo>∼</m:mo>
+	    </m:mover>
+	  </m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> is, we have to multiply it by
+      <m:math>
+	<m:apply>
+	  <m:exp/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>ω</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> and then take the real part before we can extract once
+      again, the actual
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> that we want. Nonetheless, insofar as the
+      telegrapher's equations are concerned,
+      <m:math><m:ci>t</m:ci></m:math> has disappeared from the radar
+      screen.
+    </para>
+
+    <para id="para3">To solve these we do just as we did with the
+      transient problem. We take a derivative with respect to
+      <m:math><m:ci>x</m:ci></m:math> of <link target-id="eqn5"/>, which
+      gives us a
+      <m:math>
+	<m:apply>
+	  <m:partialdiff/>
+	  <m:bvar>
+	    <m:ci>x</m:ci>
+	  </m:bvar>
+	  <m:apply>
+	    <m:ci type="fn">
+	      <m:mover>
+		<m:mi>I</m:mi>
+		<m:mo>∼</m:mo>
+	      </m:mover>
+	    </m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> on the right hand side, for which we can substitute
+      <link target-id="eqn6"/>, which leaves us with
+      <equation id="eqn7"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:apply>
+				<m:partialdiff/>
+				<m:bvar>
+					<m:ci>x</m:ci>
+					<m:degree>
+						<m:cn>2</m:cn>
+					</m:degree>
+				</m:bvar>
+				<m:degree>
+					<m:cn>2</m:cn>
+				</m:degree>
+				<m:apply>
+					<m:ci type="fn">
+						<m:mover>
+							<m:mi>V</m:mi>
+							<m:mo>∼</m:mo>
+						</m:mover>
+					</m:ci>
+					<m:ci>x</m:ci>
+				</m:apply>
+			</m:apply>
+			<m:apply>
+				<m:minus/>
+				<m:apply>
+					<m:times/>
+					<m:apply>
+						<m:power/>
+						<m:ci>ω</m:ci>
+						<m:cn>2</m:cn>
+					</m:apply>
+					<m:mi fontweight="bold">L</m:mi>
+					<m:mi fontweight="bold">C</m:mi>
+					<m:apply>
+						<m:ci type="fn">
+							<m:mover>
+								<m:mi>V</m:mi>
+								<m:mo>∼</m:mo>
+							</m:mover>
+						</m:ci>
+						<m:ci>x</m:ci>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation>
+      (- times - is +, but
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:imaginaryi/>
+	  </m:apply>
+	  <m:cn>-1</m:cn>
+	</m:apply>
+      </m:math> and so we have a - in front of the
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:ci>ω</m:ci>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>). We then re-write <link target-id="eqn7"/> as
+      <equation id="eqn8">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:partialdiff/>
+		<m:bvar>
+		  <m:ci>x</m:ci>
+		  <m:degree>
+		    <m:cn>2</m:cn>
+		  </m:degree>
+		</m:bvar>
+		<m:degree>
+		  <m:cn>2</m:cn>
+		</m:degree>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:mover>
+		      <m:mi>V</m:mi>
+		      <m:mo>∼</m:mo>
+		    </m:mover>
+		  </m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:power/>
+		  <m:ci>ω</m:ci>
+		  <m:cn>2</m:cn>
+		</m:apply>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:mi fontweight="bold">C</m:mi>
+		<m:apply>
+		  <m:ci type="fn">
+		    <m:mover>
+		      <m:mi>V</m:mi>
+		      <m:mo>∼</m:mo>
+		    </m:mover>
+		  </m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+      The simplest solution to this equation is
+      <equation id="eqn9">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:mover>
+		  <m:mi>V</m:mi>
+		  <m:mo>∼</m:mo>
+		</m:mover>
+	      </m:ci>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:mo>±</m:mo>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:ci>ω</m:ci>
+		    <m:apply>
+		      <m:root/>
+		      <m:apply>
+			<m:times/>
+			<m:mi fontweight="bold">L</m:mi>
+			<m:mi fontweight="bold">C</m:mi>
+		      </m:apply>
+		    </m:apply>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      from which we can then get the actual voltage signal
+      <equation id="eqn10">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>x</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:mover>
+		    <m:mi>V</m:mi>
+		    <m:mo>∼</m:mo>
+		  </m:mover>
+		</m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>ω</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:apply>
+		    <m:mo>±</m:mo>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>ω</m:ci>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>ω</m:ci>
+		      <m:apply>
+			<m:root/>
+			<m:apply>
+			  <m:times/>
+			  <m:mi fontweight="bold">L</m:mi>
+			  <m:mi fontweight="bold">C</m:mi>
+			</m:apply>
+		      </m:apply>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Note that we could factor out an
+      <m:math> 
+	<m:apply>
+	  <m:exp/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>ω</m:ci>
+	    <m:apply>
+	      <m:root/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:mi fontweight="bold">C</m:mi>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>, from the exponent, which, since it is just a
+      constant, we could include in
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math> (and call it
+      <m:math>
+	<m:msubsup>
+	  <m:mi>V</m:mi>
+	  <m:mn>0</m:mn>
+	  <m:mo>'</m:mo>
+	</m:msubsup>
+      </m:math>, switch the order of <m:math><m:ci>x</m:ci></m:math>
+      and <m:math><m:ci>t</m:ci></m:math>, and write <link target-id="eqn10"/> as
+      <equation id="eqn11">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>x</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msubsup>
+		<m:mi>V</m:mi>
+		<m:mn>0</m:mn>
+		<m:mo>'</m:mo>
+	      </m:msubsup>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:apply>
+		    <m:mo>±</m:mo>
+		    <m:ci>x</m:ci>
+		    <m:apply>
+		      <m:times/>
+		      <m:apply>
+			<m:divide/>
+			<m:cn>1</m:cn>
+			<m:apply>
+			  <m:root/>
+			  <m:apply>
+			    <m:times/>
+			    <m:mi fontweight="bold">L</m:mi>
+			    <m:mi fontweight="bold">C</m:mi>
+			  </m:apply>
+			</m:apply>
+		      </m:apply>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      which looks a lot like the "general"
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">f</m:ci>
+	  <m:apply>
+	    <m:mo>±</m:mo>
+	    <m:ci>x</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>v</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> solution we were talking about <link document="m1045" target-id="eqn6">earlier</link>!
+    </para>
+
+    <para id="para4">The number
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>ω</m:ci>
+	  <m:apply>
+	    <m:root/>
+	    <m:apply>
+	      <m:times/>
+	      <m:mi fontweight="bold">L</m:mi>
+	      <m:mi fontweight="bold">C</m:mi>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> is special. It is usually represented with a Greek
+      letter <m:math><m:ci>β</m:ci></m:math> and is called the
+      <term>propagation coefficient</term>. Thus we have
+      <equation id="eqn12">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>x</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:apply>
+		    <m:mo>±</m:mo>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>ω</m:ci>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>β</m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      As previously,<!--possible connexion, but i have no idea where
+      to--> a point on the wave of constant phase requires that the
+      argument inside the parenthesis remains constant. Thus if
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:msub>
+	    <m:mi>x</m:mi>
+	    <m:mn>1</m:mn>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>t</m:mi>
+	    <m:mn>1</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> is going to equal
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:msub>
+	    <m:mi>x</m:mi>
+	    <m:mn>2</m:mn>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>t</m:mi>
+	    <m:mn>2</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> (<foreign>i.e.</foreign> what was at point
+      <m:math>
+	<m:msub>
+	  <m:mi>x</m:mi>
+	  <m:mn>1</m:mn>
+	</m:msub>
+      </m:math> at
+      <m:math>
+	<m:msub>
+	  <m:mi>t</m:mi>
+	  <m:mn>1</m:mn>
+	</m:msub>
+      </m:math> is now at
+      <m:math>
+	<m:msub>
+	  <m:mi>x</m:mi>
+	  <m:mn>2</m:mn>
+	</m:msub>
+      </m:math> at time
+      <m:math>
+	<m:msub>
+	  <m:mi>t</m:mi>
+	  <m:mn>2</m:mn>
+	</m:msub>
+      </m:math> it must be that
+      <equation id="eqn13">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:mo>±</m:mo>
+	      <m:apply>
+		<m:times/>
+		<m:ci>ω</m:ci>
+		<m:msub>
+		  <m:mi>t</m:mi>
+		  <m:mn>1</m:mn>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:ci>β</m:ci>
+		<m:msub>
+		  <m:mi>x</m:mi>
+		  <m:mn>1</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:mo>±</m:mo>
+	      <m:apply>
+		<m:times/>
+		<m:ci>ω</m:ci>
+		<m:msub>
+		  <m:mi>t</m:mi>
+		  <m:mn>2</m:mn>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:ci>β</m:ci>
+		<m:msub>
+		  <m:mi>x</m:mi>
+		  <m:mn>2</m:mn>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      or
+      <equation id="eqn14">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:apply>
+	      <m:eq/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:minus/>
+		  <m:msub>
+		    <m:mi>x</m:mi>
+		    <m:mn>2</m:mn>
+		  </m:msub>
+		  <m:msub>
+		    <m:mi>x</m:mi>
+		    <m:mn>1</m:mn>
+		  </m:msub>
+		</m:apply>
+		<m:apply>
+		  <m:minus/>
+		  <m:msub>
+		    <m:mi>t</m:mi>
+		    <m:mn>2</m:mn>
+		  </m:msub>
+		  <m:msub>
+		    <m:mi>t</m:mi>
+		    <m:mn>1</m:mn>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>x</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:mo>±</m:mo>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci>ω</m:ci>
+		  <m:ci>β</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:mo>±</m:mo>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci>ω</m:ci>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>ω</m:ci>
+		    <m:apply>
+		      <m:root/>
+		      <m:apply>
+			<m:times/>
+			<m:mi fontweight="bold">L</m:mi>
+			<m:mi fontweight="bold">C</m:mi>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:mo>±</m:mo>
+		<m:apply>
+		  <m:divide/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:root/>
+		    <m:apply>
+		      <m:times/>
+		      <m:mi fontweight="bold">L</m:mi>
+		      <m:mi fontweight="bold">C</m:mi>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:msub>
+	      <m:mi>v</m:mi>
+	      <m:mi>p</m:mi>
+	    </m:msub>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Which one again, defines the <term>phase velocity</term> of the
+      wave. Other relationships to keep in mind are
+      <equation id="eqn15">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>β</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:pi/>
+	      </m:apply>
+	      <m:ci>λ</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      
+      <equation id="eqn16">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>λ</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>v</m:mi>
+		<m:mi>p</m:mi>
+	      </m:msub>
+	      <m:ci>f</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>ω</m:ci>
+		<m:ci>β</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>ω</m:ci>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>2</m:cn>
+		  <m:pi/>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:pi/>
+	      </m:apply>
+	      <m:ci>β</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      The first comes from the fact that the wave varies in
+      <m:math><m:ci>x</m:ci></m:math> as
+      <m:math>
+	<m:apply>
+	  <m:exp/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>β</m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. Thus when 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>x</m:ci>
+	  <m:ci>γ</m:ci>
+	</m:apply>
+      </m:math>, the wavelength, 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>β</m:ci>
+	  <m:ci>γ</m:ci>
+	</m:apply>
+      </m:math> just increases by
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>2</m:cn>
+	  <m:pi/>
+	</m:apply>
+      </m:math>, to get the phasor to go through one full
+      rotation. Note also, as before, the choice of the minus sign in
+      the ± in <link target-id="eqn12"/> represents a wave
+      going in the 
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> direction, while the choice of the + sign will
+      give a wave going in the 
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> direction. Clearly, by starting out taking the
+      x-derivative of the equation for
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>x</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> we would end up with
+      <equation id="eqn17">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">I</m:ci>
+	      <m:ci>x</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>I</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:apply>
+		    <m:mo>±</m:mo>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>ω</m:ci>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>β</m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Let's consider the two phasors then, and define the voltage
+      phasor associated with the positive going voltage wave as
+      <equation id="eqn18">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msub>
+		  <m:mover>
+		    <m:mi>V</m:mi>
+		    <m:mo>∼</m:mo>
+		  </m:mover>
+		  <m:mi>plus</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:times/>
+		    <m:imaginaryi/>
+		    <m:ci>β</m:ci>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and the negative voltage phasor as
+      <equation id="eqn19">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">
+		<m:msub>
+		  <m:mover>
+		    <m:mi>V</m:mi>
+		    <m:mo>∼</m:mo>
+		  </m:mover>
+		  <m:mi>minus</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>-</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>β</m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      We should keep in mind that both
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>+</m:mo>
+	</m:msup>
+      </m:math> and
+      <m:math>
+	<m:msup>
+	  <m:mi>V</m:mi>
+	  <m:mo>-</m:mo>
+	</m:msup>
+      </m:math> can be, and probably are, complex numbers. (From now
+      on we will drop the little ~ over the variables because its very
+      tedious to get it to show up with this word processor. You will
+      just have to keep in mind that any variable we do not explicitly
+      put inside absolute value markers (<foreign>i.e.</foreign>
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:msup>
+	    <m:mi>V</m:mi>
+	    <m:mo>+</m:mo>
+	  </m:msup>
+	</m:apply>
+      </m:math>) is going to be, in general, a complex number). We
+      will, of course, have similar expressions for the positive and
+      negative going current waves.
+    </para>
+
+    <para id="para5">Let's consider the positive going current and
+    voltage waves, and plug them into <link target-id="eqn5"/>.
+      <equation id="eqn20">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:times/>
+		<m:msup>
+		  <m:mi>V</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:ci>β</m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:imaginaryi/>
+		<m:ci>ω</m:ci>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:msup>
+		  <m:mi>I</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+		<m:apply>
+		  <m:exp/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:times/>
+		      <m:imaginaryi/>
+		      <m:ci>β</m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      The x-derivative brings down a 
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>β</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, the 
+      <m:math>
+	<m:apply>
+	  <m:exp/>
+	  <m:apply>
+	    <m:minus/>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:ci>β</m:ci>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>'s cancel, and we have
+      <equation id="eqn21">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msup>
+	      <m:mi>V</m:mi>
+	      <m:mo>+</m:mo>
+	    </m:msup>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>ω</m:ci>
+		  <m:mi fontweight="bold">L</m:mi>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>β</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:msup>
+		<m:mi>I</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      But, since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>β</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>ω</m:ci>
+	    <m:apply>
+	      <m:root/>
+	      <m:apply>
+		<m:times/>
+		<m:mi fontweight="bold">L</m:mi>
+		<m:mi fontweight="bold">C</m:mi>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> we have
+      <equation id="eqn22">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:apply>
+	      <m:eq/>
+	      <m:msup>
+		<m:mi>V</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:root/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:mi fontweight="bold">L</m:mi>
+		    <m:mi fontweight="bold">C</m:mi>
+		  </m:apply>
+		</m:apply>
+		<m:msup>
+		  <m:mi>I</m:mi>
+		  <m:mo>+</m:mo>
+		</m:msup>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	      <m:msup>
+		<m:mi>I</m:mi>
+		<m:mo>+</m:mo>
+	      </m:msup>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      as we had before.
+    </para>
+
+    <para id="para6">So, what has changed? Not much from the case of
+      transients on a line. We will now assume we have a
+      <emphasis>steady state</emphasis> problem. This means we turned
+      on the generator a long time ago. We assume that it has been
+      connected to the line long enough so that all transient behavior
+      has died away, and that voltages and currents are not changing
+      any more (except oscillating at frequency
+      <m:math><m:ci>ω</m:ci></m:math>, of course).
+    </para>
+
+    <para id="para7">If the line is semi-infinite (or matched with a
+      load equal to
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math>) <link target-id="fig1"/> then it is pretty obvious that
+      <equation id="eqn23">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msup>
+	      <m:mi>V</m:mi>
+	      <m:mi>+</m:mi>
+	    </m:msup>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+		<m:apply>
+		  <m:plus/>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		  <m:msub>
+		    <m:mi>Z</m:mi>
+		    <m:mi>g</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      where
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mi>g</m:mi>
+	</m:msub>
+      </m:math> is the source impedance, and
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>g</m:mi>
+	</m:msub>
+      </m:math> is the source voltage phasor.
+
+      <figure id="fig1">
+	<title>A Wave On a Semi-Infinite Line</title>
+	<media id="idm4134384" alt=""><image src="../../media/7.04.png" mime-type="image/png"/></media>
+      </figure>
+	    
+    </para>
+
+  </content>
+  
+</document>

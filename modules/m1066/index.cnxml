@@ -1,0 +1,549 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Double Stub Matching</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>ef4b574e-1fd7-4aa9-985a-62abdb85d8e4</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">
+      There is one last technique we can look at which is somewhat
+      more flexible than the single stub matching which we just looked
+      at. This is called double stub matching! Suppose we have the
+      following situation, as depicted in <link target-id="fig1">the
+      figure</link>. There is a load of
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">0.2<m:sep/>1.3</m:cn>
+	</m:apply>
+      </m:math> located at the end of the line, and then some
+      arbitrary distance away (<m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.11</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math>) an adjustable stub. Another (arbitrary)
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.11</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> from the first stub, there is a
+      <emphasis>second</emphasis> one. Let's plot
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> on the <link target-id="fig2">Smith Chart</link>, and
+      then, since the stubs are in shunt across the line, switch to
+      admittance, and find
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>. It is easy to see that
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mi>L</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">1.5<m:sep/>2.3</m:cn>
+	</m:apply>
+      </m:math>. 
+
+      <figure id="fig1">
+	<title>Double Stub Matching Problem</title>
+	<media id="idm9845760" alt=""><image src="../../media/dsmp.png" mime-type="image/png"/></media>
+      </figure>
+      
+      <figure id="fig2">
+	<title>Changing the Load to an Admittance</title>
+	<media id="idm10333152" alt=""><image src="../../media/changeLoad.png" mime-type="image/png"/></media>
+      </figure>
+
+      The first thing we might as well do is move down to the first
+      stub, and see what admittance we have there <link target-id="fig3"/>. We go from the load, to the first stub by
+      rotating on a <emphasis>circle of constant
+      radius</emphasis>(constant
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:apply>
+	    <m:ci type="fn">r</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>)since all we are doing is going from one place on the
+      line to another. If we call the location on the line of the
+      first stub "A", then we can see that
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mi>A</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">0.25<m:sep/>0.6</m:cn>
+	</m:apply>
+      </m:math>.
+
+      <figure id="fig3">
+	<title>Moving From the Load to the First Stub</title>
+	<media id="idm1629376" alt=""><image src="../../media/load2FirstStub.png" mime-type="image/png"/></media>
+      </figure>
+
+      Now, what can the first stub accomplish? A shorted stub can
+      create any <emphasis>imaginary</emphasis> admittance we want,
+      but can not change the real part of the admittance. Thus, by
+      adjusting the first stub, we can move around on a circle of
+      <emphasis>constant real part</emphasis>
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>0.25</m:cn>
+	    <m:msub>
+	      <m:mi>Y</m:mi>
+	      <m:mn>0</m:mn>
+	    </m:msub>
+	  </m:apply>
+	</m:apply>
+      </m:math>, and have any imaginary part we want. This is shown
+      schematically <link target-id="fig4">here</link>.
+      
+      <figure id="fig4">
+	<title>Possible Effects of the First Stub</title>
+	<media id="idm9913168" alt=""><image src="../../media/possibleEffects.png" mime-type="image/png"/></media>
+      </figure>
+      
+      Now, where do we want to go? Well, we would like to end up
+      someplace so that, after we have moved from A to B on the line (gone
+      from the first stub to the second), we are on the matching
+      circle. If this were so, then, since we are on the matching circle, we
+      could use the second stub to match the whole line and we would be
+      done.
+    </para>
+
+    <para id="para2">This is tricky now, so you have to pay attention
+      and think. If I want to find a place which, when moved from A to
+      B, ends up on the matching circle, then what I should do is take
+      the matching circle and move it from B to A. That is, if I
+      rotate the matching circle around
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.175</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> <emphasis>towards the load</emphasis>, then any place
+      on that rotated matching circle is guaranteed to end up on the
+      <emphasis>real</emphasis> matching circle, when we go
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.175</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> back towards the generator.
+    </para> 
+
+    <para id="para3">OK, so here's what we do. First, we rotate the
+      matching circle 0.175 around towards the load (go
+      counterclockwise) <link target-id="fig5"/>. Now what we have to do
+      is somehow get from
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>A</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> without stub to someplace on the rotated matching
+      circle. The only way we can do this is to change the imaginary
+      part of
+      <m:math>
+	<m:msub>
+	  <m:mi>Y</m:mi>
+	  <m:mi>A</m:mi>
+	</m:msub>
+      </m:math> with the stub. Suppose we move as shown in <link target-id="fig6"/>. In going from
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>A</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>
+      without stub to
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>A</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> with stub we have changed the imaginary part from
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:cn>0.6</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+      to
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:cn>0.05</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>, thus we have <emphasis>added</emphasis>
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:imaginaryi/>
+	  <m:cn>0.65</m:cn>
+	</m:apply>
+      </m:math> to the imaginary part of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>A</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>. Thus using our standard method for finding the length
+      of the first stub, we start at
+      <m:math>
+	<m:infinity/>
+      </m:math>,
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:infinity/>
+	</m:apply>
+      </m:math> (the short at the end of the stub) and go around the
+      outside of the <link target-id="fig7">Smith Chart</link> until we find
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:cn>0.05</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>. To get from one place to the next we went
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:times/>
+	    <m:apply>
+	      <m:plus/>
+	      <m:cn>0.25</m:cn>
+	      <m:cn>0.09</m:cn>
+	    </m:apply>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>0.34</m:cn>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> and so the length of the first stub,
+      <m:math>
+	<m:msub>
+	  <m:mi>L</m:mi>
+	  <m:mn>1</m:mn>
+	</m:msub>
+      </m:math> should be
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.09</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math>. Now we are at
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>A</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> with stub. The next thing we have to do is to rotate another
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.175</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> <emphasis>towards the generator</emphasis> so that we
+      can get to stub B. As we do this rotation, we again stay on a
+      circle of constant <emphasis>radius</emphasis>, because now we
+      are moving down the transmission line <emphasis>not</emphasis>
+      adding reactance by using a stub! This rotation is
+      <emphasis>guaranteed</emphasis> to end us up on the matching
+      circle because <emphasis>every</emphasis> point on the rotated
+      circle (the one we start from) is exactly
+      <m:math>
+	<m:apply>
+	  <m:cn>0.175</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> towards the load <emphasis>from</emphasis> the
+      matching circle. As shown <link target-id="fig8">here</link>, we
+      are now at the point
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>B</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>
+      without stub
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:cn type="complex-cartesian">1.0<m:sep/>1.6</m:cn>
+	</m:apply>
+      </m:math>. Thus we need to adjust the length
+      <m:math>
+	<m:msub>
+	  <m:mi>L</m:mi>
+	  <m:mn>2</m:mn>
+	</m:msub>
+      </m:math> of the second stub to give us
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:cn>1.6</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math> of reactance, so we can move (along a circle of
+	<emphasis>constant real part</emphasis> = 1.0) into the center
+	of the <link target-id="fig9">Smith Chart</link>. We have to find
+	the length
+      <m:math>
+	<m:msub>
+	  <m:mi>L</m:mi>
+	  <m:mn>2</m:mn>
+	</m:msub>
+      </m:math> for the second stub, but that is now easy! (<link target-id="fig10"/>)
+
+      <figure id="fig5">
+	<title>Rotating the Matching Circle</title>
+	<media id="idp2027472" alt=""><image src="../../media/rotating.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig6">
+	<title>Moving to Rotated Matching Circle</title>
+	<media id="idp500352" alt=""><image src="../../media/moving2Rotated.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig7">
+	<title>Finding Length of the First Stub</title>
+	<media id="idm4616560" alt=""><image src="../../media/firstLength.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig8">
+	<title>Moving Down the Second Stub</title>
+	<media id="idm52240" alt=""><image src="../../media/move22Stub.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig9">
+	<title>Making the Match</title>
+	<media id="idp2209344" alt=""><image src="../../media/makematch.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig10">
+	<title>Finding the Length of the Second Stub</title>
+	<media id="idp2453936" alt=""><image src="../../media/length2Stub.png" mime-type="image/png"/></media>
+      </figure>
+    
+    
+      Thus, by doing <term>double stub matching</term>, we are able,
+      by adding the additional degree of freedom of two adjustable
+      stubs, not to have to specify exactly where the stubs have to be
+      placed, so they can be in the line before the matching is
+      attempted. <link target-id="fig11">Here's</link> the whole sequence
+      of changes that we made. See if you can begin at "Start" and go
+      through the numbers
+      <m:math>
+	<m:apply>
+	  <m:tendsto/>
+	  <m:cn>0</m:cn>
+	  <m:cn>5</m:cn>
+	</m:apply>
+      </m:math>
+      and get from
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> to the matching point at the center of the Smith
+      Chart. Remember, when we move from one place to another on the
+      line, we must stay on a circle of constant radius. When we
+      change reactance by adjusting a stub, we must move along circles
+      of constant real part. If you do that, it's easy!
+
+      <figure id="fig11">
+	<title>Double Stub Matching All Put Together!</title>
+	<media id="idp3258832" alt=""><image src="../../media/altogether.png" mime-type="image/png"/></media>
+      </figure>
+
+
+      There's just one little problem. What if
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mi>A</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Y</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> without stub had ended up as shown in <link target-id="fig12">here</link>. We are on the
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:real/>
+	    <m:mrow>
+	      <m:mfrac>
+		<m:msub>
+		  <m:mi>Y</m:mi>
+		  <m:mi>A</m:mi>
+		</m:msub>
+		<m:msub>
+		  <m:mi>Y</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:mfrac>
+	      <m:mo>|</m:mo>
+	      <m:mtext>without stub</m:mtext>
+	    </m:mrow>
+	  </m:apply>
+	  <m:cn>2.0</m:cn>
+	</m:apply>
+      </m:math> circle. No matter how hard I try, and no matter where I set
+      <m:math>
+	<m:msub>
+	  <m:mi>L</m:mi>
+	  <m:mn>1</m:mn>
+	</m:msub>
+      </m:math> all I can do is spin around on the little circle as
+       <link target-id="fig12">shown</link>, and I will never end up on
+       the rotated matching circle, and I won't be able to make a
+       match! Well, if I add a <emphasis>third stub</emphasis>...I'll
+       let you work it out!
+    </para> 
+
+    <figure id="fig12">
+      <title>A Situation That Doesn't Work</title>
+      <media id="idp2045632" alt=""><image src="../../media/nowork.png" mime-type="image/png"/></media>
+    </figure>
+
+  
+  </content>
+  
+</document>

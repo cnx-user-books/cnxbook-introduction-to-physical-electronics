@@ -1,0 +1,853 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>MOS Transistor</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>996d3219-08f0-48e5-8124-64794da78ad7</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">
+      Now we can go back now to our initial structure, shown in the
+      <link document="m1020" target-id="fig01">introduction to
+	MOSFETs</link>, only this time we will add an oxide layer, a
+      gate structure, and another battery so that we can invert the
+      region under the gate and connect the two n-regions
+      together. Well also identify some names for parts of the
+      structure, so we will know what we are talking about. For
+      reasons which will be clear later, we call the n-region
+      connected to the negative side of the battery the
+      <term>source</term>, and the other one the
+      <term>drain</term>. We will ground the source, and also the
+      p-type substrate. We add two batteries,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+	  </m:msub></m:ci></m:math> between the gate and the source, and
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+	  </m:msub></m:ci></m:math> between the drain and the source.
+    </para>
+
+
+    <figure id="fig14">
+      <media id="idm413248" alt=""><image src="../../media/4.14.png" mime-type="image/png"/></media>
+      <caption>Biasing a MOSFET transistor</caption>
+    </figure>
+
+
+    <para id="para2">
+      It will be helpful if we also make another sketch, which gives
+      us a perspective view of the device. For this we strip off the
+      gate and oxide, but we will imagine that we have applied a
+      voltage greater than
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+	  </m:msub></m:ci></m:math> to the gate, so there is a n-type
+      region, called the <term>channel</term> which connects the
+      two. We will assume that the channel region is
+      <m:math><m:ci>L</m:ci></m:math> long and
+      <m:math><m:ci>W</m:ci></m:math> wide, as shown in <link target-id="fig15"/>.
+    </para>
+
+
+    <figure id="fig15">
+      <media id="idm8226720" alt=""><image src="../../media/4.15.png" mime-type="image/png"/></media>
+      <caption>The inversion channel and its resistance</caption>
+    </figure>
+
+
+    <para id="para3">
+      Next we want to take a look at a little section of channel, and
+      find its resistance 
+      <m:math>
+	<m:apply>
+	  <m:ci><m:mo>ⅆ</m:mo></m:ci>
+	  <m:ci>R</m:ci>
+	</m:apply>
+      </m:math>, when the
+      little section is <m:math>
+	<m:apply>
+	  <m:ci><m:mo>ⅆ</m:mo></m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> long.
+
+      <equation id="eqn25">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci><m:mo>ⅆ</m:mo></m:ci>
+	      <m:ci>R</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>dx</m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>σ</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para4">
+      We have introduced a <emphasis>slightly </emphasis>different
+      form for our resistance formula here. Normally, we would have a
+      simple <m:math><m:ci>σ</m:ci></m:math> in the denominator,
+      and an area <m:math><m:ci>A</m:ci></m:math>, for the
+      cross-sectional area of the channel. It turns out to be very
+      hard to figure out what that cross sectional area of the channel
+      is however. The electrons which form the inversion layer crowd
+      into a very thin sheet of <term>surface charge</term> which
+      really has little or no thickness, or penetration into the
+      substrate.
+    </para>
+
+
+    <para id="para5">
+      If, on the other hand we consider a surface conductivity (units:
+      simply mhos),
+      <m:math><m:ci><m:msub><m:mi>σ</m:mi><m:mi>s</m:mi>
+	  </m:msub></m:ci></m:math>, where
+
+      <equation id="eqn26">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>σ</m:mi>
+		<m:mi>s</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>μ</m:mi>
+		  <m:mi>s</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Q</m:mi>
+		  <m:mi>chan</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      then we will have an expression which we can evaluate. Here,
+      <m:math><m:ci><m:msub><m:mi>μ</m:mi><m:mi>s</m:mi>
+	  </m:msub></m:ci></m:math> is a surface mobility, with units of
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:power/>
+	    <m:ci>cm</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>V</m:ci>
+	    <m:ci>sec</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. We ran into <m:math><m:ci>μ</m:ci></m:math> in
+      <link document="m1000">earlier chapters</link>, when we were
+      building our simple conduction model. It was the quantity which
+      represented the proportionality between the average carrier
+      velocity and the electric field.
+
+      <equation id="eqn27">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:mean/>
+	      <m:ci>v</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>μ</m:ci>
+	      <m:ci>E</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <equation id="eqn27a">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>μ</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>q</m:ci>
+		<m:ci>τ</m:ci>
+	      </m:apply>
+	      <m:ci>m</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      The surface mobility is a quantity which has to be measured for a
+      given system, and is usually just a number which is given to
+      you. Something around 300
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:power/>
+	    <m:ci>cm</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>V</m:ci>
+	    <m:ci>sec</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> is about right for silicon.
+      <m:math><m:ci><m:msub><m:mi>Q</m:mi><m:mi>chan</m:mi>
+	  </m:msub></m:ci></m:math> is called the surface charge density
+      or channel charge density and it has units of
+      <m:math>
+	<m:apply>
+	  <m:divide/> 
+	  <m:ci>Coulombs</m:ci>
+	  <m:apply>
+	    <m:power/>
+	    <m:ci>cm</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>. This
+      is like a sheet of charge, which is different from the bulk
+      charge density, which has units of
+      <m:math>
+	<m:apply>
+	  <m:divide/> 
+	  <m:ci>Coulombs</m:ci>
+	  <m:apply>
+	    <m:power/>
+	    <m:ci>cm</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>. Note that:
+
+      <equation id="eqn28">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		  <m:apply>
+                    <m:power/>
+                    <m:ci>cm</m:ci>
+                    <m:cn>2</m:cn>
+		  </m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>Volt</m:ci>
+		  <m:ci>sec</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>Coulombs</m:ci>
+		<m:apply>
+		  <m:power/>
+		  <m:ci>cm</m:ci>
+		  <m:cn>2</m:cn>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>Coul</m:ci>
+		<m:ci>sec</m:ci>
+	      </m:apply>
+	      <m:ci>Volt</m:ci>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>I</m:ci>
+	      <m:ci>V</m:ci>
+	    </m:apply>
+
+	    <m:ci>mhos</m:ci>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para6">
+      It turns out that it is pretty simple to get an expression for
+      <m:math><m:ci><m:msub><m:mi>Q</m:mi><m:mi>chan</m:mi>
+	  </m:msub></m:ci></m:math>, the surface charge density in the
+      channel. For any given gate voltage
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+	  </m:msub></m:ci></m:math>, <link document="m11351" target-id="eqn08">we know</link> that the charge density on the
+      gate is given simply as:
+
+      <equation id="eqn29">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>Q</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>c</m:mi>
+		  <m:mi>ox</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>gs</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para7">
+      However, until the gate voltage
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+	  </m:msub></m:ci></m:math> gets larger than
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+	  </m:msub></m:ci></m:math> we are not creating any mobile
+      electrons under the gate, we are just building up a depletion
+      region.  We'll define
+      <m:math><m:ci><m:msub><m:mi>Q</m:mi><m:mi>T</m:mi>
+	  </m:msub></m:ci></m:math> as the charge on the gate necessary to
+      get to threshold.
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>Q</m:mi>
+	      <m:mi>T</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>c</m:mi>
+		<m:mi>ox</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>T</m:mi>
+	      </m:msub>
+	    </m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. Any charge added to the gate above
+      <m:math><m:ci><m:msub><m:mi>Q</m:mi><m:mi>T</m:mi>
+	  </m:msub></m:ci></m:math> is matched by charge
+      <m:math><m:ci><m:msub><m:mi>Q</m:mi><m:mi>chan</m:mi>
+	  </m:msub></m:ci></m:math> in the channel. Thus, it is easy to
+      say:
+
+      <equation id="eqn30">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>Q</m:mi>
+		<m:mi>channel</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Q</m:mi>
+		  <m:mi>g</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Q</m:mi>
+		  <m:mi>T</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      or
+      <equation id="eqn31">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>Q</m:mi>
+		<m:mi>chan</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>c</m:mi>
+		  <m:mi>ox</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:apply>
+		<m:minus/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>g</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>T</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para8">
+      Thus, putting <link target-id="eqn30"/> and <link target-id="eqn26"/>
+      into <link target-id="eqn25"/>, we get:
+
+      <equation id="eqn32">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci><m:mo>ⅆ</m:mo></m:ci>
+	      <m:ci>R</m:ci>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:ci><m:mo>ⅆ</m:mo></m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>μ</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>c</m:mi>
+		    <m:mi>ox</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>
+                    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>gs</m:mi>
+                    </m:msub>
+		  </m:ci>
+		  <m:ci>
+                    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>T</m:mi>
+                    </m:msub>
+		  </m:ci>
+		</m:apply>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para9">
+      If you look back at <link target-id="fig14"/>, you will see that we
+      have defined a current
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+	  </m:msub></m:ci></m:math> flowing into the drain. That current
+      flows through the channel, and hence through our little
+      incremental resistance 
+      <m:math>
+	<m:apply>
+	  <m:ci><m:mo>ⅆ</m:mo></m:ci>
+	  <m:ci>R</m:ci>
+	</m:apply>
+      </m:math>,
+      creating a voltage drop
+      <m:math>
+	<m:apply>
+	  <m:ci><m:mo>ⅆ</m:mo></m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>c</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math> across it, where
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>c</m:mi>
+	  </m:msub></m:ci></m:math> is the channel voltage.
+
+      <equation id="eqn33">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci><m:mo>ⅆ</m:mo></m:ci>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>c</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>d</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:apply>
+		<m:ci><m:mo>ⅆ</m:mo></m:ci>
+		<m:ci>R</m:ci>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>d</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:apply>
+		  <m:ci><m:mo>ⅆ</m:mo></m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>μ</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>c</m:mi>
+		    <m:mi>ox</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>
+                    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>gs</m:mi>
+                    </m:msub>
+		  </m:ci>
+		  <m:ci>
+                    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>T</m:mi>
+                    </m:msub>
+		  </m:ci>
+		</m:apply>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para10">
+      Let's move the denominator to the left, and integrate. We
+      want to do our integral completely along the channel. The voltage on
+      the channel
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>c</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math> goes from 0 on the left to
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+	  </m:msub></m:ci></m:math> on the right. At the same time,
+      <m:math><m:ci>x</m:ci></m:math> is going from 0 to
+      <m:math><m:ci>L</m:ci></m:math>. Thus our limits of integration
+      will be 0 and
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+	  </m:msub></m:ci></m:math> for the voltage integral
+      <m:math>
+	<m:apply>
+	  <m:ci><m:mo>ⅆ</m:mo></m:ci>
+	  <m:apply>
+	    <m:ci type="fn">
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>c</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> and from 0 to <m:math><m:ci>L</m:ci></m:math> for the
+      <m:math><m:ci>x</m:ci></m:math> integral
+      <m:math>
+	<m:apply>
+	  <m:ci><m:mo>ⅆ</m:mo></m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>.
+
+      <equation id="eqn34">
+	<m:math display="block">
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:int/>
+	      <m:bvar>
+		<m:ci><m:msub><m:mi>V</m:mi><m:mi>c</m:mi></m:msub></m:ci>
+	      </m:bvar>
+	      <m:lowlimit><m:cn>0</m:cn></m:lowlimit>
+	      <m:uplimit>
+		<m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi></m:msub></m:ci>
+	      </m:uplimit>
+	      <m:apply>
+		<m:times/>
+		<m:ci><m:msub><m:mi>μ</m:mi><m:mi>s</m:mi></m:msub></m:ci>
+		<m:ci><m:msub><m:mi>c</m:mi><m:mi>ox</m:mi></m:msub></m:ci>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi></m:msub></m:ci>
+		  <m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi></m:msub></m:ci>
+		</m:apply>
+		<m:ci>W</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:int/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:lowlimit><m:cn>0</m:cn></m:lowlimit>
+	      <m:uplimit>
+		<m:ci>L</m:ci>
+	      </m:uplimit>
+	      <m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi></m:msub></m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para11">
+      Both integrals are pretty trivial. Let's swap the equation
+      order, since we usually want
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+	  </m:msub></m:ci></m:math> as a function of applied voltages.
+
+      <equation id="eqn35">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>d</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>L</m:ci>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>μ</m:mi>
+		  <m:mi>s</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>c</m:mi>
+		  <m:mi>ox</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>W</m:ci>
+	      <m:apply>
+		<m:minus/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>gs</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>T</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>ds</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para12">
+      We now simply divide both sides by
+      <m:math><m:ci>L</m:ci></m:math>, and we end up with an
+      expression for the drain current
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>d</m:mi>
+	  </m:msub></m:ci></m:math>, in terms of the drain-source voltage,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+	  </m:msub></m:ci></m:math>, the gate voltage
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+	  </m:msub></m:ci></m:math> and some physical attributes of the
+      MOS transistor.
+
+
+      <equation id="eqn36">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>d</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>μ</m:mi>
+			<m:mi>s</m:mi>
+		      </m:msub>
+		    </m:ci>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>c</m:mi>
+			<m:mi>ox</m:mi>
+		      </m:msub>
+		    </m:ci>
+		    <m:ci>W</m:ci>
+		  </m:apply>
+		  <m:ci>L</m:ci>
+		</m:apply>	
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>gs</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>T</m:mi>
+		    </m:msub>
+		  </m:ci>
+		</m:apply>
+	      </m:apply>
+	      
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>ds</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+  </content>
+  
+</document>

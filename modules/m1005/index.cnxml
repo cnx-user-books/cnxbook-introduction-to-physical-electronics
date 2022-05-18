@@ -1,0 +1,628 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Gauss' Law</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>ae1f21e5-cec3-495b-acf9-2ddb6532b549</md:uuid>
+</metadata>
+
+  <content>
+    <para id="fieldtheory"> 
+      Now we have to review some field theory.  We will be using
+      fields from time to time in this course, and when we need some
+      aspect of field theory, we will introduce what we need at that
+      point.  This seems to make more sense than spending several
+      weeks talking about a lot of abstract theory without seeing how
+      or why it can be useful.  
+    </para>
+    <para id="guass">      
+      The first thing we need to remember is <term>Gauss' Law</term>.
+      Gauss' Law, like most of the fundamental laws of
+      electromagnetism comes not from first principle, but
+      rather from empirical observation and attempts to match
+      experiments with some kind of self-consistent mathematical
+      framework.  Gauss' Law states that:
+      <equation id="gausseq">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+	      <m:domainofapplication>
+		<m:ci>s</m:ci>
+	      </m:domainofapplication>
+	      <m:bvar>
+		<m:ci>S</m:ci>
+	      </m:bvar>
+	      <m:ci>D</m:ci>
+	    </m:apply>
+	    <m:ci><m:msub>
+		<m:mi>Q</m:mi>
+		<m:mi>encl</m:mi>
+	      </m:msub></m:ci>
+	    <m:apply>
+	      <m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+	      <m:domainofapplication>
+		<m:ci>v</m:ci>
+	      </m:domainofapplication>
+	      <m:bvar>
+		<m:ci>V</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">ρ</m:ci>
+		<m:ci>v</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      where <m:math><m:ci>D</m:ci> </m:math> is the <term>electric
+      displacement vector</term>, which is related to the
+      <term>electric field vector</term>, <m:math><m:ci>E</m:ci>
+      </m:math>, by the relationship
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>D</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>ε</m:ci>
+	    <m:ci>E</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. <m:math><m:ci>ε</m:ci></m:math> is called the
+      <term>dielectric constant</term>.  In silicon it has a value of 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn type="e-notation">1.1<m:sep/>-12</m:cn>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>F</m:ci>
+	    <m:ci>cm</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. (Note that <m:math><m:ci>D</m:ci> </m:math> must have
+      units of 
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>Coulombs</m:ci>
+	  <m:apply>
+	    <m:power/>
+	    <m:ci>cm</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math> to have everything work out OK.)
+      <m:math><m:ci><m:msub><m:mi>Q</m:mi><m:mi>encl</m:mi>
+      </m:msub></m:ci> </m:math> is the total amount of charge
+      enclosed in the volume <m:math><m:ci>V</m:ci> </m:math>, which is
+      obtained by doing a volume integral of the charge density
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">ρ</m:ci>
+	  <m:ci>v</m:ci>
+	</m:apply>
+      </m:math>.
+    </para>
+
+    <figure id="pictoral">
+      <media id="idm5925776" alt=""><image src="../../media/2_31.png" mime-type="image/png"/></media>
+      <caption>
+	Pictorial representation of Gauss' Law.
+      </caption>
+    </figure>
+
+    <para id="para1">
+      <link target-id="gausseq"/> just says that if you add up the
+      surface integral of the displacement vector
+      <m:math><m:ci>D</m:ci></m:math> over a closed surface
+      <m:math><m:ci>S</m:ci></m:math> , what you get is the sum of
+      the total charge enclosed by that surface.  Useful as it is, the
+      integral form of Gauss' Law, (which is what <link target-id="gausseq"/> is) will not help us much in understanding
+      the details of the depletion region.  We will have to convert
+      this equation to its differential form.  We do this by first
+      shrinking down the volume <m:math><m:ci>V</m:ci></m:math> until
+      we can treat the charge density
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">ρ</m:ci>
+	  <m:ci>v</m:ci>
+	</m:apply>
+      </m:math> as a constant <m:math><m:ci>ρ</m:ci></m:math>,
+      and replace the volume integral with a simple product.  Since we
+      are making <m:math><m:ci>V</m:ci></m:math> small, let's call it
+      <m:math>
+	<m:apply>
+	  <m:mo>Δ</m:mo>
+	  <m:ci>V</m:ci>
+	</m:apply>
+      </m:math> to remind us that we are talking about just a small
+      quantity.
+      <equation id="rho">
+	<m:math>
+	  <m:apply>
+	    <m:tendsto/>
+	    <m:apply>
+	      <m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+	      <m:domainofapplication>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>v</m:ci>
+		</m:apply>
+	      </m:domainofapplication>
+	      <m:bvar>
+		<m:ci>V</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="fn">ρ</m:ci>
+		<m:ci>v</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci type="fn">ρ</m:ci>
+	      <m:apply>
+		<m:mo>Δ</m:mo>
+		<m:ci>v</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>  
+      And thus, Gauss' Law becomes:
+      <equation id="gaussbecomes">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+	      <m:domainofapplication>
+		<m:ci>s</m:ci>
+	      </m:domainofapplication>
+	      <m:bvar>
+		<m:ci>S</m:ci>
+	      </m:bvar>
+	      <m:ci>D</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>ε</m:ci>
+	      <m:apply>
+		<m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+		<m:domainofapplication>
+		  <m:ci>s</m:ci>
+		</m:domainofapplication>
+		<m:bvar>
+		  <m:ci>S</m:ci>
+		</m:bvar>
+		<m:ci>E</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>ρ</m:ci>
+	      <m:apply>
+		<m:mo>Δ</m:mo>
+		<m:ci>V</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      or
+      <equation id="different"><m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>V</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+		  <m:domainofapplication>
+		    <m:ci>s</m:ci>
+		  </m:domainofapplication>
+		  <m:bvar>
+		    <m:ci>S</m:ci>
+		  </m:bvar>
+		  <m:ci>E</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>ρ</m:ci>
+	      <m:ci>ε</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> 
+      Now, by <emphasis>definition</emphasis> the limit of the LHS of
+      <link target-id="different"/> as
+      <m:math>
+	<m:apply>
+	  <m:tendsto/>
+	  <m:apply>
+	    <m:mo>Δ</m:mo>
+	    <m:ci>V</m:ci>
+	  </m:apply>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> is known as the divergence of the vector <m:math><m:ci type="vector">E</m:ci></m:math>, 
+      <m:math>
+	<m:apply>
+	  <m:divergence/>
+	  <m:ci type="vector">E</m:ci>
+	</m:apply>
+      </m:math>.  Thus we have
+      <equation id="div"><m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:limit/>
+	      <m:bvar>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>V</m:ci>
+		</m:apply>
+	      </m:bvar>
+	      <m:lowlimit>
+		<m:cn>0</m:cn>
+	      </m:lowlimit>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:mo>Δ</m:mo>
+		    <m:ci>V</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+		    <m:domainofapplication>
+		      <m:ci>s</m:ci>
+		    </m:domainofapplication>
+		    <m:bvar>
+		      <m:ci>S</m:ci>
+		    </m:bvar>
+		    <m:ci>E</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divergence/>
+	      <m:ci type="vector">E</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>ρ</m:ci>
+	      <m:ci>ε</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>           
+      Note what this says about the divergence.  The divergence of the
+      vector <m:math><m:ci type="vector">E</m:ci></m:math> is the
+      limit of the surface integral of <m:math><m:ci type="vector">E</m:ci></m:math> over a volume
+      <m:math><m:ci>V</m:ci></m:math>, normalized by the volume
+      itself, as the volume shrinks to zero.  I like to think of as a
+      kind of "point surface integral" of the vector <m:math><m:ci type="vector">E</m:ci></m:math>.
+    </para>
+      <figure id="volume">
+	<media id="idp2995408" alt=""><image src="../../media/2_32.png" mime-type="image/png"/></media>
+	<caption>
+	  Small volume for divergence
+	</caption>
+      </figure>
+    <para id="para2">
+      If <m:math><m:ci>E</m:ci></m:math> only varies in one dimension,
+      which is what we are working with right now, the expression for
+      the divergence is particularly simple.  It is easy to work out
+      what it is from a simple picture.  Looking at <link target-id="volume"/> we see that if <m:math><m:ci type="vector">E</m:ci></m:math> is only pointed along one
+      direction (let's say <m:math><m:ci>x</m:ci></m:math>) and is
+      only a function of <m:math><m:ci>x</m:ci></m:math>, then the
+      surface integral of <m:math><m:ci type="vector">E</m:ci></m:math> over the volume
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:mo>Δ</m:mo>
+	    <m:ci>V</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:apply>
+	      <m:mo>Δ</m:mo>
+	      <m:ci>x</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:mo>Δ</m:mo>
+	      <m:ci>y</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:mo>Δ</m:mo>
+	      <m:ci>z</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> is particularly easy to calculate.
+      <equation id="easy">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+	      <m:domainofapplication>
+		<m:ci>s</m:ci>
+	      </m:domainofapplication>
+	      <m:bvar>
+		<m:ci>S</m:ci>
+	      </m:bvar>
+	      <m:ci>E</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:ci type="vector">E</m:ci>
+		  <m:apply>
+		    <m:plus/>
+		    <m:ci>x</m:ci>
+		    <m:apply>
+		      <m:mo>Δ</m:mo>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>y</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>z</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:ci type="vector">E</m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>y</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>z</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>     
+      </equation>     
+      Where we remember that the surface integral is defined as being
+      positive for an outward pointing vector and negative for one
+      which points into the volume enclosed by the surface.  Now we
+      use the definition of the divergence
+      <equation id="morefun"><m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divergence/>
+	      <m:ci type="vector">E</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:limit/>
+	      <m:bvar>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>V</m:ci>
+		</m:apply>
+	      </m:bvar>
+	      <m:lowlimit>
+		<m:cn>0</m:cn>
+	      </m:lowlimit>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:cn>1</m:cn>
+		  <m:apply>
+		    <m:mo>Δ</m:mo>
+		    <m:ci>V</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+		    <m:domainofapplication>
+		      <m:ci>s</m:ci>
+		    </m:domainofapplication>
+		    <m:bvar>
+		      <m:ci>S</m:ci>
+		    </m:bvar>
+		    <m:ci>E</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:limit/>
+	      <m:bvar>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>V</m:ci>
+		</m:apply>
+	      </m:bvar>
+	      <m:lowlimit>
+		<m:cn>0</m:cn>
+	      </m:lowlimit>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:minus/>
+		    <m:apply>
+		      <m:ci type="vector">E</m:ci>
+		      <m:apply>
+			<m:plus/>
+			<m:ci>x</m:ci>
+			<m:apply>
+			  <m:mo>Δ</m:mo>
+			  <m:ci>x</m:ci>
+			</m:apply>
+		      </m:apply>
+		    </m:apply>
+		    <m:apply>
+		      <m:ci type="vector">E</m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		  <m:apply>
+		    <m:mo>Δ</m:mo>
+		    <m:ci>y</m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:mo>Δ</m:mo>
+		    <m:ci>z</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:mo>Δ</m:mo>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:mo>Δ</m:mo>
+		    <m:ci>y</m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:mo>Δ</m:mo>
+		    <m:ci>z</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:limit/>
+	      <m:bvar>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>V</m:ci>
+		</m:apply>
+	      </m:bvar>
+	      <m:lowlimit>
+		<m:cn>0</m:cn>
+	      </m:lowlimit>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:ci type="vector">E</m:ci>
+		    <m:apply>
+		      <m:plus/>
+		      <m:ci>x</m:ci>
+		      <m:apply>
+			<m:mo>Δ</m:mo>
+			<m:ci>x</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		  <m:apply>
+		    <m:ci type="vector">E</m:ci>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:mo>Δ</m:mo>
+		  <m:ci>x</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="vector">E</m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>      
+      So, we have for the differential form of Gauss' law:
+      <equation id="anotherform">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:partialdiff/>
+	      <m:bvar>
+		<m:ci>x</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:ci type="vector">E</m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:ci type="fn">ρ</m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	      <m:ci>ε</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+    <para id="para3">Thus, in our case, the rate of change of
+      <m:math><m:ci>E</m:ci></m:math> with  
+      <m:math><m:ci>x</m:ci></m:math>, 	  
+      <m:math>
+	  <m:apply>
+	    <m:diff/>
+	    <m:bvar>
+	      <m:ci>x</m:ci>
+	    </m:bvar>
+	    <m:ci>E</m:ci>
+	  </m:apply>
+      </m:math>, or the <emphasis>slope of 
+	<m:math>
+	  <m:apply>
+	    <m:ci>E</m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:math></emphasis> is just equal to the charge density,
+      <m:math>
+	<m:apply>
+	  <m:ci>ρ</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>, divided by <m:math><m:ci>ε</m:ci></m:math>.
+
+    </para>
+  </content>
+</document>

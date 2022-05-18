@@ -1,0 +1,291 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Transistor I-V Characteristics</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c17f119e-1388-4876-8728-fa8bded5e775</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">Let's now take a look at some current voltage relationships for
+      the bipolar transistor.  In the absence of any voltage or
+      current on the emitter-base junction, if we were to make a plot
+      of
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>I</m:mi>
+				<m:mi>C</m:mi>
+			</m:msub>
+		</m:ci>
+	</m:math>
+
+      as a function of
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>V</m:mi>
+				<m:mi>CB</m:mi>
+			</m:msub>
+		</m:ci>
+	</m:math>
+
+      it would look something like <link target-id="fig04"/>.  Check back
+      with the voltage convention in the figures on <link document="m1014" target-id="fig1">the structure </link> and <link document="m1014" target-id="fig2">forward active biasing</link> of a bipolar transistor to make sure you agree with what I drew.  All
+      we've got here is a pn junction or diode.  It just happens to be
+      biased in a reverse direction, so it conducts when
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>V</m:mi>
+				<m:mi>CB</m:mi>
+			</m:msub>
+		</m:ci>
+	</m:math>
+
+      is negative and not when
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>V</m:mi>
+				<m:mi>CB</m:mi>
+			</m:msub>
+		</m:ci>
+	</m:math>
+
+      is positive.  Thus, all we need to do is draw a diode curve, but
+      upside down!
+    </para>
+
+    <figure id="fig04">
+      <media id="idm13754304" alt=""><image src="../../media/3_4.png" mime-type="image/png"/></media>
+      <caption>
+	I-V for the collector-base terminals of the bipolar transistor
+      </caption>
+    </figure>
+
+    <para id="para2">What happens if we now <emphasis>also</emphasis> have some bias
+      applied to the emitter-base junction?  As we saw, so long as the
+      base-collector junction is reverse biased, almost all of the
+      collector current consists of electrons which have been injected
+      into the base by the emitter, diffuse across the base region,
+      and then fall down the base-collector junction.  The rate at
+      which electrons fall down the junction does not depend on how
+      large a drop there is (e.g. how big
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>V</m:mi>
+				<m:mi>CB</m:mi>
+			</m:msub>
+		</m:ci>
+	</m:math>
+
+      is).  The only thing that matters, in so far as the collector
+      current is concerned, is how fast electrons are being injected
+      into the base region, which is, of course, determined by the
+      emitter current
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>I</m:mi>
+				<m:mi>E</m:mi>
+			</m:msub>
+		</m:ci>
+	</m:math>
+
+      Thus for several different values of emitter current,
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>I</m:mi>
+				<m:msub>
+					<m:mi>E</m:mi>
+					<m:mn>1</m:mn>
+				</m:msub>
+			</m:msub>
+		</m:ci>
+	</m:math>,
+
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>I</m:mi>
+				<m:msub>
+					<m:mi>E</m:mi>
+					<m:mn>2</m:mn>
+				</m:msub>
+			</m:msub>
+		</m:ci>
+	</m:math>, and
+
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>I</m:mi>
+				<m:msub>
+					<m:mi>E</m:mi>
+					<m:mn>1</m:mn>
+				</m:msub>
+			</m:msub>
+		</m:ci>
+	</m:math>, we might see something like <link target-id="fig05"/>.
+      In the first quadrant, which is in the "forward active bias
+      mode," the output from the collector terminal looks more or
+      less like a current source; that is
+
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>I</m:mi>
+				<m:mi>C</m:mi>
+			</m:msub>
+		</m:ci>
+	</m:math>
+
+      is a constant, regardless of what
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>V</m:mi>
+				<m:mi>CB</m:mi>
+			</m:msub>
+		</m:ci>
+	</m:math>
+      is.  Note however, that we must use a <term>controlled
+      source</term>, in this case, a current-controlled current
+      source, since
+
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>I</m:mi>
+				<m:mi>C</m:mi>
+			</m:msub>
+		</m:ci>
+	</m:math>
+
+      depends on what
+      <m:math>
+		<m:ci>
+			<m:msub>
+				<m:mi>I</m:mi>
+				<m:mi>E</m:mi>
+			</m:msub>
+		</m:ci>
+	</m:math>
+
+      happens to be.  Obviously, looking in the (forward biased)
+      emitter-base terminal, we see the usual p-n junction.  Thus, if
+      we were interested in building a "model" of this device, we
+      might come up with something like <link target-id="fig06"/>.  Note
+      that the base terminal is common to both inputs.  Since we would
+      actually like to think of the transistor as a two-port device
+      (with an input and an output) the model for the transistor is
+      often drawn as shown in <link target-id="fig07"/>.
+    </para>
+
+    <figure id="fig05">
+      <media id="idm3843168" alt=""><image src="../../media/3_5.png" mime-type="image/png"/></media>
+      <caption>
+	Common base characteristics of the bipolar transistor
+      </caption>
+    </figure>
+
+    <figure id="fig06">
+      <media id="idp2587904" alt=""><image src="../../media/3_6.png" mime-type="image/png"/></media>
+      <caption>Model for the common base transistor</caption>
+    </figure>
+
+    <figure id="fig07">
+      <media id="idm61888" alt=""><image src="../../media/3_7.png" mime-type="image/png"/></media>
+      <caption>Re-drawn common base transistor</caption>
+    </figure>
+
+    <para id="para3">
+      The only drawback with what we have so far is that except in
+      some specialized high-frequency circuits, the bipolar transistor
+      is very rarely used in the common base configuration.  Most of
+      the time, you will see it in either <link target-id="fig08">the
+      common emitter configuration</link>, or the common collector
+      configuration.  The common emitter is probably the way the
+      transistor is most often used.
+    </para>
+
+    <figure id="fig08"><media id="idm5069856" alt=""><image src="../../media/3_8.png" mime-type="image/png"/></media>
+	<caption>Configuration for the common emitter circuit</caption>
+</figure>
+
+    <para id="para4">
+      Note that we have a current source driving the base, and we have
+      applied just one battery all the way from the collector to the
+      emitter.  The battery now has to do two thing: a) It has to
+      provide reverse bias for the base-collector junction and b) it
+      has to provide forward bias for the base emitter junction.  For
+      this reason, the
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>C</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+      as a function of
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>CE</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+      curves look a little different now.  It is now necessary for
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>CE</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>
+
+      to become slightly positive in order to get the transistor into
+      its active mode.  The other difference, of course, is that the
+      collector current is now shown as being
+
+      <m:math>
+        <m:apply><m:times/>
+          <m:ci>β</m:ci>
+          <m:ci>
+            <m:msub>
+              <m:mi>I</m:mi>
+              <m:mi>B</m:mi>
+            </m:msub>
+          </m:ci>
+        </m:apply>
+      </m:math>
+
+      the base current instead of
+      <m:math>
+        <m:apply><m:times/>
+          <m:ci>α</m:ci>
+          <m:ci>
+            <m:msub>
+              <m:mi>I</m:mi>
+              <m:mi>E</m:mi>
+            </m:msub>
+          </m:ci>
+        </m:apply>
+      </m:math>
+      the emitter current.
+    </para>
+
+    <figure id="fig09"><media id="idm5259024" alt=""><image src="../../media/3_9.png" mime-type="image/png"/></media>
+	<caption>
+	Common emitter characteristic curves for the transistor
+      </caption>
+</figure> 
+  </content>
+  
+</document>

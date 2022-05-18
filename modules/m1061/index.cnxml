@@ -1,0 +1,781 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Power</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>ea9479a0-25b0-455c-99c8-d7c9dfd99f06</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">You might be tempted to now say that
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>P</m:mi>
+	    <m:mi>in</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:times/>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	  </m:apply>
+	</m:apply>
+      </m:math>, but that is incorrect for sinusoidal excitation.  
+      <m:math>
+	<m:msub>
+	  <m:mi>V</m:mi>
+	  <m:mi>in</m:mi>
+	</m:msub>
+      </m:math> and
+      <m:math>
+	<m:msub>
+	  <m:mi>I</m:mi>
+	  <m:mi>in</m:mi>
+	</m:msub>
+      </m:math> are <emphasis>phasors</emphasis>! So let's digress for
+      a second to see (or review, I hope) how to find power when the
+      voltage and current are phasor quantities. What really matters
+      is not the absolute phase angle of the two quantities, but
+      rather the phase angle between them.  Suppose we have a voltage
+      phasor, <m:math><m:ci>V</m:ci></m:math> which has zero phase
+      angle and a complex impedance
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>Z</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:apply>
+	      <m:abs/>
+	      <m:ci>Z</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:exp/>
+	      <m:apply>
+		<m:times/>
+		<m:imaginaryi/>
+		<m:msub>
+		  <m:mi>θ</m:mi>
+		  <m:mi>z</m:mi>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>. Obviously, the current is given by
+      <equation id="eq1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:mover>
+	      <m:mi>I</m:mi>
+	      <m:mo>˜</m:mo>
+	    </m:mover>
+	    <m:apply>
+	      <m:divide/>
+	      <m:mover>
+		<m:mi>V</m:mi>
+		<m:mo>˜</m:mo>
+	      </m:mover>
+	      <m:mover>
+		<m:mi>Z</m:mi>
+		<m:mo>˜</m:mo>
+	      </m:mover>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:abs/>
+		  <m:ci>V</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:abs/>
+		  <m:ci>Z</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:minus/>
+		  <m:msub>
+		    <m:mi>θ</m:mi>
+		    <m:mi>z</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+	
+      To find power, we can not work just with phasors, we have to go
+      back to the complete function of time as well so we write:
+
+      <equation id="eq2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:abs/>
+		<m:ci>V</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:cos/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>ω</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      
+      <equation id="eq3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">I</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:abs/>
+		  <m:ci>V</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:abs/>
+		  <m:ci>Z</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:cos/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>ω</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		  <m:msub>
+		    <m:mi>θ</m:mi>
+		    <m:mi>z</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      
+      <equation id="eq4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">I</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:abs/>
+		<m:ci>I</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:cos/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>ω</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		  <m:msub>
+		    <m:mi>θ</m:mi>
+		    <m:mi>z</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>The power as a function of time is given as
+      <equation id="eq5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">P</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:ci type="fn">I</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:ci type="fn">V</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:abs/>
+		<m:ci>V</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:abs/>
+		<m:ci>V</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:cos/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>ω</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:cos/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>ω</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		  <m:msub>
+		    <m:mi>θ</m:mi>
+		    <m:mi>z</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>We remember a useful trig identity:
+      <equation id="eq6">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:cos/>
+	      <m:apply>
+		<m:minus/>
+		<m:ci>A</m:ci>
+		<m:ci>B</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:cos/>
+		  <m:ci>A</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:cos/>
+		  <m:ci>B</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:sin/>
+		  <m:ci>A</m:ci>
+		</m:apply>
+		<m:apply>
+		  <m:sin/>
+		  <m:ci>B</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>Hence:
+      <equation id="eq7">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:cos/>
+	      <m:apply>
+		<m:minus/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>ω</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+		<m:msub>
+		  <m:mi>θ</m:mi>
+		  <m:mi>z</m:mi>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:cos/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>ω</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:cos/>
+		  <m:msub>
+		    <m:mi>θ</m:mi>
+		    <m:mi>z</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:sin/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>ω</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:sin/>
+		  <m:msub>
+		    <m:mi>θ</m:mi>
+		    <m:mi>z</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>which makes
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">P</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math>
+
+      <equation id="eq8">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">P</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:power/>
+		  <m:apply>
+		    <m:cos/>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>ω</m:ci>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		  </m:apply>
+		  <m:cn>2</m:cn>
+		</m:apply>
+		<m:apply>
+		  <m:cos/>
+		  <m:msub>
+		    <m:mi>θ</m:mi>
+		    <m:mi>z</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:cos/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>ω</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:sin/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>ω</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:sin/>
+		  <m:msub>
+		    <m:mi>θ</m:mi>
+		    <m:mi>z</m:mi>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>We are really interested in finding <emphasis>average
+	power</emphasis> since energy which flows into and then back
+      out of the line does no work for us. Clearly the second term
+      in <link target-id="eq8"/> (going as
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:apply>
+	    <m:cos/>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>ω</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:sin/>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>ω</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>) has an average value of zero, and so we can forget
+      about it. Time for one more trig identity:
+      <equation id="eq9">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:power/>
+	      <m:apply>
+		<m:cos/>
+		<m:ci>A</m:ci>
+	      </m:apply>
+	      <m:cn>2</m:cn>
+	    </m:apply>
+	    <m:apply>
+	      <m:plus/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:cn>1</m:cn>
+		  <m:cn>2</m:cn>
+		</m:apply>
+		<m:apply>
+		  <m:cos/>
+		  <m:apply>
+		    <m:times/>
+		    <m:cn>2</m:cn>
+		    <m:ci>A</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      <m:math>
+	<m:apply>
+	  <m:cos/>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>2</m:cn>
+	    <m:ci>ω</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> has zero average value as well, so we are left with
+      the following for the average value of the power
+      <m:math>
+	<m:apply>
+	  <m:mean/>
+	  <m:apply>
+	    <m:ci type="fn">P</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+      <equation id="eq10">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:mean/>
+	      <m:apply>
+		<m:ci type="fn">P</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:apply>
+		    <m:abs/>
+		    <m:ci>V</m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:abs/>
+		    <m:ci>I</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:cos/>
+		<m:msub>
+		  <m:mi>θ</m:mi>
+		  <m:mi>z</m:mi>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:power/>
+		  <m:apply>
+		    <m:abs/>
+		    <m:ci>V</m:ci>
+		  </m:apply>
+		  <m:cn>2</m:cn>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>2</m:cn>
+		  <m:apply>
+		    <m:abs/>
+		    <m:ci>Z</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:cos/>
+		<m:msub>
+		  <m:mi>θ</m:mi>
+		  <m:mi>z</m:mi>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Note that one useful way that people sometimes use to express
+      this is to say
+      <equation id="eq11">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:mean/>
+	      <m:apply>
+		<m:ci type="fn">P</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:mover>
+		  <m:mi>V</m:mi>
+		  <m:mo>˜</m:mo>
+		</m:mover>
+		<m:msup>
+		  <m:mover>
+		    <m:mi>V</m:mi>
+		    <m:mo>˜</m:mo>
+		  </m:mover>
+		  <m:mo>*</m:mo>
+		</m:msup>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      Back to our example:
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>in</m:mi>
+	  </m:msub>
+	  <m:cn type="complex-polar">4.18<m:sep/>38</m:cn>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>in</m:mi>
+	  </m:msub>
+	  <m:cn type="complex-polar">0.144<m:sep/>21</m:cn>
+	</m:apply>
+      </m:math> Thus
+
+      <equation id="eq12">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:mean/>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:msub>
+		    <m:mi>P</m:mi>
+		    <m:mi>in</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:times/>
+		<m:cn>4.18</m:cn>
+		<m:cn>0.144</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:cos/>
+		<m:cn>59</m:cn>
+	      </m:apply>
+	      <m:mtext>Watts</m:mtext>
+	    </m:apply>
+	    <m:cn>0.155</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>As an alternative way of calculating the power into
+      the line note that we <emphasis>know</emphasis> the magnitude of
+      the current through both the capacitor and the resistor of the
+      apparent
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mi>in</m:mi>
+	</m:msub>
+      </m:math>. They are just two elements in series, and so they both
+      have the same current flowing through them, namely,
+      <m:math>
+	<m:msub>
+	  <m:mi>I</m:mi>
+	  <m:mi>in</m:mi>
+	</m:msub>
+      </m:math>. No power is dissipated in the capacitor, so we could
+      just as well have said
+      <equation id="eq13">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:mean/>
+	      <m:apply>
+		<m:ci type="fn">
+		  <m:msub>
+		    <m:mi>P</m:mi>
+		    <m:mi>in</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>t</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:cn>1</m:cn>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:power/>
+		<m:apply>
+		  <m:abs/>
+		  <m:ci>I</m:ci>
+		</m:apply>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	      <m:ci>R</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:times/>
+		<m:apply>
+		  <m:divide/>
+		  <m:cn>1</m:cn>
+		  <m:cn>2</m:cn>
+		</m:apply>
+		<m:apply>
+		  <m:power/>
+		  <m:cn>0.144</m:cn>
+		  <m:cn>2</m:cn>
+		</m:apply>
+	      </m:apply>
+	      <m:cn>15</m:cn>
+	    </m:apply>
+	    <m:cn>0.155</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation> and gotten the answer in an even easier fashion!
+      (Note that we still have to keep the factor of "1/2" to account
+      for the time average of a sinusoidal product.) For reasons I do
+      not understand, students have always had an aversion to finding
+      power. It is not that hard, and in the end, is usually the
+      "bottom line" with regard to how a system will perform. Go back
+      over this section until it makes sense, as you may see power
+      crop up someplace else one of these days!
+    </para>   
+  </content>
+  
+</document>

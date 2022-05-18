@@ -1,0 +1,770 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Basic MOS Structure</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>42ded853-09b1-4301-87fe-2a6255821401</md:uuid>
+</metadata>
+
+  <content>
+    <figure id="fig02">
+      <media id="idm7671088" alt=""><image src="../../media/4.02.png" mime-type="image/png"/></media>
+      <caption>Formation of the MOS structure</caption>
+    </figure>
+
+
+    <para id="para1">
+      <link target-id="fig02"/> shows the steps necessary to make the MOS
+      structure. It will help us in our understanding if we now rotate
+      our picture so that it is pointing sideways in our next few
+      drawings. (Also, we will forget about the two n-regions for
+      awhile, and pick them back up later when we rotate the structure
+      right side up again.) <link target-id="fig03"/> shows the rotated
+      structure. Note that in the p-silicon we have positively charged
+      mobile holes, and negatively charged, fixed acceptors. Because
+      we will need it later, we have also shown the band diagram for
+      the semiconductor below the sketch of the device. Note that
+      since the substrate is p-type, the Fermi level is located down
+      close to the valance band.
+    </para>
+
+
+    <figure id="fig03">
+      <media id="idm8830768" alt=""><image src="../../media/4.03.png" mime-type="image/png"/></media>
+      <caption>Basic MOS structure</caption>
+    </figure>
+
+
+    <para id="para2">
+      Let us now place a potential between the gate and the silicon
+      substrate. Suppose we make the gate negative with respect to the
+      substrate. Since the substrate is p-type, it has a lot of
+      mobile, positively charged holes in it. Some of them will be
+      attracted to the negative charge on the gate, and move over to
+      the surface of the substrate. This is also reflected in the band
+      diagram below the <link target-id="fig04">sketch of the
+      structure</link>. Remember that the density of holes is
+      exponentially proportional to how close the Fermi level is to
+      the valence band edge. We see that the band diagram has been
+      bent up slightly near the surface to reflect the extra holes
+      which have accumulated there.
+    </para>
+
+
+    <figure id="fig04">
+      <media id="idm1307776" alt=""><image src="../../media/4.04.png" mime-type="image/png"/></media>
+      <caption>Applying a negative gate voltage</caption>
+    </figure>
+
+
+    <para id="para3">
+      An electric field will develop between the positive holes and
+      the negative gate charge. Note that the gate and the substrate
+      form a kind of parallel plate capacitor, with the oxide acting
+      as the insulating layer in-between them. The oxide is quite thin
+      compared to the area of the device, and so it is quite
+      appropriate to assume that the electric field inside the oxide
+      is a uniform one. (We will ignore fringing at the edges.) The
+      integral of the electric field is just the applied gate voltage
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>g</m:mi>
+      </m:msub></m:ci></m:math>.  If the oxide has a thickness
+      <m:math><m:ci><m:msub><m:mi>x</m:mi><m:mi>ox</m:mi>
+      </m:msub></m:ci></m:math> then since
+      <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>ox</m:mi>
+      </m:msub></m:ci></m:math> is uniform, it is given by
+
+      <equation id="eqn02">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>E</m:mi>
+		<m:mi>ox</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>g</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>x</m:mi>
+		  <m:mi>ox</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para4">
+      If we focus in on a small part of the gate, we can make a little
+      "pill" box which extends from somewhere in the oxide, across the
+      oxide/gate interface and ends up inside the gate material
+      someplace. The pill-box will have an area
+      <m:math>
+	<m:apply>
+	  <m:ci><m:mo>Δ</m:mo></m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>.  Now we will invoke Gauss' law which we reviewed
+      earlier. Gauss' law simply says that the surface integral over a
+      closed surface of the displacement vector
+      <m:math><m:ci>D</m:ci></m:math> (which is, of course, just
+      <m:math><m:ci>ε</m:ci></m:math> times
+      <m:math><m:ci>E</m:ci></m:math>) is equal to the total charge
+      enclosed by that surface. We will assume that there is a surface
+      charge density
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>Q</m:mi>
+	      <m:mi>g</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math> (<m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>Coulombs</m:ci>
+	  <m:apply>
+	    <m:power/>
+	    <m:ci>cm</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>) on the <link target-id="fig05">surface of the gate
+      electrode</link>. The integral form of Gauss' Law is just:
+
+      <equation id="eqn03">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+	      <m:bvar>
+		<m:ci type="vector">S</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:times/>
+		<m:ci><m:msub>
+		    <m:mi>ε</m:mi>
+		    <m:mn>ox</m:mn>
+		  </m:msub></m:ci>
+		<m:ci type="vector">E</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:ci><m:msub>
+		<m:mi>Q</m:mi>
+		<m:mi>encl</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <figure id="fig05">
+      <media id="idp2885232" alt=""><image src="../../media/4.05.png" mime-type="image/png"/></media>
+      <caption>Finding the surface charge density</caption>
+    </figure>
+
+
+    <para id="para5">
+      Note that we have used
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>ε</m:mi>
+	      <m:mi>ox</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>E</m:ci>
+	</m:apply>
+      </m:math> in place of <m:math><m:ci>D</m:ci></m:math>.  In this
+      particular set-up the integral is easy to perform, since the
+      electric field is uniform, and only pointing in through one
+      surface - it terminates on the negative surface charge inside
+      the pill-box. The charge enclosed in the pill box is just
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>Q</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:apply>
+	      <m:ci><m:mo>Δ</m:mo></m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>, and so we have
+      (keeping in mind that the surface integral of a vector
+      pointing into the surface is negative)
+
+
+      <equation id="eqn04">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#surfaceintegral"/>
+	      <m:bvar>
+		<m:ci type="vector">S</m:ci>
+	      </m:bvar>
+	      <m:apply>
+		<m:times/>
+		<m:ci><m:msub>
+		    <m:mi>ε</m:mi>
+		    <m:mn>ox</m:mn>
+		  </m:msub></m:ci>
+		<m:ci type="vector">E</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:ci><m:msub>
+		    <m:mi>ε</m:mi>
+		    <m:mn>ox</m:mn>
+		  </m:msub></m:ci>
+		<m:ci><m:msub>
+		    <m:mi>E</m:mi>
+		    <m:mn>ox</m:mn>
+		  </m:msub></m:ci>
+		<m:apply>
+		  <m:ci><m:mo>Δ</m:mo></m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:minus/>
+	      <m:apply>
+		<m:times/>
+		<m:ci><m:msub>
+		    <m:mi>Q</m:mi>
+		    <m:mn>g</m:mn>
+		  </m:msub></m:ci>
+		<m:apply>
+		  <m:ci><m:mo>Δ</m:mo></m:ci>
+		  <m:ci>s</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      or
+
+      <equation id="eqn05">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>ε</m:mi>
+		  <m:mi>ox</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>E</m:mi>
+		  <m:mi>ox</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+
+	    <m:ci>
+	      <m:msub>
+		<m:mi>Q</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	    </m:ci>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para6">
+      Now, we can use <link target-id="eqn02"/> to get
+
+      <equation id="eqn06">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>ε</m:mi>
+		    <m:mi>ox</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>g</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>x</m:mi>
+		  <m:mi>ox</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>Q</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	    </m:ci>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      or
+
+      <equation id="eqn07">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>Q</m:mi>
+		  <m:mi>g</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>g</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:equivalent/>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>ε</m:mi>
+		    <m:mi>ox</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>x</m:mi>
+		    <m:mi>ox</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+
+	      <m:ci>
+		<m:msub>
+		  <m:mi>c</m:mi>
+		  <m:mi>ox</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para7">
+      The quantity <m:math><m:ci><m:msub><m:mi>c</m:mi><m:mi>ox</m:mi>
+      </m:msub></m:ci></m:math> is called the <term>oxide
+      capacitance</term>. It has units of
+      <m:math>
+	<m:apply>
+	  <m:divide/> 
+	  <m:ci>Farads</m:ci>
+	  <m:apply>
+	    <m:power/>
+	    <m:ci>cm</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math>, so it is really a capacitance <emphasis>per unit
+      area</emphasis> of the oxide. The dielectric constant of silicon
+      dioxide,
+      <m:math><m:ci><m:msub><m:mi>ε</m:mi><m:mi>ox</m:mi>
+      </m:msub></m:ci></m:math>, is about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn type="e-notation">3.3<m:sep/>-13</m:cn>
+	  <m:ci>F/cm</m:ci>
+	</m:apply>
+      </m:math>. A typical oxide thickness might be 250 Å
+      (or
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn type="e-notation">2.5<m:sep/>-6</m:cn>
+	  <m:ci>cm</m:ci>
+	</m:apply>
+      </m:math>).  In this case,
+      <m:math><m:ci><m:msub><m:mi>c</m:mi><m:mi>ox</m:mi>
+      </m:msub></m:ci></m:math> would be about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn type="e-notation">1.30<m:sep/>-7</m:cn>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>F</m:ci>
+	    <m:apply>
+	      <m:power/>
+	      <m:ci>cm</m:ci>
+	      <m:cn>2</m:cn>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>. (The units we are using here, while they might seem a
+      little arbitrary and confusing, are the ones most commonly used
+      in the semiconductor business. You will get used to them in a
+      short while.)
+    </para>
+
+
+    <para id="para8">
+      The most useful form of <link target-id="eqn07"/> is when it is
+      turned around:
+
+      <equation id="eqn08">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>Q</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>c</m:mi>
+		  <m:mi>ox</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>g</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      as it gives us a way to find the charge on the gate in terms of the
+      gate potential. We will use this equation later in our development of
+      how the MOS transistor really works.
+    </para>
+
+
+    <para id="para9">
+      It turns out we have not done anything very useful by apply a
+      negative voltage to the gate. We have drawn more holes there in
+      what is called an <term>accumulation layer</term>, but that is
+      not helping us in our effort to create a layer of electrons in
+      the MOSFET which could electrically connect the two n-regions
+      together.
+    </para>
+
+
+    <para id="para10">
+      Let's turn the battery around and apply a
+      <emphasis>positive</emphasis> voltage to the gate. (Actually,
+      let's take the battery out of the <link target-id="fig06">sketch</link> for now, and just let
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>g</m:mi>
+      </m:msub></m:ci></m:math> be a positive value, relative to the
+      substrate which will tie to ground.) Making
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>g</m:mi>
+      </m:msub></m:ci></m:math> positive puts positive
+      <m:math><m:ci><m:msub><m:mi>Q</m:mi><m:mi>g</m:mi>
+      </m:msub></m:ci></m:math> on the gate. The positive charge
+      pushes the holes away from the region under the gate and
+      uncovers some of the negatively-charged fixed acceptors. Now the
+      electric field points the other way, and goes from the positive
+      gate charge, terminating on the negative acceptor charge within
+      the silicon.
+    </para>
+
+
+    <figure id="fig06">
+      <media id="idp225328" alt=""><image src="../../media/4.06.png" mime-type="image/png"/></media>
+      <caption>Increasing the voltage extends the
+	depletion region further into the device</caption>
+    </figure>
+
+
+    <para id="para11">
+      The electric field now extends <emphasis>into</emphasis> the
+      semiconductor. We know from our experience with the p-n junction
+      that when there is an electric field, there is a shift in
+      potential, which is represented in the band diagram by bending
+      the bands. Bending the bands down (as we should moving towards
+      positive charge) causes the valence band to pull away from the
+      Fermi level near the surface of the semiconductor. If you
+      remember the expression we had for the density of holes in terms
+      of <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>v</m:mi>
+      </m:msub></m:ci></m:math> and
+      <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>f</m:mi>
+      </m:msub></m:ci></m:math> (<link document="m1002" target-id="ntypeq">electron and hole density equations</link>) it
+      is easy to see that indeed
+
+      <equation id="eqn09">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>p</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>N</m:mi>
+		  <m:mi>v</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:ci>
+			<m:msub>
+			  <m:mi>E</m:mi>
+			  <m:mi>f</m:mi>
+			</m:msub>
+		      </m:ci>
+		      <m:ci>
+			<m:msub>
+			  <m:mi>E</m:mi>
+			  <m:mi>v</m:mi>
+			</m:msub>
+		      </m:ci>
+		    </m:apply>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>k</m:ci>
+		      <m:ci>T</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      there is a depletion region (region with almost no holes) near
+      the region under the gate. (Once
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>E</m:mi>
+	      <m:mi>f</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>E</m:mi>
+	      <m:mi>v</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math> gets large with respect to
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>k</m:ci>
+	  <m:ci>T</m:ci>
+	</m:apply>
+      </m:math>, the negative exponent causes
+      <m:math>
+	<m:apply>
+	  <m:tendsto/>
+	  <m:ci>p</m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>.)
+    </para>
+
+
+    <figure id="fig07">
+      <media id="idp1260208" alt=""><image src="../../media/4.07.png" mime-type="image/png"/></media> <caption>Threshold,
+      <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>f</m:mi>
+      </m:msub></m:ci></m:math> is getting close to
+      <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>c</m:mi>
+      </m:msub></m:ci></m:math> </caption>
+    </figure>
+
+
+    <para id="para12">The electric field extends further into the semiconductor, as
+      more negative charge is uncovered and the bands bend further
+      down. But now we have to recall the <link document="m1002" target-id="ntypeq">
+      electron density equation</link>, which tells us how many
+      electrons we have
+
+      <equation id="eqn10">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>n</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>N</m:mi>
+		  <m:mi>c</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:minus/>
+		  <m:apply>
+		    <m:divide/>
+		    <m:apply>
+		      <m:minus/>
+		      <m:ci>
+			<m:msub>
+			  <m:mi>E</m:mi>
+			  <m:mi>c</m:mi>
+			</m:msub>
+		      </m:ci>
+		      <m:ci>
+			<m:msub>
+			  <m:mi>E</m:mi>
+			  <m:mi>f</m:mi>
+			</m:msub>
+		      </m:ci>
+		    </m:apply>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>k</m:ci>
+		      <m:ci>T</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para13">
+      A glance at <link target-id="fig07"/> above reveals that with this
+      much band bending,
+      <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>c</m:mi>
+      </m:msub></m:ci></m:math> the conduction band edge, and
+      <m:math><m:ci><m:msub><m:mi>E</m:mi><m:mi>f</m:mi>
+      </m:msub></m:ci></m:math> the Fermi level are starting to get
+      close to one another (at least compared to
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>k</m:ci>
+	  <m:ci>T</m:ci>
+	</m:apply>
+      </m:math>), which means that <m:math><m:ci>n</m:ci></m:math>,
+      the electron concentration, should soon start to become
+      significant. In the situation represented by <link target-id="fig07"/>, we say we are at <term>threshold</term>, and
+      the gate voltage at this point is called the <term>threshold
+      voltage</term>,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>.
+    </para>
+
+
+    <para id="para14">
+      Now, let's increase
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>g</m:mi>
+      </m:msub></m:ci></m:math> above
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>.  Here's the sketch in <link target-id="fig08"/>.
+    </para>
+
+
+    <figure id="fig08"><media id="idp5227424" alt=""><image src="../../media/4.08.png" mime-type="image/png"/></media>
+	<caption>Inversion - Electrons form an inversion layer under the gate</caption>
+</figure>
+
+
+    <para id="para15">
+      Even though we have increased
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>g</m:mi>
+      </m:msub></m:ci></m:math> beyond the threshold voltage,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>, and more positive charge appears on
+      the gate, the depletion region no longer moves back into the
+      substrate. Instead electrons start to appear under the gate
+      region, and the additional electric field lines terminate on
+      these new electrons, instead of on additional acceptors. We have
+      created an <term>inversion layer </term> of electrons under the
+      gate, and it is this layer of electrons which we can use to
+      connect the two n-type regions in our initial device.
+    </para>
+
+
+    <para id="para16">
+      Where did these electrons come from? We do not have any donors
+      in this material, so they can not come from there. The only
+      place from which electrons could be found would be through
+      thermal generation. Remember, in a semiconductor, there are
+      always a few electron hole pairs being generated by thermal
+      excitation at any given time. Electrons that get created in the
+      depletion region are caught by the electric field and are swept
+      over to the edge by the gate. I have tried to suggest this with
+      the electron generation event shown in the band diagram in the
+      figure. In a <emphasis>real</emphasis> MOS device, we have the
+      two n-regions, and it is easy for electrons from one or both to
+      "fall" into the potential well under the gate, and create the
+      inversion layer of electrons.
+    </para>
+
+    
+  </content>
+  
+</document>

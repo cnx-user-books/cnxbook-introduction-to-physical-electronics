@@ -1,0 +1,59 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Applying Metal/Sputtering</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>b724488a-6549-4246-b284-da553e20b5fd</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">We now put the wafer in a <term>sputter
+	deposition system</term>. In the sputter system, we coat the
+	entire surface of the wafer with a conductor. An
+	aluminum-silicon alloy is usually used, although other metals
+	are employed as well.
+    </para>
+
+    <para id="para2">A sputtering system is shown schematically in
+      <link target-id="fig1"/>. A sputtering system is a vacuum chamber,
+      which after it is pumped out, is re-filled with a low-pressure
+      argon gas. A high voltage ionizes the gas, and creates what is
+      known as the <term>Crookes dark space</term> near the cathode,
+      which in our case, consists of a metal target made out of the
+      metal we want to deposit. Almost all of the potential of the
+      high-voltage supply appears across the dark space. (The glow
+      discharge consists of argon ions and electrons which have been
+      stripped off of them. Since there are about equal number of ions
+      and electrons, the net charge density is about zero, and hence
+      by Gauss' law, so is the field.)
+      
+      <figure id="fig1"><title>Sputtering Apparatus</title><media id="idm13769824" alt=""><image src="../../media/5_33.png" mime-type="image/png" print-width="3.5in"/></media></figure>
+
+      The electric field accelerates the argon atoms which slam into
+      the aluminum target. There is an exchange of momentum, and an
+      aluminum atom is ejected from the target (<link target-id="fig2"/>)
+      and heads to the silicon wafer, where it sticks, and builds up a
+      metal film <link target-id="fig3"/>.
+
+      <figure id="fig2">
+	<title>Sputtering Mechanism</title>
+	<media id="idm13275392" alt=""><image src="../../media/5_34.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig3">
+	<title>Wafer Coated with Metal</title> 
+	<media id="idm6835856" alt=""><image src="../../media/5_35.png" mime-type="image/png"/></media> 
+      </figure>
+
+      If you look at <link target-id="fig3"/>, you will note that we have
+      seemingly done something pretty stupid. We have wired all of the
+      elements of our CMOS inverter together! Ah, but all is not
+      lost. We can do one more photolithographic step, and pattern and
+      etch the aluminum, so we only have it where we need it. This is
+      shown in <link target-id="fig4"/>.
+
+      <figure id="fig4">
+	<title>After Interconnect Patterning</title>
+	<media id="idm11687024" alt=""><image src="../../media/5_36.png" mime-type="image/png"/></media>
+      </figure>
+    </para>
+  </content>
+  
+</document>

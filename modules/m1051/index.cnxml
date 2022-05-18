@@ -1,0 +1,391 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Review of Phasors</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>538f58ec-68c3-4a62-8d19-0deada5040a5</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">We will not always be dealing with transmission
+      lines excited with a pulse. Although this is a good model for
+      digital circuitry, it will not always apply. When we go to analog
+      signals (rf, high frequency analog, etc.) we will need more tools
+      than are available to us at this point. In the
+      not-too-distant-past, the material we will next consider was
+      starting to be considered passé. The rf spectrum was more or
+      less filled up, and the watchword was "digital". Now, in the new
+      age of wireless communication, cell phones, and rf Local Area
+      Networks, demand for engineers who understand ac behavior on
+      transmission lines and who can design systems which work well
+      with rf signals are very much in demand. Pay heed to what we say
+      here, and you might well find yourself with many lucrative job
+      offers in the future.
+    </para>
+
+    <para id="para2">To begin, we want to consider a transmission line
+    which is being excited with an oscillating source <link target-id="fig1"/>.
+ 
+      <figure id="fig1">
+	<title>Sinusoidal Excitation of a Loaded Transmission Line</title>
+	<media id="idp9189520" alt=""><image src="../../media/7.01.png" mime-type="image/png"/></media>
+      </figure>
+      
+      The usual set-up includes a source, with a sinusoidal output, a
+      source impedance
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mi>g</m:mi>
+	</m:msub>
+      </m:math> a transmission line with impedance
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math>, <m:math><m:ci>L</m:ci></m:math> meters long, and a
+      load of impedance
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mi>L</m:mi>
+	</m:msub>
+      </m:math> at the end.
+    </para>
+
+    <para id="para3">Let's look at the source first. We can describe
+      the output waveform from the generator as
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci type="fn">V</m:ci>
+	      <m:ci>t</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:apply>
+		<m:cos/>
+		<m:apply>
+		  <m:plus/>
+		  <m:apply>
+		    <m:times/>
+		    <m:ci>ω</m:ci>
+		    <m:ci>t</m:ci>
+		  </m:apply>
+		  <m:ci>θ</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> 
+      Which when plotted lookes like <link target-id="fig2"/>.
+      
+      <figure id="fig2">
+	<title>Excitation Waveform</title>
+	<media id="idm70032" alt=""><image src="../../media/7.02.png" mime-type="image/png"/></media>
+      </figure>
+
+      The oscillating waveform has a period
+      <m:math><m:ci>T</m:ci></m:math> and its angular frequency
+      <m:math><m:ci>ω</m:ci></m:math> is given as
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>ω</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>2</m:cn>
+		<m:pi/>
+	      </m:apply>
+	      <m:ci>T</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>2</m:cn>
+	      <m:pi/>
+	      <m:ci>f</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      The angle, <m:math><m:ci>θ</m:ci></m:math>, which
+      specifies how much the wave is leading a cosine function with
+      zero off-set is given by
+      <equation id="eqn3"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:ci>θ</m:ci>
+			<m:apply>
+				<m:times/>
+				<m:cn>2</m:cn>
+				<m:pi/>
+				<m:apply>
+					<m:divide/>
+					<m:ci>τ</m:ci>
+					<m:ci>T</m:ci>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation>
+      What we <emphasis>do not</emphasis> want to do, is carry a bunch
+      of sine and cosine functions around with us everywhere. Once we
+      start multiplying and dividing, the trig turns into a big mess,
+      and gets in the way of our understanding of what is going
+      on. The way we deal with this, as every good 242 student knows,
+      is to introduce <term>phasors</term>.
+    </para>
+
+    <para id="para4">Since we know from <term>Euler's Identity</term>
+      <equation id="eqn4"><m:math>
+		<m:apply>
+			<m:eq/>
+			<m:apply>
+				<m:times/>
+				<m:msub>
+					<m:mi>V</m:mi>
+					<m:mi>g</m:mi>
+				</m:msub>
+				<m:apply>
+					<m:exp/>
+					<m:apply>
+						<m:times/>
+						<m:imaginaryi/>
+						<m:apply>
+							<m:plus/>
+							<m:apply>
+								<m:times/>
+								<m:ci>ω</m:ci>
+								<m:ci>t</m:ci>
+							</m:apply>
+							<m:ci>θ</m:ci>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+			<m:apply>
+				<m:times/>
+				<m:msub>
+					<m:mi>V</m:mi>
+					<m:mi>g</m:mi>
+				</m:msub>
+				<m:apply>
+					<m:plus/>
+					<m:apply>
+						<m:cos/>
+						<m:apply>
+							<m:plus/>
+							<m:apply>
+								<m:times/>
+								<m:ci>ω</m:ci>
+								<m:ci>t</m:ci>
+							</m:apply>
+							<m:ci>θ</m:ci>
+						</m:apply>
+					</m:apply>
+					<m:apply>
+						<m:times/>
+						<m:imaginaryi/>
+						<m:apply>
+							<m:sin/>
+							<m:apply>
+								<m:plus/>
+								<m:apply>
+									<m:times/>
+									<m:ci>ω</m:ci>
+									<m:ci>t</m:ci>
+								</m:apply>
+								<m:ci>θ</m:ci>
+							</m:apply>
+						</m:apply>
+					</m:apply>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:math>
+</equation>
+      If we take a real part of
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>g</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:exp/>
+	    <m:apply>
+	      <m:times/>
+	      <m:imaginaryi/>
+	      <m:apply>
+		<m:plus/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>ω</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+		<m:ci>θ</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> we will extract the voltage waveform we desire. We
+      will re-write this function as
+      <equation id="eqn5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:apply>
+		    <m:plus/>
+		    <m:apply>
+		      <m:times/>
+		      <m:ci>ω</m:ci>
+		      <m:ci>t</m:ci>
+		    </m:apply>
+		    <m:ci>θ</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	    
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>θ</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>ω</m:ci>
+		  <m:ci>t</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      and then <emphasis>define</emphasis>
+      <m:math>
+	<m:msub>
+	  <m:mover>
+	    <m:mi>V</m:mi>
+	    <m:mi>∼</m:mi>
+	  </m:mover>
+	  <m:mi>g</m:mi>
+	</m:msub>
+      </m:math> as the <term>phasor voltage</term> where
+      <equation id="eqn6">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mover>
+		<m:mi>V</m:mi>
+		<m:mi>∼</m:mi>
+	      </m:mover>
+	      <m:mi>g</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>g</m:mi>
+	      </m:msub>
+	      <m:apply>
+		<m:exp/>
+		<m:apply>
+		  <m:times/>
+		  <m:imaginaryi/>
+		  <m:ci>θ</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      Note that
+      <m:math>
+	<m:msub>
+	  <m:mover>
+	    <m:mi>V</m:mi>
+	    <m:mi>∼</m:mi>
+	  </m:mover>
+	  <m:mi>g</m:mi>
+	</m:msub>
+      </m:math> is a complex quantity, with both a magnitude
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>g</m:mi>
+	  </m:msub>
+	</m:apply>
+      </m:math> and a phase angle
+      <m:math><m:ci>θ</m:ci></m:math>. In order to retrieve a real
+      voltage signal from a phasor, we have to multiply the phasor by
+      <m:math>
+	<m:apply>
+	  <m:exp/>
+	  <m:apply>
+	    <m:times/>
+	    <m:imaginaryi/>
+	    <m:ci>ω</m:ci>
+	    <m:ci>t</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> and then take the real part. Note that this is the
+      same thing as plotting the phasor on the complex plane, and then
+      observing the projection of the phasor on the real axis, as the
+      phasor rotates around at a rate
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>ω</m:ci>
+	  <m:ci>t</m:ci>
+	</m:apply>
+      </m:math> <link target-id="fig3"/>.
+
+      <figure id="fig3">
+	<title>Phasor Representation</title>
+	<media id="idm1577472" alt=""><image src="../../media/7.03.png" mime-type="image/png"/></media>
+      </figure>
+
+      This method of visualization will sometimes help make results
+      seem a little easier to understand, or at least check for
+      reasonableness.
+
+    </para>   
+  </content>
+  
+</document>

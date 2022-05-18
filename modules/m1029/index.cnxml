@@ -1,0 +1,403 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>CMOS Logic</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>0e6007e6-8f3a-45aa-9953-e55f7652b9bf</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">
+      Consider the following, shown in <link target-id="fig44"/>.
+    </para>
+
+
+    <figure id="fig44">
+      <media id="idm5689712" alt=""><image src="../../media/4.44.png" mime-type="image/png"/></media>
+      <caption>A PMOS transistor</caption>
+    </figure>
+
+
+    <para id="para2">
+      This looks a lot like our previous MOSFET except that now we
+      have an n-type substrate and the source and drain regions are
+      p-type. If we apply a <emphasis>negative</emphasis>
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math> (with the source connected to the
+      n-type substrate) then the induced negative charge on the gate
+      will drive away the electrons, and if the bands under the gate
+      are bent up sufficiently, form an <link target-id="fig45">inversion
+      layer</link> of <term>holes</term> thus making an enhancement
+      mode <term>p-channel MOSFET</term>, or a PMOS transistor. (As
+      opposed to an NMOS transistor which we studied first.). Note
+      that a PMOS transistor will have a negative
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>.  That is, the gate voltage has to be
+      <emphasis>less than the source/substrate voltage</emphasis> in
+      order to turn the device on. The more negative
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math>, the more current we will have flowing
+      through the device.
+    </para>
+
+
+    <figure id="fig45">
+      <media id="idm18069904" alt=""><image src="../../media/4.45.png" mime-type="image/png"/></media>
+      <caption>Inversion of an n-type layer</caption>
+    </figure>
+
+
+    <para id="para3">
+      It turns out that a combination of both an n-channel and a
+      p-channel device on the same circuit can be very
+      advantageous. Such technology is called <term>CMOS</term>, for
+      "complementary MOS". Here is how we use a p-channel
+      transistor in the inverter circuit.
+    </para>
+
+
+    <para id="para4">
+      First of all, however, we have to see how we would make
+      one. There is a fundamental problem in trying to use both
+      n-channel and p-channel devices in the same circuit. What is it?
+      It would seem we need two different kinds of substrates, both a
+      p-type substrate for the n-channel transistor, and an n-type
+      substrate for the p-channel device. There is a way around this
+      problem by making what is called a <term>tank</term> or a
+      <term>moat</term>. A moat is a relatively deep region of one
+      type of material placed into a host substrate of the opposite
+      type (<link target-id="fig46"/>). We can put n-type source/drain
+      regions into the p-substrate and p-type source/drain regions
+      into the n-moat. In <link target-id="fig47"/>, we will also show
+      the gates, and how the whole inverter is connected together.
+    </para>
+
+
+    <figure id="fig46"><media id="idm7363312" alt=""><image src="../../media/4.46.png" mime-type="image/png" print-width="3in"/></media><caption>Preparing for a CMOS inverter</caption></figure>
+
+
+    <figure id="fig47"><media id="idm18509040" alt=""><image src="../../media/4.47.png" mime-type="image/png" print-width="3in"/></media><caption>A CMOS inverter </caption></figure>
+
+
+    <para id="para5">
+      Now let's draw the <link target-id="fig48">schematic</link>: A
+      p-channel device is drawn just like an n-channel device, except
+      we put a little "bubble" on the gate to signify that it is a
+      MOSFET of a different color. Although we usually don't do this
+      all the time, we have also shown the substrate connections in
+      this diagram. These connections show that a MOSFET is at least a
+      four terminal device, not a three terminal one as people often
+      assume. Since, in a p-channel device, the substrate is n-type,
+      we show the substrate connection as an outward pointing
+      arrow. The p-type substrate for the n-channel device is shown as
+      an inward pointing arrow. The n-channel substrate is connected
+      to ground, the p-channel substrate is connected to
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dd</m:mi>
+      </m:msub></m:ci></m:math>.  Note that since the n-moat is at
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dd</m:mi>
+      </m:msub></m:ci></m:math> and the p-substrate is at ground, the
+      moat-substrate p-n junction is reverse biased, and so no current
+      should flow between them.
+    </para>
+
+
+    <figure id="fig48">
+      <media id="idm7759888" alt=""><image src="../../media/4.48.png" mime-type="image/png"/></media>
+      <caption> Schematic of a CMOS inverter</caption>
+    </figure>
+
+
+    <para id="para6">
+      We usually do not label the source and drain either, but we do
+      here, just for completeness. Note that unlike the bipolar
+      transistor, the FET is truly a symmetric device. There is really
+      no way to tell the source from the drain. By convention, we call
+      the element which is connected to the substrate (or moat) the
+      source, and the other the drain. You will sometimes hear the
+      region under the gate (either substrate or moat) referred to as
+      the <term>backbody</term>.
+    </para>
+
+
+    <para id="para7">
+      Now let's see how this circuit works. If
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>in</m:mi>
+      </m:msub></m:ci></m:math> is high (at or near
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dd</m:mi>
+      </m:msub></m:ci></m:math>) the NMOS transistor will be turned
+      on. The voltage between the gate and substrate of the p-channel
+      device is at or near zero. The gate is at
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dd</m:mi>
+      </m:msub></m:ci></m:math> and so is the moat! Hence the upper
+      transistor will be turned off. The output will thus be
+      <emphasis>low</emphasis>.
+    </para>
+
+
+    <para id="para8">
+      If the input voltage is at or near ground (a "low") then the
+      n-channel device is turned off. The voltage between the gate and
+      substrate of the p-channel device is now
+      <m:math>
+	<m:apply>
+	  <m:mo>≂</m:mo>
+	  <m:apply>
+	    <m:minus/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>dd</m:mi>
+	      </m:msub>
+	    </m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. (The gate is 
+      <m:math>
+	<m:apply>
+	  <m:mo>≂</m:mo>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math> and the substrate is at
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>dd</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>.) If the PMOS transistor has a threshold voltage
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math> of, say, -2 V, then it will be turned
+      <emphasis>on</emphasis> and the output will be
+      <emphasis>high</emphasis>. Note however, that in either state,
+      high or low, <emphasis>there is no static current flowing
+      through the inverter</emphasis>.
+    </para>
+
+
+    <para id="para9">
+      The transfer characteristics for this circuit. Are a little more
+      complicated. First, let's make sure we have our voltages and
+      currents <link target-id="fig49">defined</link>. From the figure,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi>
+      <m:mrow><m:mi>gs</m:mi><m:mo>-</m:mo><m:mi>n</m:mi>
+      </m:mrow></m:msub></m:ci></m:math> the n-channel gate-source
+      voltage is just Vin.  <m:math><m:ci><m:msub><m:mi>V</m:mi>
+      <m:mrow><m:mi>gs</m:mi><m:mo>-</m:mo><m:mi>p</m:mi>
+      </m:mrow></m:msub></m:ci></m:math> the gate-source voltage for
+      the p-channel device is
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:minus/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>in</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>V</m:mi>
+		  <m:mi>dd</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mrow>
+		    <m:mi>d</m:mi>
+		    <m:mo>-</m:mo>
+		    <m:mi>n</m:mi>
+		  </m:mrow>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+	  </m:apply>
+
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mrow>
+		<m:mi>d</m:mi>
+		<m:mo>-</m:mo>
+		<m:mi>p</m:mi>
+	      </m:mrow>
+	    </m:msub>
+	  </m:ci>
+
+	  <m:apply>
+	    <m:times/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>d</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mrow>
+		  <m:mi>ds</m:mi>
+		  <m:mo>-</m:mo>
+		  <m:mi>p</m:mi>
+		</m:mrow>
+	      </m:msub>
+	    </m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> the drain source voltage for the p-channel transistor
+      can be written as
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mrow>
+		<m:mi>ds</m:mi>
+		<m:mo>-</m:mo>
+		<m:mi>n</m:mi>
+	      </m:mrow>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>dd</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>. We have two sets of <link target-id="fig50">characteristic curves</link>: Note that since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mrow>
+		<m:mi>gs</m:mi>
+		<m:mo>-</m:mo>
+		<m:mi>p</m:mi>
+	      </m:mrow>
+	    </m:msub>
+	  </m:ci>
+
+	  <m:apply>
+	    <m:minus/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>in</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>V</m:mi>
+		<m:mi>dd</m:mi>
+	      </m:msub>
+	    </m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, when
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:cn>0</m:cn>
+	</m:apply>
+      </m:math>V,
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mrow>
+		<m:mi>gs</m:mi>
+		<m:mo>-</m:mo>
+		<m:mi>p</m:mi>
+	      </m:mrow>
+	    </m:msub>
+	  </m:ci>
+	  <m:cn>-5</m:cn>
+	</m:apply>
+      </m:math>V and so the transistor is strongly turned on.
+    </para>
+
+
+    <figure id="fig49">
+      <media id="idm5513104" alt=""><image src="../../media/4.49.png" mime-type="image/png"/></media>
+      <caption>Defining voltages </caption>
+    </figure>
+
+
+    <figure id="fig50">
+      <media id="idm7611904" alt=""><image src="../../media/4.50.png" mime-type="image/png"/></media> <caption> Drain
+      currents for the two transistor as a function of input voltage
+      and <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math></caption>
+    </figure>
+
+
+    <para id="para10">
+      We have a number of different "load lines" in this case, because
+      for each <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>in</m:mi>
+      </m:msub></m:ci></m:math> we have a different curve for both the
+      n and p channel transistors. This is shown in <link target-id="fig51"/>. The black spots show the point of
+      intersection. Follow a few of the curves along to see if you
+      agree with where the spots have been placed. We have also added
+      a pair of dotted curves for
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>in</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:cn>2.5</m:cn>
+	</m:apply>
+      </m:math>V so we can get the "turn-over" point. Projecting the
+      location of the black dots to the
+      <m:math><m:ci><m:msub><m:mi>V</m:mi>
+      <m:mrow><m:mi>ds</m:mi><m:mo>-</m:mo><m:mi>n</m:mi>
+      </m:mrow></m:msub></m:ci></m:math> (or
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>out</m:mi>
+      </m:msub></m:ci></m:math>) axis will gives us a value for
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>out</m:mi>
+      </m:msub></m:ci></m:math> for each of the input voltages,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>in</m:mi>
+      </m:msub></m:ci></m:math>.  The resulting curve is shown in
+      <link target-id="fig52"/>.  This gives us a good "feel" for how the
+      inverter works, and how the output varies with the input. Note
+      that this transfer curve is quite symmetric about 2.5 volts, and
+      goes all the way from +5 to 0 volts on the output.
+    </para>
+
+
+    <figure id="fig51">
+      <media id="idm4318496" alt=""><image src="../../media/4.51.png" mime-type="image/png"/></media>
+      <caption>Getting the transfer function</caption>
+    </figure>
+
+
+    <figure id="fig52">
+      <media id="idm10443328" alt=""><image src="../../media/4.52.png" mime-type="image/png"/></media>
+      <caption>CMOS inverter transfer characteristics</caption>
+    </figure>
+
+
+
+  </content>
+  
+</document>

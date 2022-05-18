@@ -1,0 +1,506 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Finding the Load Impedance</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>887fd78c-e5de-4536-85fe-ef17f018c4cb</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">Let's move on to some other Smith Chart
+      applications. Suppose, somehow, we can obtain a plot of
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> on a line with some unknown load on it. The data might
+      look like <link target-id="fig1"/>. What can we tell from this plot? Well,
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">V</m:ci>
+	    <m:ci>max</m:ci>
+	  </m:apply>
+	  <m:cn>1.7</m:cn>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">V</m:ci>
+	    <m:ci>min</m:ci>
+	  </m:apply>
+	  <m:cn>0.3</m:cn>
+	</m:apply>
+      </m:math> which means
+      <equation id="eq1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>VSWR</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1.7</m:cn>
+	      <m:cn>0.3</m:cn>
+	    </m:apply>
+	    <m:cn>5.667</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>and hence
+      <equation id="eq2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:abs/>
+	      <m:ci>Γ</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:ci>VSWR</m:ci>
+		<m:cn>1</m:cn>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:ci>VSWR</m:ci>
+		<m:cn>1</m:cn>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>4.667</m:cn>
+	      <m:cn>6.667</m:cn>
+	    </m:apply>
+	    <m:cn>0.7</m:cn>
+	  </m:apply>
+	</m:math>
+      </equation>
+      
+      <figure id="fig1">
+	<title>A Standing Wave Pattern</title>
+	<media id="idp10784672" alt=""><image src="../../media/806.png" mime-type="image/png"/></media>
+      </figure>
+      
+      Since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:abs/>
+	    <m:apply>
+	      <m:ci type="fn">r</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:abs/>
+	    <m:ci>Γ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, we can plot
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> on the Smith Chart, as shown <link target-id="fig2">here</link>. We do this by setting the compass at
+      a radius of 0.7 and drawing a circle! Now,
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> is <emphasis>somewhere</emphasis> on this circle. We
+      just do not know where yet! There is more information to be
+      gleaned from the VSWR plot however.
+
+      <figure id="fig2"><title>The VSWR Circle</title><media id="idp13597184" alt=""><image src="../../media/807.png" mime-type="image/png" print-width="3in"/></media></figure>
+
+      Firstly, we note that the plot has a periodicity of about 10
+      cm. This means that λ the wavelength of the signal on the
+      line is 20 cm. Why? According to <link document="m1055" target-id="eqn5">this</link> equation,
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:apply>
+	    <m:ci type="fn">V</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> goes as
+      <m:math>
+	<m:apply>
+	  <m:cos/>
+	  <m:apply>
+	    <m:ci type="fn">φ</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:ci type="fn">φ</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:apply>
+	    <m:minus/>
+	    <m:msub>
+	      <m:mi>θ</m:mi>
+	      <m:mi>Γ</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>2</m:cn>
+	      <m:ci>β</m:ci>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> and
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>β</m:ci>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>2</m:cn>
+	      <m:pi/>
+	    </m:apply>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, thus
+      <m:math>
+	<m:apply>
+	  <m:abs/>
+	  <m:apply>
+	    <m:ci type="fn">V</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> goes as
+      <m:math>
+	<m:apply>
+	  <m:cos/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>4</m:cn>
+	      <m:pi/>
+	      <m:ci>s</m:ci>
+	    </m:apply>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. Thus each
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>λ</m:ci>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>, we are back to where we started.
+    </para>   
+
+    <para id="para2">Secondly, we note that there is a voltage minima
+      at about 2.5 cm away from the load. Where on <link target-id="fig2"/> would we expect to find a voltage minima? It
+      would be where
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math> has a phase angle of
+      <m:math>
+	<m:msup>
+	  <m:mn>180</m:mn>
+	  <m:mo>°</m:mo>
+	</m:msup>
+      </m:math> or point "A" shown in <link target-id="fig3">here</link>. The voltage minima is
+      <emphasis>always</emphasis> where the VSWR circle passes through
+      the real axis on the left hand side. (Conversely a voltage
+      maxima is where the circle goes through the real axis on the
+      right hand side.) We don't really care about
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> at a voltage minima, what we want is
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:apply>
+	    <m:ci type="fn">Z</m:ci>
+	    <m:apply>
+	      <m:eq/>
+	      <m:ci>s</m:ci>
+	      <m:cn>0</m:cn>
+	    </m:apply>
+	  </m:apply>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>, the normalized load impedance. This should be easy! If
+      we start at "A" and go
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>2.5</m:cn>
+	    <m:cn>20</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>0.125</m:cn>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> <emphasis>towards the load</emphasis> we should end up
+      at the point corresponding to
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math>. The arrow on the mini-Smith Chart says "Wavelengths
+      towards generator" If we start at A, and want to go towards the
+      <term>load</term>, we had better go around the opposite
+      direction from the arrow. (Actually, as you can see on a
+      <emphasis>real</emphasis> Smith Chart, there are arrows pointing
+      in both directions, and they are appropriately marked for your
+      convenience.)
+
+      <figure id="fig3"><title>Location of a Vmin</title><media id="idp8228576" alt=""><image src="../../media/808.png" mime-type="image/png" print-width="3in"/></media></figure>
+
+      So we start at "A" go
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.125</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> in a counter-clockwise direction, and mark a new point
+      "B" which represents our
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> which appears to be about
+      <m:math>
+	<m:cn type="complex-cartesian">0.35<m:sep/>-0.95</m:cn>
+      </m:math> or so <link target-id="fig4"/>. Thus, the load in this
+      case (assuming a
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>50</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math> line impedance) is a resistor, again by co-incidence of about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>50</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math>, in series with a capacitor with a negative reactance
+      of about
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>47.5</m:cn>
+	  <m:ci>Ω</m:ci>
+	</m:apply>
+      </m:math>. Note that we could have started at the minima at 12.5
+      cm or even 22.5 cm, and then have rotated
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>12.5</m:cn>
+	    <m:cn>20</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>0.625</m:cn>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> or
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>22.5</m:cn>
+	    <m:cn>20</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>1.125</m:cn>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> towards the load. Since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>λ</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>0.5</m:cn>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> means one complete rotation around the Smith Chart, we
+      would have ended up at the same spot, with the same
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> that we already have! We could also have started at a
+      maxima, at say 7.5 cm, marked our starting point on the right hand
+      side of the Smith chart, and then we would go
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.375</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> counterclockwise and again, we'd end up at "B".
+
+      <figure id="fig4"><title>Moving from Vmin to the Load</title><media id="idp7032176" alt=""><image src="../../media/809.png" mime-type="image/png" print-width="3in"/></media></figure>
+
+      Now, <link target-id="fig5">here</link> is another example. In this
+      case the
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>VSWR</m:ci>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>1.5</m:cn>
+	    <m:cn>0.5</m:cn>
+	  </m:apply>
+	  <m:cn>3</m:cn>
+	</m:apply>
+      </m:math>, which means
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:abs/>
+	    <m:ci>Γ</m:ci>
+	  </m:apply>
+	  <m:cn>0.5</m:cn>
+	</m:apply>
+      </m:math> and we get a circle as shown in <link target-id="fig6"/>.
+      The wavelength
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>λ</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>2</m:cn>
+	    <m:apply>
+	      <m:minus/>
+	      <m:cn>25</m:cn>
+	      <m:cn>10</m:cn>
+	    </m:apply>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>30</m:cn>
+	    <m:ci>cm</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. The first minima is thus a distance of
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:cn>10</m:cn>
+	    <m:cn>30</m:cn>
+	  </m:apply>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>0.333</m:cn>
+	    <m:ci>λ</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> from the load. So we again start at the minima, "A"
+      and now rotate as distance
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.333</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> <emphasis>towards the load</emphasis>. 
+
+      <figure id="fig5">
+	<title>Another Standing Wave Pattern</title>
+	<media id="idp15801824" alt=""><image src="../../media/810.png" mime-type="image/png"/></media>
+      </figure>
+      
+      <figure id="fig6"><title>The VSWR Circle</title><media id="idp12592640" alt=""><image src="../../media/811.png" mime-type="image/png" print-width="3in"/></media></figure>
+    </para>
+
+  </content>
+  
+</document>

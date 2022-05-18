@@ -1,0 +1,422 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Distributed Parameters</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>1506daf6-e295-4252-97ba-42c3178c2463</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">Having learned something about how we
+      generate signals with bipolar and field effect transistors, we
+      now turn our attention to the problem of getting those signals
+      from one place to the next. Ever since Samuel Morse (and the
+      founder of <emphasis>my alma mater</emphasis>, Ezra Cornell)
+      demonstrated the first working telegraph, engineers and
+      scientists have been working on the problem of describing and
+      predicting how electrical signals behave as they travel down
+      specific structures called <term>transmission lines</term>.
+    </para>
+
+    <para id="para2">Any electrical structure which carries a signal
+      from one point to another can be considered a transmission
+      line. Be it a long-haul coaxial cable used in the Internet, a
+      twisted pair in a building as part of a local-area network, a
+      cable connecting a PC to a printer, a bus layout on a
+      motherboard, or a metallization layer on a integrated circuit,
+      the fundamental behavior of all of these structures are
+      described by the same basic equations. As computer switching
+      speeds run into the 100s of MHz, into the GHz range,
+      considerations of transmission line behavior are ever more
+      critical, and become a more dominant force in the performance
+      limitations of any system.
+    </para>
+
+    <para id="para3">For our initial purposes, we will introduce a
+      "generic" transmission line <link target-id="fig1"/>, which will
+      incorporate most (but not all) features of real transmission
+      lines. We will then make some rather broad simplifications,
+      which, while rendering our results less applicable to real-life
+      situations, nevertheless <emphasis>greatly</emphasis> simplify
+      the solutions, and lead us to insights that we can indeed apply
+      to a broad range of situations.
+
+      <figure id="fig1">
+	<title>"Generic" Transmission Line</title>
+	<media id="idp2065104" alt=""><image src="../../media/6_01.png" mime-type="image/png"/></media>
+      </figure>
+
+      The generic line consists of two conductors. We will suppose a
+      potential difference
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>
+      exists between the two conductors, and that a current
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>
+      flows down one conductor, and returns via the other. For the
+      time being, we will let the transmission line be
+      "semi-infinite", which means we have access to the line at some
+      point <m:math><m:ci>x</m:ci></m:math>, but the line then extends
+      out in the
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>
+      direction to infinity. (Such lines are a bit difficult to handle
+      in the lab!)
+    </para>
+
+    <para id="para4">
+      In order to be able to describe how
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">V</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>
+      and
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">I</m:ci>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>
+      behave on this line, we have to make some kind of
+      <emphasis>model</emphasis> of the electrical characteristics
+      of the line itself. We can not just make up any model we want however;
+      we have to base the model on physical realities.
+    </para>
+
+    <para id="para5">
+      Let's start out by just considering one of the conductors and
+      the physical effects of current flowing though that
+      conductor. We know from freshman physics that a current flowing
+      in a wire gives rise to a magnetic field,
+      <m:math><m:ci>H</m:ci></m:math> (<link target-id="fig2"/>). Multiply
+      <m:math><m:ci>H</m:ci></m:math> by
+      <m:math><m:ci>μ</m:ci></m:math> and you get
+      <m:math><m:ci>B</m:ci></m:math>, the magnetic flux density, and
+      then integrate <m:math><m:ci>B</m:ci></m:math> over a plane
+      parallel to the wires and you get
+      <m:math><m:ci>Φ</m:ci></m:math>, the magnetic flux "linking"
+      the circuit. This is shown in <link target-id="fig3"/> for at least
+      part of the surface.  The definition of
+      <m:math><m:ci>L</m:ci></m:math>, the inductance of a circuit
+      element, is just
+
+      <equation id="eqn1">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:ci>L</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>Φ</m:ci>
+	      <m:ci>I</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      where <m:math><m:ci>Φ</m:ci></m:math> is the flux linking
+      the circuit element, and <m:math><m:ci>I</m:ci></m:math> is the
+      current flowing through it. Our only problem in finding
+      <m:math><m:ci>Φ</m:ci></m:math> is that the longer a section
+      of wire we take, the more <m:math><m:ci>Φ</m:ci></m:math> we
+      have for the same <m:math><m:ci>I</m:ci></m:math>. Thus, we will
+      introduce the concept of a distributed parameter.
+
+      <definition id="distpara">
+	<term>distributed parameter</term> <meaning id="idp259520">A distributed
+	  parameter is a parameter which is spread throughout a
+	  structure and is not confined to a lumped element such as a
+	  coil of wire. </meaning>
+	<example id="distinduct">
+	  <para id="expara">
+	    For instance, we will hereby define <m:math><m:mi fontweight="bold">L</m:mi></m:math> as the
+	    <term>distributed inductance</term> for the transmission
+	    line. It has units of Henrys/meter. If we have a length of
+	    transmission line
+	    <m:math>
+	      <m:msub>
+		<m:mi>x</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:math> meters long, and if that line has a distributed
+	    inductance of <m:math><m:mi fontweight="bold">L</m:mi></m:math> H/m, then the
+	    inductance <m:math><m:ci>L</m:ci></m:math> of that length
+	    of line is just
+	    <m:math>
+	      <m:apply>
+		<m:eq/>
+		<m:ci>L</m:ci>
+		<m:apply>
+		  <m:times/>
+		  <m:mi fontweight="bold">L</m:mi>
+		  <m:msub>
+		    <m:mi>x</m:mi>
+		    <m:mn>0</m:mn>
+		  </m:msub>
+		</m:apply>
+	      </m:apply>
+	    </m:math>.
+	  </para>
+	</example>
+      </definition>
+
+      <figure id="fig2">
+	<title>Build Up of Magnetic Field</title>
+	<media id="idm948592" alt=""><image src="../../media/6_02.png" mime-type="image/png"/></media>
+      </figure>
+
+      Likewise, if we have two conductors separated by some distance,
+      and if there is a potential difference
+      <m:math><m:ci>V</m:ci></m:math> between the conductors, then
+      there must be some charge
+      <m:math>
+	<m:apply>
+	  <m:mo>±</m:mo>
+	  <m:ci>Q</m:ci>
+	</m:apply>
+      </m:math>
+      on the two conductors which gives rise to that potential
+      difference.  We can imagine a linear charge distribution on the
+      transmission line, <m:math><m:ci>ρ</m:ci></m:math> (C/m),
+      where we have
+      <m:math>
+	<m:apply>
+	  <m:plus/>
+	  <m:ci>ρ</m:ci>
+	</m:apply>
+      </m:math> Coulombs/m on one conductor, and
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci>ρ</m:ci>
+	</m:apply>
+      </m:math>
+      Coulombs/m on the other conductor. For a line of length
+      <m:math>
+	<m:msub>
+	  <m:mi>x</m:mi>
+	  <m:mn>0</m:mn>
+	</m:msub>
+      </m:math>, we would have
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>Q</m:ci>
+	  <m:apply>
+	    <m:mo>±</m:mo>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>ρ</m:ci>
+	      <m:msub>
+		<m:mi>x</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+      on each section of wire. Whenever you have two charged
+      conductors with a voltage difference between them, you can
+      describe the ratio of the charge to the voltage as a
+      capacitance. The two conductors would have a capacitance
+
+      <equation id="eqn2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>C</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>Q</m:ci>
+	      <m:ci>V</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>ρ</m:ci>
+		<m:msub>
+		  <m:mi>x</m:mi>
+		  <m:mn>0</m:mn>
+		</m:msub>
+	      </m:apply>
+	      <m:ci>V</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      and a distributed capacitance <m:math><m:mi fontweight="bold">C</m:mi>
+      </m:math>
+      (F/m) which is just
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>ρ</m:ci>
+	  <m:ci>V</m:ci>
+	</m:apply>
+      </m:math>. A length of line
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>x</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:ci>
+      </m:math> long would have a capacitance
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>C</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:mi fontweight="bold">C</m:mi>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>x</m:mi>
+		<m:mn>0</m:mn>
+	      </m:msub>
+	    </m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> Farads associated with it <link target-id="fig4"/>.
+
+      <figure id="fig3">
+	<title>Find the Flux Linkage</title>
+	<media id="idm6587296" alt=""><image src="../../media/6_03.png" mime-type="image/png"/></media>
+      </figure>
+      
+      <figure id="fig4">
+	<title>Line Capacitance</title>
+	<media id="idp1186288" alt=""><image src="../../media/6_04.png" mime-type="image/png"/></media>
+      </figure>
+
+      Thus, we see that the transmission line has both a distributed
+      inductance
+      <m:math>
+	<m:mi fontweight="bold">L</m:mi>
+      </m:math> and a distributed capacitance
+      <m:math>
+	<m:mi fontweight="bold">C</m:mi>
+      </m:math>
+      which are tied up with each other. There is really no way in
+      which we can separate one from the other. In other words, we can
+      not have only the capacitance, or only the inductance, there
+      will always be some of each associated with each section of line
+      now matter how small or how big we make it.
+    </para>
+
+    <para id="para6">We are now ready to build our model. What we want
+      to do is to come up with some arrangement of inductors and
+      capacitors which will represent electrically, the properties of
+      the distributed capacitance and inductance we discussed
+      above. As a length of line gets longer, its capacitance
+      increases, so we had better put the distributed capacitances in
+      parallel with one another, since that is the way capacitors add
+      up. Also, as the line gets longer, its total inductance
+      increases, so we had better put the distributed inductances in
+      series with one another, for that is the way inductances add
+      up. <link target-id="fig5"/> is a representation of the distributed
+      inductance and capacitance of the generic transmission line.
+
+      <figure id="fig5">
+	<title>Distributed Parameter Model</title>
+	<media id="idm73744" alt=""><image src="../../media/6_05.png" mime-type="image/png"/></media>
+      </figure>
+
+      We break the line up into sections
+      <m:math>
+	<m:apply>
+	  <m:mo>Δ</m:mo>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>
+      long, each one with an inductance
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:mi fontweight="bold">L</m:mi>
+	  <m:apply>
+	    <m:mo>Δ</m:mo>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+      and a capacitance
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:mi fontweight="bold">C</m:mi>
+	  <m:apply>
+	    <m:mo>Δ</m:mo>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>. If we halve
+      <m:math>
+	<m:apply>
+	  <m:mo>Δ</m:mo>
+	  <m:ci>x</m:ci>
+	</m:apply>
+      </m:math>, we would halve the inductance and capacitance of each
+      section, but we'd have twice as many of them per unit
+      length. Duh! The point is no matter how fine we make
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:mi fontweight="bold">C</m:mi>
+	  <m:apply>
+	    <m:mo>Δ</m:mo>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, we still have Ls and Cs arranged like we see in <link target-id="fig5"/>, with the two kinds of components intermixed.
+    </para>
+
+    <para id="para7"> We <emphasis>could</emphasis> make a more
+      realistic model and realize that all real wires have series
+      resistance associated with them and that whatever we use to keep
+      the two conductors separated will have some leakage conductance
+      associated it. To account for this we would introduce a series
+      resistance
+      <m:math>
+	<m:mi fontweight="bold">R</m:mi>
+      </m:math> (ohms/unit length) and a series conductance
+      <m:math>
+	<m:mi fontweight="bold">G</m:mi>
+      </m:math> (ohms/unit length). One section of our line model then
+      looks like <link target-id="fig6"/>.
+      
+      <figure id="fig6">
+	<title>Complete Distributed Model</title>
+	<media id="idm7357472" alt=""><image src="../../media/6_06.png" mime-type="image/png"/></media>
+      </figure>
+
+      Although this <emphasis>is</emphasis> a more realistic model, it
+      leads to much more complicated math. We will start out anyway,
+      ignoring the series resistance
+      <m:math>
+	<m:mi fontweight="bold">R</m:mi>
+      </m:math> and the shunt conductance
+      <m:math>
+	<m:mi fontweight="bold">G</m:mi> </m:math>. This
+      "approximation" turns out to be pretty good as long as either
+      the line is not too long, or the frequencies of the signals we
+      are sending down the line do not get too high. Without the
+      series resistance or parallel conductance we have what is called
+      an ideal <term>lossless transmission line</term>.
+    </para>
+  </content>
+  
+</document>

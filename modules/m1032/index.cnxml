@@ -1,0 +1,86 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Introduction to IC Manufacturing Technology</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>f36e4459-c49c-42de-bb00-1550666f4c39</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      It would probably be interesting to spend a little time seeing
+      how integrated circuits are made. This chapter will be long on
+      description, and rather short on equations (yay!). This is not
+      to say that there is not a lot of analytical work in the IC
+      fabrication process. It's just that things get <emphasis>very
+      </emphasis>complicated in a hurry, and so we probably are better
+      off just looking at most processes from a qualitative point of
+      view.
+    </para>
+
+
+    <para id="p2">
+      Let's start out by taking a look at the state of the industry,
+      and remark on a few trends. <link target-id="fig01"/> is a plot of
+      IC sales in the United States over the past 30 years. This might
+      not be a bad field to get into! Maybe there will be a job or two
+      out there when you are ready to graduate.
+    </para>
+
+
+    <figure id="fig01">
+      <media id="idm2165392" alt=""><image src="../../media/5.01.png" mime-type="image/png"/></media>
+      <caption>Growth of IC Business</caption>
+    </figure>
+
+
+    <para id="p3">
+      There has been a steady shift away from bipolar technology to
+      MOS as is shown in <link target-id="fig02"/>. Currently, about 90%
+      of the market is composed of MOS devices, and only about 10% of
+      bipolar. This is likely to be the case for some time to
+      come. The change in slope, where MOS starts taking over from
+      bipolar at a more rapid rate about 1987 is when CMOS technology
+      really started to come into heavy use. At that point, bipolar
+      TTL logic essentially faded to zero.
+    </para>
+
+
+    <figure id="fig02">
+      <media id="idm1307936" alt=""><image src="../../media/5.02.png" mime-type="image/png"/></media>
+      <caption>Percentage of Business</caption>
+    </figure>
+
+
+    <para id="p4">
+      As you probably are aware, devices have been getting smaller and
+      smaller, and chips have been getting bigger and bigger with
+      time. A most <link target-id="fig03">impressive plot</link> is one
+      which shows the number of components/chip as a function of time.
+    </para>
+
+
+    <figure id="fig03">
+      <media id="idm2925232" alt=""><image src="../../media/5.03.png" mime-type="image/png"/></media>
+      <caption>Number of transistors/chip</caption>
+    </figure>
+
+
+    <para id="p5">
+      One of the main drivers for this has been feature size, which
+      shows the same nearly exponential behavior as
+      components/chip. This is plotted in <link target-id="fig04"/> for
+      your education. What is interesting to note about this is that
+      certain "doom sayers" have been predicting an abrupt halt to
+      this curve for some time now. It stands to reason that you can
+      not image something which is finer than
+      <m:math><m:mi>λ</m:mi></m:math>, the wavelength of the
+      light you use to project it with. However, by going to the
+      ultraviolet, and using a variety of image enhancing techniques,
+      lithographic engineers continue to be able to make finer and
+      finer structures. </para>
+
+    <figure id="fig04">
+      <media id="idm2209264" alt=""><image src="../../media/5.04.png" mime-type="image/png"/></media>
+      <caption>Feature size with time</caption>
+    </figure>
+  </content>
+  
+</document>

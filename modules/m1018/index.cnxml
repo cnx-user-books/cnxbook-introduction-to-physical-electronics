@@ -1,0 +1,1066 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Small Signal Models</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>7b1e8fe5-c770-4c24-8a7e-89690f85fd60</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">
+      In order to do this we need to introduce the concept of
+      <term>bias</term>, and <term>large signal</term> and <term>small
+      signal device</term> behavior.  Consider the following circuit,
+      shown in <link target-id="fig11"/>.  We are applying
+      the sum of two voltages to the diode,
+
+      <m:math>
+        <m:ci>
+          <m:msub>
+            <m:mi>V</m:mi>
+            <m:mi>B</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:math>,
+
+      the <term>bias voltage</term> (which is assumed to be a DC
+      voltage) and vs the <term>signal voltage</term> (which is
+      assumed to be AC, or sinusoidal).  By definition, we will assume
+      that
+      <m:math>
+        <m:apply><m:abs/>
+          <m:ci>
+            <m:msub>
+              <m:mi>v</m:mi>
+              <m:mi>s</m:mi>
+            </m:msub>
+          </m:ci>
+        </m:apply>
+      </m:math>
+
+      is much less than
+      <m:math>
+        <m:apply><m:abs/>
+          <m:ci>
+            <m:msub>
+              <m:mi>V</m:mi>
+              <m:mi>B</m:mi>
+            </m:msub>
+          </m:ci>
+        </m:apply>
+      </m:math>
+
+      As a result of these voltages, there will be a current
+
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>B</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      flowing through the diode which will consist of two currents,
+
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>B</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      the so-called <term>bias current</term>, and
+
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>i</m:mi>
+	    <m:mi>s</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>,
+
+      which will be the <term>signal current</term>.  Again, we
+      assume that
+
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>i</m:mi>
+	    <m:mi>s</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      is much smaller than
+
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>B</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>.
+    </para>
+
+    <figure id="fig11">
+      <media id="idp531024" alt=""><image src="../../media/3_11.png" mime-type="image/png"/></media>
+      <caption>
+	Putting together a large signal bias, and a small signal AC
+	excitation
+      </caption>
+    </figure>
+
+    <para id="para2">
+      What we would like to do is to see if we can find a linear
+      relationship between
+
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>v</m:mi>
+	    <m:mi>s</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      and
+
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>i</m:mi>
+	    <m:mi>s</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      which we could use in our signal analysis.  There are two ways
+      we can attack the problem; a graphical approach, and a purely
+      mathematical approach.  Lets try the graphical approach first,
+      as it is more intuitive, and then we will confirm what we find
+      out with a mathematical one.
+    </para>
+
+    <para id="para3">
+      Let's remind ourselves about the I-V characteristics of a diode.
+      In the present situation,
+
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>D</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      is the sum of two voltages, a DC bias voltage
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>B</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      and an AC signal,
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>v</m:mi>
+	    <m:mi>s</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      Let's plot
+      <m:math>
+        <m:apply>
+          <m:ci type="fn">
+            <m:msub>
+              <m:mi>V</m:mi>
+              <m:mi>D</m:mi>
+            </m:msub>
+          </m:ci>
+          <m:ci>t</m:ci>
+        </m:apply>
+      </m:math>
+
+      on the
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>D</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      axis as shown in <link target-id="fig13"/>.  How are we going to
+      figure out what the current is?  What we need to do is to
+      project the voltage up onto the characteristic I-V curve, and
+      then project over to the vertical current axis We do this in
+      <link target-id="fig14"/>.  Note that the output current signal is
+      somewhat distorted, which means we do not have linear behavior
+      yet.  Let's reduce the amplitude of the signal voltage, as
+      shown in <link target-id="fig15"/>.  Now we see two things: a) the
+      output is much less distorted, so we must getting a more linear
+      behavior, and b) we could get the amplitude of the output signal
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>i</m:mi>
+	    <m:mi>s</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      simply by multiplying the input signal
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>v</m:mi>
+	    <m:mi>s</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      by the slope of the I-V curve at the point where the device is
+      biased.  <emphasis>We have replaced the non-linear I-V curve of
+      the diode by a linear one, which is applicable over the range of
+      the signal voltage.</emphasis>
+
+      <equation id="eqn15">
+        <m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>i</m:mi>
+		<m:mi>s</m:mi>
+	      </m:msub>
+	    </m:ci>
+	    <m:apply>
+	      <m:csymbol definitionURL="http://cnx.rice.edu/cd/cnxmath.ocd#evaluateat"/>
+	      <m:bvar>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>D</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:bvar>
+	      <m:lowlimit>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>B</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:lowlimit>
+	      <m:apply>
+		<m:diff/>
+		<m:bvar>
+		  <m:ci><m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>D</m:mi>
+		    </m:msub></m:ci>
+		</m:bvar>
+		<m:ci><m:msub>
+                  <m:mi>I</m:mi>
+                  <m:mi>D</m:mi>
+		  </m:msub></m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+        </m:math>
+      </equation>
+
+    </para>
+
+    <figure id="fig12">
+      <media id="idm8282928" alt=""><image src="../../media/3_12.png" mime-type="image/png"/></media>
+      <caption>Diode I-V behavior</caption>
+    </figure>
+
+    <figure id="fig13">
+      <media id="idp4866112" alt=""><image src="../../media/3_13.png" mime-type="image/png"/></media>
+      <caption>
+	Bias and signal excitation of a diode I-V curve</caption>
+    </figure>
+
+    <figure id="fig14">
+      <media id="idp5782096" alt=""><image src="../../media/3_14.png" mime-type="image/png"/></media>
+      <caption>Graphically finding the AC response</caption>
+    </figure>
+
+    <figure id="fig15">
+      <media id="idp793472" alt=""><image src="../../media/3_15.png" mime-type="image/png"/></media>
+      <caption>
+	With a smaller signal, the response is more linear</caption>
+    </figure>
+
+    <para id="para4">
+      To get the slope, we need a few simple equations:
+
+      <equation id="eqn16">
+	<m:math>
+	  <m:apply>
+	    <m:approx/>
+
+	    <m:apply>
+	      <m:eq/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>D</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:apply><m:times/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>sat</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:apply><m:minus/>
+		  <m:apply><m:exp/>
+		    <m:apply><m:divide/>
+		      <m:apply><m:times/>
+			<m:ci>q</m:ci>
+			<m:ci>
+			  <m:msub>
+			    <m:mi>V</m:mi>
+			    <m:mi>D</m:mi>
+			  </m:msub>
+			</m:ci>
+		      </m:apply>
+		      <m:apply><m:times/>
+			<m:ci>k</m:ci>
+			<m:ci>T</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		  <m:cn>1</m:cn>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply><m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>sat</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:apply><m:exp/>
+		<m:apply><m:divide/>
+		  <m:apply><m:times/>
+		    <m:ci>q</m:ci>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>D</m:mi>
+		      </m:msub>
+		    </m:ci>
+		  </m:apply>
+		  <m:apply><m:times/>
+		    <m:ci>k</m:ci>
+		    <m:ci>T</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <equation id="eqn17">
+	<m:math>
+	  <m:apply><m:eq/>
+
+	    <m:apply><m:diff/>
+	      <m:bvar>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>D</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:bvar>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>D</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+
+	    <m:apply><m:times/>
+	      <m:apply><m:divide/>
+		<m:ci>q</m:ci>
+		<m:apply><m:times/>
+		  <m:ci>k</m:ci>
+		  <m:ci>T</m:ci>
+		</m:apply>
+	      </m:apply>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>sat</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:apply>
+		<m:exp/>
+		<m:apply><m:divide/>
+		  <m:apply><m:times/>
+		    <m:ci>q</m:ci>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>D</m:mi>
+		      </m:msub>
+		    </m:ci>
+		  </m:apply>
+		  <m:apply><m:times/>
+		    <m:ci>k</m:ci>
+		    <m:ci>T</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	  </m:apply>
+	</m:math>
+      </equation>
+
+    </para>
+
+    <para id="para7">
+      When we evaluate the partial derivative at voltage
+
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>V</m:mi>
+	    <m:mi>D</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>,
+      we note that
+
+      <equation id="eqn18">
+	<m:math>
+	  <m:apply><m:eq/>
+
+	    <m:apply><m:times/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>sat</m:mi>
+		</m:msub>
+	      </m:ci>
+	      <m:apply><m:exp/>
+		<m:apply><m:divide/>
+		  <m:apply><m:times/>
+		    <m:ci>q</m:ci>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>D</m:mi>
+		      </m:msub>
+		    </m:ci>
+		  </m:apply>
+		  <m:apply><m:times/>
+		    <m:ci>k</m:ci>
+		    <m:ci>T</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:ci>
+	      <m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>B</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      and hence, the slope of the curve is just
+      <m:math>
+        <m:apply><m:times/>
+          <m:apply><m:divide/>
+            <m:ci>q</m:ci>
+            <m:apply><m:times/>
+              <m:ci>k</m:ci>
+              <m:ci>T</m:ci>
+	    </m:apply>
+          </m:apply>
+          <m:ci>
+            <m:msub>
+              <m:mi>I</m:mi>
+              <m:mi>B</m:mi>
+            </m:msub>
+          </m:ci>
+        </m:apply>
+      </m:math>
+
+      or
+      <m:math>
+        <m:apply><m:times/>
+          <m:cn>40</m:cn>
+          <m:ci>
+            <m:msub>
+              <m:mi>I</m:mi>
+              <m:mi>B</m:mi>
+            </m:msub>
+          </m:ci>
+        </m:apply>
+      </m:math>,
+
+      since
+      <m:math>
+        <m:apply><m:divide/>
+          <m:ci>q</m:ci>
+          <m:apply><m:times/>
+	    <m:ci>k</m:ci>
+	    <m:ci>T</m:ci>
+          </m:apply>
+        </m:apply>
+      </m:math>
+
+      just has a value of
+      <m:math>
+        <m:apply><m:times/>
+          <m:cn>40</m:cn>
+	  <m:apply>
+	    <m:inverse/>
+	    <m:ci>V</m:ci>
+	  </m:apply>
+        </m:apply>
+      </m:math>
+
+      at room temperatures.  Note that current divided by voltage is
+      just conductance, (which is just the inverse of resistance) and
+      so we have found the <emphasis>small signal linear conductance
+      for the diode</emphasis>.
+    </para>
+
+    <para id="para8">
+      As far as the AC signal generator is concerned, we could replace
+      the diode with a resistor whose value is the inverse of the
+      conductance, or
+
+      <m:math>
+        <m:apply><m:eq/>
+          <m:ci>r</m:ci>
+          <m:apply><m:times/>
+            <m:apply><m:divide/>
+              <m:cn>1</m:cn>
+              <m:cn>40</m:cn>
+            </m:apply>
+            <m:ci>
+              <m:msub>
+                <m:mi>I</m:mi>
+                <m:mi>B</m:mi>
+              </m:msub>
+            </m:ci>
+          </m:apply>
+        </m:apply>
+      </m:math>,
+      where
+
+      <m:math>
+	<m:ci>
+	  <m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>B</m:mi>
+	  </m:msub>
+	</m:ci>
+      </m:math>
+
+      is the DC bias current through the diode.
+    </para>
+
+    <para id="para9">
+      Students are sometimes confused about how we can replace a
+      diode, which only conducts in one direction, with a resistor,
+      which conducts both ways. The answer is to look carefully at
+      <link target-id="fig15" strength="2"/>.  As the AC signal voltage
+      rises and falls, the AC output current also increases and
+      decreases in the same manner.  Over the limited range of the AC
+      signal parameters, the diode is indeed a linear signal element,
+      not a rectifying one, as it is for large signal applications.
+    </para>
+
+    <para id="para10">
+      Now let's get the same answer from a purely mathematical
+      approach.
+
+      <equation id="eqn19">
+        <m:math>
+          <m:apply><m:approx/>
+
+	    <m:apply><m:eq/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>D</m:mi>
+		</m:msub>
+	      </m:ci>
+
+	      <m:apply><m:plus/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>B</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>i</m:mi>
+		    <m:mi>s</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+
+	      <m:apply><m:times/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>sat</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:apply><m:minus/>
+		  <m:apply><m:exp/>
+		    <m:apply><m:divide/>
+		      <m:apply><m:times/>
+			<m:ci>q</m:ci>
+			<m:ci>
+			  <m:msub>
+			    <m:mi>V</m:mi>
+			    <m:mi>D</m:mi>
+			  </m:msub>
+			</m:ci>
+		      </m:apply>
+		      <m:apply><m:times/>
+			<m:ci>k</m:ci>
+			<m:ci>T</m:ci>
+		      </m:apply>
+		    </m:apply>
+		  </m:apply>
+		  <m:cn>1</m:cn>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply><m:exp/>
+	      <m:apply><m:divide/>
+		<m:apply><m:times/>
+		  <m:ci>q</m:ci>
+		  <m:apply><m:plus/>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>B</m:mi>
+		      </m:msub>
+		    </m:ci>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>v</m:mi>
+			<m:mi>s</m:mi>
+		      </m:msub>
+		    </m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply><m:times/>
+		  <m:ci>k</m:ci>
+		  <m:ci>T</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+          </m:apply>
+        </m:math>
+      </equation>
+
+      In the last expression, we dropped the <m:math><m:cn>-1</m:cn>
+      </m:math> as it is very small compared to the exponential term
+      and can be neglected.
+    </para>
+
+    <para id="para11">
+      Now we note that:
+
+      <equation id="eqn20">
+	<m:math>
+	  <m:apply><m:eq/>
+
+	    <m:apply><m:exp/>
+	      <m:apply><m:divide/>
+		<m:apply><m:times/>
+		  <m:ci>q</m:ci>
+		  <m:apply><m:plus/>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>B</m:mi>
+		      </m:msub>
+		    </m:ci>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>v</m:mi>
+			<m:mi>s</m:mi>
+		      </m:msub>
+		    </m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:apply><m:times/>
+		  <m:ci>k</m:ci>
+		  <m:ci>T</m:ci>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	    <m:apply><m:times/>
+	      <m:apply><m:exp/>
+		<m:apply><m:divide/>
+		  <m:apply><m:times/>
+		    <m:ci>q</m:ci>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>V</m:mi>
+			<m:mi>B</m:mi>
+		      </m:msub>
+		    </m:ci>
+		  </m:apply>
+		  <m:apply><m:times/>
+		    <m:ci>k</m:ci>
+		    <m:ci>T</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	      <m:apply><m:exp/>
+		<m:apply><m:divide/>
+		  <m:apply><m:times/>
+		    <m:ci>q</m:ci>
+		    <m:ci>
+		      <m:msub>
+			<m:mi>v</m:mi>
+			<m:mi>s</m:mi>
+		      </m:msub>
+		    </m:ci>
+		  </m:apply>
+		  <m:apply><m:times/>
+		    <m:ci>k</m:ci>
+		    <m:ci>T</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      And, for the second exponential, if
+      <m:math>
+        <m:apply><m:times/>
+          <m:ci>q</m:ci>
+          <m:ci>
+            <m:msub>
+              <m:mi>V</m:mi>
+              <m:mi>B</m:mi>
+            </m:msub>
+          </m:ci>
+        </m:apply>
+      </m:math>
+
+      is much less than
+      <m:math>
+        <m:apply><m:times/>
+          <m:ci>k</m:ci>
+          <m:ci>T</m:ci>
+        </m:apply>
+      </m:math>,
+
+      <equation id="eqn21">
+        <m:math>
+          <m:apply><m:approx/>
+
+            <m:apply><m:exp/>
+              <m:apply><m:divide/>
+                <m:apply><m:times/>
+                  <m:ci>q</m:ci>
+                  <m:ci>
+                    <m:msub>
+                      <m:mi>v</m:mi>
+                      <m:mi>s</m:mi>
+                    </m:msub>
+                  </m:ci>
+                </m:apply>
+                <m:apply><m:times/>
+                  <m:ci>k</m:ci>
+                  <m:ci>T</m:ci>
+                </m:apply>
+              </m:apply>
+            </m:apply>
+
+            <m:apply><m:plus/>
+              <m:cn>1</m:cn>
+              <m:apply><m:divide/>
+                <m:apply><m:times/>
+                  <m:ci>q</m:ci>
+                  <m:ci>
+                    <m:msub>
+                      <m:mi>v</m:mi>
+                      <m:mi>s</m:mi>
+                    </m:msub>
+                  </m:ci>
+                </m:apply>
+                <m:apply><m:times/>
+                  <m:ci>k</m:ci>
+                  <m:ci>T</m:ci>
+                </m:apply>
+              </m:apply>
+              <m:ci>…</m:ci>
+            </m:apply>
+          </m:apply>
+        </m:math>
+      </equation>
+
+      where we have used the power series expansion for the
+      exponential, but have only taken the first two terms.  Thus
+
+      <equation id="eqn22">
+        <m:math>
+          <m:apply><m:approx/>
+
+            <m:apply><m:plus/>
+              <m:ci>
+                <m:msub>
+                  <m:mi>I</m:mi>
+                  <m:mi>B</m:mi>
+                </m:msub>
+              </m:ci>
+              <m:ci>
+                <m:msub>
+                  <m:mi>i</m:mi>
+                  <m:mi>s</m:mi>
+                </m:msub>
+              </m:ci>
+            </m:apply>
+
+            <m:apply><m:times/>
+              <m:ci>
+                <m:msub>
+                  <m:mi>I</m:mi>
+                  <m:mi>sat</m:mi>
+                </m:msub>
+              </m:ci>
+              <m:apply><m:exp/>
+                <m:apply><m:divide/>
+                  <m:apply><m:times/>
+                    <m:ci>q</m:ci>
+                    <m:ci>
+                      <m:msub>
+                        <m:mi>V</m:mi>
+                        <m:mi>B</m:mi>
+                      </m:msub>
+                    </m:ci>
+                  </m:apply>
+                  <m:apply><m:times/>
+                    <m:ci>k</m:ci>
+                    <m:ci>T</m:ci>
+                  </m:apply>
+                </m:apply>
+              </m:apply>
+              <m:apply><m:plus/>
+                <m:cn>1</m:cn>
+                <m:apply><m:divide/>
+                  <m:apply><m:times/>
+                    <m:ci>q</m:ci>
+                    <m:ci>
+                      <m:msub>
+                        <m:mi>v</m:mi>
+                        <m:mi>s</m:mi>
+                      </m:msub>
+                    </m:ci>
+                  </m:apply>
+                  <m:apply><m:times/>
+                    <m:ci>k</m:ci>
+                    <m:ci>T</m:ci>
+                  </m:apply>
+                </m:apply>
+              </m:apply>
+            </m:apply>
+          </m:apply>
+        </m:math>
+      </equation>
+
+      Obviously
+
+      <equation id="eqn23">
+        <m:math>
+          <m:apply><m:eq/>
+            <m:ci>
+              <m:msub>
+                <m:mi>I</m:mi>
+                <m:mi>B</m:mi>
+              </m:msub>
+            </m:ci>
+	    <m:apply><m:times/>
+              <m:ci>
+                <m:msub>
+                  <m:mi>I</m:mi>
+                  <m:mi>sat</m:mi>
+                </m:msub>
+              </m:ci>
+              <m:apply><m:exp/>
+                <m:apply><m:divide/>
+                  <m:apply><m:times/>
+                    <m:ci>q</m:ci>
+                    <m:ci>
+                      <m:msub>
+                        <m:mi>V</m:mi>
+                        <m:mi>B</m:mi>
+                      </m:msub>
+                    </m:ci>
+                  </m:apply>
+                  <m:apply><m:times/>
+                    <m:ci>k</m:ci>
+                    <m:ci>T</m:ci>
+                  </m:apply>
+                </m:apply>
+              </m:apply>
+            </m:apply>
+          </m:apply>
+        </m:math>
+      </equation>
+
+      and
+
+      <equation id="eqn24">
+        <m:math>
+          <m:apply><m:eq/>
+            <m:ci>
+              <m:msub>
+                <m:mi>i</m:mi>
+                <m:mi>s</m:mi>
+              </m:msub>
+            </m:ci>
+            <m:apply><m:times/>
+              <m:ci>
+                <m:msub>
+                  <m:mi>I</m:mi>
+                  <m:mi>sat</m:mi>
+                </m:msub>
+              </m:ci>
+              <m:apply><m:exp/>
+                <m:apply><m:divide/>
+                  <m:apply><m:times/>
+                    <m:ci>q</m:ci>
+                    <m:ci>
+                      <m:msub>
+                        <m:mi>V</m:mi>
+                        <m:mi>B</m:mi>
+                      </m:msub>
+                    </m:ci>
+                  </m:apply>
+                  <m:apply><m:times/>
+                    <m:ci>k</m:ci>
+                    <m:ci>T</m:ci>
+                  </m:apply>
+                </m:apply>
+              </m:apply>
+              <m:apply><m:times/>
+                <m:apply><m:divide/>
+                  <m:ci>q</m:ci>
+                  <m:apply><m:times/>
+                    <m:ci>k</m:ci>
+                    <m:ci>T</m:ci>
+                  </m:apply>
+                </m:apply>
+                <m:ci>
+                  <m:msub>
+                    <m:mi>v</m:mi>
+                    <m:mi>s</m:mi>
+                  </m:msub>
+                </m:ci>
+              </m:apply>
+            </m:apply>
+
+            <m:apply><m:times/>
+              <m:apply><m:divide/>
+                <m:ci>q</m:ci>
+                <m:apply><m:times/>
+                  <m:ci>k</m:ci>
+                  <m:ci>T</m:ci>
+                </m:apply>
+              </m:apply>
+              <m:ci>
+                <m:msub>
+                  <m:mi>I</m:mi>
+                  <m:mi>B</m:mi>
+                </m:msub>
+              </m:ci>
+              <m:ci>
+                <m:msub>
+                  <m:mi>v</m:mi>
+                  <m:mi>s</m:mi>
+                </m:msub>
+              </m:ci>
+            </m:apply>
+          </m:apply>
+        </m:math>
+      </equation>
+
+      which gives us the same result as before
+
+      <equation id="eqn25">
+        <m:math>
+          <m:apply><m:eq/>
+            <m:apply><m:divide/>
+              <m:ci>
+                <m:msub>
+                  <m:mi>i</m:mi>
+                  <m:mi>s</m:mi>
+                </m:msub>
+              </m:ci>
+              <m:ci>
+                <m:msub>
+                  <m:mi>v</m:mi>
+                  <m:mi>s</m:mi>
+                </m:msub>
+              </m:ci>
+            </m:apply>
+            <m:apply><m:times/>
+              <m:apply><m:divide/>
+                <m:ci>q</m:ci>
+                <m:apply><m:times/>
+                  <m:ci>k</m:ci>
+                  <m:ci>T</m:ci>
+                </m:apply>
+              </m:apply>
+              <m:ci>
+                <m:msub>
+                  <m:mi>I</m:mi>
+                  <m:mi>B</m:mi>
+                </m:msub>
+              </m:ci>
+            </m:apply>
+          </m:apply>
+        </m:math>
+      </equation>
+    </para>
+  </content>
+  
+</document>

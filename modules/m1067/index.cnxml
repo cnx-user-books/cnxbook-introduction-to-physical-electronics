@@ -1,0 +1,558 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Odds and Ends</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>1a2d4ac2-81e4-4315-9a44-08df9ed10af5</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">Just a few odds and ends. Consider the <link target-id="fig1">following</link> which is called a "cascaded line"
+      problem. These are problems where we have two different
+      transmission lines, with different characteristic
+      impedances. Since we will give all of the distances in
+      wavelengths, λ, we will assume that the λ we are
+      talking about is the appropriate one for the line involved. If
+      the phase velocities on the two lines is the same, then the
+      physical lengths would correspond as well. The approach is
+      relatively straight-forward. First let's plot
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>L</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mn>0</m:mn>
+	  </m:msub>
+	</m:apply>
+      </m:math> on the <link target-id="fig2">Smith Chart</link>. Then we
+      have to rotate
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.2</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> so that we can find
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>A</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mrow>
+	      <m:mn>0</m:mn>
+	      <m:mo>​</m:mo>
+	      <m:mn>1</m:mn>
+	    </m:mrow>
+	  </m:msub>
+	</m:apply>
+      </m:math>, the normalized impedance at point A, the junction
+      between the two lines <link target-id="fig3"/>.
+
+      <figure id="fig1">
+	<title>Cascaded Line</title>
+	<media id="idp11603328" alt=""><image src="../../media/cascadedLine.png" mime-type="image/png"/></media>
+      </figure>
+	    
+      <figure id="fig2">
+	<title>Smith Diagram</title>
+	<media id="idp14935840" alt=""><image src="../../media/smithDiagram.png" mime-type="image/png"/></media>
+      </figure>
+
+      Thus, we find
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mi>A</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mrow>
+		<m:mn>0</m:mn>
+		<m:mo>​</m:mo>
+		<m:mn>1</m:mn>
+	      </m:mrow>
+	    </m:msub>
+	  </m:apply>
+	  <m:cn type="complex-cartesian">0.32<m:sep/>0.6</m:cn>
+	</m:apply>
+      </m:math>. Now we have to <term>renormalize</term> the impedance
+	  so we can move to the line with the new impedance
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mrow>
+	    <m:mn>0</m:mn>
+	    <m:mo>​</m:mo>
+	    <m:mn>2</m:mn>
+	  </m:mrow>
+	</m:msub>
+      </m:math>. Since 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mrow>
+	      <m:mn>0</m:mn>
+	      <m:mo>​</m:mo>
+	      <m:mn>1</m:mn>
+	    </m:mrow>
+	  </m:msub>
+	  <m:apply>
+	    <m:cn>300</m:cn>
+	    <m:ci>Ω</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>A</m:mi>
+	  </m:msub>
+	  <m:cn type="complex-cartesian">96<m:sep/>-180</m:cn>
+	</m:apply>
+      </m:math>. This is the load for the second length of line, so let's find
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>A</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mrow>
+	      <m:mn>0</m:mn>
+	      <m:mo>​</m:mo>
+	      <m:mn>2</m:mn>
+	    </m:mrow>
+	  </m:msub>
+	</m:apply>
+      </m:math>, which is easily found to be
+      <m:math>
+	<m:cn type="complex-cartesian">1.9<m:sep/>-3.6</m:cn>
+      </m:math>, so this can be plotted on the <link target-id="fig4">Smith Chart</link>. Now we have to rotate around
+      another
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:cn>0.15</m:cn>
+	  <m:ci>λ</m:ci>
+	</m:apply>
+      </m:math> so that we can find
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>in</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mrow>
+	      <m:mn>0</m:mn>
+	      <m:mo>​</m:mo>
+	      <m:mn>2</m:mn>
+	    </m:mrow>
+	  </m:msub>
+	</m:apply>
+      </m:math>. This appear to have a value of about
+      <m:math>
+	<m:cn type="complex-cartesian">0.15<m:sep/>-0.45</m:cn>
+      </m:math>, so
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>in</m:mi>
+	  </m:msub>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn type="complex-cartesian">7.5<m:sep/>-22.5</m:cn>
+	    <m:ci>Ω</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math> <link target-id="fig5"/>.
+
+      <figure id="fig3">
+	<title>Towards the Generator</title>
+	<media id="idp741024" alt=""><image src="../../media/generator.png" mime-type="image/png"/></media>
+      </figure>
+
+      <figure id="fig4">
+	<title>More Smith Charts</title>
+	<media id="idp11613088" alt=""><image src="../../media/moreSC.png" mime-type="image/png"/></media>
+      </figure>
+      
+      <figure id="fig5">
+	<title>Even More Smith Charts</title>
+	<media id="idp7710208" alt=""><image src="../../media/evenMoreSC.png" mime-type="image/png"/></media>
+      </figure>
+
+      There is one application of the cascaded line problem that is
+      used quite a bit in practice. Consider the following: We assume
+      that we have a matched line with impedance
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mrow>
+	    <m:mn>0</m:mn>
+	    <m:mo>​</m:mo>
+	    <m:mn>2</m:mn>
+	  </m:mrow>
+	</m:msub>
+      </m:math> and we connect it to another line whose impedance is
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mrow>
+	    <m:mn>0</m:mn>
+	    <m:mo>​</m:mo>
+	    <m:mn>1</m:mn>
+	  </m:mrow>
+	</m:msub>
+      </m:math> <link target-id="fig6"/>. If we connect the two of them
+      together directly, we will have a reflection coefficient at the
+      junction given by
+      <equation id="eq1">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>Γ</m:ci>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:minus/>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mi>​</m:mi>
+		    <m:mn>2</m:mn>
+		  </m:mrow>
+		</m:msub>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mi>​</m:mi>
+		    <m:mn>1</m:mn>
+		  </m:mrow>
+		</m:msub>
+	      </m:apply>
+	      <m:apply>
+		<m:plus/>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mi>​</m:mi>
+		    <m:mn>2</m:mn>
+		  </m:mrow>
+		</m:msub>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mi>​</m:mi>
+		    <m:mn>1</m:mn>
+		  </m:mrow>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <figure id="fig6">
+	<title>Simplified Cascaded Line</title>
+	<media id="idp14838896" alt=""><image src="../../media/simpleCL.png" mime-type="image/png"/></media>
+      </figure>
+
+      Now let's imagine that we have inserted a section of line with length
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>l</m:ci>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>λ</m:ci>
+	    <m:cn>4</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math> and impedance
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mi>m</m:mi>
+	</m:msub>
+      </m:math> <link target-id="fig7"/>. At point A, the junction
+      between the first line and the matchng section, we can find the
+      normalized impedance as
+      <equation id="eq2">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mi>A</m:mi>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+	      <m:mi>M</m:mi>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mrow>
+		  <m:mn>0</m:mn>
+		  <m:mo>​</m:mo>
+		  <m:mn>2</m:mn>
+		</m:mrow>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mi>m</m:mi>
+	      </m:msub>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      <figure id="fig7">
+	<title>Another Cascaded Line</title>
+	<media id="idp11029152" alt=""><image src="../../media/anotherCL.png" mime-type="image/png"/></media>
+      </figure>
+
+      We take this impedence and rotate around on the Smith Chart
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:ci>λ</m:ci>
+	  <m:cn>4</m:cn>
+	</m:apply>
+      </m:math> to find
+      <m:math>
+	<m:apply>
+	  <m:divide/>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>B</m:mi>
+	  </m:msub>
+	  <m:msub>
+	    <m:mi>Z</m:mi>
+	    <m:mi>M</m:mi>
+	  </m:msub>
+	</m:apply>
+      </m:math>
+      <equation id="eq3">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mi>B</m:mi>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mi>M</m:mi>
+	      </m:msub>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mi>m</m:mi>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mrow>
+		  <m:mn>0</m:mn>
+		  <m:mo>​</m:mo>
+		  <m:mn>2</m:mn>
+		</m:mrow>
+	      </m:msub>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mi>m</m:mi>
+	      </m:msub>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>where we have taken advantage of the fact that when we
+      go half way around the Smith Chart, the impedance we get is just
+      the inverse of what we had originally (half way around turns
+      <m:math>
+	<m:apply>
+	  <m:ci type="fn">r</m:ci>
+	  <m:ci>s</m:ci>
+	</m:apply>
+      </m:math>
+      into
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:apply>
+	    <m:ci type="fn">r</m:ci>
+	    <m:ci>s</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>).
+    </para>
+
+    <para id="para2">Thus
+      <equation id="eq4">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mi>B</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:power/>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mi>m</m:mi>
+		</m:msub>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mrow>
+		  <m:mn>0</m:mn>
+		  <m:mo>​</m:mo>
+		  <m:mn>2</m:mn>
+		</m:mrow>
+	      </m:msub>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      If we want to have a match for line with impedence
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mrow>
+	    <m:mn>0</m:mn>
+	    <m:mo>​</m:mo>
+	    <m:mn>1</m:mn>
+	  </m:mrow>
+	</m:msub>
+      </m:math>, then
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mi>B</m:mi>
+	</m:msub>
+      </m:math> should equal
+      <m:math>
+	<m:msub>
+	  <m:mi>Z</m:mi>
+	  <m:mrow>
+	    <m:mn>0</m:mn>
+	    <m:mo>​</m:mo>
+	    <m:mn>1</m:mn>
+	  </m:mrow>
+	</m:msub>
+      </m:math> and hence:
+      <equation id="eq5">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mi>B</m:mi>
+	    </m:msub>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mrow>
+		<m:mn>0</m:mn>
+		<m:mo>​</m:mo>
+		<m:mn>1</m:mn>
+	      </m:mrow>
+	    </m:msub>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:power/>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mi>m</m:mi>
+		</m:msub>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	      <m:msub>
+		<m:mi>Z</m:mi>
+		<m:mrow>
+		  <m:mn>0</m:mn>
+		  <m:mo>​</m:mo>
+		  <m:mn>2</m:mn>
+		</m:mrow>
+	      </m:msub>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      or
+      <equation id="eq6">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:msub>
+	      <m:mi>Z</m:mi>
+	      <m:mi>m</m:mi>
+	    </m:msub>
+	    <m:apply>
+	      <m:root/>
+	      <m:apply>
+		<m:times/>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mo>​</m:mo>
+		    <m:mn>1</m:mn>
+		  </m:mrow>
+		</m:msub>
+		<m:msub>
+		  <m:mi>Z</m:mi>
+		  <m:mrow>
+		    <m:mn>0</m:mn>
+		    <m:mo>​</m:mo>
+		    <m:mn>2</m:mn>
+		  </m:mrow>
+		</m:msub>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+      This piece of line is called a <term>quarter wave matching
+      section</term> and is a convenient way to connect two lines of
+      different impedance.
+    </para>
+
+  </content>
+  
+</document>

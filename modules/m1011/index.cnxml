@@ -1,0 +1,268 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Light Emitting Diode</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>97b53c7d-6399-479c-a276-bc65157c31d1</md:uuid>
+</metadata>
+
+  <content>
+    <para id="recombining"> Let's talk about the recombining electrons
+      for a minute.  When the electron falls down from the conduction
+      band and fills in a hole in the valence band, there is an
+      obvious loss of energy.  The question is; where does that energy
+      go?  In silicon, the answer is not very interesting.  Silicon is
+      what is known as an <term>indirect band-gap material</term>.
+      What this means is that as an electron goes from the bottom of
+      the conduction band to the top of the valence band, it must also
+      undergo a significant change in momentum.  This all comes about
+      from the details of the band structure for the material, which
+      we will not concern ourselves with here.  As we all know,
+      whenever something changes state, we must still conserve not
+      only energy, but also momentum.  In the case of an electron
+      going from the conduction band to the valence band in silicon,
+      both of these things can only be conserved if the transition
+      also creates a quantized set of lattice vibrations, called
+      <term>phonons</term>, or "heat".  Phonons posses
+      <emphasis>both</emphasis> energy and momentum, and their
+      creation upon the recombination of an electron and hole allows
+      for complete conservation of both energy and momentum.  All of
+      the energy which the electron gives up in going from the
+      conduction band to the valence band (1.1 eV) ends up in phonons,
+      which is another way of saying that the electron heats up the
+      crystal.
+    </para>
+    <para id="direct"> In some other semiconductors, something else
+      occurs.  In a class of materials called <term>direct band-gap
+      semiconductors</term>, the transition from conduction band to
+      valence band involves essentially no change in momentum.
+      Photons, it turns out, possess a fair amount of energy (several
+      eV/photon in some cases) but they have very little momentum
+      associated with them.  Thus, for a direct band gap material, the
+      excess energy of the electron-hole recombination can either be
+      taken away as heat, or more likely, as a photon of light.  This
+      <term>radiative transition</term> then conserves energy and
+      momentum by giving off light whenever an electron and hole
+      recombine.  This gives rise to (for us) a new type of device,
+      the light emitting diode (LED).  Emission of a photon in an LED
+      is shown schematically in <link target-id="radiative"/>.
+      <figure id="radiative">
+	<title>
+	  Radiative recombination in a direct band-gap semiconductor
+	</title>
+	<media id="idm9200752" alt=""><image src="../../media/2_55.png" mime-type="image/png"/></media>
+      </figure>
+    </para>
+    <para id="para1">
+      It was Planck who postulated that the energy of a photon was
+      related to its frequency by a constant, which was later named
+      after him.  If the frequency of oscillation is given by the
+      Greek letter "nu" (<m:math><m:ci>ν</m:ci></m:math>), then the
+      energy of the photon is just 
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>h</m:ci>
+	  <m:ci>ν</m:ci>
+	</m:apply>
+      </m:math>, where <m:math><m:ci>h</m:ci></m:math> is Planck's
+      constant, which has a value of 
+      <m:math>
+	<m:apply>
+	 <m:times/>
+	  <m:cn type="e-notation">4.14<m:sep/>-15</m:cn>
+	  <m:ci>eV</m:ci>
+	  <m:ci>seconds</m:ci>
+	</m:apply>
+      </m:math>.
+      <equation id="planck">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>E</m:ci>
+	    <m:apply>
+	      <m:times/>
+	      <m:ci>h</m:ci>
+	      <m:ci>ν</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>      
+      When we talk about light it is conventional to specify its
+      wavelength, <m:math><m:ci>λ</m:ci></m:math>, instead of
+      its frequency.  Visible light has a wavelength on the order of
+      nanometers (Red is about 600 nm, green about 500 nm and blue is
+      in the 450 nm region.)  A handy "rule of thumb" can be derived
+      from the fact that 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>λ</m:ci>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>c</m:ci>
+	    <m:ci>v</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, where <m:math><m:ci>c</m:ci></m:math> is the speed of
+      light.  Since 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>c</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn type="e-notation">3<m:sep/>8</m:cn>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>m</m:ci>
+	      <m:ci>sec</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math> or 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>c</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn type="e-notation">3<m:sep/>17</m:cn>
+	    <m:apply>
+	      <m:divide/>
+	      <m:ci>nm</m:ci>
+	      <m:ci>sec</m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+      <equation id="lambda">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:ci>λ</m:ci>
+	      <m:ci>nm</m:ci>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:apply>
+		<m:times/>
+		<m:ci>h</m:ci>
+		<m:ci>c</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:ci>E</m:ci>
+		<m:ci>eV</m:ci>
+	      </m:apply>
+	    </m:apply>
+	    <m:apply>
+	      <m:divide/>
+	      <m:cn>1242</m:cn>
+	      <m:apply>
+		<m:ci>E</m:ci>
+		<m:ci>eV</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation> Thus, a semiconductor with a 2 eV band-gap should
+      give off light at about 620 nm (in the red).  A 3 eV band-gap
+      material would emit at 414 nm, in the violet.  The human eye, of
+      course, is not equally responsive to all colors.  We  show
+      this in <link target-id="human"/>, where we have also included the
+      materials which are used for important light emitting diodes
+      (LEDs) for each of the different spectral regions.
+      <figure id="human"><title>Relative response of the human eye to various colors</title><media id="idm10569232" alt=""><image src="../../media/2_56.png" mime-type="image/png" print-width="4in"/></media></figure>
+    </para>
+    <para id="para3">
+      As you no doubt notice, a number of the important LEDs are based
+      on the GaAsP system.  GaAs is a direct band-gap semiconductor
+      with a band gap of 1.42 eV (in the infrared).  GaP is an
+      indirect band-gap material with a band gap of 2.26 eV (550 nm,
+      or green).  Both As and P are group V elements.  (Hence the
+      nomenclature of the materials as <term>III-V compound
+      semiconductors</term>.)  We can replace some of the As with P in
+      GaAs and make a mixed compound semiconductor
+      <m:math>
+	<m:apply>
+	  <m:times/>
+	  <m:ci>Ga</m:ci>
+	  <m:ci><m:msub>
+	      <m:mi>As</m:mi>
+	      <m:mtext>1-x</m:mtext>
+	    </m:msub></m:ci>
+	  <m:ci><m:msub>
+	      <m:mi>P</m:mi>
+	      <m:mi>x</m:mi>
+	    </m:msub></m:ci>
+	</m:apply>
+      </m:math>.  When the mole fraction of phosphorous is less than
+      about 0.45 the band gap is direct, and so we can "engineer" the
+      desired color of LED that we want by simply growing a crystal
+      with the proper phosphorus concentration!  The properties of the
+      GaAsP system are shown in <link target-id="bandgap"/>.  It turns
+      out that for this system, there are actually
+      <emphasis>two</emphasis> different band gaps, as shown in the
+      <link target-id="bandgap">inset</link>.  One is a direct gap (no
+      change in momentum) and the other is indirect.  In GaAs, the
+      direct gap has lower energy than the indirect one (like in the
+      inset) and so the transition is a radiative one.  As we start
+      adding phosphorous to the system, both the direct and indirect
+      band gaps increase in energy.  However, the direct gap energy
+      increases faster with phosphorous fraction than does the
+      indirect one.  At a mole fraction
+      <m:math><m:ci>x</m:ci></m:math> of about 0.45, the gap energies
+      cross over and the material goes from being a direct gap
+      semiconductor to an indirect gap semiconductor.  At
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>x</m:ci>
+	  <m:cn>0.35</m:cn>
+	</m:apply>
+      </m:math> the band gap is about 1.97 eV (630 nm), and so we
+      would only expect to get light up to the red using the GaAsP
+      system for making LED's.  Fortunately, people discovered that
+      you could add an impurity (nitrogen) to the GaAsP system, which
+      introduced a new level in the system.  An electron could go from
+      the indirect conduction band (for a mixture with a mole fraction
+      greater than 0.45) to the nitrogen site, changing its momentum,
+      but not its energy.  It could then make a direct transition to
+      the valence band, and light with colors all the way to the green
+      became possible.  The use of a nitrogen <term>recombination
+      center</term> is depicted in the <link target-id="nitrogen"/>.
+    </para>
+      <figure id="bandgap"><title>Band gap for the GaAsP system</title><media id="idp3546192" alt=""><image src="../../media/2_57.png" mime-type="image/png" print-width="3.7in"/></media></figure>
+      <figure id="nitrogen">
+	<title>
+	  Addition of a nitrogen recombination center to indirectGaAsP
+	</title>
+	<media id="idm4068736" alt=""><image src="../../media/2_58.png" mime-type="image/png"/></media>
+      </figure>
+    <para id="para4">  
+      If we want colors with wavelengths shorter than the green, we
+      must abandon the GaAsP system and look for more suitable
+      materials.  A compound semiconductor made from the II-VI
+      elements Zn and Se make up one promising system, and several
+      research groups have successfully made blue and blue-green LEDs
+      from ZnSe.  SiC is another (weak) blue emitter which is
+      commercially available on the market.  Recently, workers at a
+      tiny, unknown chemical company stunned the "display world" by
+      announcing that they had successfully fabricated a blue LED
+      using the II-V material GaN.  A good blue LED has been the "holy
+      grail" of the display and CD ROM research community for a number
+      of years now.  Obviously, adding blue to the already working
+      green and red LED's completes the set of 3 primary colors
+      necessary for a full-color flat panel display (Hang a TV screen
+      on your wall like a picture?).  Using a blue LED or laser in a
+      CD ROM would more than quadruple its data capacity, as bit
+      diameter scales as <m:math><m:ci>λ</m:ci> </m:math>, and
+      hence the area as 
+      <m:math>
+	<m:apply>
+	  <m:power/>
+	  <m:ci>λ</m:ci>
+	  <m:cn>2</m:cn>
+	</m:apply>
+      </m:math>.
+
+
+</para> </content> </document>

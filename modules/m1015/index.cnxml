@@ -1,0 +1,540 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Transistor Equations</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>5f9d8724-4d01-4888-8d9d-0bf773222887</md:uuid>
+</metadata>
+
+  <content>
+
+    <para id="para1">
+      There are several "figures of merit" for the operation of the
+      transistor.  The first of these is called the <term>emitter
+      injection efficiency</term>, <m:math><m:ci>γ</m:ci>
+      </m:math>.  The emitter injection efficiency is just the ratio
+      of the electron current flowing in the emitter to the total
+      current across the emitter base junction:
+
+      <equation id="eqn02">
+        <m:math>
+          <m:apply>
+	    <m:eq/>
+            <m:ci>γ</m:ci>
+            <m:apply>
+	      <m:divide/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>e</m:mi>
+		</m:msub></m:ci>
+              <m:apply><m:plus/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>I</m:mi>	    
+		    <m:mi>Ee</m:mi>
+		  </m:msub></m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>Eh</m:mi>
+		  </m:msub></m:ci>
+              </m:apply>
+            </m:apply>
+          </m:apply>
+        </m:math>
+      </equation>
+
+    </para>
+
+
+    <para id="para2">
+      If you go back and look at <link document="m1007" target-id="final">the diode equation</link> you will note that the
+      electron forward current across a junction is proportional to
+      <m:math> <m:ci><m:msub> <m:mi>N</m:mi> <m:mi>d</m:mi>
+      </m:msub></m:ci> </m:math> the doping on the n-side of the
+      junction.  Clearly the hole current will be proportional to
+
+      <m:math>
+	<m:ci><m:msub>
+	    <m:mi>N</m:mi>
+	    <m:mi>a</m:mi>
+	  </m:msub></m:ci>
+      </m:math>,
+
+      the acceptor doping on the p-side of the junction.  Thus, at
+      least to first order
+    </para>
+
+    <equation id="eqn03">
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>γ</m:ci>
+	  <m:apply><m:divide/>
+	    <m:ci><m:msub>
+		<m:mi>N</m:mi>
+		<m:msub>
+		  <m:mi>d</m:mi>
+		  <m:mi>E</m:mi>
+		</m:msub>
+	      </m:msub></m:ci>
+	    <m:apply><m:plus/>
+	      <m:ci><m:msub>
+		  <m:mi>N</m:mi>
+		  <m:msub>
+		    <m:mi>d</m:mi>
+		    <m:mi>E</m:mi>
+		  </m:msub>	 
+		</m:msub></m:ci>
+	      <m:ci><m:msub>
+		  <m:mi>N</m:mi>
+		  <m:msub>
+		    <m:mi>a</m:mi>
+		    <m:mi>B</m:mi>
+		  </m:msub>
+		</m:msub></m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:apply>
+      </m:math>
+    </equation>
+
+    <para id="para3">
+      (There are some other considerations which we are ignoring in
+      obtaining this expression, but to first order, and for most
+      "real" transistors, <link target-id="eqn03"/> is a very good
+      approximation.)
+    </para>
+
+    <para id="para4">
+      The second "figure of merit" is the base transport factor,
+      <m:math>
+        <m:ci><m:msub>
+	    <m:mi>α</m:mi>
+	    <m:mi>T</m:mi>
+	  </m:msub></m:ci>
+      </m:math>.
+
+      The base transport factor tells us what fraction of the electron
+      current which is injected into the base actually makes it to
+      collector junction.  This turns out to be given, to a very good
+      approximation, by the expression
+
+      <equation id="eqn04"><m:math>
+	<m:apply>
+		<m:eq/>
+		<m:ci><m:msub>
+			<m:mi>α</m:mi>
+			<m:mi>T</m:mi>
+		</m:msub></m:ci>
+		<m:apply>
+			<m:minus/>
+			<m:cn>1</m:cn>
+			<m:apply>
+				<m:times/>
+				<m:apply>
+					<m:divide/>
+					<m:cn>1</m:cn>									<m:cn>2</m:cn>
+				</m:apply>
+				<m:apply>
+					<m:power/>
+						<m:apply>
+							<m:divide/>
+	<m:ci><m:msub><m:mi>W</m:mi><m:mi>B</m:mi></m:msub></m:ci>
+<m:ci><m:msub><m:mi>L</m:mi><m:mi>e</m:mi></m:msub></m:ci>
+						</m:apply>
+					<m:cn>2</m:cn>
+				</m:apply>
+			</m:apply>
+		</m:apply>
+	</m:apply>
+</m:math>
+</equation>
+
+    </para>
+
+    <para id="para5">
+      Where
+
+      <m:math>
+        <m:ci><m:msub>
+	    <m:mi>W</m:mi>
+	    <m:mi>B</m:mi>
+	  </m:msub></m:ci>
+      </m:math>
+
+      is the physical width of the base region, and
+
+      <m:math>
+        <m:ci><m:msub>
+	    <m:mi>L</m:mi>
+	    <m:mi>e</m:mi>
+	  </m:msub></m:ci>
+      </m:math>
+
+      is the electron diffusion length, defined in the <link document="m1010" target-id="length"> electron diffusion length
+      equation</link>.
+
+      <equation id="eqn05">
+        <m:math>
+          <m:apply>
+	    <m:eq/>
+            <m:ci><m:msub>
+		<m:mi>L</m:mi>
+		<m:mi>e</m:mi>
+	      </m:msub></m:ci>
+            <m:apply>
+	      <m:root/>
+              <m:apply>
+		<m:times/>
+                <m:ci><m:msub>
+		    <m:mi>D</m:mi>
+		    <m:mi>e</m:mi>
+		  </m:msub></m:ci>
+                <m:ci><m:msub>
+		    <m:mi>τ</m:mi>
+		    <m:mi>r</m:mi>
+		  </m:msub></m:ci>
+              </m:apply>
+            </m:apply>
+          </m:apply>
+        </m:math>
+      </equation>
+
+    </para>
+
+    <para id="para6">
+      Clearly, if the base is very narrow compared to the diffusion
+      length, and since the electron concentration is falling off like
+
+      <m:math>
+        <m:apply>
+	  <m:exp/>
+          <m:apply><m:divide/>
+            <m:apply><m:minus/>
+              <m:ci>x</m:ci>
+            </m:apply>
+            <m:ci><m:msub>
+		<m:mi>L</m:mi>
+		<m:mi>e</m:mi>
+	      </m:msub></m:ci>
+          </m:apply>
+	</m:apply>
+      </m:math>
+
+      the shorter the base is compared to
+
+      <m:math>
+        <m:ci><m:msub>
+	    <m:mi>L</m:mi>
+	    <m:mi>e</m:mi>
+	  </m:msub></m:ci>
+      </m:math>
+
+      the greater the fraction of electrons who will actually make it
+      across.  We saw before that a typical value for
+
+      <m:math>
+        <m:ci><m:msub>
+	    <m:mi>L</m:mi>
+	    <m:mi>e</m:mi>
+	  </m:msub></m:ci>
+      </m:math>
+
+      might be on the order of 0.005 cm or 50 μm.  In a
+      typical bipolar transistor, the base width,
+
+      <m:math>
+        <m:ci><m:msub>
+	    <m:mi>W</m:mi>
+	    <m:mi>B</m:mi>
+	  </m:msub></m:ci>
+      </m:math>
+
+      is usually only a few μm and so
+      <m:math><m:ci>α</m:ci></m:math> can be quite close to
+      unity as well.
+    </para>
+
+    <para id="para7">
+      Looking back at <link document="m1014" target-id="fig3">this
+      figure</link>, it should be clear that, so long as the
+      collector-base junction remains reverse-biased, the collector
+      current
+
+      <m:math>
+	<m:ci><m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>Ce</m:mi>
+	  </m:msub></m:ci> </m:math>, will only depend on how much of
+      the total emitter current actually gets collected by the
+      reverse-biased base-collector junction.  That is, the collector
+      current IC is just some fraction of the total emitter current
+
+      <m:math>
+	<m:ci><m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>E</m:mi>
+	  </m:msub></m:ci>
+      </m:math>.
+
+      We introduce yet one more constant which reflects the ratio
+      between these two currents, and call it simply
+      "<m:math><m:ci>α</m:ci></m:math>."  Thus we say
+
+      <equation id="eqn06">
+        <m:math>
+          <m:apply>
+	    <m:eq/>
+            <m:ci><m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>C</m:mi>
+	      </m:msub></m:ci>
+            <m:apply><m:times/>
+              <m:ci>α</m:ci>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>E</m:mi>
+		</m:msub></m:ci>
+            </m:apply>
+          </m:apply>
+        </m:math>
+      </equation>
+    </para>
+
+    <para id="para8">
+      Since the <emphasis>electron</emphasis> current into the base
+      is just
+
+      <m:math>
+        <m:apply><m:times/>
+          <m:ci>γ</m:ci>
+          <m:ci><m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>E</m:mi>
+	    </m:msub></m:ci>
+        </m:apply>
+      </m:math>
+
+      and
+
+      <m:math>
+	<m:ci><m:msub>
+	    <m:mi>α</m:mi>
+	    <m:mi>T</m:mi>
+	  </m:msub></m:ci>
+      </m:math>
+
+      of that current reaches the collector, we can write:
+
+      <equation id="eqn07">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci><m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>C</m:mi>
+	      </m:msub></m:ci>
+	    <m:apply><m:times/>
+	      <m:ci>α</m:ci>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>E</m:mi>
+		</m:msub></m:ci>
+	    </m:apply>
+	    <m:apply><m:times/>
+	      <m:ci><m:msub>
+		  <m:mi>α</m:mi>
+		  <m:mi>T</m:mi>
+		</m:msub></m:ci>
+	      <m:ci>γ</m:ci>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>E</m:mi>
+		</m:msub></m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+    </para>
+
+    <para id="para9">
+      Looking back at the <link document="m1014" target-id="fig1">structure of an npn bipolar transistor</link>, we
+      can use Kirchoff's current law for the transistor and say:
+
+      <equation id="eqn08">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply><m:plus/>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>C</m:mi>
+		</m:msub></m:ci>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>B</m:mi>
+		</m:msub></m:ci>
+	    </m:apply>
+	    <m:ci><m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>E</m:mi>
+	      </m:msub></m:ci>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      or
+
+      <equation id="eqn09">
+        <m:math>
+          <m:apply>
+	    <m:eq/>
+            <m:ci><m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>B</m:mi>
+	      </m:msub></m:ci>
+            <m:apply><m:minus/>
+              <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>E</m:mi>
+		</m:msub></m:ci>
+              <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>C</m:mi>
+		</m:msub></m:ci>
+            </m:apply>
+            <m:apply><m:minus/>
+              <m:apply><m:divide/>
+                <m:ci><m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>C</m:mi>
+		  </m:msub></m:ci>
+                <m:ci>α</m:ci>
+              </m:apply>
+              <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>C</m:mi>
+		</m:msub></m:ci>
+            </m:apply>
+          </m:apply>
+        </m:math>
+      </equation>
+    </para>
+
+    <para id="para10">
+      This can be re-written to express
+
+      <m:math>
+        <m:ci><m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>C</m:mi>
+	  </m:msub></m:ci>
+      </m:math>
+
+      in terms of
+
+      <m:math>
+        <m:ci><m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>B</m:mi>
+	  </m:msub></m:ci>
+      </m:math>
+
+      as:
+
+      <equation id="eqn10">
+	<m:math>
+	  <m:apply>
+	    <m:equivalent/>
+	    <m:apply>
+	      <m:eq/>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>C</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:times/>
+		<m:apply><m:divide/>
+		  <m:ci>α</m:ci>
+		  <m:apply><m:minus/>
+		    <m:cn>1</m:cn>
+		    <m:ci>α</m:ci>
+		  </m:apply>
+		</m:apply>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>I</m:mi>
+		    <m:mi>B</m:mi>
+		  </m:msub>
+		</m:ci>
+              </m:apply>
+	    </m:apply>
+	    <m:apply><m:times/>
+	      <m:ci>β</m:ci>
+	      <m:ci><m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>B</m:mi>
+		</m:msub></m:ci>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+    </para>
+
+    <para id="para11">
+      This is the fundamental operational equation for the bipolar
+      equation.  It says that the collector current is dependent only
+      on the base current.  Note that if
+      <m:math><m:ci>α</m:ci></m:math> is a number close to (but
+      still slightly less than) unity, then
+      <m:math><m:ci>β</m:ci></m:math> which is just given by
+
+      <equation id="eqn11">
+        <m:math>
+          <m:apply>
+	    <m:eq/>
+            <m:ci>β</m:ci>
+            <m:apply><m:divide/>
+              <m:ci>α</m:ci>
+              <m:apply><m:minus/>
+                <m:cn>1</m:cn>
+                <m:ci>α</m:ci>
+              </m:apply>
+            </m:apply>
+          </m:apply>
+        </m:math>
+      </equation>
+
+      will be a fairly large number.  Typical values for a will be on
+      the order of 0.99 or greater, which puts
+      <m:math><m:ci>β</m:ci></m:math>, the current gain, at
+      around 100 or more!  This means that we can control, or amplify
+      the current going into the collector of the transistor with a
+      current 100 times smaller going into the base.  This all occurs
+      because the ratio of the collector current to the base current
+      is fixed by the conditions across the emitter-base junction, and
+      the ratio of the two,
+
+      <m:math>
+        <m:ci><m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>C</m:mi>
+	  </m:msub></m:ci>
+      </m:math>
+
+      to
+
+      <m:math>
+        <m:ci><m:msub>
+	    <m:mi>I</m:mi>
+	    <m:mi>B</m:mi>
+	  </m:msub></m:ci>
+      </m:math>
+
+      is always the same.
+    </para>
+   
+  </content>
+  
+</document>

@@ -1,0 +1,384 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Plotting MOS I-V</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>f6adc134-2b84-4294-ba8b-ab106ea78fb7</md:uuid>
+</metadata>
+
+  <content>
+    <para id="para1">
+      Now we use two of the equations (<link document="m1024" target-id="eqn41"/> and <link document="m1024" target-id="eqn45"/>)
+      that we found in the discussion about <link document="m1024">MOS Regimes</link> to calculate a set of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math> and
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math> values for various value of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math>.  (Note that
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>gs</m:mi>
+      </m:msub></m:ci></m:math> must be greater than
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math> for the two equations to be valid.)
+      When we get the numbers, we build a little table.
+    </para>
+
+
+    <para id="para2">
+      Once we have <link target-id="fig24">the numbers</link>, then we
+      sketch a piece of graph paper with the proper scale, and <link target-id="fig25">plot the points</link> on it. Once the
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>,
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math> points have been determined, it is
+      easy to sketch in the I-V behavior. You just draw a curve from
+      the origin up to any given point, having it "peak out" just at
+      the dot, and then draw a straight line at
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math> to finish things off. One such curve
+      is shown in <link target-id="fig26"/>. And then finally in <link target-id="fig27"/> they are all sketched in. Your curves probably
+      wont be exactly right but they will be good enough for a lot of
+      applications.
+    </para>
+
+
+    <table frame="all" id="fig24" summary="">
+	<tgroup cols="3" align="left" colsep="1" rowsep="1">
+	  <thead valign="top">
+	    <row>
+	      <entry>
+		<m:math><m:ci><m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>gs</m:mi>
+		    </m:msub></m:ci></m:math>
+	      </entry>
+	      <entry>
+		<m:math><m:apply> <m:ci type="fn"><m:msub><m:mi>V</m:mi>
+			<m:mi>dsat</m:mi></m:msub></m:ci>
+		    <m:ci>V</m:ci></m:apply></m:math>
+	      </entry>
+	      <entry>
+		<m:math><m:apply><m:ci type="fn"><m:msub><m:mi>V</m:mi>
+			<m:mi>dsat</m:mi></m:msub></m:ci>
+		    <m:ci>mA</m:ci></m:apply></m:math>
+	      </entry>
+	    </row>
+	  </thead>
+	  <tbody valign="top">
+	    <row>
+	      <entry>
+		3
+	      </entry>
+	      <entry>
+		1
+	      </entry>
+	      <entry>
+		0.44
+	      </entry>
+	    </row>
+	    <row>
+	      <entry>
+		4
+	      </entry>
+	      <entry>
+		2
+	      </entry>
+	      <entry>
+		1.76
+	      </entry>
+	    </row>
+	    <row>
+	      <entry>
+		5
+	      </entry>
+	      <entry>
+		3
+	      </entry>
+	      <entry>
+		3.96
+	      </entry>
+	    </row>
+	    <row>
+	      <entry>
+		6
+	      </entry>
+	      <entry>
+		4
+	      </entry>
+	      <entry>
+		7.04
+	      </entry>
+	    </row>
+	    <row>
+	      <entry>
+		7
+	      </entry>
+	      <entry>
+		5
+	      </entry>
+	      <entry>
+		11
+	      </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      <caption>Results of calculating
+	<m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+	</m:msub></m:ci></m:math> and
+	<m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>dsat</m:mi>
+	</m:msub></m:ci></m:math>.</caption></table>
+
+
+    <figure id="fig25">
+      <media id="idm7459168" alt=""><image src="../../media/4.25.png" mime-type="image/png"/></media> <caption>Plotting
+      <m:math><m:ci><m:msub><m:mi>I</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math> and
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>dsat</m:mi>
+      </m:msub></m:ci></m:math>.</caption>
+    </figure>
+
+
+    <figure id="fig26">
+      <media id="idm8301328" alt=""><image src="../../media/4.26.png" mime-type="image/png"/></media>
+      <caption>Sketching in one of the I-V curves.</caption>
+    </figure>
+
+
+    <figure id="fig27">
+      <media id="idm7917424" alt=""><image src="../../media/4.27.png" mime-type="image/png"/></media>
+      <caption>The complete set of curves.</caption>
+    </figure>
+
+
+    <para id="para3">
+      There is a particularly easy way to measure by
+      <m:math><m:ci>k</m:ci></m:math> and
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math> for a MOSFET. Let's first introduce
+      the schematic symbol for the MOSFET, it looks like <link target-id="fig28"/>. Let's take a MOSFET and hook it up as shown in
+      <link target-id="fig29"/>.
+    </para>
+
+
+    <figure id="fig28">
+      <media id="idm9322944" alt=""><image src="../../media/4.28.png" mime-type="image/png"/></media>
+      <caption>Schematic symbol for a MOSFET </caption>
+    </figure>
+
+
+    <figure id="fig29">
+      <media id="idp5228160" alt=""><image src="../../media/4.29.png" mime-type="image/png"/></media> <caption>Circuit for
+      finding <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math> and
+      <m:math><m:ci>k</m:ci></m:math></caption>
+    </figure>
+
+
+    <para id="para4">
+      Since the gate of this transistor is connected to the drain,
+      there is no doubt that
+      <m:math>
+	<m:apply>
+	  <m:minus/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>gs</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math> is less than
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>.  In fact, since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>gs</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>
+      , their difference, is zero. Thus, for any value of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math>, this transistor is operating in its
+      saturated condition. Since
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>gs</m:mi>
+	    </m:msub>
+	  </m:ci>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>V</m:mi>
+	      <m:mi>ds</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math>, we can rewrite <link document="m1023" target-id="eqn33">a previous equation</link> derived equation from
+      the section on <link document="m1023">MOS transistor</link> as
+
+      <equation id="eqn47">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>
+	      <m:msub>
+		<m:mi>I</m:mi>
+		<m:mi>d</m:mi>
+	      </m:msub>
+	    </m:ci>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:divide/>
+		<m:ci>k</m:ci>
+		<m:cn>2</m:cn>
+	      </m:apply>
+
+	      <m:apply>
+		<m:power/>
+		<m:apply>
+		  <m:minus/>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>ds</m:mi>
+		    </m:msub>
+		  </m:ci>
+		  <m:ci>
+		    <m:msub>
+		      <m:mi>V</m:mi>
+		      <m:mi>T</m:mi>
+		    </m:msub>
+		  </m:ci>
+		</m:apply>
+		<m:cn>2</m:cn>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para5">
+      Now let's take the square root of both sides:
+
+      <equation id="eqn48">
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:apply>
+	      <m:root/>
+	      <m:ci>
+		<m:msub>
+		  <m:mi>I</m:mi>
+		  <m:mi>d</m:mi>
+		</m:msub>
+	      </m:ci>
+	    </m:apply>
+
+	    <m:apply>
+	      <m:times/>
+	      <m:apply>
+		<m:root/>
+		<m:apply>
+		  <m:divide/>
+		  <m:ci>k</m:ci>
+		  <m:cn>2</m:cn>
+		</m:apply>
+	      </m:apply>
+	      <m:apply>
+		<m:minus/>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>ds</m:mi>
+		  </m:msub>
+		</m:ci>
+		<m:ci>
+		  <m:msub>
+		    <m:mi>V</m:mi>
+		    <m:mi>T</m:mi>
+		  </m:msub>
+		</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+
+	</m:math>
+      </equation>
+    </para>
+
+
+    <para id="para6">
+      So if we make a <link target-id="fig30">plot</link> of
+      <m:math>
+	<m:apply>
+	  <m:root/>
+	  <m:ci>
+	    <m:msub>
+	      <m:mi>I</m:mi>
+	      <m:mi>d</m:mi>
+	    </m:msub>
+	  </m:ci>
+	</m:apply>
+      </m:math> as a function of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>ds</m:mi>
+      </m:msub></m:ci></m:math>, we should get a straight line, with a
+      slope of
+      <m:math>
+	<m:apply>
+	  <m:root/>
+	  <m:apply>
+	    <m:divide/>
+	    <m:ci>k</m:ci>
+	    <m:cn>2</m:cn>
+	  </m:apply>
+	</m:apply>
+      </m:math> and an x-intercept of
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>.
+    </para>
+
+
+    <figure id="fig30">
+      <media id="idp2638768" alt=""><image src="../../media/4.30.png" mime-type="image/png"/></media> <caption>Obtaining
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math> and
+      <m:math><m:ci>k</m:ci></m:math></caption>
+    </figure>
+
+
+    <para id="para7">
+      Because of the expected non-ideality, the curve does not go all
+      the way to <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>, but deviates a bit near the bottom. A
+      simple linear extrapolation of the straight part of the plot
+      however, yields an unambiguous value for the threshold voltage
+      <m:math><m:ci><m:msub><m:mi>V</m:mi><m:mi>T</m:mi>
+      </m:msub></m:ci></m:math>.
+    </para>
+
+
+
+  </content>
+  
+</document>
